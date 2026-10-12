@@ -1,0 +1,1524 @@
+{
+  "level": 3,
+  "language": "python",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Functions with Return Values",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Return Value?",
+          "content": "A function can return a value using 'return', like return x + y to give back a sum."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does 'return' do in a function?",
+          "options": ["Prints text", "Sends back a value", "Stops the program"],
+          "correct": "Sends back a value"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Return Functions",
+          "content": "Use 'def' and 'return', like def add(a, b): return a + b."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Write a function sum_nums(a, b) that returns a + b.",
+          "expectedAnswer": "def sum_nums(a, b):\n    return a + b\nprint(sum_nums(2, 3))",
+          "blocks": ["def sum_nums(a, b):\n    return a + b\nprint(sum_nums(2, 3))"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Return Values",
+          "content": "Store the return value, like result = add(2, 3), to use it later."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Return num * 2 in the function.",
+          "starterCode": "def double(num):\n    \ndouble(5)",
+          "placeholders": [
+            {"line": 2, "index": 4, "hint": "return num * 2"}
+          ],
+          "blocks": ["return num * 2", "print(num * 2)", "num * 2"],
+          "correctAnswers": ["return num * 2"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does def x(): return 5 give when called?",
+          "options": ["Prints 5", "Returns 5", "Nothing"],
+          "correct": "Returns 5"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Returning Different Types",
+          "content": "Return numbers, strings, or booleans, like return 'hello' or return True."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Write a function is_even(num) that returns True if num is even.",
+          "expectedAnswer": "def is_even(num):\n    return num % 2 == 0\nprint(is_even(4))",
+          "blocks": ["def is_even(num):\n    return num % 2 == 0\nprint(is_even(4))"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Early Returns",
+          "content": "Use return to exit a function early, like if x < 0: return False."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Return 'Hi' in the function.",
+          "starterCode": "def greet():\n    \ngreet()",
+          "placeholders": [
+            {"line": 2, "index": 4, "hint": "return 'Hi'"}
+          ],
+          "blocks": ["return 'Hi'", "print('Hi')", "'Hi'"],
+          "correctAnswers": ["return 'Hi'"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can a function return a string?",
+          "options": ["Yes", "No", "Only numbers"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Return Power",
+          "content": "Return values make functions flexible for calculations and decisions."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Return Master! 🎁",
+          "content": "You’re returning values like a pro! Your functions are super useful!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Nested Loops",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Nested Loops?",
+          "content": "A loop inside another loop, like a for loop inside a for loop."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a nested loop?",
+          "options": ["One loop", "Loop inside loop", "Two separate loops"],
+          "correct": "Loop inside loop"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Nested Loops",
+          "content": "Indent the inner loop, like for i in range(2): for j in range(2): print(i, j)."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Print pairs from [1, 2] and ['a', 'b'].",
+          "expectedAnswer": "for num in [1, 2]:\n    for letter in ['a', 'b']:\n        print(num, letter)",
+          "blocks": ["for num in [1, 2]:", "\n    for letter in ['a', 'b']:", "\n        print(num, letter)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "How They Work",
+          "content": "The inner loop runs completely for each iteration of the outer loop."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add inner loop for ['x', 'y'].",
+          "starterCode": "for i in [1, 2]:\n    \n        print(i, j)",
+          "placeholders": [
+            {"line": 2, "index": 4, "hint": "for j in ['x', 'y']:"}
+          ],
+          "blocks": ["for j in ['x', 'y']:", "for i in [1, 2]:", "print(j)"],
+          "correctAnswers": ["for j in ['x', 'y']:"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "How many times does the inner loop run if outer loop runs 2 times?",
+          "options": ["Once", "Twice per outer", "Four times"],
+          "correct": "Twice per outer"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Uses of Nested Loops",
+          "content": "Great for combining lists or creating patterns."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print a 2x2 grid of '*'.",
+          "expectedAnswer": "for i in range(2):\n    for j in range(2):\n        print('*', end=' ')\n    print()",
+          "blocks": ["for i in range(2):", "\n    for j in range(2):", "\n        print('*', end=' ')", "\n    print()"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Indentation",
+          "content": "Inner loop code is indented under the outer loop."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Print i, j in nested loop.",
+          "starterCode": "for i in range(2):\n    for j in range(2):\n        ",
+          "placeholders": [
+            {"line": 3, "index": 8, "hint": "print(i, j)"}
+          ],
+          "blocks": ["print(i, j)", "print(i)", "print(j)"],
+          "correctAnswers": ["print(i, j)"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does nested loop indentation show?",
+          "options": ["Loop order", "Loop end", "Loop start"],
+          "correct": "Loop order"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Nested Loop Power",
+          "content": "Nested loops help process complex data combinations."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Nested Loop Ninja! 🔄",
+          "content": "You’re mastering loops inside loops! Your code is tackling big tasks!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "List Slicing",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is List Slicing?",
+          "content": "Slicing gets a part of a list, like list[1:3] to get items 1 to 2."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does list[0:2] do?",
+          "options": ["Gets all items", "Gets first two", "Gets last two"],
+          "correct": "Gets first two"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Slices",
+          "content": "Use [start:end], like nums[1:3] to get a sublist."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Slice [2, 3] from [1, 2, 3, 4] and print.",
+          "expectedAnswer": "nums = [1, 2, 3, 4]\nprint(nums[1:3])",
+          "blocks": ["nums = [1, 2, 3, 4]", "\nprint(nums[1:3])"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Slice Shortcuts",
+          "content": "Use [:n] for start to n, or [n:] for n to end."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Slice first 2 items from [1, 2, 3].",
+          "starterCode": "nums = [1, 2, 3]\nprint(nums[])",
+          "placeholders": [
+            {"line": 2, "index": 11, "hint": ":2"}
+          ],
+          "blocks": [":2", "1:3", "2:"],
+          "correctAnswers": [":2"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does [1, 2, 3][:1] give?",
+          "options": ["[1]", "[2]", "[3]"],
+          "correct": "[1]"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Negative Indices",
+          "content": "Use negative indices, like [-1] for last item."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Slice last 2 items from [1, 2, 3, 4].",
+          "expectedAnswer": "nums = [1, 2, 3, 4]\nprint(nums[-2:])",
+          "blocks": ["nums = [1, 2, 3, 4]", "\nprint(nums[-2:])"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Step in Slicing",
+          "content": "Use [start:end:step], like [::2] to get every second item."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Slice every second item from [1, 2, 3, 4].",
+          "starterCode": "nums = [1, 2, 3, 4]\nprint(nums[])",
+          "placeholders": [
+            {"line": 2, "index": 11, "hint": "::2"}
+          ],
+          "blocks": ["::2", ":2", "2:"],
+          "correctAnswers": ["::2"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does [1, 2, 3, 4][::2] give?",
+          "options": ["[1, 3]", "[2, 4]", "[1, 2]"],
+          "correct": "[1, 3]"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Slicing Power",
+          "content": "Slicing lets you work with parts of lists easily."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Slicing Star! ✂️",
+          "content": "You’re cutting lists like a pro! Slicing makes your code precise!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "List Methods",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are List Methods?",
+          "content": "Methods like .sort() or .pop() change or get info from lists."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does .sort() do?",
+          "options": ["Removes items", "Sorts list", "Counts items"],
+          "correct": "Sorts list"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Sort",
+          "content": "Sorts in ascending order, like [3, 1].sort() makes [1, 3]."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Sort [4, 2, 3] and print.",
+          "expectedAnswer": "nums = [4, 2, 3]\nnums.sort()\nprint(nums)",
+          "blocks": ["nums = [4, 2, 3]", "\nnums.sort()", "\nprint(nums)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Pop Method",
+          "content": "Pop removes and returns an item, like list.pop() for the last item."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Pop last item from [1, 2].",
+          "starterCode": "nums = [1, 2]\nnums.()\nprint(nums)",
+          "placeholders": [
+            {"line": 2, "index": 6, "hint": "pop"}
+          ],
+          "blocks": ["pop", "sort", "remove"],
+          "correctAnswers": ["pop"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does [1, 2].pop() return?",
+          "options": ["1", "2", "Nothing"],
+          "correct": "2"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Reverse Method",
+          "content": "Reverse flips the list, like [1, 2].reverse() makes [2, 1]."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Reverse [1, 2, 3] and print.",
+          "expectedAnswer": "nums = [1, 2, 3]\nnums.reverse()\nprint(nums)",
+          "blocks": ["nums = [1, 2, 3]", "\nnums.reverse()", "\nprint(nums)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Index Method",
+          "content": "Find item’s index, like list.index('a') returns 0 if 'a' is first."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Find index of 'cat' in ['cat', 'dog'].",
+          "starterCode": "pets = ['cat', 'dog']\nprint(pets.('cat'))",
+          "placeholders": [
+            {"line": 2, "index": 11, "hint": "index"}
+          ],
+          "blocks": ["index", "count", "pop"],
+          "correctAnswers": ["index"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does ['x', 'y'].index('y') return?",
+          "options": ["0", "1", "2"],
+          "correct": "1"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Method Power",
+          "content": "List methods make lists dynamic and easy to manage."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "List Method Guru! 📋",
+          "content": "You’re transforming lists like a pro! Methods make your code powerful!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Dictionary Methods",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Dictionary Methods?",
+          "content": "Methods like .keys() or .values() work with dictionary data."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does .keys() return?",
+          "options": ["Values", "Keys", "Pairs"],
+          "correct": "Keys"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Keys",
+          "content": "Get all keys, like dict.keys() for {'a': 1} returns ['a']."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Print keys of {'name': 'Mia', 'age': 10}.",
+          "expectedAnswer": "info = {'name': 'Mia', 'age': 10}\nprint(info.keys())",
+          "blocks": ["info = {'name': 'Mia', 'age': 10}", "\nprint(info.keys())"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Values Method",
+          "content": "Get all values, like dict.values() returns ['Mia', 10]."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get values from {'x': 1, 'y': 2}.",
+          "starterCode": "data = {'x': 1, 'y': 2}\nprint(data.())",
+          "placeholders": [
+            {"line": 2, "index": 11, "hint": "values"}
+          ],
+          "blocks": ["values", "keys", "items"],
+          "correctAnswers": ["values"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does {'a': 5}.values() return?",
+          "options": ["['a']", "[5]", "['a', 5]"],
+          "correct": "[5]"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Items Method",
+          "content": "Get key-value pairs, like dict.items() returns [('a', 1)]."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print items of {'color': 'blue'}.",
+          "expectedAnswer": "data = {'color': 'blue'}\nprint(data.items())",
+          "blocks": ["data = {'color': 'blue'}", "\nprint(data.items())"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Pop Method",
+          "content": "Remove a key-value pair, like dict.pop('key') returns the value."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Pop 'age' from {'age': 10}.",
+          "starterCode": "info = {'age': 10}\ninfo.('age')\nprint(info)",
+          "placeholders": [
+            {"line": 2, "index": 6, "hint": "pop"}
+          ],
+          "blocks": ["pop", "get", "remove"],
+          "correctAnswers": ["pop"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does {'x': 1}.pop('x') return?",
+          "options": ["'x'", "1", "Nothing"],
+          "correct": "1"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Dictionary Method Power",
+          "content": "Methods make dictionaries flexible for data tasks."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Dictionary Method Pro! 📖",
+          "content": "You’re mastering dictionary methods! Your code is super organized!"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "String Splitting",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Splitting?",
+          "content": "Split turns a string into a list, like 'a b'.split() makes ['a', 'b']."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does .split() return?",
+          "options": ["String", "List", "Number"],
+          "correct": "List"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Split",
+          "content": "Split on spaces by default, or specify, like 'a,b'.split(',')."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Split 'cat dog' into a list and print.",
+          "expectedAnswer": "text = 'cat dog'\nprint(text.split())",
+          "blocks": ["text = 'cat dog'", "\nprint(text.split())"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Custom Split",
+          "content": "Split on any character, like 'x-y'.split('-') makes ['x', 'y']."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Split 'a,b' on comma.",
+          "starterCode": "text = 'a,b'\nprint(text.split())",
+          "placeholders": [
+            {"line": 2, "index": 17, "hint": "','"}
+          ],
+          "blocks": ["','", "' '", "'.'"],
+          "correctAnswers": ["','"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does 'x y'.split() give?",
+          "options": ["['x', 'y']", "['x y']", "['x']"],
+          "correct": "['x', 'y']"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Saving Splits",
+          "content": "Store the list, like words = text.split(), to use it."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Split 'red,blue' on comma and print.",
+          "expectedAnswer": "text = 'red,blue'\ncolors = text.split(',')\nprint(colors)",
+          "blocks": ["text = 'red,blue'", "\ncolors = text.split(',')", "\nprint(colors)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Split Uses",
+          "content": "Split is great for processing text into parts."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Split 'hi there' into words.",
+          "starterCode": "text = 'hi there'\nwords = text.()\nprint(words)",
+          "placeholders": [
+            {"line": 2, "index": 13, "hint": "split"}
+          ],
+          "blocks": ["split", "replace", "upper"],
+          "correctAnswers": ["split"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does 'a-b'.split('-') give?",
+          "options": ["['a', 'b']", "['a-b']", "['b']"],
+          "correct": "['a', 'b']"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Split Power",
+          "content": "Splitting makes text easy to work with in lists."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Split Specialist! 🔪",
+          "content": "You’re breaking text into lists like a pro! Splitting is your superpower!"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "String Joining",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Joining?",
+          "content": "Join combines a list into a string, like ','.join(['a', 'b']) makes 'a,b'."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does .join() do?",
+          "options": ["Splits text", "Combines list", "Counts items"],
+          "correct": "Combines list"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Join",
+          "content": "Choose a separator, like ' '.join(['hi', 'there']) makes 'hi there'."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Join ['cat', 'dog'] with space and print.",
+          "expectedAnswer": "pets = ['cat', 'dog']\nprint(' '.join(pets))",
+          "blocks": ["pets = ['cat', 'dog']", "\nprint(' '.join(pets))"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Custom Join",
+          "content": "Use any separator, like '-'.join(['x', 'y']) makes 'x-y'."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Join ['a', 'b'] with comma.",
+          "starterCode": "items = ['a', 'b']\nprint(.join(items))",
+          "placeholders": [
+            {"line": 2, "index": 6, "hint": "','"}
+          ],
+          "blocks": ["','", "' '", "'.'"],
+          "correctAnswers": ["','"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does '-'.join(['x', 'y']) give?",
+          "options": ["'x-y'", "'x y'", "'xy'"],
+          "correct": "'x-y'"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Saving Joins",
+          "content": "Store the result, like text = ' '.join(list), to use it."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Join ['red', 'blue'] with comma and print.",
+          "expectedAnswer": "colors = ['red', 'blue']\ntext = ','.join(colors)\nprint(text)",
+          "blocks": ["colors = ['red', 'blue']", "\ntext = ','.join(colors)", "\nprint(text)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Join Uses",
+          "content": "Join is great for formatting lists into text."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Join ['hi', 'bye'] with space.",
+          "starterCode": "words = ['hi', 'bye']\ntext = .join(words)\nprint(text)",
+          "placeholders": [
+            {"line": 2, "index": 8, "hint": "' '"}
+          ],
+          "blocks": ["' '", "','", "'-'"],
+          "correctAnswers": ["' '"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does ''.join(['a', 'b']) give?",
+          "options": ["'ab'", "'a b'", "'a,b'"],
+          "correct": "'ab'"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Join Power",
+          "content": "Joining makes lists into clean, readable strings."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Join Jedi! 🧵",
+          "content": "You’re stitching lists into strings like a pro! Joining is your craft!"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Basic Error Handling",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Error Handling?",
+          "content": "Use try/except to catch errors, like trying to convert bad input."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does try/except do?",
+          "options": ["Causes errors", "Catches errors", "Prints errors"],
+          "correct": "Catches errors"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Try/Except",
+          "content": "Use try: code that might fail, except: code to handle the error."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Try converting 'abc' to int, print 'Error' if it fails.",
+          "expectedAnswer": "try:\n    num = int('abc')\nexcept:\n    print('Error')",
+          "blocks": ["try:", "\n    num = int('abc')", "\nexcept:", "\n    print('Error')"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Specific Errors",
+          "content": "Catch specific errors, like except ValueError: for bad int conversions."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Catch ValueError for int('x').",
+          "starterCode": "try:\n    int('x')\nexcept :\n    print('Bad input')",
+          "placeholders": [
+            {"line": 3, "index": 7, "hint": "ValueError"}
+          ],
+          "blocks": ["ValueError", "Error", "TypeError"],
+          "correctAnswers": ["ValueError"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What error occurs for int('abc')?",
+          "options": ["TypeError", "ValueError", "IndexError"],
+          "correct": "ValueError"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Why Handle Errors?",
+          "content": "Prevents crashes and makes programs user-friendly."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Try dividing 10 by 0, print 'Cannot divide' if error.",
+          "expectedAnswer": "try:\n    result = 10 / 0\nexcept:\n    print('Cannot divide')",
+          "blocks": ["try:", "\n    result = 10 / 0", "\nexcept:", "\n    print('Cannot divide')"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Simple Handling",
+          "content": "Keep try/except blocks small to focus on specific errors."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add try for int(input()).",
+          "starterCode": "\n    num = int(input('Number: '))\nexcept ValueError:\n    print('Not a number')",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "try:"}
+          ],
+          "blocks": ["try:", "except:", "if:"],
+          "correctAnswers": ["try:"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Does try/except stop program crashes?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Error Handling Power",
+          "content": "Error handling makes programs robust and reliable."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Error Handler! 🛡️",
+          "content": "You’re catching errors like a pro! Your code is bulletproof!"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Looping Through Dictionaries",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Dictionary Looping?",
+          "content": "Loop through keys, values, or pairs, like for k in dict:."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What can you loop through in a dictionary?",
+          "options": ["Keys", "Numbers", "Lists"],
+          "correct": "Keys"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Looping Keys",
+          "content": "Use for key in dict: to get keys, like for k in {'a': 1}: print(k)."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Print keys of {'name': 'Mia', 'age': 10}.",
+          "expectedAnswer": "info = {'name': 'Mia', 'age': 10}\nfor key in info:\n    print(key)",
+          "blocks": ["info = {'name': 'Mia', 'age': 10}", "\nfor key in info:", "\n    print(key)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Looping Values",
+          "content": "Use dict.values(), like for v in dict.values(): print(v)."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Loop through values of {'x': 1, 'y': 2}.",
+          "starterCode": "data = {'x': 1, 'y': 2}\nfor v in data.():\n    print(v)",
+          "placeholders": [
+            {"line": 2, "index": 14, "hint": "values"}
+          ],
+          "blocks": ["values", "keys", "items"],
+          "correctAnswers": ["values"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does for v in {'a': 5}.values(): give?",
+          "options": ["'a'", "5", "'a', 5"],
+          "correct": "5"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Looping Items",
+          "content": "Use dict.items() for key-value pairs, like for k, v in dict.items()."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print key-value pairs of {'color': 'blue'}.",
+          "expectedAnswer": "data = {'color': 'blue'}\nfor key, value in data.items():\n    print(key, value)",
+          "blocks": ["data = {'color': 'blue'}", "\nfor key, value in data.items():", "\n    print(key, value)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Loop",
+          "content": "Loop dictionaries to process or display their data."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Loop keys of {'a': 1}.",
+          "starterCode": "dict = {'a': 1}\nfor  in dict:\n    print(key)",
+          "placeholders": [
+            {"line": 2, "index": 5, "hint": "key"}
+          ],
+          "blocks": ["key", "value", "item"],
+          "correctAnswers": ["key"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does for k, v in {'x': 1}.items(): give?",
+          "options": ["k='x', v=1", "k=1, v='x'", "k='x', v='x'"],
+          "correct": "k='x', v=1"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Dictionary Loop Power",
+          "content": "Looping dictionaries makes data processing easy."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Dict Loop Dynamo! 🔄",
+          "content": "You’re looping dictionaries like a pro! Your code is data-smart!"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "List Sorting with Key",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Key Sorting?",
+          "content": "Sort lists with a key function, like sort(key=len) to sort by length."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does sort(key=len) do?",
+          "options": ["Sorts by value", "Sorts by length", "Sorts random"],
+          "correct": "Sorts by length"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Key",
+          "content": "Pass a function, like ['cat', 'a'].sort(key=len) to sort by string length."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Sort ['dog', 'a', 'cat'] by length.",
+          "expectedAnswer": "words = ['dog', 'a', 'cat']\nwords.sort(key=len)\nprint(words)",
+          "blocks": ["words = ['dog', 'a', 'cat']", "\nwords.sort(key=len)", "\nprint(words)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Reverse Sort",
+          "content": "Use reverse=True, like sort(key=len, reverse=True) for descending."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Sort ['hi', 'bye'] by length, descending.",
+          "starterCode": "words = ['hi', 'bye']\nwords.sort(key=len, =True)\nprint(words)",
+          "placeholders": [
+            {"line": 2, "index": 20, "hint": "reverse"}
+          ],
+          "blocks": ["reverse", "key", "True"],
+          "correctAnswers": ["reverse"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does ['ab', 'c'].sort(key=len) give?",
+          "options": ["['c', 'ab']", "['ab', 'c']", "Error"],
+          "correct": "['c', 'ab']"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Custom Key",
+          "content": "Define your own key function, like def key_func(x): return x[0]."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Sort ['red', 'blue'] by last letter.",
+          "expectedAnswer": "def last_letter(x):\n    return x[-1]\ncolors = ['red', 'blue']\ncolors.sort(key=last_letter)\nprint(colors)",
+          "blocks": ["def last_letter(x):\n    return x[-1]", "\ncolors = ['red', 'blue']", "\ncolors.sort(key=last_letter)", "\nprint(colors)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Key Uses",
+          "content": "Key sorting is great for custom ordering."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Sort by length with key.",
+          "starterCode": "words = ['a', 'bb']\nwords.sort(=len)\nprint(words)",
+          "placeholders": [
+            {"line": 2, "index": 11, "hint": "key"}
+          ],
+          "blocks": ["key", "reverse", "sort"],
+          "correctAnswers": ["key"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can you sort by a custom function?",
+          "options": ["Yes", "No", "Only numbers"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Sort Key Power",
+          "content": "Key sorting makes lists ordered in creative ways."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Sort Key Sorcerer! 🔠",
+          "content": "You’re sorting with keys like a pro! Your lists are perfectly ordered!"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Combining Conditionals",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Combined Conditionals?",
+          "content": "Use and, or to combine conditions, like if x > 0 and x < 10:."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does 'and' do?",
+          "options": ["One is true", "Both are true", "Neither is true"],
+          "correct": "Both are true"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using And",
+          "content": "Both conditions must be true, like if age > 5 and age < 12:."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "If x = 8, print 'OK' if x > 5 and x < 10.",
+          "expectedAnswer": "x = 8\nif x > 5 and x < 10:\n    print('OK')",
+          "blocks": ["x = 8", "\nif x > 5 and x < 10:", "\n    print('OK')"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Or",
+          "content": "One condition must be true, like if x < 0 or x > 100:."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Use or for x < 1 or x > 5.",
+          "starterCode": "x = 6\nif x < 1  x > 5:\n    print('Yes')",
+          "placeholders": [
+            {"line": 2, "index": 9, "hint": "or"}
+          ],
+          "blocks": ["or", "and", "not"],
+          "correctAnswers": ["or"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does x > 1 or x < 0 return for x = 2?",
+          "options": ["True", "False", "Error"],
+          "correct": "True"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Not Operator",
+          "content": "Not reverses a condition, like if not x == 0:."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "If x = 0, print 'Not zero' if x is not 0.",
+          "expectedAnswer": "x = 0\nif not x == 0:\n    print('Not zero')",
+          "blocks": ["x = 0", "\nif not x == 0:", "\n    print('Not zero')"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Complex Conditions",
+          "content": "Combine multiple and/or, like if x > 0 and (y < 5 or z > 10):."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Use and for x > 0 and y < 2.",
+          "starterCode": "x = 1\ny = 1\nif x > 0  y < 2:\n    print('Good')",
+          "placeholders": [
+            {"line": 3, "index": 9, "hint": "and"}
+          ],
+          "blocks": ["and", "or", "not"],
+          "correctAnswers": ["and"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does not x == 1 return for x = 1?",
+          "options": ["True", "False", "1"],
+          "correct": "False"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Conditional Power",
+          "content": "Combining conditions makes decisions precise."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Conditional Combiner! ✅",
+          "content": "You’re mixing conditions like a pro! Your code is super smart!"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Break and Continue",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Break and Continue?",
+          "content": "Break stops a loop, continue skips to the next iteration."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does break do?",
+          "options": ["Skips iteration", "Stops loop", "Restarts loop"],
+          "correct": "Stops loop"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Break",
+          "content": "Use break to exit, like if x == 5: break to stop at 5."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Stop loop at 3 in range(5).",
+          "expectedAnswer": "for i in range(5):\n    if i == 3:\n        break\n    print(i)",
+          "blocks": ["for i in range(5):", "\n    if i == 3:", "\n        break", "\n    print(i)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Continue",
+          "content": "Skip rest of loop, like if x % 2 == 0: continue to skip evens."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Skip 2 in loop.",
+          "starterCode": "for i in [1, 2, 3]:\n    if i == 2:\n        \n    print(i)",
+          "placeholders": [
+            {"line": 3, "index": 8, "hint": "continue"}
+          ],
+          "blocks": ["continue", "break", "pass"],
+          "correctAnswers": ["continue"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does continue do?",
+          "options": ["Stops loop", "Skips iteration", "Prints item"],
+          "correct": "Skips iteration"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Break for early exit, continue for skipping specific cases."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print odd numbers from [1, 2, 3, 4] using continue.",
+          "expectedAnswer": "for num in [1, 2, 3, 4]:\n    if num % 2 == 0:\n        continue\n    print(num)",
+          "blocks": ["for num in [1, 2, 3, 4]:", "\n    if num % 2 == 0:", "\n        continue", "\n    print(num)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Loop Control",
+          "content": "Break and continue give you control over loop flow."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Break at 'b' in ['a', 'b', 'c'].",
+          "starterCode": "for x in ['a', 'b', 'c']:\n    if x == 'b':\n        \n    print(x)",
+          "placeholders": [
+            {"line": 3, "index": 8, "hint": "break"}
+          ],
+          "blocks": ["break", "continue", "print"],
+          "correctAnswers": ["break"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What prints 1, 3 from [1, 2, 3, 4] with continue?",
+          "options": ["Skip evens", "Skip odds", "Break at 2"],
+          "correct": "Skip evens"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Loop Control Power",
+          "content": "Break and continue make loops flexible and efficient."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Loop Controller! 🎮",
+          "content": "You’re controlling loops like a pro! Break and continue are your tools!"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Simple Tuples",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Tuples?",
+          "content": "Tuples are like lists but unchangeable, like (1, 2)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Can you change a tuple?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "No"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Tuples",
+          "content": "Use (), like coords = (3, 4) to store fixed data."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create tuple (1, 2) and print.",
+          "expectedAnswer": "nums = (1, 2)\nprint(nums)",
+          "blocks": ["nums = (1, 2)", "\nprint(nums)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Accessing Items",
+          "content": "Use index, like tuple[0] to get first item."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get first item from (5, 6).",
+          "starterCode": "pair = (5, 6)\nprint(pair[])",
+          "placeholders": [
+            {"line": 2, "index": 11, "hint": "0"}
+          ],
+          "blocks": ["0", "1", "5"],
+          "correctAnswers": ["0"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does (1, 2)[1] give?",
+          "options": ["1", "2", "None"],
+          "correct": "2"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Tuple Uses",
+          "content": "Tuples are great for fixed data, like coordinates or settings."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print first item of ('red', 'blue').",
+          "expectedAnswer": "colors = ('red', 'blue')\nprint(colors[0])",
+          "blocks": ["colors = ('red', 'blue')", "\nprint(colors[0])"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Tuple Length",
+          "content": "Use len(), like len((1, 2)) returns 2."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get length of (3, 4).",
+          "starterCode": "tup = (3, 4)\nprint((tup))",
+          "placeholders": [
+            {"line": 2, "index": 6, "hint": "len"}
+          ],
+          "blocks": ["len", "size", "count"],
+          "correctAnswers": ["len"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does len(('a', 'b')) return?",
+          "options": ["1", "2", "3"],
+          "correct": "2"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Tuple Power",
+          "content": "Tuples keep data safe and simple for fixed collections."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Tuple Titan! 📍",
+          "content": "You’re using tuples like a pro! Your code is rock-solid!"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Basic List Operations",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a List?",
+          "content": "A list is a collection of items in Python, defined using square brackets []."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Which of these is a valid list?",
+          "options": ["{1, 2, 3}", "[1, 2, 3]", "(1, 2, 3)"],
+          "correct": "[1, 2, 3]"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Accessing List Items",
+          "content": "Use an index to access a list item: my_list[0] gets the first item."
+        },
+        {
+          "id": 4,
+          "type": "info",
+          "title": "Modifying Lists",
+          "content": "You can add items with append() or change items by assigning to an index."
+        },
+        {
+          "id": 5,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Append '4' to the list.",
+          "starterCode": "numbers = [1, 2, 3]\nnumbers.('4')\nprint(numbers)",
+          "placeholders": [
+            {"line": 2, "index": 8, "hint": "append"}
+          ],
+          "blocks": ["append", "add", "insert"],
+          "correctAnswers": ["append"],
+          "language": "python"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does my_list.append(5) do?",
+          "options": ["Removes 5", "Adds 5", "Sorts list"],
+          "correct": "Adds 5"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Looping Through Lists",
+          "content": "Use a for loop to go through items: for x in my_list: print(x)"
+        },
+        {
+          "id": 8,
+          "type": "codeChallenge",
+          "title": "Print each item in the list.",
+          "expectedAnswer": "my_list = [10, 20, 30]\nfor item in my_list:\n    print(item)",
+          "blocks": ["my_list = [10, 20, 30]", "\nfor item in my_list:", "\n    print(item)"],
+          "language": "python"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "List Length",
+          "content": "Use len(my_list) to get the number of items in the list."
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get the length of the list.",
+          "starterCode": "my_list = ['a', 'b', 'c']\nprint(len())",
+          "placeholders": [
+            {"line": 2, "index": 10, "hint": "my_list"}
+          ],
+          "blocks": ["my_list", "'a'", "'b'", "'c'"],
+          "correctAnswers": ["my_list"],
+          "language": "python"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What does len(my_list) return?",
+          "options": ["First item", "Number of items", "Last item"],
+          "correct": "Number of items"
+        },
+        {
+          "id": 12,
+          "type": "info",
+          "title": "List Power",
+          "content": "Lists help you store and organize lots of data in Python."
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "List Master! 📝",
+          "content": "You're working with lists like a Python pro!"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "level": 4,
+  "language": "htmlcssjs",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Advanced Selectors",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "More Precise Targeting", "content": "Beyond basic class and ID selectors, CSS offers more advanced selectors to target elements with incredible precision." },
+        { "id": 2, "type": "info", "title": "Descendant Selector", "content": "A space between selectors targets a descendant. For example, `article p` selects any `<p>` that is somewhere inside an `<article>`." },
+        { "id": 3, "type": "codeChallenge", "title": "Select all links `<a>` that are inside a `nav` element.", "expectedAnswer": "nav a { color: blue; }", "blocks": ["nav a { color: blue; }"], "language": "css" },
+        { "id": 4, "type": "info", "title": "Child Selector", "content": "The `>` combinator selects a direct child. `ul > li` selects only `<li>` elements that are direct children of a `<ul>`, not those nested deeper." },
+        { "id": 5, "type": "codeChallenge", "title": "Select only the direct `p` children of a `div` with the class 'card'.", "expectedAnswer": ".card > p { font-size: 1rem; }", "blocks": [".card > p { font-size: 1rem; }"], "language": "css" },
+        { "id": 6, "type": "quiz", "question": "What does `div > p` select?", "options": ["Any p inside a div", "A p that is a direct child of a div", "A p that is a parent of a div"], "correct": "A p that is a direct child of a div" },
+        { "id": 7, "type": "info", "title": "Adjacent Sibling Selector", "content": "The `+` combinator selects an element that is immediately after another specific element. `h1 + p` selects the first `<p>` right after an `<h1>`." },
+        { "id": 8, "type": "codeChallenge", "title": "Give the paragraph immediately following an `h2` some top margin.", "expectedAnswer": "h2 + p { margin-top: 10px; }", "blocks": ["h2 + p { margin-top: 10px; }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Select the `<span>` that is a direct child of the `<strong>` tag.", "starterCode": "strong   span { font-weight: bold; }", "placeholders": [{ "line": 1, "index": 7, "hint": ">" }], "blocks": [">", "+", " "], "correctAnswers": [">"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Selector Sensei! 🥋", "content": "You can now target elements with surgical precision. This is key to writing clean CSS that doesn't require adding extra classes to everything." }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Attribute Selectors",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Styling by Attribute", "content": "Attribute selectors allow you to select elements based on the presence or value of their HTML attributes." },
+        { "id": 2, "type": "info", "title": "Presence Selector", "content": "The `[attribute]` syntax selects any element that has the specified attribute, regardless of its value. `[required]` selects any element with the `required` attribute." },
+        { "id": 3, "type": "codeChallenge", "title": "Select all `<a>` tags that have a `target` attribute.", "expectedAnswer": "a[target] { background: yellow; }", "blocks": ["a[target] { background: yellow; }"], "language": "css" },
+        { "id": 4, "type": "info", "title": "Exact Value Selector", "content": "The `[attribute='value']` syntax selects elements where the attribute has a specific, exact value. `[type='submit']` selects only submit buttons." },
+        { "id": 5, "type": "codeChallenge", "title": "Select only links that go to 'https://example.com'.", "expectedAnswer": "a[href='https://example.com'] { font-weight: bold; }", "blocks": ["a[href='https://example.com'] { font-weight: bold; }"], "language": "css" },
+        { "id": 6, "type": "quiz", "question": "How do you select an input with the exact type 'checkbox'?", "options": ["input[type~='checkbox']", "input[type='checkbox']", "input[type*='checkbox']"], "correct": "input[type='checkbox']" },
+        { "id": 7, "type": "info", "title": "Substring Selectors", "content": "You can also select based on substrings in an attribute's value. `[class*='icon-']` selects elements whose class contains 'icon-' anywhere inside it." },
+        { "id": 8, "type": "codeChallenge", "title": "Select all links whose `href` attribute begins with 'https'.", "expectedAnswer": "a[href^='https'] { border-bottom: 1px solid blue; }", "blocks": ["a[href^='https'] { border-bottom: 1px solid blue; }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Select all `<img>` tags whose `src` attribute ends with '.png'.", "starterCode": "img[src $='.png'] { border: 2px solid green; }", "placeholders": [{ "line": 1, "index": 8, "hint": "=" }], "blocks": ["=", "*", "^"], "correctAnswers": ["="], "language": "css" },
+        { "id": 10, "type": "info", "title": "Attribute Authority! 🏷️", "content": "You've unlocked a powerful way to style elements without needing to add extra classes, leading to cleaner HTML and more flexible CSS." }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pseudo-Class Deep Dive",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Beyond Hover and Active", "content": "Pseudo-classes let you style elements based on their state or position in the document tree. Let's explore some more advanced ones." },
+        { "id": 2, "type": "info", "title": "Positional Pseudo-Classes", "content": "`:first-child` selects an element that is the first child of its parent. `:last-child` selects the last one." },
+        { "id": 3, "type": "codeChallenge", "title": "Remove the top border from the first list item in any list.", "expectedAnswer": "li:first-child { border-top: none; }", "blocks": ["li:first-child { border-top: none; }"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "Which pseudo-class targets the last paragraph inside a div?", "options": ["div > p:last", "p:last-of-type", "p:last-child"], "correct": "p:last-child" },
+        { "id": 5, "type": "info", "title": "The `:nth-child` Selector", "content": "`:nth-child(n)` is incredibly powerful. You can pass it a number (`2`), a keyword (`odd` or `even`), or a formula (`2n+1`) to select specific children." },
+        { "id": 6, "type": "codeChallenge", "title": "Give every even row in a table a light grey background (zebra-striping).", "expectedAnswer": "tr:nth-child(even) { background-color: #f2f2f2; }", "blocks": ["tr:nth-child(even) { background-color: #f2f2f2; }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "UI State Pseudo-Classes", "content": "Pseudo-classes like `:checked` (for checkboxes/radios), `:disabled`, and `:focus` (for inputs) let you style elements based on their interaction state." },
+        { "id": 8, "type": "codeChallenge", "title": "Add a blue outline to any input field when it is focused.", "expectedAnswer": "input:focus { outline: 2px solid blue; }", "blocks": ["input:focus { outline: 2px solid blue; }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Select the third `<li>` element in a list.", "starterCode": "li:nth-child( ) { font-weight: bold; }", "placeholders": [{ "line": 1, "index": 13, "hint": "3" }], "blocks": ["3", "odd", "2n"], "correctAnswers": ["3"], "language": "css" },
+        { "id": 10, "type": "info", "title": "State Stylist! ✨", "content": "You can now write CSS that responds to the structure of your document and the state of your UI, making your designs more robust and interactive." }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Pseudo-Elements Deep Dive",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Styling Virtual Elements", "content": "Pseudo-elements create abstractions of the document tree that can be styled. They are prefixed with `::`." },
+        { "id": 2, "type": "info", "title": "Decorating with `::before` and `::after`", "content": "These are the most common pseudo-elements. They insert generated content before or after an element's actual content. They require a `content` property." },
+        { "id": 3, "type": "codeChallenge", "title": "Add a quotation mark before every `<blockquote>`.", "expectedAnswer": "blockquote::before { content: '“'; font-size: 2em; }", "blocks": ["blockquote::before { content: '“'; font-size: 2em; }"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "Which property is required for `::before` and `::after` to work?", "options": ["display", "position", "content"], "correct": "content" },
+        { "id": 5, "type": "info", "title": "Styling the First Line and Letter", "content": "`::first-line` applies styles to the first line of a block-level element. `::first-letter` applies styles to the first letter, creating a 'drop cap' effect." },
+        { "id": 6, "type": "codeChallenge", "title": "Make the first letter of every article's first paragraph larger and bolder.", "expectedAnswer": "article p:first-child::first-letter { font-size: 3em; font-weight: bold; }", "blocks": ["article p:first-child::first-letter { font-size: 3em; font-weight: bold; }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "Styling Form Selections", "content": "The `::selection` pseudo-element applies styles to the part of a document that has been highlighted by the user (e.g., by clicking and dragging)." },
+        { "id": 8, "type": "codeChallenge", "title": "Change the background color of user-selected text to gold.", "expectedAnswer": "::selection { background-color: gold; color: black; }", "blocks": ["::selection { background-color: gold; color: black; }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add content *after* the link element.", "starterCode": "a:: { content: ' 🔗'; }", "placeholders": [{ "line": 1, "index": 3, "hint": "after" }], "blocks": ["after", "before", "selection"], "correctAnswers": ["after"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Virtual Virtuoso! 🎩", "content": "You've mastered the art of styling parts of the document that don't exist in the HTML. This is an elegant way to add decoration and polish." }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "CSS Variables",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Reusable Values", "content": "CSS variables, also known as Custom Properties, allow you to define reusable values (like colors or sizes) in one place and reference them throughout your stylesheet." },
+        { "id": 2, "type": "info", "title": "Declaring Variables", "content": "You declare a variable on a selector (often `:root` to make it global) using a name that starts with two hyphens, like `--main-color: #333;`." },
+        { "id": 3, "type": "codeChallenge", "title": "Declare a global CSS variable named `--primary-font` and set it to 'Arial'.", "expectedAnswer": ":root { --primary-font: 'Arial'; }", "blocks": [":root { --primary-font: 'Arial'; }"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "What must a CSS variable name start with?", "options": ["$", "@", "--"], "correct": "--" },
+        { "id": 5, "type": "info", "title": "Using Variables", "content": "You use a variable with the `var()` function, like `color: var(--main-color);`." },
+        { "id": 6, "type": "codeChallenge", "title": "Declare a main color variable and then use it on the `body`'s background.", "expectedAnswer": ":root { --bg-color: #f0f0f0; }\nbody { background-color: var(--bg-color); }", "blocks": [":root { --bg-color: #f0f0f0; }\nbody { background-color: var(--bg-color); }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "Fallback Values", "content": "The `var()` function can take a second argument, which is a fallback value to use if the variable is not defined." },
+        { "id": 8, "type": "codeChallenge", "title": "Use a variable for font size, but provide '16px' as a fallback.", "expectedAnswer": "p { font-size: var(--p-font-size, 16px); }", "blocks": ["p { font-size: var(--p-font-size, 16px); }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Use the `--accent-color` variable.", "starterCode": "button { color:  (--accent-color); }", "placeholders": [{ "line": 1, "index": 16, "hint": "var" }], "blocks": ["var", "use", "css"], "correctAnswers": ["var"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Theme Architect! 🏗️", "content": "CSS variables are the cornerstone of modern theming (e.g., light/dark mode) and creating scalable, maintainable design systems. Great job!" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "The `calc()` Function",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Calculations in CSS", "content": "The `calc()` function lets you perform mathematical calculations right inside your CSS property values." },
+        { "id": 2, "type": "info", "title": "Mixing Units", "content": "The true power of `calc()` is its ability to mix different units, like percentages and pixels, which is impossible otherwise." },
+        { "id": 3, "type": "codeChallenge", "title": "Set the width of an element to be 100% of its parent, minus 20 pixels.", "expectedAnswer": ".element { width: calc(100% - 20px); }", "blocks": [".element { width: calc(100% - 20px); }"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "What is the main benefit of `calc()`?", "options": ["It's faster than regular values", "It can mix different units", "It works in old browsers"], "correct": "It can mix different units" },
+        { "id": 5, "type": "info", "title": "Syntax Note", "content": "It's important to have spaces around the operators (+, -, *, /) inside `calc()`." },
+        { "id": 6, "type": "quiz", "question": "Which syntax is correct?", "options": ["calc(100%-20px)", "calc(100% - 20px)"], "correct": "calc(100% - 20px)" },
+        { "id": 7, "type": "codeChallenge", "title": "Set an element's height to be the full viewport height minus the 60px header.", "expectedAnswer": ".content { height: calc(100vh - 60px); }", "blocks": [".content { height: calc(100vh - 60px); }"], "language": "css" },
+        { "id": 8, "type": "info", "title": "Using with Variables", "content": "`calc()` works beautifully with CSS variables, allowing for highly dynamic and configurable layouts." },
+        { "id": 9, "type": "codeChallenge", "title": "Set a font size to be a base variable plus 2 pixels.", "expectedAnswer": ":root { --base-size: 16px; }\np { font-size: calc(var(--base-size) + 2px); }", "blocks": [":root { --base-size: 16px; }\np { font-size: calc(var(--base-size) + 2px); }"], "language": "css" },
+        { "id": 10, "type": "info", "title": "CSS Calculator! 🧮", "content": "You can now create fluid layouts that perfectly adapt to fixed elements, a common challenge in web design. This is a very practical skill." }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "2D Transforms",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Manipulating Space", "content": "The `transform` property lets you modify the coordinate space of an element, allowing you to translate (move), rotate, scale, and skew it." },
+        { "id": 2, "type": "info", "title": "Translate", "content": "The `translate()` function moves an element from its current position. `transform: translate(50px, 20px)` moves it 50px right and 20px down." },
+        { "id": 3, "type": "codeChallenge", "title": "Move an element 100 pixels to the right.", "expectedAnswer": ".box { transform: translateX(100px); }", "blocks": [".box { transform: translateX(100px); }"], "language": "css" },
+        { "id": 4, "type": "info", "title": "Rotate", "content": "The `rotate()` function rotates an element around its center. It takes an angle value, like `deg` for degrees." },
+        { "id": 5, "type": "codeChallenge", "title": "Rotate an element by 45 degrees.", "expectedAnswer": ".icon { transform: rotate(45deg); }", "blocks": [".icon { transform: rotate(45deg); }"], "language": "css" },
+        { "id": 6, "type": "quiz", "question": "Which function would you use to spin an element?", "options": ["spin()", "turn()", "rotate()"], "correct": "rotate()" },
+        { "id": 7, "type": "info", "title": "Scale", "content": "The `scale()` function resizes an element. `scale(2)` makes it twice as big, while `scale(0.5)` makes it half the size." },
+        { "id": 8, "type": "codeChallenge", "title": "Make a button grow to 1.1 times its size on hover.", "expectedAnswer": "button:hover { transform: scale(1.1); }", "blocks": ["button:hover { transform: scale(1.1); }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Combine a scale and a rotation transform.", "starterCode": ".card { transform: rotate(5deg)  (1.2); }", "placeholders": [{ "line": 1, "index": 29, "hint": "scale" }], "blocks": ["scale", "translate", "skew"], "correctAnswers": ["scale"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Space Bender! 💫", "content": "You can now manipulate elements in 2D space, which is the foundation for creating engaging micro-interactions and animations." }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "3D Transforms",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Adding Depth", "content": "3D transforms add a Z-axis to your manipulations, allowing you to create effects with perspective and depth." },
+        { "id": 2, "type": "info", "title": "The `perspective` Property", "content": "To enable a 3D space, the *parent* element needs a `perspective` property. This defines how intense the 3D effect is (lower values are more extreme)." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a 3D space on a container element.", "expectedAnswer": ".container { perspective: 800px; }", "blocks": [".container { perspective: 800px; }"], "language": "css" },
+        { "id": 4, "type": "info", "title": "3D Rotate", "content": "You can now rotate elements around the X, Y, or Z axes. `rotateX(45deg)` tilts an element back, while `rotateY(45deg)` turns it sideways." },
+        { "id": 5, "type": "codeChallenge", "title": "Flip a card over by rotating it 180 degrees on the Y-axis.", "expectedAnswer": ".card { transform: rotateY(180deg); }", "blocks": [".card { transform: rotateY(180deg); }"], "language": "css" },
+        { "id": 6, "type": "quiz", "question": "Which rotation would make an element look like it's falling backward into the screen?", "options": ["rotateX()", "rotateY()", "rotateZ()"], "correct": "rotateX()" },
+        { "id": 7, "type": "info", "title": "3D Translate", "content": "`translateZ()` moves an element closer to or further away from the viewer along the Z-axis, making it appear larger or smaller." },
+        { "id": 8, "type": "codeChallenge", "title": "Move an element 100 pixels 'closer' to the viewer.", "expectedAnswer": ".item { transform: translateZ(100px); }", "blocks": [".item { transform: translateZ(100px); }"], "language": "css" },
+        { "id": 9, "type": "info", "title": "Creating a 3D Cube", "content": "By combining these properties on multiple faces of an object, you can create fully 3D shapes like cubes directly in CSS." },
+        { "id": 10, "type": "info", "title": "Dimension Drifter! 🧊", "content": "You've unlocked the third dimension! This allows for stunning visual effects like card flips, 3D carousels, and much more." }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Transitions Deep Dive",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Smoother Animations", "content": "The `transition` property animates an element smoothly from one state to another. Let's explore its sub-properties for more control." },
+        { "id": 2, "type": "info", "title": "Sub-properties", "content": "The `transition` shorthand combines `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a transition that only animates the `background-color` property over 0.5 seconds.", "expectedAnswer": ".btn { transition-property: background-color; transition-duration: 0.5s; }", "blocks": [".btn { transition-property: background-color; transition-duration: 0.5s; }"], "language": "css" },
+        { "id": 4, "type": "info", "title": "Timing Functions", "content": "The `transition-timing-function` controls the acceleration curve. Common values are `ease` (default), `linear`, `ease-in`, `ease-out`, and `ease-in-out`." },
+        { "id": 5, "type": "codeChallenge", "title": "Make a box slide in slowly and then speed up.", "expectedAnswer": ".box { transform: translateX(-100%); transition: transform 1s ease-in; }\n.box.active { transform: translateX(0); }", "blocks": [".box { transform: translateX(-100%); transition: transform 1s ease-in; }\n.box.active { transform: translateX(0); }"], "language": "css" },
+        { "id": 6, "type": "quiz", "question": "Which timing function has no acceleration or deceleration?", "options": ["ease", "linear", "ease-in-out"], "correct": "linear" },
+        { "id": 7, "type": "info", "title": "Delaying a Transition", "content": "The `transition-delay` property lets you specify a wait time before the transition begins." },
+        { "id": 8, "type": "codeChallenge", "title": "Animate an element's opacity, but wait 1 second before starting the animation.", "expectedAnswer": ".fade-in { opacity: 0; transition: opacity 0.5s 1s; }\n.fade-in.visible { opacity: 1; }", "blocks": [".fade-in { opacity: 0; transition: opacity 0.5s 1s; }\n.fade-in.visible { opacity: 1; }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Use the `transition` shorthand to set a 0.3s ease-out animation.", "starterCode": ".card { transition: all 0.3s  ; }", "placeholders": [{ "line": 1, "index": 29, "hint": "ease-out" }], "blocks": ["ease-out", "linear", "ease-in"], "correctAnswers": ["ease-out"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Animation Artist! 🎨", "content": "You now have fine-grained control over your transitions, allowing you to create animations with unique personality and timing." }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Keyframe Animations",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Multi-Step Animations", "content": "While `transition` is great for simple A-to-B state changes, `@keyframes` let you define complex, multi-step animations." },
+        { "id": 2, "type": "info", "title": "Defining `@keyframes`", "content": "You define a `@keyframes` rule with a name. Inside, you define styles at different percentage points of the animation, from `0%` (or `from`) to `100%` (or `to`)." },
+        { "id": 3, "type": "codeChallenge", "title": "Define keyframes named 'fade-in' that animate opacity from 0 to 1.", "expectedAnswer": "@keyframes fade-in {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}", "blocks": ["@keyframes fade-in {\n  from { opacity: 0; }\n  to { opacity: 1; }\n}"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "What is the keyword to start a keyframe definition?", "options": ["@animation", "@define", "@keyframes"], "correct": "@keyframes" },
+        { "id": 5, "type": "info", "title": "The `animation` Property", "content": "To apply the keyframes to an element, you use the `animation` property, specifying the name, duration, and other settings." },
+        { "id": 6, "type": "codeChallenge", "title": "Apply the 'fade-in' animation to a div, making it last 2 seconds.", "expectedAnswer": ".my-div { animation: fade-in 2s; }", "blocks": [".my-div { animation: fade-in 2s; }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "Animation Sub-properties", "content": "Like `transition`, `animation` is a shorthand for properties like `animation-iteration-count` (e.g., `infinite`), `animation-direction` (e.g., `alternate`), and `animation-fill-mode`." },
+        { "id": 8, "type": "codeChallenge", "title": "Create a pulsing animation that scales an element up and down infinitely.", "expectedAnswer": "@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }\n.heart { animation: pulse 1.5s infinite; }", "blocks": ["@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }\n.heart { animation: pulse 1.5s infinite; }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Make the 'spin' animation run forever.", "starterCode": ".loader { animation: spin 1s  ; }", "placeholders": [{ "line": 1, "index": 28, "hint": "infinite" }], "blocks": ["infinite", "forever", "loop"], "correctAnswers": ["infinite"], "language": "css" },
+        { "id": 10, "type": "info", "title": "CSS Animator! 🎬", "content": "You can now create complex, cinematic animations using only CSS. This is a powerful tool for grabbing user attention and creating delightful experiences." }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Flexbox Alignment",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Mastering Flexbox Alignment", "content": "Flexbox provides a powerful set of properties for aligning items along both the main and cross axes. Let's master them." },
+        { "id": 2, "type": "info", "title": "`justify-content` Revisited", "content": "`justify-content` aligns items along the main axis. We know `center`, `flex-start`, and `flex-end`. Other values include `space-between`, `space-around`, and `space-evenly`." },
+        { "id": 3, "type": "codeChallenge", "title": "Distribute items with equal spacing around them.", "expectedAnswer": ".container { display: flex; justify-content: space-around; }", "blocks": [".container { display: flex; justify-content: space-around; }"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "Which value places the first item at the start, the last at the end, and distributes the rest evenly?", "options": ["space-around", "space-evenly", "space-between"], "correct": "space-between" },
+        { "id": 5, "type": "info", "title": "`align-items` Revisited", "content": "`align-items` aligns items along the cross axis. Besides `center`, `flex-start`, and `flex-end`, there's also `stretch` (the default) and `baseline`." },
+        { "id": 6, "type": "codeChallenge", "title": "Align all flex items to the top of the container.", "expectedAnswer": ".container { display: flex; align-items: flex-start; }", "blocks": [".container { display: flex; align-items: flex-start; }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "`align-content`", "content": "When you have wrapped flex lines (with `flex-wrap: wrap`), `align-content` is used to distribute the space between the lines, similar to how `justify-content` works." },
+        { "id": 8, "type": "codeChallenge", "title": "For a wrapped container, center all the lines of items vertically.", "expectedAnswer": ".container { display: flex; flex-wrap: wrap; align-content: center; }", "blocks": [".container { display: flex; flex-wrap: wrap; align-content: center; }"], "language": "css" },
+        { "id": 9, "type": "info", "title": "Overriding with `align-self`", "content": "You can override the `align-items` value for a single flex item by applying `align-self` directly to it." },
+        { "id": 10, "type": "codeChallenge", "title": "In a centered container, make one specific item align to the end.", "expectedAnswer": ".container { align-items: center; }\n.special-item { align-self: flex-end; }", "blocks": [".container { align-items: center; }\n.special-item { align-self: flex-end; }"], "language": "css" }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Flexbox Sizing",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Flexible Sizing", "content": "Flexbox provides properties to control how items grow and shrink to fill available space, making them truly 'flexible'." },
+        { "id": 2, "type": "info", "title": "`flex-grow`", "content": "`flex-grow` is a unitless value that dictates how much of the available space an item should take up. A value of `1` means 'take up an equal share'." },
+        { "id": 3, "type": "codeChallenge", "title": "Make three child divs share the container space equally.", "expectedAnswer": ".item { flex-grow: 1; }", "blocks": [".item { flex-grow: 1; }"], "language": "css" },
+        { "id": 4, "type": "codeChallenge", "title": "Make a main content area take up twice as much space as a sidebar.", "expectedAnswer": ".main { flex-grow: 2; }\n.sidebar { flex-grow: 1; }", "blocks": [".main { flex-grow: 2; }\n.sidebar { flex-grow: 1; }"], "language": "css" },
+        { "id": 5, "type": "info", "title": "`flex-shrink`", "content": "`flex-shrink` controls how much an item should shrink if there isn't enough space. The default is `1`. A value of `0` prevents shrinking." },
+        { "id": 6, "type": "codeChallenge", "title": "Prevent a logo from shrinking in a flex container.", "expectedAnswer": ".logo { flex-shrink: 0; }", "blocks": [".logo { flex-shrink: 0; }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "`flex-basis`", "content": "`flex-basis` defines the default size of an element before the remaining space is distributed. It's like a more flexible `width`." },
+        { "id": 8, "type": "codeChallenge", "title": "Give flex items an ideal starting width of 200px.", "expectedAnswer": ".item { flex-basis: 200px; }", "blocks": [".item { flex-basis: 200px; }"], "language": "css" },
+        { "id": 9, "type": "info", "title": "The `flex` Shorthand", "content": "The `flex` property is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis` in that order. `flex: 1 0 250px;` is a common pattern." },
+        { "id": 10, "type": "codeChallenge", "title": "Use the flex shorthand to create a flexible item that won't shrink.", "expectedAnswer": ".item { flex: 1 0 auto; }", "blocks": [".item { flex: 1 0 auto; }"], "language": "css" }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Grid Layout Deep Dive",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Mastering CSS Grid", "content": "CSS Grid is a 2D layout system that gives you precise control over both rows and columns simultaneously." },
+        { "id": 2, "type": "info", "title": "The `fr` Unit", "content": "The `fr` (fractional) unit is designed for Grid. It represents a fraction of the available space in the grid container. `1fr 1fr` creates two equal columns." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a three-column layout where the middle column is twice as wide as the sides.", "expectedAnswer": ".container { display: grid; grid-template-columns: 1fr 2fr 1fr; }", "blocks": [".container { display: grid; grid-template-columns: 1fr 2fr 1fr; }"], "language": "css" },
+        { "id": 4, "type": "info", "title": "The `repeat()` Function", "content": "The `repeat()` function is a convenient way to define multiple tracks. `repeat(12, 1fr)` creates a 12-column grid." },
+        { "id": 5, "type": "codeChallenge", "title": "Create a grid with 4 equal columns using `repeat()`.", "expectedAnswer": ".grid { display: grid; grid-template-columns: repeat(4, 1fr); }", "blocks": [".grid { display: grid; grid-template-columns: repeat(4, 1fr); }"], "language": "css" },
+        { "id": 6, "type": "quiz", "question": "What does `repeat(3, 100px)` create?", "options": ["Three rows of 100px", "Three columns or rows of 100px", "A 3x100 grid"], "correct": "Three columns or rows of 100px" },
+        { "id": 7, "type": "info", "title": "The `gap` Property", "content": "The `gap` property (shorthand for `row-gap` and `column-gap`) defines the size of the gutters between grid tracks." },
+        { "id": 8, "type": "codeChallenge", "title": "Create a grid with a 20px gap between all items.", "expectedAnswer": ".grid { display: grid; gap: 20px; }", "blocks": [".grid { display: grid; gap: 20px; }"], "language": "css" },
+        { "id": 9, "type": "info", "title": "`minmax()`", "content": "The `minmax(min, max)` function defines a size range. This is great for responsive design, e.g., `minmax(200px, 1fr)` means 'be at least 200px, but grow to fill'." },
+        { "id": 10, "type": "codeChallenge", "title": "Create a responsive column that's at least 300px wide.", "expectedAnswer": ".grid { grid-template-columns: minmax(300px, 1fr); }", "blocks": [".grid { grid-template-columns: minmax(300px, 1fr); }"], "language": "css" }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Placing Grid Items",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Line-Based Placement", "content": "The lines that form the grid are numbered, starting from 1. You can place items precisely using these line numbers." },
+        { "id": 2, "type": "info", "title": "`grid-column` and `grid-row`", "content": "These properties are shorthands for `grid-column-start`/`end` and `grid-row-start`/`end`. `grid-column: 1 / 3;` makes an item start on line 1 and end on line 3." },
+        { "id": 3, "type": "codeChallenge", "title": "In a 4-column grid, make a header item span all 4 columns.", "expectedAnswer": ".header { grid-column: 1 / 5; }", "blocks": [".header { grid-column: 1 / 5; }"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "To make an item span from column line 2 to 4, you'd use...", "options": ["grid-column: 2 / 4;", "grid-column: 2 / 3;", "grid-column: 2, 4;"], "correct": "grid-column: 2 / 4;" },
+        { "id": 5, "type": "info", "title": "The `span` Keyword", "content": "You can also specify how many tracks an item should span. `grid-column: span 2;` makes the item take up two column tracks." },
+        { "id": 6, "type": "codeChallenge", "title": "Make a 'featured' item start in column 2 and span 3 columns.", "expectedAnswer": ".featured { grid-column: 2 / span 3; }", "blocks": [".featured { grid-column: 2 / span 3; }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "Named Grid Areas", "content": "A more intuitive way to build layouts is by naming areas with `grid-template-areas` on the parent, and then assigning items to those areas with `grid-area`." },
+        { "id": 8, "type": "codeChallenge", "title": "Create a classic header, sidebar, content, footer layout with named areas.", "expectedAnswer": ".container { display: grid; grid-template-areas: 'header header' 'sidebar content' 'footer footer'; }\n.header { grid-area: header; }\n.sidebar { grid-area: sidebar; }", "blocks": [".container { display: grid; grid-template-areas: 'header header' 'sidebar content' 'footer footer'; }\n.header { grid-area: header; }\n.sidebar { grid-area: sidebar; }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Assign the main content to the 'main' grid area.", "starterCode": ".main-content { grid- : main; }", "placeholders": [{ "line": 1, "index": 15, "hint": "area" }], "blocks": ["area", "column", "template"], "correctAnswers": ["area"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Grid Architect! 🏙️", "content": "You can now build entire, complex page layouts with CSS Grid, one of the most powerful and essential tools in a modern front-end developer's toolkit." }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Responsive Design Principles",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "What is Responsive Design?", "content": "Responsive Web Design (RWD) is an approach that makes your web pages render well on a variety of devices and screen sizes, from small phones to large desktops." },
+        { "id": 2, "type": "info", "title": "The Viewport Meta Tag", "content": "The first step is always to include the viewport meta tag in your HTML `<head>`. `<meta name='viewport' content='width=device-width, initial-scale=1.0'>`." },
+        { "id": 3, "type": "quiz", "question": "What is the purpose of the viewport meta tag?", "options": ["To set the page background", "To control the layout viewport on mobile browsers", "To load CSS"], "correct": "To control the layout viewport on mobile browsers" },
+        { "id": 4, "type": "info", "title": "Fluid Grids", "content": "Instead of fixed pixel widths, use relative units like percentages, `vw` (viewport width), or `fr` in Grid layouts. This allows your layout to stretch and shrink fluidly." },
+        { "id": 5, "type": "info", "title": "Flexible Images", "content": "A common practice to make images responsive is to give them `max-width: 100%;` and `height: auto;`. This ensures they never overflow their container but maintain their aspect ratio." },
+        { "id": 6, "type": "codeChallenge", "title": "Write the CSS to make all images on a page responsive.", "expectedAnswer": "img { max-width: 100%; height: auto; }", "blocks": ["img { max-width: 100%; height: auto; }"], "language": "css" },
+        { "id": 7, "type": "info", "title": "Mobile First", "content": "The 'Mobile First' approach means you design and write the base CSS for the smallest screen (mobile) first, then add complexity for larger screens using media queries." },
+        { "id": 8, "type": "quiz", "question": "What is the benefit of a 'Mobile First' strategy?", "options": ["It's easier for designers", "It forces you to prioritize content and leads to cleaner code", "It only works for mobile apps"], "correct": "It forces you to prioritize content and leads to cleaner code" },
+        { "id": 9, "type": "info", "title": "Progressive Enhancement", "content": "Mobile First is a form of progressive enhancement: start with a simple baseline that works everywhere, then add enhancements for capable browsers/devices." },
+        { "id": 10, "type": "info", "title": "Responsive Thinker! 🤔", "content": "You now understand the core principles behind modern responsive design. This mindset is crucial before even writing the code." }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Media Queries",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "The Key to Responsiveness", "content": "Media Queries are the tool we use to apply different CSS rules based on device characteristics, most commonly the viewport width." },
+        { "id": 2, "type": "info", "title": "Syntax", "content": "A media query starts with `@media`, followed by a media type (like `screen`), and a condition in parentheses, like `(min-width: 768px)`." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a media query that applies styles only when the screen is 600px or wider.", "expectedAnswer": "@media screen and (min-width: 600px) { /* styles here */ }", "blocks": ["@media screen and (min-width: 600px) { /* styles here */ }"], "language": "css" },
+        { "id": 4, "type": "quiz", "question": "What does `(min-width: 800px)` mean?", "options": ["When the width is less than 800px", "When the width is exactly 800px", "When the width is 800px or greater"], "correct": "When the width is 800px or greater" },
+        { "id": 5, "type": "info", "title": "Common Breakpoints", "content": "While they can be anything, common 'breakpoints' for changing layouts are around 600px (tablet), 900px (small desktop), and 1200px (large desktop)." },
+        { "id": 6, "type": "codeChallenge", "title": "Make a `div`'s background red on small screens and blue on screens 768px and wider.", "expectedAnswer": "div { background: red; }\n@media (min-width: 768px) {\n  div { background: blue; }\n}", "blocks": ["div { background: red; }\n@media (min-width: 768px) {\n  div { background: blue; }\n}"], "language": "css" },
+        { "id": 7, "type": "info", "title": "Combining Queries", "content": "You can combine conditions with `and`, and you can provide comma-separated lists to apply the same styles for different queries." },
+        { "id": 8, "type": "codeChallenge", "title": "Apply styles only for screens between 600px and 900px wide.", "expectedAnswer": "@media (min-width: 600px) and (max-width: 900px) { /* styles */ }", "blocks": ["@media (min-width: 600px) and (max-width: 900px) { /* styles */ }"], "language": "css" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Apply styles for screens smaller than 500px.", "starterCode": "@media ( -width: 500px) { }", "placeholders": [{ "line": 1, "index": 9, "hint": "max" }], "blocks": ["max", "min", "exact"], "correctAnswers": ["max"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Responsive Ruler! 📏", "content": "Media queries are your primary tool for implementing responsive designs. You can now make your layouts adapt perfectly to any screen." }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Responsive Layout Patterns",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Common Responsive Patterns", "content": "There are several common, reusable patterns for making layouts responsive." },
+        { "id": 2, "type": "info", "title": "The 'Column Drop' Pattern", "content": "In this pattern, a multi-column layout on desktop 'drops' to a single column on mobile, with columns stacking vertically. This is a classic use for Flexbox or Grid." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a 2-column flexbox layout that stacks on screens smaller than 700px.", "expectedAnswer": ".container { display: flex; flex-direction: column; }\n@media (min-width: 700px) {\n  .container { flex-direction: row; }\n}", "blocks": [".container { display: flex; flex-direction: column; }\n@media (min-width: 700px) {\n  .container { flex-direction: row; }\n}"], "language": "css" },
+        { "id": 4, "type": "info", "title": "The 'Mostly Fluid' Pattern", "content": "This pattern uses a fluid grid, but adds margins on larger screens to constrain the main content to a maximum width for better readability." },
+        { "id": 5, "type": "codeChallenge", "title": "Create a container that is 90% wide, but no wider than 1200px, and is centered.", "expectedAnswer": ".container { width: 90%; max-width: 1200px; margin: 0 auto; }", "blocks": [".container { width: 90%; max-width: 1200px; margin: 0 auto; }"], "language": "css" },
+        { "id": 6, "type": "info", "title": "Responsive Grids with `auto-fit`", "content": "CSS Grid can create magic responsive columns. `grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));` creates columns that are at least 250px wide and automatically wrap." },
+        { "id": 7, "type": "codeChallenge", "title": "Create a responsive gallery grid using `auto-fit`.", "expectedAnswer": ".gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }", "blocks": [".gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }"], "language": "css" },
+        { "id": 8, "type": "quiz", "question": "What is the benefit of the `auto-fit` pattern?", "options": ["It doesn't require any media queries", "It's better for SEO", "It works in old browsers"], "correct": "It doesn't require any media queries" },
+        { "id": 9, "type": "info", "title": "Off-Canvas Navigation", "content": "A common mobile pattern is to hide the main navigation off-screen, and show it when a user clicks a 'hamburger' menu icon. This requires some JavaScript to toggle a class." },
+        { "id": 10, "type": "info", "title": "Layout Leader! 👑", "content": "You are now familiar with the most important and widely used responsive layout patterns on the web." }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Responsive Typography",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Readable Text on All Screens", "content": "Responsive typography ensures your text is legible and well-proportioned on any device." },
+        { "id": 2, "type": "info", "title": "Relative Font Sizes", "content": "Use relative units like `rem` and `em` for font sizes instead of `px`. This allows all text to scale proportionally if the user changes their browser's base font size." },
+        { "id": 3, "type": "quiz", "question": "What is the `rem` unit relative to?", "options": ["The parent element's font size", "The viewport width", "The root (<html>) element's font size"], "correct": "The root (<html>) element's font size" },
+        { "id": 4, "type": "codeChallenge", "title": "Set a base font size on the `html` element, then use `rem` for a heading.", "expectedAnswer": "html { font-size: 16px; }\nh1 { font-size: 2rem; /* 32px */ }", "blocks": ["html { font-size: 16px; }\nh1 { font-size: 2rem; /* 32px */ }"], "language": "css" },
+        { "id": 5, "type": "info", "title": "The `clamp()` Function", "content": "The `clamp(MIN, IDEAL, MAX)` function is a modern way to create fluid typography. It sets a font size that grows with the viewport but doesn't go below the MIN or above the MAX." },
+        { "id": 6, "type": "codeChallenge", "title": "Create a fluid heading font size using `clamp()`.", "expectedAnswer": "h1 { font-size: clamp(1.5rem, 5vw, 3rem); }", "blocks": ["h1 { font-size: clamp(1.5rem, 5vw, 3rem); }"], "language": "css" },
+        { "id": 7, "type": "quiz", "question": "In `clamp(1rem, 4vw, 2rem)`, what is `4vw`?", "options": ["The minimum value", "The maximum value", "The preferred, fluid value"], "correct": "The preferred, fluid value" },
+        { "id": 8, "type": "info", "title": "Line Length", "content": "For readability, a line of text shouldn't be too long. A good range is 45-75 characters. Use `max-width` on your text containers to control this." },
+        { "id": 9, "type": "codeChallenge", "title": "Constrain the width of a paragraph for better readability.", "expectedAnswer": "p { max-width: 65ch; /* 'ch' is a unit for character width */ }", "blocks": ["p { max-width: 65ch; /* 'ch' is a unit for character width */ }"], "language": "css" },
+        { "id": 10, "type": "info", "title": "Typography Titan! ✒️", "content": "You can now create text that is not only beautiful but also perfectly readable and accessible on any screen size." }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "CSS Architecture and BEM",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Organizing Large Stylesheets", "content": "In large projects, CSS can become messy and hard to maintain. CSS architecture provides methodologies for keeping it organized." },
+        { "id": 2, "type": "info", "title": "What is BEM?", "content": "BEM (Block, Element, Modifier) is a popular and simple naming convention that makes your CSS more readable and less prone to conflicts." },
+        { "id": 3, "type": "info", "title": "Block", "content": "A Block is a standalone component, like `.card`, `.nav`, or `.form`. It's the root of the component." },
+        { "id": 4, "type": "info", "title": "Element", "content": "An Element is a part of a block that has no standalone meaning. It's named with the block name, two underscores, and the element name, like `.card__title`." },
+        { "id": 5, "type": "codeChallenge", "title": "Write a BEM class for the image inside a `.card` block.", "expectedAnswer": ".card__image", "blocks": [".card__image"], "language": "css" },
+        { "id": 6, "type": "quiz", "question": "What is the correct BEM syntax for an element?", "options": [".block-element", ".block--element", ".block__element"], "correct": ".block__element" },
+        { "id": 7, "type": "info", "title": "Modifier", "content": "A Modifier is a flag on a block or element that changes its appearance or state. It's named with two hyphens, like `.card--featured` or `.card__button--disabled`." },
+        { "id": 8, "type": "codeChallenge", "title": "Write a BEM class for a large, primary button.", "expectedAnswer": ".button--large.button--primary", "blocks": [".button--large.button--primary"], "language": "css" },
+        { "id": 9, "type": "quiz", "question": "You have a `.form__input`. How would you write a modifier for its error state?", "options": [".form__input--error", ".form__input-error", ".form__input.error"], "correct": ".form__input--error" },
+        { "id": 10, "type": "info", "title": "CSS Architect! 🏛️", "content": "You've learned a professional methodology for writing scalable and maintainable CSS. This is a critical skill for working on large projects or with a team." }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Level 4 Review",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Advanced CSS Review", "content": "You have learned the most powerful tools in modern CSS, from advanced selectors and animations to responsive design and architecture." },
+        { "id": 2, "type": "quiz", "question": "Which selector targets a `<p>` that is an immediate sibling after an `<h1>`?", "options": ["h1 ~ p", "h1 > p", "h1 + p"], "correct": "h1 + p" },
+        { "id": 3, "type": "quiz", "question": "How do you declare a global CSS variable for a primary color?", "options": ["`$primary-color: blue;`", "`:root { --primary-color: blue; }`", "var primary-color = blue;"], "correct": "`:root { --primary-color: blue; }`" },
+        { "id": 4, "type": "quiz", "question": "To flip a card over, which transform would you use?", "options": ["`transform: rotateX(180deg);`", "`transform: rotateY(180deg);`", "`transform: rotateZ(180deg);`"], "correct": "`transform: rotateY(180deg);`" },
+        { "id": 5, "type": "quiz", "question": "The `@keyframes` rule is used for...", "options": ["Simple two-state transitions", "Multi-step, complex animations", "Defining CSS variables"], "correct": "Multi-step, complex animations" },
+        { "id": 6, "type": "quiz", "question": "To make flex items wrap onto new lines, you use...", "options": ["`flex-direction: column;`", "`flex-wrap: wrap;`", "`align-content: wrap;`"], "correct": "`flex-wrap: wrap;`" },
+        { "id": 7, "type": "quiz", "question": "In a 'Mobile First' approach, your media queries will mostly use...", "options": ["`max-width`", "`min-width`", "They use both equally"], "correct": "`min-width`" },
+        { "id": 8, "type": "quiz", "question": "In BEM, what does `.card__header--large` represent?", "options": ["A block", "An element", "An element with a modifier"], "correct": "An element with a modifier" },
+        { "id": 9, "type": "info", "title": "Ready for Mastery", "content": "You have all the HTML and CSS knowledge needed to build beautiful, responsive, and professional websites from scratch. The next step is to add complex logic with JavaScript." },
+        { "id": 10, "type": "info", "title": "CSS Master! 🏅", "content": "Congratulations! You have achieved a master's understanding of CSS. You can bring any design to life in the browser." }
+      ]
+    }
+  ]
+}

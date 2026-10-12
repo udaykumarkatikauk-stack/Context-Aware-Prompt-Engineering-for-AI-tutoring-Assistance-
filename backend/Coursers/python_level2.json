@@ -1,0 +1,1641 @@
+{
+    "level": 2,
+    "language": "python",
+    "modules": [
+      {
+        "id": 1,
+        "title": "Functions with One Parameter",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is a Parameter?",
+            "content": "A parameter is a value you give to a function, like a name to say hello."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does a parameter do?",
+            "options": ["Prints text", "Gives input", "Stores code"],
+            "correct": "Gives input"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Making a Function",
+            "content": "Use def and a parameter, like def say(name): to print a name."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Make a function say(name) to print 'Hi, ' + name.",
+            "expectedAnswer": "def say(name):\n    print('Hi, ' + name)\nsay('Mia')",
+            "blocks": ["def say(name):\n    print('Hi, ' + name)\nsay('Mia')"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Calling Functions",
+            "content": "Call with a value, like say('Alex') to use 'Alex' as the name."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Call show with 'Sun'.",
+            "starterCode": "def show(thing):\n    print(thing)\n('Sun')",
+            "placeholders": [
+              {"line": 3, "index": 0, "hint": "show"}
+            ],
+            "blocks": ["show", "print", "thing"],
+            "correctAnswers": ["show"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does say('Zoe') do?",
+            "options": ["Defines function", "Calls function", "Prints nothing"],
+            "correct": "Calls function"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Using Parameters",
+            "content": "The parameter acts like a variable inside the function."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Make a function add(a, b) to print the sum of a and b.",
+            "expectedAnswer": "def add(a, b):\n    print(a + b)\nadd(3, 5)",
+            "blocks": ["def add(a, b):\n    print(a + b)\nadd(3, 5)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Parameter Names",
+            "content": "Choose clear names like 'name' or 'num' for parameters."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Define a function with parameter item.",
+            "starterCode": " print_item(item):\n    print(item)\nprint_item('Book')",
+            "placeholders": [
+              {"line": 1, "index": 0, "hint": "def"}
+            ],
+            "blocks": ["def", "for", "if"],
+            "correctAnswers": ["def"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Can you call a function with different values?",
+            "options": ["Yes", "No", "Only once"],
+            "correct": "Yes"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Why Parameters?",
+            "content": "Parameters make functions work with different data."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Function Star! 🌟",
+            "content": "You’re using parameters like a pro! Your functions are super flexible!"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Functions with Numbers",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "Number Parameters",
+            "content": "Functions can take numbers, like def double(num): to multiply by 2."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What can a function parameter be?",
+            "options": ["Only text", "Only numbers", "Text or numbers"],
+            "correct": "Text or numbers"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Math in Functions",
+            "content": "Use numbers in functions, like def add_five(x): print(x + 5)."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Make a function double(num) to print num * 2.",
+            "expectedAnswer": "def double(num):\n    print(num * 2)\ndouble(4)",
+            "blocks": ["def double(num):\n    print(num * 2)\ndouble(4)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Calling with Numbers",
+            "content": "Call with a number, like double(3) to use 3 as num."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Call triple with 5.",
+            "starterCode": "def triple(n):\n    print(n * 3)\n(5)",
+            "placeholders": [
+              {"line": 3, "index": 0, "hint": "triple"}
+            ],
+            "blocks": ["triple", "print", "n"],
+            "correctAnswers": ["triple"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does double(2) print if it does num * 2?",
+            "options": ["2", "4", "6"],
+            "correct": "4"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Number Operations",
+            "content": "Use +, -, *, / with number parameters in functions."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Make a function add_ten(x) to print x + 10.",
+            "expectedAnswer": "def add_ten(x):\n    print(x + 10)\nadd_ten(5)",
+            "blocks": ["def add_ten(x):\n    print(x + 10)\nadd_ten(5)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Simple Calculations",
+            "content": "Keep math simple in functions for easy coding."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Add 3 to num in the function.",
+            "starterCode": "def increase(num):\n    print()\nincrease(7)",
+            "placeholders": [
+              {"line": 2, "index": 10, "hint": "num + 3"}
+            ],
+            "blocks": ["num + 3", "num * 3", "num - 3"],
+            "correctAnswers": ["num + 3"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Can a function use math with parameters?",
+            "options": ["Yes", "No", "Only print"],
+            "correct": "Yes"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Number Power",
+            "content": "Number parameters let functions do math easily."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Number Function Hero! ➕",
+            "content": "You’re doing math in functions! Your code is getting powerful!"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Adding to Lists",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Adding to Lists?",
+            "content": "You can add items to a list using .append(), like list.append('new')."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does .append() do?",
+            "options": ["Removes item", "Adds item", "Prints list"],
+            "correct": "Adds item"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Append",
+            "content": "Append adds an item to the end, like colors.append('red')."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Add 'blue' to ['red'] and print the list.",
+            "expectedAnswer": "colors = ['red']\ncolors.append('blue')\nprint(colors)",
+            "blocks": ["colors = ['red']", "\ncolors.append('blue')", "\nprint(colors)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Adding Any Item",
+            "content": "Append can add text, numbers, or more, like list.append(5)."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Add 10 to [1, 2].",
+            "starterCode": "nums = [1, 2]\nnums.(10)\nprint(nums)",
+            "placeholders": [
+              {"line": 2, "index": 6, "hint": "append"}
+            ],
+            "blocks": ["append", "print", "add"],
+            "correctAnswers": ["append"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does ['a'].append('b') do?",
+            "options": ["Makes ['a']", "Makes ['a', 'b']", "Prints 'b'"],
+            "correct": "Makes ['a', 'b']"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Growing Lists",
+            "content": "You can append many times to make a list bigger."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Add 'cat' and 'dog' to [] and print.",
+            "expectedAnswer": "pets = []\npets.append('cat')\npets.append('dog')\nprint(pets)",
+            "blocks": ["pets = []", "\npets.append('cat')", "\npets.append('dog')", "\nprint(pets)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Checking Lists",
+            "content": "Print the list after appending to see the new items."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Add 'pen' to ['book'].",
+            "starterCode": "items = ['book']\nitems.append()\nprint(items)",
+            "placeholders": [
+              {"line": 2, "index": 13, "hint": "'pen'"}
+            ],
+            "blocks": ["'pen'", "'book'", "pen"],
+            "correctAnswers": ["'pen'"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Where does append add an item?",
+            "options": ["Start", "End", "Middle"],
+            "correct": "End"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "List Growth",
+            "content": "Appending makes lists useful for collecting data."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "List Builder! 📋",
+            "content": "You’re growing lists like a champ! Appending makes your code awesome!"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Removing from Lists",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Removing?",
+            "content": "You can remove items from a list using .remove(), like list.remove('old')."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does .remove() do?",
+            "options": ["Adds item", "Deletes item", "Prints item"],
+            "correct": "Deletes item"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Remove",
+            "content": "Remove deletes the first matching item, like colors.remove('red')."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Remove 'blue' from ['red', 'blue'] and print.",
+            "expectedAnswer": "colors = ['red', 'blue']\ncolors.remove('blue')\nprint(colors)",
+            "blocks": ["colors = ['red', 'blue']", "\ncolors.remove('blue')", "\nprint(colors)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Removing Numbers",
+            "content": "Remove works with numbers too, like nums.remove(5)."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Remove 2 from [1, 2, 3].",
+            "starterCode": "nums = [1, 2, 3]\nnums.(2)\nprint(nums)",
+            "placeholders": [
+              {"line": 2, "index": 6, "hint": "remove"}
+            ],
+            "blocks": ["remove", "append", "delete"],
+            "correctAnswers": ["remove"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does ['a', 'b'].remove('a') do?",
+            "options": ["Makes ['b']", "Makes ['a']", "Prints 'a'"],
+            "correct": "Makes ['b']"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Checking After Remove",
+            "content": "Print the list after removing to see what’s left."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Remove 10 from [10, 20] and print.",
+            "expectedAnswer": "nums = [10, 20]\nnums.remove(10)\nprint(nums)",
+            "blocks": ["nums = [10, 20]", "\nnums.remove(10)", "\nprint(nums)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "One at a Time",
+            "content": "Remove deletes only the first match, not all."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Remove 'cat' from ['cat', 'dog'].",
+            "starterCode": "pets = ['cat', 'dog']\npets.remove()\nprint(pets)",
+            "placeholders": [
+              {"line": 2, "index": 12, "hint": "'cat'"}
+            ],
+            "blocks": ["'cat'", "'dog'", "cat"],
+            "correctAnswers": ["'cat'"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Does remove delete all matching items?",
+            "options": ["Yes", "No, just first", "Sometimes"],
+            "correct": "No, just first"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "List Cleanup",
+            "content": "Removing helps keep lists tidy and relevant."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "List Cleaner! 🧹",
+            "content": "You’re tidying lists like a pro! Removing makes your code sharp!"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Simple Dictionaries",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What are Dictionaries?",
+            "content": "Dictionaries store pairs, like {'name': 'Mia'} to link 'name' to 'Mia'."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does a dictionary store?",
+            "options": ["Single items", "Pairs", "Only numbers"],
+            "correct": "Pairs"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Making Dictionaries",
+            "content": "Use {}, like info = {'age': 10} to store data."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Make {'color': 'blue'} and print it.",
+            "expectedAnswer": "data = {'color': 'blue'}\nprint(data)",
+            "blocks": ["data = {'color': 'blue'}", "\nprint(data)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Getting Values",
+            "content": "Use the key, like info['age'] to get 10."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Get 'red' from {'color': 'red'}.",
+            "starterCode": "item = {'color': 'red'}\nprint(item[])",
+            "placeholders": [
+              {"line": 2, "index": 11, "hint": "'color'"}
+            ],
+            "blocks": ["'color'", "'red'", "color"],
+            "correctAnswers": ["'color'"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does {'x': 5}['x'] give?",
+            "options": ["'x'", "5", "Nothing"],
+            "correct": "5"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Changing Values",
+            "content": "Update with the key, like dict['key'] = 'new'."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Change 'age' to 12 in {'age': 11} and print.",
+            "expectedAnswer": "info = {'age': 11}\ninfo['age'] = 12\nprint(info)",
+            "blocks": ["info = {'age': 11}", "\ninfo['age'] = 12", "\nprint(info)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Adding Pairs",
+            "content": "Add new pairs, like dict['new'] = 'value'."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Add 'name': 'Zoe' to {}.",
+            "starterCode": "user = {}\nuser[] = 'Zoe'\nprint(user)",
+            "placeholders": [
+              {"line": 2, "index": 6, "hint": "'name'"}
+            ],
+            "blocks": ["'name'", "'Zoe'", "name"],
+            "correctAnswers": ["'name'"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Can you add new pairs to a dictionary?",
+            "options": ["Yes", "No", "Only one"],
+            "correct": "Yes"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Dictionary Use",
+            "content": "Dictionaries help organize data with keys and values."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Dictionary Pro! 📖",
+            "content": "You’re organizing data like a wizard! Dictionaries make your code neat!"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Changing Text Case",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Text Case?",
+            "content": "Text case changes letters, like .upper() to make 'hi' into 'HI'."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does .upper() do?",
+            "options": ["Makes lowercase", "Makes uppercase", "Removes text"],
+            "correct": "Makes uppercase"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Upper",
+            "content": "Use .upper(), like 'hello'.upper() to get 'HELLO'."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Print 'code' in uppercase.",
+            "expectedAnswer": "text = 'code'\nprint(text.upper())",
+            "blocks": ["text = 'code'", "\nprint(text.upper())"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Using Lower",
+            "content": "Use .lower(), like 'HI'.lower() to get 'hi'."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Make 'YELL' lowercase.",
+            "starterCode": "text = 'YELL'\nprint(text.())",
+            "placeholders": [
+              {"line": 2, "index": 11, "hint": "lower"}
+            ],
+            "blocks": ["lower", "upper", "print"],
+            "correctAnswers": ["lower"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does 'Fun'.lower() give?",
+            "options": ["'FUN'", "'fun'", "'Fun'"],
+            "correct": "'fun'"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Saving Results",
+            "content": "Store the result, like new = text.upper(), to use later."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Store 'run' as uppercase and print.",
+            "expectedAnswer": "text = 'run'\nupper_text = text.upper()\nprint(upper_text)",
+            "blocks": ["text = 'run'", "\nupper_text = text.upper()", "\nprint(upper_text)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Case Uses",
+            "content": "Upper and lower help make text look right."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Make 'SHOUT' lowercase and print.",
+            "starterCode": "text = 'SHOUT'\n = text.lower()\nprint(result)",
+            "placeholders": [
+              {"line": 2, "index": 0, "hint": "result"}
+            ],
+            "blocks": ["result", "text", "lower"],
+            "correctAnswers": ["result"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does 'hi'.upper() give?",
+            "options": ["'hi'", "'HI'", "'Hi'"],
+            "correct": "'HI'"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Text Case Power",
+            "content": "Changing case makes text clear and professional."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Case Changer! 📜",
+            "content": "You’re shaping text like a pro! Upper and lower make your code shine!"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Replacing Text",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Replacing?",
+            "content": "Replacing swaps text, like .replace('old', 'new') to change words."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does .replace() do?",
+            "options": ["Adds text", "Swaps text", "Removes text"],
+            "correct": "Swaps text"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Replace",
+            "content": "'cat'.replace('c', 'h') makes 'hat'."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Replace 'dog' with 'cat' in 'I like dog'.",
+            "expectedAnswer": "text = 'I like dog'\nprint(text.replace('dog', 'cat'))",
+            "blocks": ["text = 'I like dog'", "\nprint(text.replace('dog', 'cat'))"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Replacing Words",
+            "content": "Replace whole words, like 'hi'.replace('hi', 'hello')."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Replace 'hi' with 'hey'.",
+            "starterCode": "text = 'hi there'\nprint(text.replace(, 'hey'))",
+            "placeholders": [
+              {"line": 2, "index": 18, "hint": "'hi'"}
+            ],
+            "blocks": ["'hi'", "'hey'", "hi"],
+            "correctAnswers": ["'hi'"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does 'run'.replace('r', 'f') give?",
+            "options": ["'fun'", "'run'", "'ruf'"],
+            "correct": "'fun'"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Saving Replacements",
+            "content": "Store the result, like new = text.replace('a', 'b')."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Replace 'bad' with 'good' in 'Feeling bad' and print.",
+            "expectedAnswer": "text = 'Feeling bad'\nnew_text = text.replace('bad', 'good')\nprint(new_text)",
+            "blocks": ["text = 'Feeling bad'", "\nnew_text = text.replace('bad', 'good')", "\nprint(new_text)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Replace Uses",
+            "content": "Replace fixes text or changes messages easily."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Replace 'no' with 'yes'.",
+            "starterCode": "text = 'no way'\nresult = text.('no', 'yes')\nprint(result)",
+            "placeholders": [
+              {"line": 2, "index": 13, "hint": "replace"}
+            ],
+            "blocks": ["replace", "upper", "lower"],
+            "correctAnswers": ["replace"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Does replace change the original text?",
+            "options": ["Yes", "No, makes new", "Sometimes"],
+            "correct": "No, makes new"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Replace Power",
+            "content": "Replacing makes text flexible and fun to edit."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Replace Rockstar! 🔄",
+            "content": "You’re swapping text like a pro! Replace makes your code creative!"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Counting in Lists",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Counting?",
+            "content": "Use .count() to find how many times an item appears, like list.count('x')."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does .count() do?",
+            "options": ["Adds items", "Counts items", "Removes items"],
+            "correct": "Counts items"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Count",
+            "content": "['a', 'a'].count('a') returns 2 because 'a' appears twice."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Count 'cat' in ['cat', 'dog', 'cat'].",
+            "expectedAnswer": "pets = ['cat', 'dog', 'cat']\nprint(pets.count('cat'))",
+            "blocks": ["pets = ['cat', 'dog', 'cat']", "\nprint(pets.count('cat'))"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Counting Numbers",
+            "content": "Count numbers too, like [1, 1, 2].count(1) returns 2."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Count 5 in [5, 6, 5].",
+            "starterCode": "nums = [5, 6, 5]\nprint(nums.(5))",
+            "placeholders": [
+              {"line": 2, "index": 11, "hint": "count"}
+            ],
+            "blocks": ["count", "append", "remove"],
+            "correctAnswers": ["count"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does ['x', 'y'].count('x') return?",
+            "options": ["0", "1", "2"],
+            "correct": "1"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Saving Counts",
+            "content": "Store the count, like num = list.count(3), to use it."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Count 2 in [1, 2, 2] and print.",
+            "expectedAnswer": "nums = [1, 2, 2]\nresult = nums.count(2)\nprint(result)",
+            "blocks": ["nums = [1, 2, 2]", "\nresult = nums.count(2)", "\nprint(result)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "When to Count",
+            "content": "Count helps check how often something appears."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Count 'hi' in ['hi', 'bye'].",
+            "starterCode": "words = ['hi', 'bye']\ncount = words.count()\nprint(count)",
+            "placeholders": [
+              {"line": 2, "index": 20, "hint": "'hi'"}
+            ],
+            "blocks": ["'hi'", "'bye'", "hi"],
+            "correctAnswers": ["'hi'"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does [1, 2].count(3) return?",
+            "options": ["0", "1", "2"],
+            "correct": "0"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Counting Power",
+            "content": "Counting helps you understand your list data."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Counting Champ! 🔢",
+            "content": "You’re counting items like a pro! Your lists are under control!"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "More Conditionals",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Elif?",
+            "content": "Elif checks another condition if the first if is false, like elif x > 5:."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does elif mean?",
+            "options": ["Else if", "End if", "Extra if"],
+            "correct": "Else if"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Elif",
+            "content": "Use after if, like if x > 10: print('Big') elif x > 5: print('Medium')."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "If x = 7, print 'Medium' if >5, else 'Small'.",
+            "expectedAnswer": "x = 7\nif x > 5:\n    print('Medium')\nelse:\n    print('Small')",
+            "blocks": ["x = 7\nif x > 5:\n    print('Medium')\nelse:\n    print('Small')"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Multiple Elifs",
+            "content": "Add more elifs for more checks, like elif x > 3:."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Add elif for x > 2.",
+            "starterCode": "x = 3\nif x > 5:\n    print('Big')\n x > 2:\n    print('OK')",
+            "placeholders": [
+              {"line": 4, "index": 0, "hint": "elif"}
+            ],
+            "blocks": ["elif", "if", "else"],
+            "correctAnswers": ["elif"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "When does elif run?",
+            "options": ["If if is true", "If if is false", "Always"],
+            "correct": "If if is false"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "With Else",
+            "content": "Use else for all other cases after if and elif."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "If x = 1, print 'Big' if >5, 'OK' if >2, else 'Tiny'.",
+            "expectedAnswer": "x = 1\nif x > 5:\n    print('Big')\nelif x > 2:\n    print('OK')\nelse:\n    print('Tiny')",
+            "blocks": ["x = 1\nif x > 5:\n    print('Big')\nelif x > 2:\n    print('OK')\nelse:\n    print('Tiny')"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Order Matters",
+            "content": "Python checks if, then elif, then else, in order."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Check if y < 10 with elif.",
+            "starterCode": "y = 8\nif y > 20:\n    print('High')\n y < 10:\n    print('Low')",
+            "placeholders": [
+              {"line": 4, "index": 0, "hint": "elif"}
+            ],
+            "blocks": ["elif", "if", "else"],
+            "correctAnswers": ["elif"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Can you have multiple elifs?",
+            "options": ["Yes", "No", "Only one"],
+            "correct": "Yes"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Conditional Power",
+            "content": "Elif makes your program choose between many options."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Conditional King! ✅",
+            "content": "You’re making choices like a pro! Elif makes your code smart!"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Looping with Range",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Range?",
+            "content": "Range makes numbers, like range(3) gives 0, 1, 2 for looping."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does range(2) give?",
+            "options": ["0, 1", "1, 2", "2"],
+            "correct": "0, 1"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Range",
+            "content": "Use in loops, like for i in range(3): print(i) to print 0, 1, 2."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Print 0 to 2 using range.",
+            "expectedAnswer": "for i in range(3):\n    print(i)",
+            "blocks": ["for i in range(3):", "\n    print(i)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Range in Loops",
+            "content": "Range helps repeat code a set number of times."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Loop 4 times with range.",
+            "starterCode": "for x in (4):\n    print(x)",
+            "placeholders": [
+              {"line": 1, "index": 9, "hint": "range"}
+            ],
+            "blocks": ["range", "list", "count"],
+            "correctAnswers": ["range"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does range(5) start with?",
+            "options": ["0", "1", "5"],
+            "correct": "0"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Doing Things",
+            "content": "Use range to print messages or do math in loops."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Print 'Hi' 3 times using range.",
+            "expectedAnswer": "for i in range(3):\n    print('Hi')",
+            "blocks": ["for i in range(3):", "\n    print('Hi')"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Range Numbers",
+            "content": "Range always starts at 0 and stops before the number."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Print 0 to 1 with range.",
+            "starterCode": "for num in range():\n    print(num)",
+            "placeholders": [
+              {"line": 1, "index": 15, "hint": "2"}
+            ],
+            "blocks": ["2", "1", "3"],
+            "correctAnswers": ["2"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What is the last number in range(4)?",
+            "options": ["3", "4", "5"],
+            "correct": "3"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Range Power",
+            "content": "Range makes looping easy and fun for beginners."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Range Ruler! 🔢",
+            "content": "You’re looping with range like a pro! Your code is repeating perfectly!"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Combining Lists",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Combining?",
+            "content": "Use + to join lists, like ['a'] + ['b'] makes ['a', 'b']."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does + do with lists?",
+            "options": ["Joins lists", "Removes items", "Counts items"],
+            "correct": "Joins lists"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using +",
+            "content": "Add lists, like list1 + list2 to make one big list."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Combine ['red'] and ['blue'] and print.",
+            "expectedAnswer": "colors = ['red'] + ['blue']\nprint(colors)",
+            "blocks": ["colors = ['red'] + ['blue']", "\nprint(colors)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Saving Combined Lists",
+            "content": "Store the result, like new = list1 + list2."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Combine [1] and [2].",
+            "starterCode": "nums = [1]  [2]\nprint(nums)",
+            "placeholders": [
+              {"line": 1, "index": 10, "hint": "+"}
+            ],
+            "blocks": ["+", "-", "*"],
+            "correctAnswers": ["+"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does ['x'] + ['y'] give?",
+            "options": ["['x', 'y']", "['x']", "['y']"],
+            "correct": "['x', 'y']"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Combining More Lists",
+            "content": "You can join many lists, like list1 + list2 + list3."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Combine [1], [2], [3] and print.",
+            "expectedAnswer": "nums = [1] + [2] + [3]\nprint(nums)",
+            "blocks": ["nums = [1] + [2] + [3]", "\nprint(nums)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "List Order",
+            "content": "The first list’s items come first in the result."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Combine ['a'] and ['b'].",
+            "starterCode": "result =  + ['b']\nprint(result)",
+            "placeholders": [
+              {"line": 1, "index": 9, "hint": "['a']"}
+            ],
+            "blocks": ["['a']", "['b']", "'a'"],
+            "correctAnswers": ["['a']"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Does ['a'] + ['b'] change the original lists?",
+            "options": ["Yes", "No", "Sometimes"],
+            "correct": "No"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Combine Power",
+            "content": "Combining lists helps collect data together."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "List Combiner! 🔗",
+            "content": "You’re joining lists like a pro! Your code is building big lists!"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Checking List Items",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Checking?",
+            "content": "Use 'in' to check if an item is in a list, like 'x' in ['x', 'y']."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does 'in' do?",
+            "options": ["Adds item", "Checks item", "Removes item"],
+            "correct": "Checks item"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using In",
+            "content": "'cat' in ['cat', 'dog'] returns True if 'cat' is there."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Check if 'red' is in ['red', 'blue'].",
+            "expectedAnswer": "colors = ['red', 'blue']\nprint('red' in colors)",
+            "blocks": ["colors = ['red', 'blue']", "\nprint('red' in colors)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "With If",
+            "content": "Use 'in' with if, like if 'x' in list: print('Found')."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Check if 5 is in [5, 6].",
+            "starterCode": "nums = [5, 6]\nif  in nums:\n    print('Yes')",
+            "placeholders": [
+              {"line": 2, "index": 4, "hint": "5"}
+            ],
+            "blocks": ["5", "6", "nums"],
+            "correctAnswers": ["5"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does 'z' in ['x', 'y'] return?",
+            "options": ["True", "False", "Error"],
+            "correct": "False"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Checking Uses",
+            "content": "Checking helps find items before using them."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Check if 'dog' is in ['cat'] and print 'Found' if true.",
+            "expectedAnswer": "pets = ['cat']\nif 'dog' in pets:\n    print('Found')",
+            "blocks": ["pets = ['cat']", "\nif 'dog' in pets:", "\n    print('Found')"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "True or False",
+            "content": "'in' returns True if the item is found, False if not."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Check if 'hi' is in ['hi'].",
+            "starterCode": "words = ['hi']\nprint( in words)",
+            "placeholders": [
+              {"line": 2, "index": 6, "hint": "'hi'"}
+            ],
+            "blocks": ["'hi'", "'bye'", "hi"],
+            "correctAnswers": ["'hi'"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does 1 in [1, 2] return?",
+            "options": ["True", "False", "1"],
+            "correct": "True"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Check Power",
+            "content": "Checking makes sure your program uses the right data."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Check Champion! 🔍",
+            "content": "You’re finding items like a pro! Checking keeps your code accurate!"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Simple While Loops",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is a While Loop?",
+            "content": "A while loop repeats while a condition is true, like while x < 3:."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "When does a while loop run?",
+            "options": ["Condition true", "Condition false", "Once"],
+            "correct": "Condition true"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Writing While",
+            "content": "Use while, like while count < 3: print(count), and change count."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Print 1 to 3 using while.",
+            "expectedAnswer": "count = 1\nwhile count < 4:\n    print(count)\n    count += 1",
+            "blocks": ["count = 1", "\nwhile count < 4:", "\n    print(count)", "\n    count += 1"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Changing Variables",
+            "content": "Update the variable, like count += 1, to stop the loop."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Add 1 to x in the loop.",
+            "starterCode": "x = 1\nwhile x < 3:\n    print(x)\n    ",
+            "placeholders": [
+              {"line": 4, "index": 4, "hint": "x += 1"}
+            ],
+            "blocks": ["x += 1", "x = 1", "x -= 1"],
+            "correctAnswers": ["x += 1"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does x += 1 do?",
+            "options": ["Lowers x", "Raises x", "Resets x"],
+            "correct": "Raises x"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Simple Loops",
+            "content": "Keep while loops simple to avoid mistakes."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Print 0 to 1 using while.",
+            "expectedAnswer": "num = 0\nwhile num < 2:\n    print(num)\n    num += 1",
+            "blocks": ["num = 0\nwhile num < 2:\n    print(num)\n    num += 1"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Loop End",
+            "content": "The loop stops when the condition is false."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Set while to stop at 5.",
+            "starterCode": "x = 1\nwhile x  5:\n    print(x)\n    x += 1",
+            "placeholders": [
+              {"line": 2, "index": 8, "hint": "<"}
+            ],
+            "blocks": ["<", ">", "="],
+            "correctAnswers": ["<"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "When does while x < 4 stop?",
+            "options": ["x is 3", "x is 4", "x is 5"],
+            "correct": "x is 4"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "While Power",
+            "content": "While loops repeat tasks until you want them to stop."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "While Wizard! 🔄",
+            "content": "You’re looping like a pro! While loops make your code repeat easily!"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Comparing Numbers",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Comparing?",
+            "content": "Compare numbers with >, <, ==, like x > y to check if x is bigger."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does == check?",
+            "options": ["Greater", "Equal", "Less"],
+            "correct": "Equal"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Comparisons",
+            "content": "Use in if, like if x > 5: print('Big') to compare."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "If x = 10, print 'Big' if x > 7.",
+            "expectedAnswer": "x = 10\nif x > 7:\n    print('Big')",
+            "blocks": ["x = 10", "\nif x > 7:", "\n    print('Big')"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Equal Check",
+            "content": "Use == to check if numbers are the same, like x == 5."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Check if y == 3.",
+            "starterCode": "y = 3\nif y  3:\n    print('Yes')",
+            "placeholders": [
+              {"line": 2, "index": 5, "hint": "=="}
+            ],
+            "blocks": ["==", ">", "<"],
+            "correctAnswers": ["=="],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does 5 < 3 return?",
+            "options": ["True", "False", "5"],
+            "correct": "False"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Less Than",
+            "content": "Use < to check if a number is smaller, like x < 10."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "If x = 2, print 'Small' if x < 5.",
+            "expectedAnswer": "x = 2\nif x < 5:\n    print('Small')",
+            "blocks": ["x = 2", "\nif x < 5:", "\n    print('Small')"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Comparison Results",
+            "content": "Comparisons give True or False to help make choices."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Check if num > 1.",
+            "starterCode": "num = 4\nif  > 1:\n    print('More')",
+            "placeholders": [
+              {"line": 2, "index": 4, "hint": "num"}
+            ],
+            "blocks": ["num", "1", "More"],
+            "correctAnswers": ["num"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does 7 == 7 return?",
+            "options": ["True", "False", "7"],
+            "correct": "True"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Comparison Power",
+            "content": "Comparing helps your program make smart decisions."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Comparison Captain! ⚖️",
+            "content": "You’re comparing numbers like a pro! Your code is making choices!"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Simple Counting",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Counting?",
+            "content": "Counting tracks how many times something happens, like in a loop."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What is counting for?",
+            "options": ["Printing", "Tracking", "Removing"],
+            "correct": "Tracking"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using a Counter",
+            "content": "Use a variable, like count = 0, and add 1 each time."
+          },
+          {
+            "id": 4,
+            "type": "codeChallenge",
+            "title": "Count from 1 to 3 in a loop.",
+            "expectedAnswer": "count = 0\nfor i in range(3):\n    count += 1\nprint(count)",
+            "blocks": ["count = 0", "\nfor i in range(3):", "\n    count += 1", "\nprint(count)"],
+            "language": "python"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Counting in While",
+            "content": "Use while to count, like while x < 3: x += 1."
+          },
+          {
+            "id": 6,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Count to 2 with while.",
+            "starterCode": "x = 0\nwhile x < 2:\n    x += \nprint(x)",
+            "placeholders": [
+              {"line": 3, "index": 10, "hint": "1"}
+            ],
+            "blocks": ["1", "2", "x"],
+            "correctAnswers": ["1"],
+            "language": "python"
+          },
+          {
+            "id": 7,
+            "type": "quiz",
+            "question": "What does count += 1 do?",
+            "options": ["Lowers count", "Raises count", "Resets count"],
+            "correct": "Raises count"
+          },
+          {
+            "id": 8,
+            "type": "info",
+            "title": "Counting Items",
+            "content": "Count specific items, like how many 5s in a list."
+          },
+          {
+            "id": 9,
+            "type": "codeChallenge",
+            "title": "Count 1s in [1, 2, 1].",
+            "expectedAnswer": "nums = [1, 2, 1]\ncount = 0\nfor n in nums:\n    if n == 1:\n        count += 1\nprint(count)",
+            "blocks": ["nums = [1, 2, 1]\ncount = 0\nfor n in nums:\n    if n == 1:\n        count += 1\nprint(count)"],
+            "language": "python"
+          },
+          {
+            "id": 10,
+            "type": "info",
+            "title": "Saving Counts",
+            "content": "Store the count in a variable to use later."
+          },
+          {
+            "id": 11,
+            "type": "code_fill_in_the_blank",
+            "instruction": "Count loops 2 times.",
+            "starterCode": "count = 0\nfor i in range(2):\n     += 1\nprint(count)",
+            "placeholders": [
+              {"line": 3, "index": 4, "hint": "count"}
+            ],
+            "blocks": ["count", "i", "2"],
+            "correctAnswers": ["count"],
+            "language": "python"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What is the count after looping 4 times?",
+            "options": ["3", "4", "5"],
+            "correct": "4"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Counting Power",
+            "content": "Counting helps track data in your programs."
+          },
+          {
+            "id": 14,
+            "type": "info",
+            "title": "Counting Genius! 🧮",
+            "content": "You’re counting like a pro! Your code is keeping track perfectly!"
+          }
+        ]
+      }
+    ]
+  }

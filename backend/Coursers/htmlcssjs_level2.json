@@ -1,0 +1,1731 @@
+{
+  "level": 2,
+  "language": "htmlcssjs",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Intro to CSS",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is CSS?",
+          "content": "CSS (Cascading Style Sheets) is used to style HTML elements, controlling colors, fonts, layouts, and more to make web pages visually appealing."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Adding CSS to HTML",
+          "content": "CSS can be added using <style> tags in the <head>, external .css files via <link>, or inline with the style attribute, like <p style='color:blue'>."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "What does CSS stand for?",
+          "options": ["Creative Style System", "Cascading Style Sheets", "Colorful Style Script"],
+          "correct": "Cascading Style Sheets"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Make the text 'Hello' red using inline CSS.",
+          "expectedAnswer": "<p style='color:red'>Hello</p>",
+          "blocks": ["<p style='color:red'>Hello</p>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Create a <style> tag to make all <h1> tags blue.",
+          "expectedAnswer": "<style>h1 {color: blue;}</style><h1>Title</h1>",
+          "blocks": ["<style>h1 {color: blue;}</style><h1>Title</h1>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add CSS to make the paragraph text green.",
+          "starterCode": "<style>\np {\n  \n}\n</style>\n<p>Text</p>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "color: green;"}
+          ],
+          "blocks": ["color: green;", "background: green;", "font: green;"],
+          "correctAnswers": ["color: green;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which tag is used for internal CSS?",
+          "options": ["<css>", "<style>", "<link>"],
+          "correct": "<style>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Where does the <link> tag go?",
+          "options": ["<body>", "<head>", "<footer>"],
+          "correct": "<head>"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Link an external stylesheet named 'styles.css' and display 'Styled Page' in a paragraph.",
+          "expectedAnswer": "<!DOCTYPE html><html><head><link rel='stylesheet' href='styles.css'></head><body><p>Styled Page</p></body></html>",
+          "blocks": ["<!DOCTYPE html><html><head><link rel='stylesheet' href='styles.css'></head><body><p>Styled Page</p></body></html>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete the CSS rule to set the background color of <div> to yellow.",
+          "starterCode": "<style>\ndiv {\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "background: yellow;"}
+          ],
+          "blocks": ["background: yellow;", "color: yellow;", "border: yellow;"],
+          "correctAnswers": ["background: yellow;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What does the style attribute do?",
+          "options": ["Links external files", "Adds inline CSS", "Sets HTML structure"],
+          "correct": "Adds inline CSS"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Use inline CSS to make a paragraph font size 20px.",
+          "expectedAnswer": "<p style='font-size:20px'>Big text</p>",
+          "blocks": ["<p style='font-size:20px'>Big text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which CSS property changes text color?",
+          "options": ["font", "color", "background"],
+          "correct": "color"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "CSS Starter Success! 🎨",
+          "content": "You've kicked off your CSS journey with style! 🌟 Your web pages are about to get a lot more colorful. Keep it up! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "CSS Selectors",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Selectors?",
+          "content": "Selectors target HTML elements to apply styles. Types include element (e.g., p), class (.my-class), and ID (#my-id)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Class vs ID Selectors",
+          "content": "Classes (.class) can be reused on multiple elements; IDs (#id) are unique. Example: .blue {color: blue;} or #header {background: grey;}"
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which selector targets a specific element by its unique ID?",
+          "options": [".class", "#id", "element"],
+          "correct": "#id"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Style all <p> tags to have red text using a CSS rule.",
+          "expectedAnswer": "<style>p {color: red;}</style><p>Text</p>",
+          "blocks": ["<style>p {color: red;}</style><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Apply a class 'highlight' to make a div's background yellow.",
+          "expectedAnswer": "<style>.highlight {background: yellow;}</style><div class='highlight'>Box</div>",
+          "blocks": ["<style>.highlight {background: yellow;}</style><div class='highlight'>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete the CSS rule to target an element with ID 'main' and set its font size to 18px.",
+          "starterCode": "<style>\n  \n</style>\n<div id='main'>Content</div>",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "#main {font-size: 18px;}"}
+          ],
+          "blocks": ["#main {font-size: 18px;}", ".main {font-size: 18px;}", "main {font-size: 18px;}"],
+          "correctAnswers": ["#main {font-size: 18px;}"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "How do you select all <div> elements?",
+          "options": [".div", "#div", "div"],
+          "correct": "div"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can a class be applied to multiple elements?",
+          "options": ["Yes", "No", "Only with JavaScript"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Use an ID selector to make a paragraph bold.",
+          "expectedAnswer": "<style>#bold {font-weight: bold;}</style><p id='bold'>Text</p>",
+          "blocks": ["<style>#bold {font-weight: bold;}</style><p id='bold'>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Target all <h2> elements to make their text purple.",
+          "starterCode": "<style>\n  \n</style>\n<h2>Title</h2>",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "h2 {color: purple;}"}
+          ],
+          "blocks": ["h2 {color: purple;}", ".h2 {color: purple;}", "#h2 {color: purple;}"],
+          "correctAnswers": ["h2 {color: purple;}"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Which selector has the highest specificity?",
+          "options": ["Element", "Class", "ID"],
+          "correct": "ID"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Style a class 'box' to have a green border.",
+          "expectedAnswer": "<style>.box {border: 1px solid green;}</style><div class='box'>Content</div>",
+          "blocks": ["<style>.box {border: 1px solid green;}</style><div class='box'>Content</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does a dot (.) indicate in CSS?",
+          "options": ["ID selector", "Class selector", "Element selector"],
+          "correct": "Class selector"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Selector Superstar! 🎯",
+          "content": "You've nailed CSS selectors! Your ability to target and style elements is spot-on. Keep styling with precision! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "CSS Colors and Backgrounds",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "CSS Color Values",
+          "content": "Colors in CSS can be set using names (red), hex (#FF0000), RGB (rgb(255,0,0)), or HSL (hsl(0,100%,50%))."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Background Properties",
+          "content": "Use background-color for solid colors, background-image for images, and background-repeat to control image tiling."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which is a valid CSS color format?",
+          "options": ["#FFG000", "rgb(255,0,0)", "bluee"],
+          "correct": "rgb(255,0,0)"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Set a paragraph's text color to hex #00FF00.",
+          "expectedAnswer": "<p style='color:#00FF00'>Text</p>",
+          "blocks": ["<p style='color:#00FF00'>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Give a div a blue background using a CSS rule.",
+          "expectedAnswer": "<style>div {background-color: blue;}</style><div>Box</div>",
+          "blocks": ["<style>div {background-color: blue;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set the background color of a section to RGB (0, 255, 0).",
+          "starterCode": "<style>\nsection {\n  \n}\n</style>\n<section>Content</section>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "background-color: rgb(0,255,0);"}
+          ],
+          "blocks": ["background-color: rgb(0,255,0);", "color: rgb(0,255,0);", "border: rgb(0,255,0);"],
+          "correctAnswers": ["background-color: rgb(0,255,0);"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does background-repeat do?",
+          "options": ["Changes text color", "Controls image tiling", "Sets border style"],
+          "correct": "Controls image tiling"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which color format uses percentages?",
+          "options": ["Hex", "RGB", "HSL"],
+          "correct": "HSL"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Style a header with a black background and white text.",
+          "expectedAnswer": "<style>header {background-color: black; color: white;}</style><header>Title</header>",
+          "blocks": ["<style>header {background-color: black; color: white;}</style><header>Title</header>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set a paragraph's text color to HSL (120, 100%, 50%).",
+          "starterCode": "<style>\np {\n  \n}\n</style>\n<p>Text</p>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "color: hsl(120,100%,50%);"}
+          ],
+          "blocks": ["color: hsl(120,100%,50%);", "background: hsl(120,100%,50%);", "border: hsl(120,100%,50%);"],
+          "correctAnswers": ["color: hsl(120,100%,50%);"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What is #FFFFFF in CSS?",
+          "options": ["Black", "White", "Red"],
+          "correct": "White"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Create a div with a grey background using RGB.",
+          "expectedAnswer": "<style>div {background-color: rgb(128,128,128);}</style><div>Box</div>",
+          "blocks": ["<style>div {background-color: rgb(128,128,128);}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which property sets a solid color background?",
+          "options": ["background-color", "background-image", "color"],
+          "correct": "background-color"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Color Connoisseur! 🌈",
+          "content": "Your mastery of CSS colors and backgrounds is vibrant! Your pages are now bursting with style. Keep painting the web! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "CSS Fonts and Text",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Font Properties",
+          "content": "CSS font properties include font-family (e.g., Arial), font-size (e.g., 16px), and font-weight (e.g., bold or 700)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Text Properties",
+          "content": "Text properties like text-align (center, left), text-decoration (underline), and line-height control text appearance and spacing."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which property sets the font type?",
+          "options": ["font-style", "font-family", "font-weight"],
+          "correct": "font-family"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Set a paragraph's font to Arial with size 14px.",
+          "expectedAnswer": "<style>p {font-family: Arial; font-size: 14px;}</style><p>Text</p>",
+          "blocks": ["<style>p {font-family: Arial; font-size: 14px;}</style><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Center-align a heading's text.",
+          "expectedAnswer": "<style>h1 {text-align: center;}</style><h1>Title</h1>",
+          "blocks": ["<style>h1 {text-align: center;}</style><h1>Title</h1>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a text-decoration to underline a span.",
+          "starterCode": "<style>\nspan {\n  \n}\n</style>\n<span>Text</span>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "text-decoration: underline;"}
+          ],
+          "blocks": ["text-decoration: underline;", "text-align: underline;", "font: underline;"],
+          "correctAnswers": ["text-decoration: underline;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does font-weight control?",
+          "options": ["Font size", "Text alignment", "Text thickness"],
+          "correct": "Text thickness"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which value centers text?",
+          "options": ["left", "center", "justify"],
+          "correct": "center"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Set a div's font to bold with 1.5 line height.",
+          "expectedAnswer": "<style>div {font-weight: bold; line-height: 1.5;}</style><div>Text</div>",
+          "blocks": ["<style>div {font-weight: bold; line-height: 1.5;}</style><div>Text</div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set a paragraph's font size to 18px.",
+          "starterCode": "<style>\np {\n  \n}\n</style>\n<p>Text</p>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "font-size: 18px;"}
+          ],
+          "blocks": ["font-size: 18px;", "font: 18px;", "size: 18px;"],
+          "correctAnswers": ["font-size: 18px;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Which property adds a strikethrough?",
+          "options": ["text-align", "text-decoration", "font-style"],
+          "correct": "text-decoration"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Style a span with italic text and Verdana font.",
+          "expectedAnswer": "<style>span {font-family: Verdana; font-style: italic;}</style><span>Text</span>",
+          "blocks": ["<style>span {font-family: Verdana; font-style: italic;}</style><span>Text</span>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What unit is commonly used for font-size?",
+          "options": ["px", "cm", "kg"],
+          "correct": "px"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Typography Titan! ✍️",
+          "content": "Your text styling skills are top-notch! From fonts to alignment, your pages look polished and professional. Keep it up! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "CSS Box Model",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Understanding the Box Model",
+          "content": "Every HTML element is a box with content, padding (inner space), border, and margin (outer space)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Box Model Properties",
+          "content": "Use padding (e.g., padding: 10px), border (e.g., border: 1px solid black), and margin (e.g., margin: 20px) to control spacing."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which property adds space outside an element?",
+          "options": ["padding", "margin", "border"],
+          "correct": "margin"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Add 10px padding to a div.",
+          "expectedAnswer": "<style>div {padding: 10px;}</style><div>Box</div>",
+          "blocks": ["<style>div {padding: 10px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Give a paragraph a 2px solid black border.",
+          "expectedAnswer": "<style>p {border: 2px solid black;}</style><p>Text</p>",
+          "blocks": ["<style>p {border: 2px solid black;}</style><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add 15px margin to all sides of a section.",
+          "starterCode": "<style>\nsection {\n  \n}\n</style>\n<section>Content</section>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "margin: 15px;"}
+          ],
+          "blocks": ["margin: 15px;", "padding: 15px;", "border: 15px;"],
+          "correctAnswers": ["margin: 15px;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does padding affect?",
+          "options": ["Space outside the border", "Space inside the border", "Border thickness"],
+          "correct": "Space inside the border"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which property defines a box’s edge?",
+          "options": ["margin", "padding", "border"],
+          "correct": "border"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Style a div with 5px padding and 10px margin.",
+          "expectedAnswer": "<style>div {padding: 5px; margin: 10px;}</style><div>Box</div>",
+          "blocks": ["<style>div {padding: 5px; margin: 10px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a 3px dashed red border to a paragraph.",
+          "starterCode": "<style>\np {\n  \n}\n</style>\n<p>Text</p>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "border: 3px dashed red;"}
+          ],
+          "blocks": ["border: 3px dashed red;", "border: 3px solid red;", "margin: 3px dashed red;"],
+          "correctAnswers": ["border: 3px dashed red;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What happens if margin is set to auto?",
+          "options": ["Centers the element", "Removes margin", "Adds default spacing"],
+          "correct": "Centers the element"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Center a div with margin and add 8px padding.",
+          "expectedAnswer": "<style>div {margin: auto; padding: 8px;}</style><div>Box</div>",
+          "blocks": ["<style>div {margin: auto; padding: 8px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which box model layer is closest to content?",
+          "options": ["Margin", "Padding", "Border"],
+          "correct": "Padding"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Box Model Boss! 📏",
+          "content": "You've conquered the CSS box model! Your layouts are now perfectly spaced and structured. Keep building awesome designs! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "CSS Layout with Float",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Float?",
+          "content": "The float property (e.g., float: left) moves elements to the left or right, allowing text and inline elements to wrap around them."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Clearing Floats",
+          "content": "Use clear: both to prevent elements from wrapping around floated elements. Often used with a clearfix on parent containers."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "What does float: right do?",
+          "options": ["Aligns text right", "Moves element to the right", "Centers the element"],
+          "correct": "Moves element to the right"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Float an image to the left of a paragraph.",
+          "expectedAnswer": "<style>img {float: left;}</style><img src='photo.jpg' alt='Photo'><p>Text</p>",
+          "blocks": ["<style>img {float: left;}</style><img src='photo.jpg' alt='Photo'><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Float two divs side by side.",
+          "expectedAnswer": "<style>.box {float: left;}</style><div class='box'>Box1</div><div class='box'>Box2</div>",
+          "blocks": ["<style>.box {float: left;}</style><div class='box'>Box1</div><div class='box'>Box2</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Clear floats after two floated divs.",
+          "starterCode": "<style>\n.box {float: left;}\n.clear { }\n</style>\n<div class='box'>Box1</div>\n<div class='box'>Box2</div>\n<div class='clear'></div>",
+          "placeholders": [
+            {"line": 3, "index": 8, "hint": "clear: both;"}
+          ],
+          "blocks": ["clear: both;", "float: none;", "clear: left;"],
+          "correctAnswers": ["clear: both;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does clear: both do?",
+          "options": ["Removes all styles", "Stops wrapping on both sides", "Floats an element"],
+          "correct": "Stops wrapping on both sides"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Why use a clearfix?",
+          "options": ["To center elements", "To fix collapsed parent containers", "To add borders"],
+          "correct": "To fix collapsed parent containers"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Float an image right and clear it afterward.",
+          "expectedAnswer": "<style>img {float: right;}</style><img src='photo.jpg' alt='Photo'><p style='clear:both'>Text</p>",
+          "blocks": ["<style>img {float: right;}</style><img src='photo.jpg' alt='Photo'><p style='clear:both'>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Float a div to the right.",
+          "starterCode": "<style>\ndiv {\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "float: right;"}
+          ],
+          "blocks": ["float: right;", "float: left;", "clear: right;"],
+          "correctAnswers": ["float: right;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What happens to non-floated content next to a floated element?",
+          "options": ["It disappears", "It wraps around", "It moves above"],
+          "correct": "It wraps around"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Create a floated layout with three equal-width boxes.",
+          "expectedAnswer": "<style>.box {float: left; width: 33%;}</style><div class='box'>Box1</div><div class='box'>Box2</div><div class='box'>Box3</div>",
+          "blocks": ["<style>.box {float: left; width: 33%;}</style><div class='box'>Box1</div><div class='box'>Box2</div><div class='box'>Box3</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which property is often used with float to set size?",
+          "options": ["height", "width", "margin"],
+          "correct": "width"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Float Phenom! 🌊",
+          "content": "You've mastered floating layouts! Your designs are flowing beautifully. Keep creating stunning web pages! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "CSS Positioning",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Position Property",
+          "content": "The position property (static, relative, absolute, fixed, sticky) controls element placement. Use top, left, etc., to adjust position."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Relative vs Absolute",
+          "content": "Relative moves elements from their normal position; absolute positions them relative to the nearest positioned ancestor."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which position value stays in the document flow?",
+          "options": ["absolute", "fixed", "relative"],
+          "correct": "relative"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Position a div 20px from the top relatively.",
+          "expectedAnswer": "<style>div {position: relative; top: 20px;}</style><div>Box</div>",
+          "blocks": ["<style>div {position: relative; top: 20px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Place a div 10px from the left using absolute positioning.",
+          "expectedAnswer": "<style>div {position: absolute; left: 10px;}</style><div>Box</div>",
+          "blocks": ["<style>div {position: absolute; left: 10px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Fix a header to the top of the page.",
+          "starterCode": "<style>\nheader {\n  \n}\n</style>\n<header>Title</header>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "position: fixed; top: 0;"}
+          ],
+          "blocks": ["position: fixed; top: 0;", "position: absolute; top: 0;", "position: relative; top: 0;"],
+          "correctAnswers": ["position: fixed; top: 0;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does position: fixed do?",
+          "options": ["Sticks to viewport", "Moves with scroll", "Stays in flow"],
+          "correct": "Sticks to viewport"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which property is used with position to move elements?",
+          "options": ["margin", "top", "float"],
+          "correct": "top"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Position a div 50px from the bottom using absolute.",
+          "expectedAnswer": "<style>div {position: absolute; bottom: 50px;}</style><div>Box</div>",
+          "blocks": ["<style>div {position: absolute; bottom: 50px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Position a span relatively 5px to the right.",
+          "starterCode": "<style>\nspan {\n  \n}\n</style>\n<span>Text</span>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "position: relative; right: 5px;"}
+          ],
+          "blocks": ["position: relative; right: 5px;", "position: absolute; right: 5px;", "float: right;"],
+          "correctAnswers": ["position: relative; right: 5px;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Where is an absolute element positioned if no ancestor is positioned?",
+          "options": ["Relative to body", "Relative to parent", "Stays in place"],
+          "correct": "Relative to body"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Create a sticky navigation bar.",
+          "expectedAnswer": "<style>nav {position: sticky; top: 0;}</style><nav>Menu</nav>",
+          "blocks": ["<style>nav {position: sticky; top: 0;}</style><nav>Menu</nav>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does position: sticky require?",
+          "options": ["A top/bottom value", "A parent with overflow", "A fixed width"],
+          "correct": "A top/bottom value"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Positioning Pro! 📍",
+          "content": "You've mastered CSS positioning! Your elements are now exactly where you want them. Keep crafting precise layouts! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "CSS Display Property",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Display?",
+          "content": "The display property controls element layout: block (full width), inline (flows with text), inline-block, or none (hides element)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Common Display Values",
+          "content": "<div> is block, <span> is inline. Use inline-block for inline elements with width/height, or none to hide elements."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which display value hides an element?",
+          "options": ["block", "inline", "none"],
+          "correct": "none"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Make a span behave like a block element.",
+          "expectedAnswer": "<style>span {display: block;}</style><span>Text</span>",
+          "blocks": ["<style>span {display: block;}</style><span>Text</span>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Hide a div using display.",
+          "expectedAnswer": "<style>div {display: none;}</style><div>Box</div>",
+          "blocks": ["<style>div {display: none;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set a div to inline-block.",
+          "starterCode": "<style>\ndiv {\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "display: inline-block;"}
+          ],
+          "blocks": ["display: inline-block;", "display: block;", "display: inline;"],
+          "correctAnswers": ["display: inline-block;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which display allows width and height?",
+          "options": ["inline", "inline-block", "none"],
+          "correct": "inline-block"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is the default display for <p>?",
+          "options": ["inline", "block", "inline-block"],
+          "correct": "block"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Make two divs inline with each other.",
+          "expectedAnswer": "<style>div {display: inline;}</style><div>Box1</div><div>Box2</div>",
+          "blocks": ["<style>div {display: inline;}</style><div>Box1</div><div>Box2</div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Hide a paragraph using display.",
+          "starterCode": "<style>\np {\n  \n}\n</style>\n<p>Text</p>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "display: none;"}
+          ],
+          "blocks": ["display: none;", "visibility: hidden;", "display: block;"],
+          "correctAnswers": ["display: none;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What does inline-block allow that inline doesn’t?",
+          "options": ["Line breaks", "Width/height", "Text alignment"],
+          "correct": "Width/height"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Make a div inline-block with 100px width.",
+          "expectedAnswer": "<style>div {display: inline-block; width: 100px;}</style><div>Box</div>",
+          "blocks": ["<style>div {display: inline-block; width: 100px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which elements are inline by default?",
+          "options": ["<div>, <p>", "<span>, <a>", "<section>, <article>"],
+          "correct": "<span>, <a>"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Display Dynamo! 🖼️",
+          "content": "You've unlocked the power of CSS display! Your layouts are now flexible and dynamic. Keep shaping the web! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "CSS Flexbox Basics",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Flexbox?",
+          "content": "Flexbox is a CSS layout model for aligning and distributing space among items in a container using display: flex."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Flex Container Properties",
+          "content": "Key properties: flex-direction (row/column), justify-content (space items), align-items (align on cross-axis)."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which property enables Flexbox?",
+          "options": ["flex", "display: flex", "flexbox"],
+          "correct": "display: flex"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a flex container with three divs in a row.",
+          "expectedAnswer": "<style>.container {display: flex;}</style><div class='container'><div>Box1</div><div>Box2</div><div>Box3</div></div>",
+          "blocks": ["<style>.container {display: flex;}</style><div class='container'><div>Box1</div><div>Box2</div><div>Box3</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Center items in a flex container horizontally.",
+          "expectedAnswer": "<style>.container {display: flex; justify-content: center;}</style><div class='container'><div>Box</div></div>",
+          "blocks": ["<style>.container {display: flex; justify-content: center;}</style><div class='container'><div>Box</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set flex-direction to column for a flex container.",
+          "starterCode": "<style>\n.container {\n  display: flex;\n  \n}\n</style>\n<div class='container'><div>Box1</div><div>Box2</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "flex-direction: column;"}
+          ],
+          "blocks": ["flex-direction: column;", "flex-direction: row;", "direction: column;"],
+          "correctAnswers": ["flex-direction: column;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does justify-content do?",
+          "options": ["Aligns items vertically", "Spaces items on main axis", "Sets flex direction"],
+          "correct": "Spaces items on main axis"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which property aligns items vertically in a row flexbox?",
+          "options": ["align-items", "justify-content", "flex-direction"],
+          "correct": "align-items"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Space flex items evenly in a container.",
+          "expectedAnswer": "<style>.container {display: flex; justify-content: space-between;}</style><div class='container'><div>Box1</div><div>Box2</div></div>",
+          "blocks": ["<style>.container {display: flex; justify-content: space-between;}</style><div class='container'><div>Box1</div><div>Box2</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Center items vertically in a flex container.",
+          "starterCode": "<style>\n.container {\n  display: flex;\n  \n}\n</style>\n<div class='container'><div>Box</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "align-items: center;"}
+          ],
+          "blocks": ["align-items: center;", "justify-content: center;", "align: center;"],
+          "correctAnswers": ["align-items: center;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What is the default flex-direction?",
+          "options": ["column", "row", "reverse-row"],
+          "correct": "row"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Create a column flexbox with centered items.",
+          "expectedAnswer": "<style>.container {display: flex; flex-direction: column; align-items: center;}</style><div class='container'><div>Box1</div><div>Box2</div></div>",
+          "blocks": ["<style>.container {display: flex; flex-direction: column; align-items: center;}</style><div class='container'><div>Box1</div><div>Box2</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which axis does justify-content affect?",
+          "options": ["Cross axis", "Main axis", "Both axes"],
+          "correct": "Main axis"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Flexbox Fanatic! 📐",
+          "content": "You've got Flexbox down! Your layouts are now dynamic and responsive. Keep flexing those CSS skills! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "CSS Flexbox Advanced",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Flex Item Properties",
+          "content": "Flex items can use flex-grow (expand to fill space), flex-shrink (shrink if needed), and flex-basis (default size)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Flex Shorthand",
+          "content": "The flex property combines grow, shrink, and basis, e.g., flex: 1 1 auto. Order property changes item sequence."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "What does flex-grow control?",
+          "options": ["Item alignment", "Item expansion", "Item order"],
+          "correct": "Item expansion"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Make a flex item grow to fill available space.",
+          "expectedAnswer": "<style>.container {display: flex;} .item {flex-grow: 1;}</style><div class='container'><div class='item'>Box</div></div>",
+          "blocks": ["<style>.container {display: flex;} .item {flex-grow: 1;}</style><div class='container'><div class='item'>Box</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Set a flex item’s basis to 100px.",
+          "expectedAnswer": "<style>.container {display: flex;} .item {flex-basis: 100px;}</style><div class='container'><div class='item'>Box</div></div>",
+          "blocks": ["<style>.container {display: flex;} .item {flex-basis: 100px;}</style><div class='container'><div class='item'>Box</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Use flex shorthand to set grow to 1 and basis to 50px.",
+          "starterCode": "<style>\n.container {display: flex;}\n.item {\n  \n}\n</style>\n<div class='container'><div class='item'>Box</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "flex: 1 1 50px;"}
+          ],
+          "blocks": ["flex: 1 1 50px;", "flex: 1 50px;", "flex-grow: 1;"],
+          "correctAnswers": ["flex: 1 1 50px;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does flex-shrink control?",
+          "options": ["Item expansion", "Item shrinking", "Item alignment"],
+          "correct": "Item shrinking"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does order: 1 do?",
+          "options": ["Moves item to start", "Changes item sequence", "Sets item size"],
+          "correct": "Changes item sequence"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Reorder a flex item to appear last.",
+          "expectedAnswer": "<style>.container {display: flex;} .last {order: 1;}</style><div class='container'><div>Box1</div><div class='last'>Box2</div></div>",
+          "blocks": ["<style>.container {display: flex;} .last {order: 1;}</style><div class='container'><div>Box1</div><div class='last'>Box2</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Prevent a flex item from shrinking.",
+          "starterCode": "<style>\n.container {display: flex;}\n.item {\n  \n}\n</style>\n<div class='container'><div class='item'>Box</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "flex-shrink: 0;"}
+          ],
+          "blocks": ["flex-shrink: 0;", "flex-grow: 0;", "flex: 0;"],
+          "correctAnswers": ["flex-shrink: 0;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What is the default flex-basis?",
+          "options": ["0", "auto", "100%"],
+          "correct": "auto"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Make two flex items grow equally.",
+          "expectedAnswer": "<style>.container {display: flex;} .item {flex: 1;}</style><div class='container'><div class='item'>Box1</div><div class='item'>Box2</div></div>",
+          "blocks": ["<style>.container {display: flex;} .item {flex: 1;}</style><div class='container'><div class='item'>Box1</div><div class='item'>Box2</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does flex: 1 mean?",
+          "options": ["Grow only", "Grow and shrink equally", "Fixed size"],
+          "correct": "Grow and shrink equally"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Flexbox Master! 🏆",
+          "content": "You've unlocked advanced Flexbox skills! Your layouts are now super flexible and precise. Keep pushing your CSS limits! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "CSS Grid Basics",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is CSS Grid?",
+          "content": "CSS Grid is a 2D layout system for creating grid-based layouts using display: grid and defining rows/columns."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Grid Container Properties",
+          "content": "Use grid-template-columns and grid-template-rows to define the grid structure, e.g., grid-template-columns: 1fr 1fr."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which property enables CSS Grid?",
+          "options": ["grid", "display: grid", "grid-template"],
+          "correct": "display: grid"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a grid with two equal columns.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-columns: 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-columns: 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Create a grid with three equal rows.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-rows: 1fr 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div><div>Box3</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-rows: 1fr 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div><div>Box3</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set a grid with three equal columns.",
+          "starterCode": "<style>\n.grid {\n  display: grid;\n  \n}\n</style>\n<div class='grid'><div>Box1</div><div>Box2</div><div>Box3</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "grid-template-columns: 1fr 1fr 1fr;"}
+          ],
+          "blocks": ["grid-template-columns: 1fr 1fr 1fr;", "grid-template-rows: 1fr 1fr 1fr;", "grid-columns: 1fr 1fr 1fr;"],
+          "correctAnswers": ["grid-template-columns: 1fr 1fr 1fr;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does 1fr mean in CSS Grid?",
+          "options": ["1 pixel", "1 fraction of available space", "1 fixed unit"],
+          "correct": "1 fraction of available space"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which property defines grid rows?",
+          "options": ["grid-template-columns", "grid-template-rows", "grid-row"],
+          "correct": "grid-template-rows"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create a 2x2 grid layout.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div><div>Box3</div><div>Box4</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div><div>Box3</div><div>Box4</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set a grid with two rows of 100px height.",
+          "starterCode": "<style>\n.grid {\n  display: grid;\n  \n}\n</style>\n<div class='grid'><div>Box1</div><div>Box2</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "grid-template-rows: 100px 100px;"}
+          ],
+          "blocks": ["grid-template-rows: 100px 100px;", "grid-template-columns: 100px 100px;", "grid-rows: 100px 100px;"],
+          "correctAnswers": ["grid-template-rows: 100px 100px;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What is the default placement of grid items?",
+          "options": ["Centered", "Top-left", "Bottom-right"],
+          "correct": "Top-left"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Create a grid with one 200px column and two equal columns.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-columns: 200px 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div><div>Box3</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-columns: 200px 1fr 1fr;}</style><div class='grid'><div>Box1</div><div>Box2</div><div>Box3</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Can CSS Grid create overlapping layouts?",
+          "options": ["Yes", "No", "Only with Flexbox"],
+          "correct": "Yes"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Grid Guru! 🏁",
+          "content": "You've mastered CSS Grid basics! Your 2D layouts are now structured and precise. Keep building grid-tastic designs! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "CSS Grid Advanced",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Grid Item Placement",
+          "content": "Place items using grid-column and grid-row (e.g., grid-column: 1 / 3 spans two columns) or named areas with grid-template-areas."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Grid Gaps",
+          "content": "Use gap, row-gap, or column-gap to add spacing between grid items, e.g., gap: 10px."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which property spans an item across columns?",
+          "options": ["grid-column", "grid-row", "grid-area"],
+          "correct": "grid-column"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Make a grid item span two columns.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-columns: 1fr 1fr;} .item {grid-column: 1 / 3;}</style><div class='grid'><div class='item'>Box</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-columns: 1fr 1fr;} .item {grid-column: 1 / 3;}</style><div class='grid'><div class='item'>Box</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Add 10px gaps between grid items.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-columns: 1fr 1fr; gap: 10px;}</style><div class='grid'><div>Box1</div><div>Box2</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-columns: 1fr 1fr; gap: 10px;}</style><div class='grid'><div>Box1</div><div>Box2</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Make a grid item span two rows.",
+          "starterCode": "<style>\n.grid {display: grid; grid-template-rows: 1fr 1fr;}\n.item {\n  \n}\n</style>\n<div class='grid'><div class='item'>Box</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "grid-row: 1 / 3;"}
+          ],
+          "blocks": ["grid-row: 1 / 3;", "grid-column: 1 / 3;", "grid-area: 1 / 3;"],
+          "correctAnswers": ["grid-row: 1 / 3;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does gap: 20px do?",
+          "options": ["Adds margin", "Spaces grid items", "Sets item size"],
+          "correct": "Spaces grid items"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does grid-template-areas define?",
+          "options": ["Item sizes", "Named grid regions", "Grid gaps"],
+          "correct": "Named grid regions"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create a grid with named areas for header and content.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-areas: 'header' 'content';} .header {grid-area: header;} .content {grid-area: content;}</style><div class='grid'><div class='header'>Header</div><div class='content'>Content</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-areas: 'header' 'content';} .header {grid-area: header;} .content {grid-area: content;}</style><div class='grid'><div class='header'>Header</div><div class='content'>Content</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add 15px row gaps to a grid.",
+          "starterCode": "<style>\n.grid {\n  display: grid;\n  \n}\n</style>\n<div class='grid'><div>Box1</div><div>Box2</div></div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "row-gap: 15px;"}
+          ],
+          "blocks": ["row-gap: 15px;", "column-gap: 15px;", "gap: 15px;"],
+          "correctAnswers": ["row-gap: 15px;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What does grid-column: 2 / 4 mean?",
+          "options": ["Spans 2 columns", "Spans columns 2 to 3", "Sets column width"],
+          "correct": "Spans columns 2 to 3"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Place a grid item in the second column.",
+          "expectedAnswer": "<style>.grid {display: grid; grid-template-columns: 1fr 1fr;} .item {grid-column: 2;}</style><div class='grid'><div class='item'>Box</div></div>",
+          "blocks": ["<style>.grid {display: grid; grid-template-columns: 1fr 1fr;} .item {grid-column: 2;}</style><div class='grid'><div class='item'>Box</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Can grid items overlap?",
+          "options": ["Yes, with positioning", "No", "Only with Flexbox"],
+          "correct": "Yes, with positioning"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Grid Genius! 🧩",
+          "content": "You've mastered advanced CSS Grid! Your layouts are now complex and polished. Keep creating grid masterpieces! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "CSS Transitions",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Transitions?",
+          "content": "Transitions smoothly animate CSS property changes, like color or size, using transition-property, transition-duration, etc."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Transition Properties",
+          "content": "Key properties: transition-property (e.g., background), transition-duration (e.g., 0.5s), transition-timing-function (e.g., ease)."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which property sets transition speed?",
+          "options": ["transition-property", "transition-duration", "transition-delay"],
+          "correct": "transition-duration"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Transition a div’s background color over 1 second.",
+          "expectedAnswer": "<style>div {background: blue; transition: background 1s;} div:hover {background: red;}</style><div>Box</div>",
+          "blocks": ["<style>div {background: blue; transition: background 1s;} div:hover {background: red;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Animate a div’s width change over 0.3 seconds.",
+          "expectedAnswer": "<style>div {width: 100px; transition: width 0.3s;} div:hover {width: 200px;}</style><div>Box</div>",
+          "blocks": ["<style>div {width: 100px; transition: width 0.3s;} div:hover {width: 200px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a 0.5s transition for opacity changes.",
+          "starterCode": "<style>\ndiv {\n  opacity: 1;\n  \n}\ndiv:hover {opacity: 0.5;}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "transition: opacity 0.5s;"}
+          ],
+          "blocks": ["transition: opacity 0.5s;", "transition: opacity 0.5;", "opacity: 0.5s;"],
+          "correctAnswers": ["transition: opacity 0.5s;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does transition-timing-function control?",
+          "options": ["Animation speed", "Animation easing", "Animation delay"],
+          "correct": "Animation easing"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which value starts a transition slowly?",
+          "options": ["linear", "ease-in", "ease-out"],
+          "correct": "ease-in"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Transition a div’s height with ease-out timing.",
+          "expectedAnswer": "<style>div {height: 100px; transition: height 0.5s ease-out;} div:hover {height: 150px;}</style><div>Box</div>",
+          "blocks": ["<style>div {height: 100px; transition: height 0.5s ease-out;} div:hover {height: 150px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a 0.2s delay to a color transition.",
+          "starterCode": "<style>\ndiv {\n  color: black;\n  \n}\ndiv:hover {color: blue;}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "transition: color 0.5s 0.2s;"}
+          ],
+          "blocks": ["transition: color 0.5s 0.2s;", "transition: color 0.2s;", "transition-delay: 0.2s;"],
+          "correctAnswers": ["transition: color 0.5s 0.2s;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Can multiple properties be transitioned?",
+          "options": ["Yes", "No", "Only with JavaScript"],
+          "correct": "Yes"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Transition both color and font-size with a 0.4s duration.",
+          "expectedAnswer": "<style>div {color: black; font-size: 16px; transition: color 0.4s, font-size 0.4s;} div:hover {color: green; font-size: 24px;}</style><div>Box</div>",
+          "blocks": ["<style>div {color: black; font-size: 16px; transition: color 0.4s, font-size 0.4s;} div:hover {color: green; font-size: 24px;}</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which pseudo-class triggers transitions on hover?",
+          "options": [":hover", ":active", ":focus"],
+          "correct": ":hover"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Transition Trailblazer! 🌟",
+          "content": "You've mastered CSS transitions! Your web pages now have smooth, engaging animations. Keep bringing your designs to life! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "CSS Pseudo-Classes",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Pseudo-Classes?",
+          "content": "Pseudo-classes like :hover, :active, and :first-child style elements based on user interaction or position, e.g., a:hover {color: red;}"
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Common Pseudo-Classes",
+          "content": ":hover (mouse over), :active (clicked), :nth-child(n) (selects specific children), and :first-child target specific states or positions."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which pseudo-class styles an element when clicked?",
+          "options": [":hover", ":active", ":focus"],
+          "correct": ":active"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Change a link’s color to blue on hover.",
+          "expectedAnswer": "<style>a:hover {color: blue;}</style><a href='#'>Link</a>",
+          "blocks": ["<style>a:hover {color: blue;}</style><a href='#'>Link</a>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Style the first list item in a list to be bold.",
+          "expectedAnswer": "<style>li:first-child {font-weight: bold;}</style><ul><li>Item1</li><li>Item2</li></ul>",
+          "blocks": ["<style>li:first-child {font-weight: bold;}</style><ul><li>Item1</li><li>Item2</li></ul>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Style every second paragraph with a grey background.",
+          "starterCode": "<style>\np:nth-child(2n) {\n  \n}\n</style>\n<p>Para1</p>\n<p>Para2</p>\n<p>Para3</p>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "background: grey;"}
+          ],
+          "blocks": ["background: grey;", "color: grey;", "border: grey;"],
+          "correctAnswers": ["background: grey;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does :first-child target?",
+          "options": ["Last element", "First element", "All children"],
+          "correct": "First element"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which pseudo-class selects every third element?",
+          "options": [":nth-child(3)", ":nth-child(3n)", ":third-child"],
+          "correct": ":nth-child(3n)"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Make a button red when active.",
+          "expectedAnswer": "<style>button:active {background: red;}</style><button>Click</button>",
+          "blocks": ["<style>button:active {background: red;}</style><button>Click</button>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Style the last list item with italic text.",
+          "starterCode": "<style>\nli:last-child {\n  \n}\n</style>\n<ul><li>Item1</li><li>Item2</li></ul>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "font-style: italic;"}
+          ],
+          "blocks": ["font-style: italic;", "font: italic;", "text-style: italic;"],
+          "correctAnswers": ["font-style: italic;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What does :hover require?",
+          "options": ["A click", "Mouse over", "Keyboard focus"],
+          "correct": "Mouse over"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Style every odd list item with a yellow background.",
+          "expectedAnswer": "<style>li:nth-child(odd) {background: yellow;}</style><ul><li>Item1</li><li>Item2</li><li>Item3</li></ul>",
+          "blocks": ["<style>li:nth-child(odd) {background: yellow;}</style><ul><li>Item1</li><li>Item2</li><li>Item3</li></ul>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Can pseudo-classes be combined?",
+          "options": ["Yes", "No", "Only with pseudo-elements"],
+          "correct": "Yes"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Pseudo-Class Pro! 🖱️",
+          "content": "You've conquered CSS pseudo-classes! Your interactive and dynamic styles are top-notch. Keep making the web engaging! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "CSS Pseudo-Elements",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Pseudo-Elements?",
+          "content": "Pseudo-elements like ::before and ::after style specific parts of an element or add content, e.g., p::before {content: '★';}"
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Common Pseudo-Elements",
+          "content": "::before adds content before an element, ::after adds after, ::first-line styles the first line of text, and ::first-letter styles the first letter."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which pseudo-element adds content after an element?",
+          "options": ["::before", "::after", "::first-line"],
+          "correct": "::after"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Add a star before a paragraph using ::before.",
+          "expectedAnswer": "<style>p::before {content: '★ ';}</style><p>Text</p>",
+          "blocks": ["<style>p::before {content: '★ ';}</style><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Style the first letter of a paragraph to be red.",
+          "expectedAnswer": "<style>p::first-letter {color: red;}</style><p>Text</p>",
+          "blocks": ["<style>p::first-letter {color: red;}</style><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add an arrow after a link using ::after.",
+          "starterCode": "<style>\na::after {\n  \n}\n</style>\n<a href='#'>Link</a>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "content: ' →';"}
+          ],
+          "blocks": ["content: ' →';", "content: '← ';", "text: ' →';"],
+          "correctAnswers": ["content: ' →';"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does ::first-line target?",
+          "options": ["First word", "First line of text", "First element"],
+          "correct": "First line of text"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which property is required for ::before/::after?",
+          "options": ["color", "content", "display"],
+          "correct": "content"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Style the first line of a paragraph to be bold.",
+          "expectedAnswer": "<style>p::first-line {font-weight: bold;}</style><p>Text line one<br>Line two</p>",
+          "blocks": ["<style>p::first-line {font-weight: bold;}</style><p>Text line one<br>Line two</p>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Make the first letter of a heading twice as large.",
+          "starterCode": "<style>\nh1::first-letter {\n  \n}\n</style>\n<h1>Title</h1>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "font-size: 2em;"}
+          ],
+          "blocks": ["font-size: 2em;", "font: 2em;", "size: 2em;"],
+          "correctAnswers": ["font-size: 2em;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Can ::before add images?",
+          "options": ["Yes, with content: url()", "No", "Only with background"],
+          "correct": "Yes, with content: url()"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Add a bullet point before each list item.",
+          "expectedAnswer": "<style>li::before {content: '• ';}</style><ul><li>Item1</li><li>Item2</li></ul>",
+          "blocks": ["<style>li::before {content: '• ';}</style><ul><li>Item1</li><li>Item2</li></ul>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Which pseudo-element styles part of an element?",
+          "options": ["::hover", "::first-letter", ":first-child"],
+          "correct": "::first-letter"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Pseudo-Element Phenom! ✨",
+          "content": "You've mastered CSS pseudo-elements! Your ability to style specific parts and add content is next-level. Keep creating stunning designs! 🚀"
+        }
+      ]
+    }
+  ]
+}

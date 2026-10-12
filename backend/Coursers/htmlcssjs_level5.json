@@ -1,0 +1,1733 @@
+{
+  "level": 5,
+  "language": "htmlcssjs",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Advanced CSS Variables",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Introduction to CSS Variables",
+          "content": "CSS Variables (custom properties) like --main-color allow reusable values, defined with :root and accessed with var()."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Scope of Variables",
+          "content": "Variables can be global (:root) or local (within a selector), e.g., :root { --color: blue; } and div { --local: red; }."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "How do you define a CSS variable?",
+          "options": ["var(--name)", "--name: value;", "set --name value"],
+          "correct": "--name: value;"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Define a global variable for a red color and apply it to a div.",
+          "expectedAnswer": "<style>:root { --main-color: red; } div { color: var(--main-color); }</style><div>Text</div>",
+          "blocks": ["<style>:root { --main-color: red; } div { color: var(--main-color); }</style><div>Text</div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Use a variable for a 10px padding in a class.",
+          "expectedAnswer": "<style>:root { --padding: 10px; } .box { padding: var(--padding); }</style><div class='box'>Box</div>",
+          "blocks": ["<style>:root { --padding: 10px; } .box { padding: var(--padding); }</style><div class='box'>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set a local variable for background color in a section.",
+          "starterCode": "<style>\nsection {\n  --bg-color: green;\n  \n}\n</style>\n<section>Content</section>",
+          "placeholders": [
+            {"line": 4, "index": 2, "hint": "background-color: var(--bg-color);"}
+          ],
+          "blocks": ["background-color: var(--bg-color);", "color: var(--bg-color);", "border: var(--bg-color);"],
+          "correctAnswers": ["background-color: var(--bg-color);"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Where are global variables defined?",
+          "options": ["div", ":root", "body"],
+          "correct": ":root"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What happens if a variable is undefined?",
+          "options": ["Uses default value", "Throws error", "Ignores style"],
+          "correct": "Uses default value"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create a theme with variables for color and font-size.",
+          "expectedAnswer": "<style>:root { --text-color: blue; --font-size: 16px; } p { color: var(--text-color); font-size: var(--font-size); }</style><p>Text</p>",
+          "blocks": ["<style>:root { --text-color: blue; --font-size: 16px; } p { color: var(--text-color); font-size: var(--font-size); }</style><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Use a variable for a border width of 2px.",
+          "starterCode": "<style>\n:root {\n  --border-width: 2px;\n}\ndiv {\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 6, "index": 2, "hint": "border: var(--border-width) solid black;"}
+          ],
+          "blocks": ["border: var(--border-width) solid black;", "border-width: var(--border-width);", "padding: var(--border-width);"],
+          "correctAnswers": ["border: var(--border-width) solid black;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Can variables be updated dynamically?",
+          "options": ["Yes, with JavaScript", "No", "Only with CSS"],
+          "correct": "Yes, with JavaScript"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Switch a variable on hover for background color.",
+          "expectedAnswer": "<style>:root { --bg-color: white; } div { background: var(--bg-color); } div:hover { --bg-color: grey; background: var(--bg-color); }</style><div>Box</div>",
+          "blocks": ["<style>:root { --bg-color: white; } div { background: var(--bg-color); } div:hover { --bg-color: grey; background: var(--bg-color); }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does var(--var, fallback) do?",
+          "options": ["Sets a default value", "Ignores the variable", "Defines a new variable"],
+          "correct": "Sets a default value"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Variable Virtuoso! 🎛️",
+          "content": "You've mastered CSS variables! Your styles are now reusable and dynamic. Keep enhancing your web designs! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Responsive Design with Media Queries",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Media Queries?",
+          "content": "Media queries adjust styles based on device characteristics like width, height, or orientation, e.g., @media (max-width: 600px)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Common Breakpoints",
+          "content": "Typical breakpoints: 600px (mobile), 768px (tablet), 992px (laptop), using min-width or max-width."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "What does @media (max-width: 600px) target?",
+          "options": ["Screens wider than 600px", "Screens up to 600px", "All screens"],
+          "correct": "Screens up to 600px"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Hide a div on screens below 500px.",
+          "expectedAnswer": "<style>@media (max-width: 500px) { div { display: none; } }</style><div>Box</div>",
+          "blocks": ["<style>@media (max-width: 500px) { div { display: none; } }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Change font size to 14px for screens above 768px.",
+          "expectedAnswer": "<style>@media (min-width: 768px) { p { font-size: 14px; } }</style><p>Text</p>",
+          "blocks": ["<style>@media (min-width: 768px) { p { font-size: 14px; } }</style><p>Text</p>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Stack divs vertically on screens below 600px.",
+          "starterCode": "<style>\n.container { display: flex; }\n@media (max-width: 600px) {\n  .container {\n    \n  }\n}\n</style>\n<div class='container'><div>Box1</div><div>Box2</div></div>",
+          "placeholders": [
+            {"line": 5, "index": 4, "hint": "display: block;"}
+          ],
+          "blocks": ["display: block;", "flex-direction: column;", "display: none;"],
+          "correctAnswers": ["display: block;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What unit is often used in media queries?",
+          "options": ["px", "em", "Both"],
+          "correct": "Both"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which query targets landscape orientation?",
+          "options": ["(orientation: portrait)", "(orientation: landscape)", "(width: landscape)"],
+          "correct": "(orientation: landscape)"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Adjust a grid to one column below 700px.",
+          "expectedAnswer": "<style>.grid { display: grid; grid-template-columns: 1fr 1fr; } @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }</style><div class='grid'><div>Box1</div><div>Box2</div></div>",
+          "blocks": ["<style>.grid { display: grid; grid-template-columns: 1fr 1fr; } @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }</style><div class='grid'><div>Box1</div><div>Box2</div></div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set a max-width of 90% for images on mobile.",
+          "starterCode": "<style>\nimg {\n  width: 100%;\n}\n@media (max-width: 600px) {\n  img {\n    \n  }\n}\n</style>\n<img src='photo.jpg' alt='Photo'>",
+          "placeholders": [
+            {"line": 7, "index": 4, "hint": "max-width: 90%;"}
+          ],
+          "blocks": ["max-width: 90%;", "width: 90%;", "max-height: 90%;"],
+          "correctAnswers": ["max-width: 90%;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Can media queries target print?",
+          "options": ["Yes", "No", "Only with JavaScript"],
+          "correct": "Yes"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Style a button differently in portrait mode.",
+          "expectedAnswer": "<style>button { background: grey; } @media (orientation: portrait) { button { background: blue; } }</style><button>Click</button>",
+          "blocks": ["<style>button { background: grey; } @media (orientation: portrait) { button { background: blue; } }</style><button>Click</button>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does min-width do in a media query?",
+          "options": ["Targets screens below", "Targets screens above", "Sets minimum width"],
+          "correct": "Targets screens above"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Responsive Ruler! 📱",
+          "content": "You've mastered responsive design with media queries! Your sites adapt beautifully to any device. Keep optimizing! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "CSS Animations with @keyframes",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Introduction to @keyframes",
+          "content": "@keyframes defines animation stages (e.g., 0% to 100%) to create complex animations, applied with animation-name."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Animation Properties",
+          "content": "Use animation-duration, animation-iteration-count (e.g., infinite), and animation-timing-function (e.g., ease) to control animations."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "What defines an animation sequence?",
+          "options": ["@animation", "@keyframes", "animation-style"],
+          "correct": "@keyframes"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a simple fade animation.",
+          "expectedAnswer": "<style>@keyframes fade { from { opacity: 0; } to { opacity: 1; } } div { animation: fade 2s; }</style><div>Box</div>",
+          "blocks": ["<style>@keyframes fade { from { opacity: 0; } to { opacity: 1; } } div { animation: fade 2s; }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Make a div slide in from the left over 1s.",
+          "expectedAnswer": "<style>@keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } } div { animation: slideIn 1s; }</style><div>Box</div>",
+          "blocks": ["<style>@keyframes slideIn { from { transform: translateX(-100%); } to { transform: translateX(0); } } div { animation: slideIn 1s; }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Set an animation to loop infinitely.",
+          "starterCode": "<style>\n@keyframes move { from { left: 0; } to { left: 100px; } }\ndiv {\n  animation: move 2s;\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 5, "index": 2, "hint": "animation-iteration-count: infinite;"}
+          ],
+          "blocks": ["animation-iteration-count: infinite;", "animation-loop: infinite;", "iteration: infinite;"],
+          "correctAnswers": ["animation-iteration-count: infinite;"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does animation-duration set?",
+          "options": ["Delay", "Length of animation", "Number of loops"],
+          "correct": "Length of animation"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which timing function starts fast then slows?",
+          "options": ["ease-in", "ease-out", "linear"],
+          "correct": "ease-out"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Animate a div’s rotation with ease-in-out.",
+          "expectedAnswer": "<style>@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } } div { animation: rotate 3s ease-in-out infinite; }</style><div>Box</div>",
+          "blocks": ["<style>@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } } div { animation: rotate 3s ease-in-out infinite; }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a 0.5s delay to an animation.",
+          "starterCode": "<style>\n@keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-20px); } }\ndiv {\n  animation: bounce 1s;\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 5, "index": 2, "hint": "animation-delay: 0.5s;"}
+          ],
+          "blocks": ["animation-delay: 0.5s;", "delay: 0.5s;", "animation-time: 0.5s;"],
+          "correctAnswers": ["animation-delay: 0.5s;"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Can animations run on hover?",
+          "options": ["Yes", "No", "Only with transitions"],
+          "correct": "Yes"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Create a bouncing animation triggered on hover.",
+          "expectedAnswer": "<style>@keyframes bounce { 0% { transform: translateY(0); } 50% { transform: translateY(-30px); } 100% { transform: translateY(0); } } div { transition: none; } div:hover { animation: bounce 0.8s ease-out; }</style><div>Box</div>",
+          "blocks": ["<style>@keyframes bounce { 0% { transform: translateY(0); } 50% { transform: translateY(-30px); } 100% { transform: translateY(0); } } div { transition: none; } div:hover { animation: bounce 0.8s ease-out; }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does animation-fill-mode do?",
+          "options": ["Sets initial state", "Holds final state", "Reverses animation"],
+          "correct": "Holds final state"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Animation Ace! 🎬",
+          "content": "You've mastered CSS animations with @keyframes! Your pages are now alive with motion. Keep animating! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "CSS Transforms",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Transforms?",
+          "content": "Transforms alter element appearance (e.g., rotate, scale) using properties like transform: rotate(45deg) or translate(20px, 10px)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Transform Functions",
+          "content": "Common functions: rotate(), scale(), translate(), skew(), applied with transform property."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which transform moves an element?",
+          "options": ["rotate", "translate", "scale"],
+          "correct": "translate"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Rotate a div 90 degrees.",
+          "expectedAnswer": "<style>div { transform: rotate(90deg); }</style><div>Box</div>",
+          "blocks": ["<style>div { transform: rotate(90deg); }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Scale a div to twice its size.",
+          "expectedAnswer": "<style>div { transform: scale(2); }</style><div>Box</div>",
+          "blocks": ["<style>div { transform: scale(2); }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Translate a div 50px right and 20px down.",
+          "starterCode": "<style>\ndiv {\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "transform: translate(50px, 20px);"}
+          ],
+          "blocks": ["transform: translate(50px, 20px);", "transform: translateX(50px);", "transform: move(50px, 20px);"],
+          "correctAnswers": ["transform: translate(50px, 20px);"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What unit is used with rotate()?",
+          "options": ["px", "deg", "%"],
+          "correct": "deg"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which transform skews an element?",
+          "options": ["skew", "scale", "rotate"],
+          "correct": "skew"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Skew a div by 20 degrees on the X-axis.",
+          "expectedAnswer": "<style>div { transform: skewX(20deg); }</style><div>Box</div>",
+          "blocks": ["<style>div { transform: skewX(20deg); }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Scale a div horizontally by 1.5.",
+          "starterCode": "<style>\ndiv {\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "transform: scaleX(1.5);"}
+          ],
+          "blocks": ["transform: scaleX(1.5);", "transform: scale(1.5);", "transform: scaleY(1.5);"],
+          "correctAnswers": ["transform: scaleX(1.5);"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Can multiple transforms be combined?",
+          "options": ["Yes, with spaces", "No", "Only with transitions"],
+          "correct": "Yes, with spaces"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Combine rotate and translate on a div.",
+          "expectedAnswer": "<style>div { transform: rotate(45deg) translate(20px, 10px); }</style><div>Box</div>",
+          "blocks": ["<style>div { transform: rotate(45deg) translate(20px, 10px); }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does transform-origin affect?",
+          "options": ["Animation speed", "Transform pivot point", "Element size"],
+          "correct": "Transform pivot point"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Transform Titan! 🔄",
+          "content": "You've mastered CSS transforms! Your elements now twist, turn, and move with ease. Keep transforming your designs! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "CSS Filters",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are CSS Filters?",
+          "content": "Filters like blur(), brightness(), and grayscale() apply visual effects to elements, similar to Photoshop filters."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Common Filter Functions",
+          "content": "Examples: filter: blur(5px), filter: brightness(150%), filter: contrast(200%) to modify appearance."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "question": "Which filter blurs an element?",
+          "options": ["brightness", "blur", "contrast"],
+          "correct": "blur"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Apply a 3px blur to an image.",
+          "expectedAnswer": "<style>img { filter: blur(3px); }</style><img src='photo.jpg' alt='Photo'>",
+          "blocks": ["<style>img { filter: blur(3px); }</style><img src='photo.jpg' alt='Photo'>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Increase brightness of a div by 120%.",
+          "expectedAnswer": "<style>div { filter: brightness(120%); }</style><div>Box</div>",
+          "blocks": ["<style>div { filter: brightness(120%); }</style><div>Box</div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Apply 50% grayscale to an image.",
+          "starterCode": "<style>\nimg {\n  \n}\n</style>\n<img src='photo.jpg' alt='Photo'>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "filter: grayscale(50%);"}
+          ],
+          "blocks": ["filter: grayscale(50%);", "filter: blur(50%);", "filter: brightness(50%);"],
+          "correctAnswers": ["filter: grayscale(50%);"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What unit is used with blur()?",
+          "options": ["%", "px", "deg"],
+          "correct": "px"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which filter increases color intensity?",
+          "options": ["saturate", "hue-rotate", "opacity"],
+          "correct": "saturate"
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Rotate hue of an image by 90 degrees.",
+          "expectedAnswer": "<style>img { filter: hue-rotate(90deg); }</style><img src='photo.jpg' alt='Photo'>",
+          "blocks": ["<style>img { filter: hue-rotate(90deg); }</style><img src='photo.jpg' alt='Photo'>"],
+          "language": "html"
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Reduce opacity of a div to 70%.",
+          "starterCode": "<style>\ndiv {\n  \n}\n</style>\n<div>Box</div>",
+          "placeholders": [
+            {"line": 3, "index": 2, "hint": "filter: opacity(70%);"}
+          ],
+          "blocks": ["filter: opacity(70%);", "opacity: 70%;", "filter: brightness(70%);"],
+          "correctAnswers": ["filter: opacity(70%);"],
+          "language": "html"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "Can filters be combined?",
+          "options": ["Yes, with spaces", "No", "Only with animations"],
+          "correct": "Yes, with spaces"
+        },
+        {
+          "id": 12,
+          "type": "codeChallenge",
+          "title": "Combine blur and contrast on an image.",
+          "expectedAnswer": "<style>img { filter: blur(2px) contrast(150%); }</style><img src='photo.jpg' alt='Photo'>",
+          "blocks": ["<style>img { filter: blur(2px) contrast(150%); }</style><img src='photo.jpg' alt='Photo'>"],
+          "language": "html"
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What does filter: invert(100%) do?",
+          "options": ["Blurs the element", "Inverts colors", "Reduces brightness"],
+          "correct": "Inverts colors"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Filter Fanatic! 🎨",
+          "content": "You've mastered CSS filters! Your elements now have stunning visual effects. Keep enhancing your designs! 🚀"
+        }
+      ]
+    },
+    {
+          "id": 6,
+          "title": "CSS Multi-Column Layout",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What is Multi-Column Layout?",
+              "content": "The multi-column layout divides content into columns using properties like column-count and column-width."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Column Properties",
+              "content": "Use column-count (e.g., 3) for fixed columns, column-width (e.g., 200px) for flexible widths, and column-gap for spacing."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "Which property sets the number of columns?",
+              "options": ["column-width", "column-count", "column-gap"],
+              "correct": "column-count"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Create a div with 2 columns.",
+              "expectedAnswer": "<style>div { column-count: 2; }</style><div>Column content goes here</div>",
+              "blocks": ["<style>div { column-count: 2; }</style><div>Column content goes here</div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Set a column width of 150px with 10px gap.",
+              "expectedAnswer": "<style>div { column-width: 150px; column-gap: 10px; }</style><div>Column content goes here</div>",
+              "blocks": ["<style>div { column-width: 150px; column-gap: 10px; }</style><div>Column content goes here</div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Add a rule to break columns at specific points.",
+              "starterCode": "<style>\ndiv {\n  column-count: 3;\n  \n}\n</style>\n<div>Content <br> More content</div>",
+              "placeholders": [
+                {"line": 4, "index": 2, "hint": "column-break-inside: avoid;"}
+              ],
+              "blocks": ["column-break-inside: avoid;", "break-inside: avoid;", "column-gap: avoid;"],
+              "correctAnswers": ["column-break-inside: avoid;"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does column-gap control?",
+              "options": ["Column width", "Space between columns", "Column height"],
+              "correct": "Space between columns"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Can columns have different widths?",
+              "options": ["Yes", "No", "Only with JavaScript"],
+              "correct": "No"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Style a div with 4 columns and 15px gap.",
+              "expectedAnswer": "<style>div { column-count: 4; column-gap: 15px; }</style><div>Column content goes here</div>",
+              "blocks": ["<style>div { column-count: 4; column-gap: 15px; }</style><div>Column content goes here</div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Set a maximum column width of 200px.",
+              "starterCode": "<style>\ndiv {\n  column-count: 3;\n  \n}\n</style>\n<div>Column content goes here</div>",
+              "placeholders": [
+                {"line": 4, "index": 2, "hint": "max-column-width: 200px;"}
+              ],
+              "blocks": ["max-column-width: 200px;", "column-width: 200px;", "max-width: 200px;"],
+              "correctAnswers": ["max-column-width: 200px;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "What prevents content from breaking across columns?",
+              "options": ["column-break-inside", "column-gap", "column-width"],
+              "correct": "column-break-inside"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Create a multi-column layout with a rule between columns.",
+              "expectedAnswer": "<style>div { column-count: 2; column-rule: 1px solid black; }</style><div>Column content goes here</div>",
+              "blocks": ["<style>div { column-count: 2; column-rule: 1px solid black; }</style><div>Column content goes here</div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "Which property adds a line between columns?",
+              "options": ["column-rule", "column-gap", "column-border"],
+              "correct": "column-rule"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Column Maestro! 📄",
+              "content": "You've mastered multi-column layouts! Your content is now organized and stylish. Keep designing! 🚀"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "CSS Clipping and Masking",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What is Clipping?",
+              "content": "Clipping hides parts of an element outside a defined shape using clip-path, like circle() or polygon()."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Masking Basics",
+              "content": "Masking uses mask-image to show or hide parts based on a gradient or image, offering more control than clipping."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "Which property creates a clipping shape?",
+              "options": ["mask-image", "clip-path", "overflow"],
+              "correct": "clip-path"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Clip a div into a circle.",
+              "expectedAnswer": "<style>div { clip-path: circle(50%); width: 200px; height: 200px; background: blue; }</style><div></div>",
+              "blocks": ["<style>div { clip-path: circle(50%); width: 200px; height: 200px; background: blue; }</style><div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Create a triangle clip-path.",
+              "expectedAnswer": "<style>div { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); width: 200px; height: 200px; background: green; }</style><div></div>",
+              "blocks": ["<style>div { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); width: 200px; height: 200px; background: green; }</style><div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Apply a linear gradient mask to an image.",
+              "starterCode": "<style>\nimg {\n  \n}\n</style>\n<img src='photo.jpg' alt='Photo'>",
+              "placeholders": [
+                {"line": 3, "index": 2, "hint": "mask-image: linear-gradient(to right, transparent, black);"}
+              ],
+              "blocks": ["mask-image: linear-gradient(to right, transparent, black);", "clip-path: gradient;", "filter: gradient;"],
+              "correctAnswers": ["mask-image: linear-gradient(to right, transparent, black);"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does mask-image use?",
+              "options": ["Shapes", "Gradients or images", "Colors"],
+              "correct": "Gradients or images"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Can clip-path use percentages?",
+              "options": ["Yes", "No", "Only with pixels"],
+              "correct": "Yes"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Clip a div with an ellipse shape.",
+              "expectedAnswer": "<style>div { clip-path: ellipse(50% 60% at 50% 50%); width: 200px; height: 200px; background: red; }</style><div></div>",
+              "blocks": ["<style>div { clip-path: ellipse(50% 60% at 50% 50%); width: 200px; height: 200px; background: red; }</style><div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Mask an image with a radial gradient.",
+              "starterCode": "<style>\nimg {\n  \n}\n</style>\n<img src='photo.jpg' alt='Photo'>",
+              "placeholders": [
+                {"line": 3, "index": 2, "hint": "mask-image: radial-gradient(circle, transparent 50%, black 50%);"}
+              ],
+              "blocks": ["mask-image: radial-gradient(circle, transparent 50%, black 50%);", "clip-path: radial-gradient;", "filter: radial-gradient;"],
+              "correctAnswers": ["mask-image: radial-gradient(circle, transparent 50%, black 50%);"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "What happens outside a clip-path?",
+              "options": ["Visible", "Hidden", "Blurred"],
+              "correct": "Hidden"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Combine clip-path and mask-image on a div.",
+              "expectedAnswer": "<style>div { clip-path: circle(40%); mask-image: linear-gradient(to bottom, transparent, black); width: 200px; height: 200px; background: yellow; }</style><div></div>",
+              "blocks": ["<style>div { clip-path: circle(40%); mask-image: linear-gradient(to bottom, transparent, black); width: 200px; height: 200px; background: yellow; }</style><div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "Which is more flexible, clipping or masking?",
+              "options": ["Clipping", "Masking", "Both equal"],
+              "correct": "Masking"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Clip and Mask Master! ✂️",
+              "content": "You've conquered clipping and masking! Your designs now have creative cuts and masks. Keep innovating! 🚀"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "title": "CSS Blend Modes",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What are Blend Modes?",
+              "content": "Blend modes like multiply and overlay combine colors of an element with its background using mix-blend-mode."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Common Blend Modes",
+              "content": "Examples: multiply (darkens), screen (lightens), overlay (enhances contrast), applied with mix-blend-mode."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "Which blend mode darkens colors?",
+              "options": ["screen", "multiply", "overlay"],
+              "correct": "multiply"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Apply multiply blend mode to a div.",
+              "expectedAnswer": "<style>div { mix-blend-mode: multiply; background: red; width: 100px; height: 100px; }</style><div style='background: yellow; position: relative;'></div>",
+              "blocks": ["<style>div { mix-blend-mode: multiply; background: red; width: 100px; height: 100px; }</style><div style='background: yellow; position: relative;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Use overlay blend mode on an image.",
+              "expectedAnswer": "<style>img { mix-blend-mode: overlay; } div { background: grey; }</style><div><img src='photo.jpg' alt='Photo' style='width: 200px; height: 200px;'></div>",
+              "blocks": ["<style>img { mix-blend-mode: overlay; } div { background: grey; }</style><div><img src='photo.jpg' alt='Photo' style='width: 200px; height: 200px;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Set a screen blend mode for a div.",
+              "starterCode": "<style>\ndiv {\n  background: blue;\n  \n}\n</style>\n<div style='background: white; position: relative; width: 100px; height: 100px;'></div>",
+              "placeholders": [
+                {"line": 4, "index": 2, "hint": "mix-blend-mode: screen;"}
+              ],
+              "blocks": ["mix-blend-mode: screen;", "blend-mode: screen;", "filter: screen;"],
+              "correctAnswers": ["mix-blend-mode: screen;"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does mix-blend-mode affect?",
+              "options": ["Element and background", "Only the element", "Only the parent"],
+              "correct": "Element and background"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Which blend mode enhances contrast?",
+              "options": ["multiply", "overlay", "difference"],
+              "correct": "overlay"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Combine two divs with difference blend mode.",
+              "expectedAnswer": "<style>.container { background: green; position: relative; } .box { mix-blend-mode: difference; background: red; width: 100px; height: 100px; }</style><div class='container'><div class='box'></div></div>",
+              "blocks": ["<style>.container { background: green; position: relative; } .box { mix-blend-mode: difference; background: red; width: 100px; height: 100px; }</style><div class='container'><div class='box'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Apply a lighten blend mode to an image.",
+              "starterCode": "<style>\nimg {\n  \n}\n</style>\n<img src='photo.jpg' alt='Photo' style='width: 200px; height: 200px;'>",
+              "placeholders": [
+                {"line": 3, "index": 2, "hint": "mix-blend-mode: lighten;"}
+              ],
+              "blocks": ["mix-blend-mode: lighten;", "blend-mode: lighten;", "filter: lighten;"],
+              "correctAnswers": ["mix-blend-mode: lighten;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "Does blend mode work without a background?",
+              "options": ["Yes", "No", "Only with images"],
+              "correct": "No"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Create a color-dodge effect on a div.",
+              "expectedAnswer": "<style>.container { background: yellow; position: relative; } .box { mix-blend-mode: color-dodge; background: blue; width: 100px; height: 100px; }</style><div class='container'><div class='box'></div></div>",
+              "blocks": ["<style>.container { background: yellow; position: relative; } .box { mix-blend-mode: color-dodge; background: blue; width: 100px; height: 100px; }</style><div class='container'><div class='box'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "What does color-burn do?",
+              "options": ["Lightens", "Darkens", "Inverts"],
+              "correct": "Darkens"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Blend Mode Boss! 🎨",
+              "content": "You've mastered CSS blend modes! Your designs now blend beautifully. Keep experimenting! 🚀"
+            }
+          ]
+        },
+
+        {
+          "id": 9,
+          "title": "CSS Grid Layout",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "Introduction to CSS Grid",
+              "content": "CSS Grid is a 2D layout system using rows and columns, defined with display: grid and properties like grid-template-columns."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Grid Properties",
+              "content": "Use grid-template-columns, grid-template-rows, gap, and grid-area to structure and space grid items."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "What starts a grid layout?",
+              "options": ["display: flex", "display: grid", "grid: start"],
+              "correct": "display: grid"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Create a 3-column grid.",
+              "expectedAnswer": "<style>.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; } .item { background: lightblue; }</style><div class='grid'><div class='item'></div><div class='item'></div><div class='item'></div></div>",
+              "blocks": ["<style>.grid { display: grid; grid-template-columns: 1fr 1fr 1fr; } .item { background: lightblue; }</style><div class='grid'><div class='item'></div><div class='item'></div><div class='item'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Add a 10px gap to a grid.",
+              "expectedAnswer": "<style>.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } .item { background: lightgreen; }</style><div class='grid'><div class='item'></div><div class='item'></div></div>",
+              "blocks": ["<style>.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } .item { background: lightgreen; }</style><div class='grid'><div class='item'></div><div class='item'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Set a grid item to span two columns.",
+              "starterCode": "<style>\n.grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\n.item {\n  \n}\n</style>\n<div class='grid'><div class='item'></div><div class='item'></div></div>",
+              "placeholders": [
+                {"line": 7, "index": 2, "hint": "grid-column: span 2;"}
+              ],
+              "blocks": ["grid-column: span 2;", "span: 2;", "grid-span: 2;"],
+              "correctAnswers": ["grid-column: span 2;"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does 1fr mean?",
+              "options": ["Fixed row", "Fractional unit", "Full row"],
+              "correct": "Fractional unit"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Which property sets row height?",
+              "options": ["grid-template-rows", "grid-rows", "row-height"],
+              "correct": "grid-template-rows"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Create a grid with 2 rows and 2 columns.",
+              "expectedAnswer": "<style>.grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 100px 100px; } .item { background: pink; }</style><div class='grid'><div class='item'></div><div class='item'></div><div class='item'></div><div class='item'></div></div>",
+              "blocks": ["<style>.grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 100px 100px; } .item { background: pink; }</style><div class='grid'><div class='item'></div><div class='item'></div><div class='item'></div><div class='item'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Assign a grid item to a specific area.",
+              "starterCode": "<style>\n.grid {\n  display: grid;\n  grid-template-areas: 'header header'\n                      'main aside';\n}\n.item {\n  \n}\n</style>\n<div class='grid'><div class='item'></div><div class='item'></div></div>",
+              "placeholders": [
+                {"line": 8, "index": 2, "hint": "grid-area: header;"}
+              ],
+              "blocks": ["grid-area: header;", "area: header;", "grid-position: header;"],
+              "correctAnswers": ["grid-area: header;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "Can grid items overlap?",
+              "options": ["Yes, with z-index", "No", "Only with flex"],
+              "correct": "Yes, with z-index"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Build a header and sidebar layout.",
+              "expectedAnswer": "<style>.grid { display: grid; grid-template-areas: 'header header' 'sidebar main'; grid-template-columns: 1fr 3fr; grid-template-rows: 50px 1fr; } .header { grid-area: header; background: lightgray; } .sidebar { grid-area: sidebar; background: lightblue; } .main { grid-area: main; background: white; }</style><div class='grid'><div class='header'></div><div class='sidebar'></div><div class='main'></div></div>",
+              "blocks": ["<style>.grid { display: grid; grid-template-areas: 'header header' 'sidebar main'; grid-template-columns: 1fr 3fr; grid-template-rows: 50px 1fr; } .header { grid-area: header; background: lightgray; } .sidebar { grid-area: sidebar; background: lightblue; } .main { grid-area: main; background: white; }</style><div class='grid'><div class='header'></div><div class='sidebar'></div><div class='main'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "What does grid-gap do?",
+              "options": ["Sets item size", "Adds space between grid lines", "Aligns items"],
+              "correct": "Adds space between grid lines"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Grid Guru! 🧩",
+              "content": "You've mastered CSS Grid! Your layouts are now powerful and precise. Keep building! 🚀"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "title": "CSS Flexbox",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What is Flexbox?",
+              "content": "Flexbox is a 1D layout model for aligning items in rows or columns, using display: flex and properties like justify-content."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Flex Properties",
+              "content": "Use flex-direction, justify-content, align-items, and flex-wrap to control layout and alignment."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "What enables Flexbox?",
+              "options": ["display: block", "display: flex", "flex: start"],
+              "correct": "display: flex"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Create a horizontal flex container.",
+              "expectedAnswer": "<style>.flex { display: flex; } .item { background: orange; }</style><div class='flex'><div class='item'></div><div class='item'></div></div>",
+              "blocks": ["<style>.flex { display: flex; } .item { background: orange; }</style><div class='flex'><div class='item'></div><div class='item'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Center items horizontally.",
+              "expectedAnswer": "<style>.flex { display: flex; justify-content: center; } .item { background: purple; }</style><div class='flex'><div class='item'></div><div class='item'></div></div>",
+              "blocks": ["<style>.flex { display: flex; justify-content: center; } .item { background: purple; }</style><div class='flex'><div class='item'></div><div class='item'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Align items vertically to the center.",
+              "starterCode": "<style>\n.flex {\n  display: flex;\n  \n}\n.item {\n  background: teal;\n}\n</style>\n<div class='flex'><div class='item'></div><div class='item'></div></div>",
+              "placeholders": [
+                {"line": 4, "index": 2, "hint": "align-items: center;"}
+              ],
+              "blocks": ["align-items: center;", "justify-items: center;", "align-content: center;"],
+              "correctAnswers": ["align-items: center;"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does flex-direction: column do?",
+              "options": ["Stacks items vertically", "Aligns items horizontally", "Wraps items"],
+              "correct": "Stacks items vertically"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Which property wraps flex items?",
+              "options": ["flex-wrap", "wrap-flex", "flex-direction"],
+              "correct": "flex-wrap"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Create a vertical flex with wrapped items.",
+              "expectedAnswer": "<style>.flex { display: flex; flex-direction: column; flex-wrap: wrap; height: 200px; } .item { background: brown; }</style><div class='flex'><div class='item'></div><div class='item'></div><div class='item'></div></div>",
+              "blocks": ["<style>.flex { display: flex; flex-direction: column; flex-wrap: wrap; height: 200px; } .item { background: brown; }</style><div class='flex'><div class='item'></div><div class='item'></div><div class='item'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Set a flex item to grow equally.",
+              "starterCode": "<style>\n.flex {\n  display: flex;\n}\n.item {\n  \n}\n</style>\n<div class='flex'><div class='item'></div><div class='item'></div></div>",
+              "placeholders": [
+                {"line": 6, "index": 2, "hint": "flex: 1;"}
+              ],
+              "blocks": ["flex: 1;", "grow: 1;", "flex-grow: 1;"],
+              "correctAnswers": ["flex: 1;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "Can flex items have different sizes?",
+              "options": ["Yes, with flex", "No", "Only with grid"],
+              "correct": "Yes, with flex"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Build a navbar with space-between.",
+              "expectedAnswer": "<style>.nav { display: flex; justify-content: space-between; } .item { background: darkblue; color: white; }</style><div class='nav'><div class='item'>Home</div><div class='item'>Contact</div></div>",
+              "blocks": ["<style>.nav { display: flex; justify-content: space-between; } .item { background: darkblue; color: white; }</style><div class='nav'><div class='item'>Home</div><div class='item'>Contact</div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "What does align-content do?",
+              "options": ["Aligns items in a row", "Aligns rows in a flex container", "Sets item size"],
+              "correct": "Aligns rows in a flex container"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Flexbox Pro! 🎯",
+              "content": "You've mastered Flexbox! Your layouts are now flexible and aligned. Keep flexing your skills! 🚀"
+            }
+          ]
+        },
+
+        {
+          "id": 11,
+          "title": "CSS Transitions",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What are Transitions?",
+              "content": "Transitions smoothly change property values over time, using transition-property and transition-duration."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Transition Properties",
+              "content": "Use transition-property (e.g., width), transition-duration (e.g., 0.5s), and transition-timing-function (e.g., ease)."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "Which property triggers a transition?",
+              "options": ["animation", "transition", "transform"],
+              "correct": "transition"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Add a 1s width transition on hover.",
+              "expectedAnswer": "<style>.box { width: 100px; transition: width 1s; } .box:hover { width: 200px; }</style><div class='box' style='height: 100px; background: lightcoral;'></div>",
+              "blocks": ["<style>.box { width: 100px; transition: width 1s; } .box:hover { width: 200px; }</style><div class='box' style='height: 100px; background: lightcoral;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Create a color transition over 0.5s.",
+              "expectedAnswer": "<style>.box { background: blue; transition: background 0.5s; } .box:hover { background: red; }</style><div class='box' style='width: 100px; height: 100px;'></div>",
+              "blocks": ["<style>.box { background: blue; transition: background 0.5s; } .box:hover { background: red; }</style><div class='box' style='width: 100px; height: 100px;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Set an ease-in timing function.",
+              "starterCode": "<style>\n.box {\n  width: 100px;\n  transition: width 1s;\n  \n}\n.box:hover {\n  width: 200px;\n}\n</style>\n<div class='box' style='height: 100px; background: lightgreen;'></div>",
+              "placeholders": [
+                {"line": 5, "index": 2, "hint": "transition-timing-function: ease-in;"}
+              ],
+              "blocks": ["transition-timing-function: ease-in;", "timing: ease-in;", "transition: ease-in;"],
+              "correctAnswers": ["transition-timing-function: ease-in;"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does transition-duration set?",
+              "options": ["Delay", "Animation length", "Property to animate"],
+              "correct": "Animation length"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Can multiple properties transition?",
+              "options": ["Yes, with commas", "No", "Only with keyframes"],
+              "correct": "Yes, with commas"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Transition width and height together.",
+              "expectedAnswer": "<style>.box { width: 100px; height: 100px; transition: width 1s, height 1s; } .box:hover { width: 200px; height: 200px; }</style><div class='box' style='background: lightblue;'></div>",
+              "blocks": ["<style>.box { width: 100px; height: 100px; transition: width 1s, height 1s; } .box:hover { width: 200px; height: 200px; }</style><div class='box' style='background: lightblue;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Add a 0.2s delay to a transition.",
+              "starterCode": "<style>\n.box {\n  width: 100px;\n  transition: width 1s;\n  \n}\n.box:hover {\n  width: 200px;\n}\n</style>\n<div class='box' style='height: 100px; background: pink;'></div>",
+              "placeholders": [
+                {"line": 5, "index": 2, "hint": "transition-delay: 0.2s;"}
+              ],
+              "blocks": ["transition-delay: 0.2s;", "delay: 0.2s;", "transition-time: 0.2s;"],
+              "correctAnswers": ["transition-delay: 0.2s;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "What triggers a transition?",
+              "options": ["Hover", "Click", "Both"],
+              "correct": "Hover"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Animate opacity with a linear timing.",
+              "expectedAnswer": "<style>.box { opacity: 0.5; transition: opacity 1s linear; } .box:hover { opacity: 1; }</style><div class='box' style='width: 100px; height: 100px; background: lightgray;'></div>",
+              "blocks": ["<style>.box { opacity: 0.5; transition: opacity 1s linear; } .box:hover { opacity: 1; }</style><div class='box' style='width: 100px; height: 100px; background: lightgray;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "What does ease-out do?",
+              "options": ["Starts slow, ends fast", "Starts fast, ends slow", "Constant speed"],
+              "correct": "Starts fast, ends slow"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Transition Trailblazer! ⏳",
+              "content": "You've mastered CSS transitions! Your designs now flow smoothly. Keep transitioning! 🚀"
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "title": "CSS Shapes",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What are CSS Shapes?",
+              "content": "CSS Shapes define non-rectangular areas around elements using shape-outside, like circle() or polygon()."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Shape Functions",
+              "content": "Use shape-outside with circle(), ellipse(), or polygon() to wrap text around custom shapes."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "Which property wraps text around a shape?",
+              "options": ["shape-inside", "shape-outside", "clip-path"],
+              "correct": "shape-outside"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Wrap text around a circle.",
+              "expectedAnswer": "<style>.circle { float: left; width: 100px; height: 100px; shape-outside: circle(50%); background: lightyellow; } p { margin: 0; }</style><div class='circle'></div><p>Text wraps here...</p>",
+              "blocks": ["<style>.circle { float: left; width: 100px; height: 100px; shape-outside: circle(50%); background: lightyellow; } p { margin: 0; }</style><div class='circle'></div><p>Text wraps here...</p>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Create a triangle shape for text wrap.",
+              "expectedAnswer": "<style>.triangle { float: left; width: 0; height: 0; shape-outside: polygon(0 100%, 100% 100%, 50% 0); background: lightgreen; } p { margin: 0; }</style><div class='triangle'></div><p>Text wraps here...</p>",
+              "blocks": ["<style>.triangle { float: left; width: 0; height: 0; shape-outside: polygon(0 100%, 100% 100%, 50% 0); background: lightgreen; } p { margin: 0; }</style><div class='triangle'></div><p>Text wraps here...</p>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Set an ellipse shape for text wrapping.",
+              "starterCode": "<style>\n.ellipse {\n  float: left;\n  width: 150px;\n  height: 100px;\n  \n}\np {\n  margin: 0;\n}\n</style>\n<div class='ellipse' style='background: lightblue;'></div><p>Text wraps here...</p>",
+              "placeholders": [
+                {"line": 6, "index": 2, "hint": "shape-outside: ellipse(75px 50px);"}
+              ],
+              "blocks": ["shape-outside: ellipse(75px 50px);", "shape: ellipse(75px 50px);", "clip-path: ellipse(75px 50px);"],
+              "correctAnswers": ["shape-outside: ellipse(75px 50px);"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does float do with shapes?",
+              "options": ["Positions the shape", "Enables text wrapping", "Sets shape size"],
+              "correct": "Enables text wrapping"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Can shapes be animated?",
+              "options": ["Yes, with transitions", "No", "Only with keyframes"],
+              "correct": "Yes, with transitions"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Wrap text around a custom polygon.",
+              "expectedAnswer": "<style>.poly { float: left; width: 100px; height: 100px; shape-outside: polygon(0 0, 100% 50%, 0 100%); background: lightpink; } p { margin: 0; }</style><div class='poly'></div><p>Text wraps here...</p>",
+              "blocks": ["<style>.poly { float: left; width: 100px; height: 100px; shape-outside: polygon(0 0, 100% 50%, 0 100%); background: lightpink; } p { margin: 0; }</style><div class='poly'></div><p>Text wraps here...</p>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Add a transition to a shape's size.",
+              "starterCode": "<style>\n.shape {\n  width: 100px;\n  height: 100px;\n  shape-outside: circle(50%);\n  \n}\n.shape:hover {\n  width: 150px;\n  height: 150px;\n}\n</style>\n<div class='shape' style='float: left; background: lightgray;'></div><p>Text wraps here...</p>",
+              "placeholders": [
+                {"line": 6, "index": 2, "hint": "transition: width 0.5s, height 0.5s;"}
+              ],
+              "blocks": ["transition: width 0.5s, height 0.5s;", "transition: all 0.5s;", "animation: 0.5s;"],
+              "correctAnswers": ["transition: width 0.5s, height 0.5s;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "What unit can shape-outside use?",
+              "options": ["px", "%", "Both"],
+              "correct": "Both"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Combine circle and transition for a shape.",
+              "expectedAnswer": "<style>.circle { float: left; width: 100px; height: 100px; shape-outside: circle(50%); transition: width 0.5s, height 0.5s; background: lightcyan; } .circle:hover { width: 150px; height: 150px; } p { margin: 0; }</style><div class='circle'></div><p>Text wraps here...</p>",
+              "blocks": ["<style>.circle { float: left; width: 100px; height: 100px; shape-outside: circle(50%); transition: width 0.5s, height 0.5s; background: lightcyan; } .circle:hover { width: 150px; height: 150px; } p { margin: 0; }</style><div class='circle'></div><p>Text wraps here...</p>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "Does shape-outside work without float?",
+              "options": ["Yes", "No", "Only with grid"],
+              "correct": "No"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Shape Shaper! ✂️",
+              "content": "You've mastered CSS Shapes! Your layouts now have creative text flows. Keep shaping! 🚀"
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "title": "CSS Writing Modes",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What are Writing Modes?",
+              "content": "Writing modes control text direction (e.g., horizontal-tb, vertical-rl) using writing-mode for diverse layouts."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Writing Mode Values",
+              "content": "Options: horizontal-tb (left-to-right), vertical-rl (right-to-left vertical), vertical-lr (left-to-right vertical)."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "Which property sets writing mode?",
+              "options": ["text-direction", "writing-mode", "direction"],
+              "correct": "writing-mode"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Set a vertical right-to-left mode.",
+              "expectedAnswer": "<style>.box { writing-mode: vertical-rl; } p { margin: 0; }</style><div class='box'><p>Vertical text here</p></div>",
+              "blocks": ["<style>.box { writing-mode: vertical-rl; } p { margin: 0; }</style><div class='box'><p>Vertical text here</p></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Use horizontal top-to-bottom mode.",
+              "expectedAnswer": "<style>.box { writing-mode: horizontal-tb; } p { margin: 0; }</style><div class='box'><p>Horizontal text here</p></div>",
+              "blocks": ["<style>.box { writing-mode: horizontal-tb; } p { margin: 0; }</style><div class='box'><p>Horizontal text here</p></div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Apply vertical left-to-right mode.",
+              "starterCode": "<style>\n.box {\n  \n}\np {\n  margin: 0;\n}\n</style>\n<div class='box'><p>Vertical text here</p></div>",
+              "placeholders": [
+                {"line": 3, "index": 2, "hint": "writing-mode: vertical-lr;"}
+              ],
+              "blocks": ["writing-mode: vertical-lr;", "direction: vertical-lr;", "text-mode: vertical-lr;"],
+              "correctAnswers": ["writing-mode: vertical-lr;"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What does vertical-rl do?",
+              "options": ["Left to right", "Right to left vertical", "Top to bottom"],
+              "correct": "Right to left vertical"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Can writing-mode affect block size?",
+              "options": ["Yes", "No", "Only with flex"],
+              "correct": "Yes"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Combine vertical-rl with a background.",
+              "expectedAnswer": "<style>.box { writing-mode: vertical-rl; background: lightseagreen; } p { margin: 0; }</style><div class='box'><p>Vertical text here</p></div>",
+              "blocks": ["<style>.box { writing-mode: vertical-rl; background: lightseagreen; } p { margin: 0; }</style><div class='box'><p>Vertical text here</p></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Add a width to a vertical mode box.",
+              "starterCode": "<style>\n.box {\n  writing-mode: vertical-rl;\n  \n}\np {\n  margin: 0;\n}\n</style>\n<div class='box'><p>Vertical text here</p></div>",
+              "placeholders": [
+                {"line": 4, "index": 2, "hint": "width: 100px;"}
+              ],
+              "blocks": ["width: 100px;", "height: 100px;", "size: 100px;"],
+              "correctAnswers": ["width: 100px;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "What adjusts text orientation?",
+              "options": ["text-orientation", "writing-orientation", "direction"],
+              "correct": "text-orientation"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Use vertical-lr with rotated text.",
+              "expectedAnswer": "<style>.box { writing-mode: vertical-lr; text-orientation: mixed; background: lightsalmon; } p { margin: 0; }</style><div class='box'><p>Vertical text here</p></div>",
+              "blocks": ["<style>.box { writing-mode: vertical-lr; text-orientation: mixed; background: lightsalmon; } p { margin: 0; }</style><div class='box'><p>Vertical text here</p></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "Does writing-mode work with images?",
+              "options": ["Yes", "No", "Only with text"],
+              "correct": "No"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Writing Mode Wizard! 📝",
+              "content": "You've mastered CSS Writing Modes! Your text flows in any direction. Keep exploring! 🚀"
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "title": "CSS Variables and Theming",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What are CSS Variables?",
+              "content": "CSS Variables (custom properties) like --main-color store reusable values, defined with :root and accessed with var()."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Theming with Variables",
+              "content": "Use variables to create themes (e.g., light/dark) by updating :root values with JavaScript or media queries."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "How are variables defined?",
+              "options": ["var(--name)", "--name: value;", "set --name"],
+              "correct": "--name: value;"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Define a global color variable.",
+              "expectedAnswer": "<style>:root { --primary-color: blue; } .box { background: var(--primary-color); }</style><div class='box' style='width: 100px; height: 100px;'></div>",
+              "blocks": ["<style>:root { --primary-color: blue; } .box { background: var(--primary-color); }</style><div class='box' style='width: 100px; height: 100px;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Set a font-size variable.",
+              "expectedAnswer": "<style>:root { --font-size: 16px; } p { font-size: var(--font-size); }</style><p>Sample text</p>",
+              "blocks": ["<style>:root { --font-size: 16px; } p { font-size: var(--font-size); }</style><p>Sample text</p>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Use a variable with a fallback.",
+              "starterCode": "<style>\n:root {\n  --text-color: green;\n}\n.box {\n  color: var(--text-color);\n  \n}\n</style>\n<div class='box'>Text</div>",
+              "placeholders": [
+                {"line": 7, "index": 2, "hint": "color: var(--text-color, black);"}
+              ],
+              "blocks": ["color: var(--text-color, black);", "color: var(--text-color);", "fallback: black;"],
+              "correctAnswers": ["color: var(--text-color, black);"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "Where are global variables set?",
+              "options": ["body", ":root", "div"],
+              "correct": ":root"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Can variables be updated dynamically?",
+              "options": ["Yes, with JavaScript", "No", "Only with CSS"],
+              "correct": "Yes, with JavaScript"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Create a dark theme with variables.",
+              "expectedAnswer": "<style>:root { --bg-color: white; --text-color: black; } .dark-theme { --bg-color: #333; --text-color: white; } .box { background: var(--bg-color); color: var(--text-color); }</style><div class='box dark-theme' style='width: 100px; height: 100px;'></div>",
+              "blocks": ["<style>:root { --bg-color: white; --text-color: black; } .dark-theme { --bg-color: #333; --text-color: white; } .box { background: var(--bg-color); color: var(--text-color); }</style><div class='box dark-theme' style='width: 100px; height: 100px;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Switch theme with a media query.",
+              "starterCode": "<style>\n:root {\n  --bg-color: white;\n  --text-color: black;\n}\n.box {\n  background: var(--bg-color);\n  color: var(--text-color);\n}\n@media (prefers-color-scheme: dark) {\n  \n}\n</style>\n<div class='box' style='width: 100px; height: 100px;'></div>",
+              "placeholders": [
+                {"line": 10, "index": 2, "hint": ":root { --bg-color: #333; --text-color: white; }"}
+              ],
+              "blocks": [":root { --bg-color: #333; --text-color: white; }", ":root { --bg-color: white; }", "body { background: #333; }"],
+              "correctAnswers": [":root { --bg-color: #333; --text-color: white; }"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "What does var(--var, fallback) do?",
+              "options": ["Sets a default value", "Ignores the variable", "Defines a new variable"],
+              "correct": "Sets a default value"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Build a theme toggle with variables.",
+              "expectedAnswer": "<style>:root { --bg-color: white; --text-color: black; } .dark { --bg-color: #222; --text-color: white; } .box { background: var(--bg-color); color: var(--text-color); transition: all 0.5s; }</style><div class='box' style='width: 100px; height: 100px;'></div>",
+              "blocks": ["<style>:root { --bg-color: white; --text-color: black; } .dark { --bg-color: #222; --text-color: white; } .box { background: var(--bg-color); color: var(--text-color); transition: all 0.5s; }</style><div class='box' style='width: 100px; height: 100px;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "Are variables case-sensitive?",
+              "options": ["Yes", "No", "Only in some browsers"],
+              "correct": "Yes"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Theme Titan! 🎨",
+              "content": "You've mastered CSS Variables and Theming! Your designs are now adaptable and stylish. Keep theming! 🚀"
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "title": "CSS Positioning",
+          "lessons": [
+            {
+              "id": 1,
+              "type": "info",
+              "title": "What is Positioning?",
+              "content": "Positioning controls element placement using position: static, relative, absolute, or fixed with top, left, etc."
+            },
+            {
+              "id": 2,
+              "type": "info",
+              "title": "Positioning Types",
+              "content": "static (default), relative (offset from original), absolute (relative to parent), fixed (relative to viewport)."
+            },
+            {
+              "id": 3,
+              "type": "quiz",
+              "question": "What is the default position?",
+              "options": ["absolute", "relative", "static"],
+              "correct": "static"
+            },
+            {
+              "id": 4,
+              "type": "codeChallenge",
+              "title": "Move a div 20px right with relative positioning.",
+              "expectedAnswer": "<style>.box { position: relative; left: 20px; background: lightgoldenrodyellow; } </style><div class='box' style='width: 100px; height: 100px;'></div>",
+              "blocks": ["<style>.box { position: relative; left: 20px; background: lightgoldenrodyellow; } </style><div class='box' style='width: 100px; height: 100px;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 5,
+              "type": "codeChallenge",
+              "title": "Position a div absolutely at top left.",
+              "expectedAnswer": "<style>.container { position: relative; } .box { position: absolute; top: 0; left: 0; background: lightpink; } </style><div class='container'><div class='box' style='width: 100px; height: 100px;'></div></div>",
+              "blocks": ["<style>.container { position: relative; } .box { position: absolute; top: 0; left: 0; background: lightpink; } </style><div class='container'><div class='box' style='width: 100px; height: 100px;'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 6,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Fix a div at the bottom.",
+              "starterCode": "<style>\n.box {\n  position: fixed;\n  \n}\n</style>\n<div class='box' style='width: 100px; height: 100px; background: lightgray;'></div>",
+              "placeholders": [
+                {"line": 4, "index": 2, "hint": "bottom: 0;"}
+              ],
+              "blocks": ["bottom: 0;", "top: 0;", "left: 0;"],
+              "correctAnswers": ["bottom: 0;"],
+              "language": "html"
+            },
+            {
+              "id": 7,
+              "type": "quiz",
+              "question": "What is a positioning context?",
+              "options": ["Parent with position", "Viewport", "Document root"],
+              "correct": "Parent with position"
+            },
+            {
+              "id": 8,
+              "type": "quiz",
+              "question": "Does static allow offsets?",
+              "options": ["Yes", "No", "Only with JavaScript"],
+              "correct": "No"
+            },
+            {
+              "id": 9,
+              "type": "codeChallenge",
+              "title": "Create a sticky header.",
+              "expectedAnswer": "<style>.header { position: sticky; top: 0; background: lightsteelblue; } </style><div class='header' style='width: 100%; height: 50px;'></div>",
+              "blocks": ["<style>.header { position: sticky; top: 0; background: lightsteelblue; } </style><div class='header' style='width: 100%; height: 50px;'></div>"],
+              "language": "html"
+            },
+            {
+              "id": 10,
+              "type": "code_fill_in_the_blank",
+              "instruction": "Set an absolute div 50px from top.",
+              "starterCode": "<style>\n.container {\n  position: relative;\n}\n.box {\n  position: absolute;\n  \n}\n</style>\n<div class='container'><div class='box' style='width: 100px; height: 100px; background: lightgreen;'></div></div>",
+              "placeholders": [
+                {"line": 7, "index": 2, "hint": "top: 50px;"}
+              ],
+              "blocks": ["top: 50px;", "bottom: 50px;", "left: 50px;"],
+              "correctAnswers": ["top: 50px;"],
+              "language": "html"
+            },
+            {
+              "id": 11,
+              "type": "quiz",
+              "question": "What does z-index affect?",
+              "options": ["Width", "Stacking order", "Height"],
+              "correct": "Stacking order"
+            },
+            {
+              "id": 12,
+              "type": "codeChallenge",
+              "title": "Layer two positioned divs.",
+              "expectedAnswer": "<style>.container { position: relative; } .box1 { position: absolute; top: 10px; left: 10px; background: lightcoral; z-index: 1; } .box2 { position: absolute; top: 20px; left: 20px; background: lightblue; z-index: 2; }</style><div class='container'><div class='box1' style='width: 100px; height: 100px;'></div><div class='box2' style='width: 100px; height: 100px;'></div></div>",
+              "blocks": ["<style>.container { position: relative; } .box1 { position: absolute; top: 10px; left: 10px; background: lightcoral; z-index: 1; } .box2 { position: absolute; top: 20px; left: 20px; background: lightblue; z-index: 2; }</style><div class='container'><div class='box1' style='width: 100px; height: 100px;'></div><div class='box2' style='width: 100px; height: 100px;'></div></div>"],
+              "language": "html"
+            },
+            {
+              "id": 13,
+              "type": "quiz",
+              "question": "What makes an element sticky?",
+              "options": ["position: sticky", "position: fixed", "position: relative"],
+              "correct": "position: sticky"
+            },
+            {
+              "id": 14,
+              "type": "info",
+              "title": "Positioning Pro! 📍",
+              "content": "You've mastered CSS Positioning! Your elements are now perfectly placed. Keep positioning! 🚀"
+            }
+          ]
+        }
+      ]
+    }

@@ -1,0 +1,2581 @@
+{
+    "level": 1,
+    "language": "sql",
+    "modules": [
+      {
+        "id": 1,
+        "title": "What is SQL?",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "Introduction to SQL",
+            "content": "SQL stands for Structured Query Language. It's like a special language used to talk to databases, which are like digital filing cabinets that store information."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does SQL stand for?",
+            "options": ["Simple Query Language", "Structured Query Language", "System Query Language"],
+            "correct": "Structured Query Language"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "What Does SQL Do?",
+            "content": "SQL lets you ask questions to find data, add new data, update existing data, or delete data in a database. Think of it as giving instructions to a librarian to find or organize books."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What can SQL do with a database?",
+            "options": ["Find data", "Play music", "Edit photos"],
+            "correct": "Find data"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Databases and Tables",
+            "content": "A database is a collection of tables, and each table is like a spreadsheet with rows and columns to store information, such as names or ages."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What is a table in a database like?",
+            "options": ["A book", "A spreadsheet", "A video"],
+            "correct": "A spreadsheet"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Why Learn SQL?",
+            "content": "SQL is used by businesses to manage data, like customer records or sales. Learning SQL helps you work with data to answer questions or solve problems."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "Why is SQL useful?",
+            "options": ["To design websites", "To manage data", "To create apps"],
+            "correct": "To manage data"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "SQL in Everyday Life",
+            "content": "When you search for products online or check your bank account, SQL is working behind the scenes to fetch the right information from databases."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "Where might SQL be used?",
+            "options": ["Online shopping", "Drawing pictures", "Playing games"],
+            "correct": "Online shopping"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "SQL Commands",
+            "content": "SQL uses commands like SELECT to find data, INSERT to add data, UPDATE to change data, and DELETE to remove data."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Which SQL command finds data?",
+            "options": ["INSERT", "SELECT", "DELETE"],
+            "correct": "SELECT"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "SQL is Not Coding",
+            "content": "SQL is different from programming languages like Python. It's more like giving specific instructions to a database to get or change data."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "Is SQL a programming language like Python?",
+            "options": ["Yes", "No", "Sometimes"],
+            "correct": "No"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "You're Ready to Start!",
+            "content": "Great job learning the basics of SQL! You're ready to explore how to use SQL to work with data. Let's dive in! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Understanding Databases",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is a Database?",
+            "content": "A database is an organized collection of data, like a digital library where information is stored in tables for easy access."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What is a database like?",
+            "options": ["A digital library", "A music playlist", "A photo album"],
+            "correct": "A digital library"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Tables in Databases",
+            "content": "Tables are the main building blocks of a database. Each table holds related data, like a table for 'Customers' with names and emails."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does a table store?",
+            "options": ["Related data", "Videos", "Games"],
+            "correct": "Related data"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Rows and Columns",
+            "content": "A table has rows (each row is one record, like one customer) and columns (each column is a field, like 'Name' or 'Age')."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What is a row in a table?",
+            "options": ["A field", "A record", "A column"],
+            "correct": "A record"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Example Table",
+            "content": "Imagine a 'Pets' table with columns 'Name', 'Type', and 'Age'. Each row could be a pet, like 'Fluffy, Cat, 3'."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What might a 'Pets' table column be?",
+            "options": ["Age", "Color", "Sound"],
+            "correct": "Age"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Primary Key",
+            "content": "A primary key is a unique identifier for each row, like an ID number, to ensure no two rows are confused."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What is a primary key?",
+            "options": ["A unique identifier", "A table name", "A column type"],
+            "correct": "A unique identifier"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Database Management Systems",
+            "content": "SQL works with systems like MySQL or PostgreSQL, which are software that manage databases and understand SQL commands."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Which is a database management system?",
+            "options": ["MySQL", "HTML", "CSS"],
+            "correct": "MySQL"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Relational Databases",
+            "content": "Most SQL databases are relational, meaning tables are connected by keys, like linking 'Orders' to 'Customers' by Customer ID."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What connects tables in a relational database?",
+            "options": ["Keys", "Rows", "Files"],
+            "correct": "Keys"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "You're Making Progress!",
+            "content": "Awesome! You now understand what databases are and how they're structured. Let's learn how to query them next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Basic SQL Syntax",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "SQL Commands",
+            "content": "SQL commands are like sentences that tell the database what to do. They often start with words like SELECT or INSERT."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does an SQL command start with?",
+            "options": ["A number", "A word like SELECT", "A symbol"],
+            "correct": "A word like SELECT"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Case Sensitivity",
+            "content": "SQL commands are not case-sensitive, so 'SELECT' and 'select' work the same, but it's common to write commands in uppercase."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "Is 'SELECT' the same as 'select' in SQL?",
+            "options": ["Yes", "No", "Only sometimes"],
+            "correct": "Yes"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Semicolons",
+            "content": "SQL commands usually end with a semicolon (;) to show the command is complete, like a period in a sentence."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What ends an SQL command?",
+            "options": ["A comma", "A semicolon", "A period"],
+            "correct": "A semicolon"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Basic SELECT Command",
+            "content": "The SELECT command is used to find data. Example: SELECT * FROM Pets; gets all data from the Pets table."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does SELECT * FROM Pets; do?",
+            "options": ["Deletes Pets", "Gets all data from Pets", "Updates Pets"],
+            "correct": "Gets all data from Pets"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "FROM Clause",
+            "content": "The FROM clause tells SQL which table to look at. Example: SELECT Name FROM Pets; gets the Name column from Pets."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does the FROM clause specify?",
+            "options": ["The table", "The column", "The database"],
+            "correct": "The table"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Selecting Columns",
+            "content": "You can choose specific columns with SELECT. Example: SELECT Name, Age FROM Pets; gets only Name and Age columns."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does SELECT Name, Age FROM Pets; return?",
+            "options": ["All columns", "Name and Age columns", "Only Name"],
+            "correct": "Name and Age columns"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Comments in SQL",
+            "content": "Comments explain code and are ignored by the database. Use -- for single-line comments. Example: -- This is a comment."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "How do you write a single-line comment in SQL?",
+            "options": ["//", "--", "/* */"],
+            "correct": "--"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "You're Getting the Hang of It!",
+            "content": "Great work learning SQL syntax! You're ready to start querying data with SELECT. Keep it up! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Selecting Data",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The SELECT Statement",
+            "content": "SELECT is the most common SQL command. It retrieves data from a table, like asking for specific information from a file."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does the SELECT command do?",
+            "options": ["Deletes data", "Retrieves data", "Updates data"],
+            "correct": "Retrieves data"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Selecting All Columns",
+            "content": "Use * to select all columns. Example: SELECT * FROM Students; gets every column from the Students table."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does SELECT * do?",
+            "options": ["Selects one column", "Selects all columns", "Selects one row"],
+            "correct": "Selects all columns"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Choosing Specific Columns",
+            "content": "List column names to get only those. Example: SELECT FirstName, LastName FROM Students; gets just those columns."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does SELECT FirstName FROM Students; return?",
+            "options": ["All columns", "Only FirstName column", "All rows"],
+            "correct": "Only FirstName column"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Limiting Rows",
+            "content": "Use LIMIT to get fewer rows. Example: SELECT * FROM Products LIMIT 5; returns only 5 rows."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does LIMIT 5 do?",
+            "options": ["Returns 5 columns", "Returns 5 rows", "Returns 5 tables"],
+            "correct": "Returns 5 rows"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "DISTINCT Keyword",
+            "content": "Use DISTINCT to avoid duplicates. Example: SELECT DISTINCT City FROM Customers; gets unique cities."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does SELECT DISTINCT City do?",
+            "options": ["Gets all cities", "Gets unique cities", "Gets one city"],
+            "correct": "Gets unique cities"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Column Aliases",
+            "content": "Use AS to rename columns in results. Example: SELECT Name AS PetName FROM Pets; shows 'PetName' as the column header."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does AS do in SELECT Name AS PetName?",
+            "options": ["Renames the table", "Renames the column", "Renames the database"],
+            "correct": "Renames the column"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Order of Commands",
+            "content": "Write SELECT, then columns, then FROM, then other clauses like LIMIT. Example: SELECT Name FROM Pets LIMIT 2;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What comes after SELECT in a query?",
+            "options": ["FROM", "LIMIT", "Columns"],
+            "correct": "Columns"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "You're Querying Like a Pro!",
+            "content": "Fantastic! You're now selecting data with ease. Next, let's learn how to filter data! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Filtering Data with WHERE",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The WHERE Clause",
+            "content": "WHERE filters rows based on conditions. Example: SELECT * FROM Pets WHERE Type = 'Cat'; gets only cats."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does the WHERE clause do?",
+            "options": ["Sorts data", "Filters rows", "Adds data"],
+            "correct": "Filters rows"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using Equals",
+            "content": "Use = to match exact values. Example: SELECT Name FROM Students WHERE Grade = 'A'; gets students with an A."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does WHERE Grade = 'A' do?",
+            "options": ["Gets all grades", "Gets A grades", "Gets B grades"],
+            "correct": "Gets A grades"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Numbers in WHERE",
+            "content": "Use numbers without quotes. Example: SELECT * FROM Pets WHERE Age = 5; gets pets that are 5 years old."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "How do you write a number in WHERE?",
+            "options": ["With quotes", "Without quotes", "With parentheses"],
+            "correct": "Without quotes"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Text in WHERE",
+            "content": "Text values need single quotes. Example: SELECT * FROM Customers WHERE City = 'Paris'; gets customers in Paris."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "How do you write text in WHERE?",
+            "options": ["With single quotes", "With double quotes", "Without quotes"],
+            "correct": "With single quotes"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Greater Than",
+            "content": "Use > to find larger values. Example: SELECT * FROM Orders WHERE Total > 100; gets orders over $100."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does WHERE Total > 100 do?",
+            "options": ["Gets orders over $100", "Gets orders under $100", "Gets orders equal to $100"],
+            "correct": "Gets orders over $100"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Less Than",
+            "content": "Use < for smaller values. Example: SELECT Name FROM Products WHERE Price < 20; gets products under $20."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does WHERE Price < 20 return?",
+            "options": ["Products over $20", "Products under $20", "Products equal to $20"],
+            "correct": "Products under $20"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Not Equal",
+            "content": "Use != or <> to exclude values. Example: SELECT * FROM Pets WHERE Type != 'Dog'; gets non-dog pets."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What does WHERE Type != 'Dog' do?",
+            "options": ["Gets only dogs", "Gets non-dogs", "Gets all pets"],
+            "correct": "Gets non-dogs"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Filtering Master!",
+            "content": "You're filtering data like a champ! Next, let's combine conditions to make queries even smarter! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Combining Conditions",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The AND Operator",
+            "content": "AND combines conditions that must both be true. Example: SELECT * FROM Pets WHERE Type = 'Cat' AND Age > 2; gets older cats."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does AND require?",
+            "options": ["One condition true", "Both conditions true", "No conditions true"],
+            "correct": "Both conditions true"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "The OR Operator",
+            "content": "OR needs at least one condition true. Example: SELECT * FROM Pets WHERE Type = 'Cat' OR Type = 'Dog'; gets cats or dogs."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does OR require?",
+            "options": ["Both conditions true", "At least one condition true", "No conditions true"],
+            "correct": "At least one condition true"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "The NOT Operator",
+            "content": "NOT excludes conditions. Example: SELECT * FROM Pets WHERE NOT Type = 'Cat'; gets all non-cat pets."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does NOT Type = 'Cat' do?",
+            "options": ["Gets only cats", "Gets non-cats", "Gets all pets"],
+            "correct": "Gets non-cats"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Combining AND and OR",
+            "content": "Use parentheses to group conditions. Example: SELECT * FROM Pets WHERE (Type = 'Cat' OR Type = 'Dog') AND Age > 5;"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "Why use parentheses with AND and OR?",
+            "options": ["To group conditions", "To sort data", "To limit rows"],
+            "correct": "To group conditions"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Order of Operations",
+            "content": "SQL evaluates NOT first, then AND, then OR. Use parentheses to control the order."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "Which operator is evaluated first?",
+            "options": ["AND", "OR", "NOT"],
+            "correct": "NOT"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Example with AND",
+            "content": "SELECT Name FROM Customers WHERE City = 'London' AND Country = 'UK'; gets customers from London, UK."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does WHERE City = 'London' AND Country = 'UK' return?",
+            "options": ["All customers", "London, UK customers", "London customers"],
+            "correct": "London, UK customers"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Example with OR",
+            "content": "SELECT * FROM Products WHERE Category = 'Electronics' OR Category = 'Clothing'; gets products in either category."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What does OR Category = 'Clothing' include?",
+            "options": ["Only clothing", "Clothing and others", "No clothing"],
+            "correct": "Clothing and others"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Condition Expert!",
+            "content": "You're combining conditions like a pro! Next, let's sort our query results! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Sorting Data",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The ORDER BY Clause",
+            "content": "ORDER BY sorts results. Example: SELECT * FROM Pets ORDER BY Age; sorts pets by age."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does ORDER BY do?",
+            "options": ["Filters rows", "Sorts results", "Limits rows"],
+            "correct": "Sorts results"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Ascending Order",
+            "content": "Use ASC for ascending order (default). Example: SELECT Name FROM Students ORDER BY Name ASC; sorts names A to Z."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does ORDER BY Name ASC do?",
+            "options": ["Sorts Z to A", "Sorts A to Z", "No sorting"],
+            "correct": "Sorts A to Z"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Descending Order",
+            "content": "Use DESC for descending order. Example: SELECT * FROM Orders ORDER BY Total DESC; sorts from highest to lowest."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does ORDER BY Total DESC do?",
+            "options": ["Lowest to highest", "Highest to lowest", "No sorting"],
+            "correct": "Highest to lowest"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Sorting Multiple Columns",
+            "content": "Sort by multiple columns. Example: SELECT * FROM Pets ORDER BY Type, Age; sorts by Type, then Age within each Type."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does ORDER BY Type, Age do?",
+            "options": ["Sorts by Type then Age", "Sorts by Age only", "Sorts by Type only"],
+            "correct": "Sorts by Type then Age"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Combining with WHERE",
+            "content": "Use ORDER BY after WHERE. Example: SELECT * FROM Pets WHERE Type = 'Dog' ORDER BY Age;"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What comes first in a query?",
+            "options": ["ORDER BY", "WHERE", "SELECT"],
+            "correct": "SELECT"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Sorting Text",
+            "content": "Text sorts alphabetically. Example: SELECT Name FROM Customers ORDER BY Name DESC; sorts names Z to A."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "How does ORDER BY Name DESC sort text?",
+            "options": ["A to Z", "Z to A", "Randomly"],
+            "correct": "Z to A"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Sorting Numbers",
+            "content": "Numbers sort numerically. Example: SELECT Price FROM Products ORDER BY Price; sorts from lowest to highest."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "How does ORDER BY Price sort numbers?",
+            "options": ["Lowest to highest", "Highest to lowest", "Randomly"],
+            "correct": "Lowest to highest"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Sorting Star!",
+            "content": "You're sorting data like a pro! Let's move on to aggregating data next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Aggregating Data",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What is Aggregation?",
+            "content": "Aggregation summarizes data, like counting rows or finding averages. SQL has functions like COUNT or SUM for this."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does aggregation do?",
+            "options": ["Summarizes data", "Filters data", "Sorts data"],
+            "correct": "Summarizes data"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "COUNT Function",
+            "content": "COUNT counts rows. Example: SELECT COUNT(*) FROM Pets; returns the total number of pets."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does COUNT(*) do?",
+            "options": ["Sums values", "Counts rows", "Averages values"],
+            "correct": "Counts rows"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "SUM Function",
+            "content": "SUM adds up numbers. Example: SELECT SUM(Total) FROM Orders; gets the total of all orders."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does SUM(Total) do?",
+            "options": ["Counts orders", "Adds order totals", "Averages orders"],
+            "correct": "Adds order totals"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "AVG Function",
+            "content": "AVG finds the average. Example: SELECT AVG(Price) FROM Products; gets the average product price."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does AVG(Price) return?",
+            "options": ["Total price", "Average price", "Minimum price"],
+            "correct": "Average price"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "MIN and MAX",
+            "content": "MIN finds the smallest value, MAX the largest. Example: SELECT MAX(Age) FROM Pets; gets the oldest pet's age."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does MAX(Age) do?",
+            "options": ["Youngest age", "Oldest age", "Average age"],
+            "correct": "Oldest age"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Using with WHERE",
+            "content": "Combine with WHERE. Example: SELECT COUNT(*) FROM Pets WHERE Type = 'Cat'; counts only cats."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does COUNT(*) WHERE Type = 'Cat' count?",
+            "options": ["All pets", "Only cats", "Only dogs"],
+            "correct": "Only cats"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Aliases for Aggregates",
+            "content": "Use AS to name results. Example: SELECT COUNT(*) AS PetCount FROM Pets; names the count 'PetCount'."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What does AS PetCount do?",
+            "options": ["Renames the table", "Names the count", "Filters data"],
+            "correct": "Names the count"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Aggregation Ace!",
+            "content": "You're summarizing data like a pro! Next, let's group data for even more insights! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Grouping Data",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The GROUP BY Clause",
+            "content": "GROUP BY groups rows with the same value. Example: SELECT Type, COUNT(*) FROM Pets GROUP BY Type; counts pets by type."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does GROUP BY do?",
+            "options": ["Sorts data", "Groups rows", "Filters rows"],
+            "correct": "Groups rows"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using with Aggregates",
+            "content": "GROUP BY is used with functions like COUNT or SUM. Example: SELECT City, SUM(Total) FROM Orders GROUP BY City;"
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What is GROUP BY used with?",
+            "options": ["Aggregate functions", "WHERE clause", "ORDER BY"],
+            "correct": "Aggregate functions"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Grouping by One Column",
+            "content": "Group by one column. Example: SELECT Department, AVG(Salary) FROM Employees GROUP BY Department;"
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does GROUP BY Department do?",
+            "options": ["Groups by department", "Sorts by department", "Filters departments"],
+            "correct": "Groups by department"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Multiple Columns",
+            "content": "Group by multiple columns. Example: SELECT City, Country, COUNT(*) FROM Customers GROUP BY City, Country;"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "Can you group by multiple columns?",
+            "options": ["Yes", "No", "Only one"],
+            "correct": "Yes"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Combining with WHERE",
+            "content": "Use WHERE before GROUP BY. Example: SELECT Type, COUNT(*) FROM Pets WHERE Age > 2 GROUP BY Type;"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What comes before GROUP BY?",
+            "options": ["ORDER BY", "WHERE", "SELECT"],
+            "correct": "WHERE"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Order of Results",
+            "content": "Use ORDER BY after GROUP BY to sort. Example: SELECT Type, COUNT(*) FROM Pets GROUP BY Type ORDER BY COUNT(*) DESC;"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What can follow GROUP BY?",
+            "options": ["WHERE", "ORDER BY", "FROM"],
+            "correct": "ORDER BY"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "HAVING Clause",
+            "content": "HAVING filters groups. Example: SELECT Type, COUNT(*) FROM Pets GROUP BY Type HAVING COUNT(*) > 1;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What does HAVING do?",
+            "options": ["Filters groups", "Filters rows", "Sorts groups"],
+            "correct": "Filters groups"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Grouping Guru!",
+            "content": "You're grouping data like a master! Let's learn about joining tables next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Joining Tables",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "Why Join Tables?",
+            "content": "Joining tables combines data from multiple tables, like linking 'Orders' with 'Customers' to see who ordered what."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does joining tables do?",
+            "options": ["Deletes tables", "Combines data", "Sorts tables"],
+            "correct": "Combines data"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "INNER JOIN",
+            "content": "INNER JOIN gets rows where both tables match. Example: SELECT * FROM Orders INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;"
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does INNER JOIN return?",
+            "options": ["All rows", "Matching rows", "Non-matching rows"],
+            "correct": "Matching rows"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "The ON Clause",
+            "content": "ON specifies how tables connect. Example: ON Orders.CustomerID = Customers.CustomerID links the tables by CustomerID."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does the ON clause do?",
+            "options": ["Sorts data", "Links tables", "Filters rows"],
+            "correct": "Links tables"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Selecting Columns",
+            "content": "Choose columns from both tables. Example: SELECT Customers.Name, Orders.Total FROM Orders INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "Can you select columns from both tables in a join?",
+            "options": ["Yes", "No", "Only one table"],
+            "correct": "Yes"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Table Aliases",
+            "content": "Use aliases to shorten table names. Example: SELECT c.Name FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID;"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does a table alias do?",
+            "options": ["Renames columns", "Shortens table names", "Filters tables"],
+            "correct": "Shortens table names"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "LEFT JOIN",
+            "content": "LEFT JOIN includes all rows from the left table, with NULLs if no match in the right table."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does LEFT JOIN include?",
+            "options": ["All left table rows", "Only matching rows", "All right table rows"],
+            "correct": "All left table rows"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "RIGHT JOIN",
+            "content": "RIGHT JOIN includes all rows from the right table, with NULLs if no match in the left table."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What does RIGHT JOIN include?",
+            "options": ["All left table rows", "All right table rows", "Only matching rows"],
+            "correct": "All right table rows"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Joining Jedi!",
+            "content": "You're combining tables like a pro! Next, let's insert data into tables! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Inserting Data",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The INSERT Command",
+            "content": "INSERT adds new rows to a table. Example: INSERT INTO Pets (Name, Type) VALUES ('Fluffy', 'Cat'); adds a new pet."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does INSERT do?",
+            "options": ["Adds rows", "Deletes rows", "Updates rows"],
+            "correct": "Adds rows"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Specifying Columns",
+            "content": "List columns in INSERT. Example: INSERT INTO Customers (Name, City) VALUES ('Alice', 'Paris'); sets only those columns."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does INSERT INTO Customers (Name) do?",
+            "options": ["Sets all columns", "Sets Name column", "Sets no columns"],
+            "correct": "Sets Name column"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "The VALUES Clause",
+            "content": "VALUES lists the data. Example: INSERT INTO Pets VALUES ('Max', 'Dog', 4); adds a full row."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does the VALUES clause provide?",
+            "options": ["Column names", "Data for rows", "Table names"],
+            "correct": "Data for rows"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Text Values",
+            "content": "Text needs single quotes. Example: INSERT INTO Products (Name) VALUES ('Laptop');"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "How do you write text in VALUES?",
+            "options": ["With single quotes", "With double quotes", "Without quotes"],
+            "correct": "With single quotes"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Number Values",
+            "content": "Numbers don't need quotes. Example: INSERT INTO Orders (Total) VALUES (99.99);"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "Do numbers in VALUES need quotes?",
+            "options": ["Yes", "No", "Sometimes"],
+            "correct": "No"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Inserting Multiple Rows",
+            "content": "Add multiple rows. Example: INSERT INTO Pets VALUES ('Luna', 'Cat', 2), ('Rex', 'Dog', 5);"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Can you insert multiple rows at once?",
+            "options": ["Yes", "No", "Only one"],
+            "correct": "Yes"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Omitting Columns",
+            "content": "Omitted columns get default or NULL values. Example: INSERT INTO Pets (Name) VALUES ('Spot'); leaves Type and Age empty."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What happens to omitted columns?",
+            "options": ["They get errors", "They get defaults or NULL", "They are deleted"],
+            "correct": "They get defaults or NULL"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Data Inserter!",
+            "content": "You're adding data like a pro! Let's learn how to update existing data next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Updating Data",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The UPDATE Command",
+            "content": "UPDATE changes existing rows. Example: UPDATE Pets SET Age = 4 WHERE Name = 'Fluffy'; updates Fluffy's age."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does UPDATE do?",
+            "options": ["Adds rows", "Changes rows", "Deletes rows"],
+            "correct": "Changes rows"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "The SET Clause",
+            "content": "SET specifies new values. Example: UPDATE Customers SET City = 'London' WHERE CustomerID = 1;"
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does the SET clause do?",
+            "options": ["Filters rows", "Sets new values", "Sorts data"],
+            "correct": "Sets new values"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Using WHERE",
+            "content": "WHERE chooses which rows to update. Without WHERE, all rows change! Example: UPDATE Products SET Price = 10;"
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What happens without WHERE in UPDATE?",
+            "options": ["Updates one row", "Updates all rows", "No update"],
+            "correct": "Updates all rows"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Updating Multiple Columns",
+            "content": "Update multiple columns. Example: UPDATE Pets SET Name = 'Luna', Age = 3 WHERE ID = 2;"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "Can you update multiple columns?",
+            "options": ["Yes", "No", "Only one"],
+            "correct": "Yes"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Text Values",
+            "content": "Use single quotes for text. Example: UPDATE Employees SET Department = 'Sales' WHERE ID = 5;"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "How do you write text in SET?",
+            "options": ["With single quotes", "With double quotes", "Without quotes"],
+            "correct": "With single quotes"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Number Values",
+            "content": "Numbers don't need quotes. Example: UPDATE Orders SET Total = 150.50 WHERE OrderID = 10;"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Do numbers in SET need quotes?",
+            "options": ["Yes", "No", "Sometimes"],
+            "correct": "No"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Using Conditions",
+            "content": "Combine conditions. Example: UPDATE Pets SET Age = 6 WHERE Type = 'Dog' AND Name = 'Rex';"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "Can you use AND in UPDATE's WHERE?",
+            "options": ["Yes", "No", "Only OR"],
+            "correct": "Yes"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Update Expert!",
+            "content": "You're updating data like a champ! Let's learn how to delete data next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Deleting Data",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The DELETE Command",
+            "content": "DELETE removes rows. Example: DELETE FROM Pets WHERE Name = 'Fluffy'; removes Fluffy."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does DELETE do?",
+            "options": ["Adds rows", "Removes rows", "Updates rows"],
+            "correct": "Removes rows"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Using WHERE",
+            "content": "WHERE specifies which rows to delete. Without WHERE, all rows are deleted! Example: DELETE FROM Orders;"
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What happens without WHERE in DELETE?",
+            "options": ["Deletes one row", "Deletes all rows", "No deletion"],
+            "correct": "Deletes all rows"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Deleting by ID",
+            "content": "Use primary keys for precise deletion. Example: DELETE FROM Customers WHERE CustomerID = 1;"
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What is a good way to delete a specific row?",
+            "options": ["By name", "By primary key", "By table"],
+            "correct": "By primary key"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Combining Conditions",
+            "content": "Use AND or OR. Example: DELETE FROM Products WHERE Price < 10 AND Category = 'Old';"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "Can you use AND in DELETE's WHERE?",
+            "options": ["Yes", "No", "Only OR"],
+            "correct": "Yes"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Deleting Multiple Rows",
+            "content": "DELETE can remove multiple rows. Example: DELETE FROM Orders WHERE Total < 50;"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "Can DELETE remove multiple rows?",
+            "options": ["Yes", "No", "Only one"],
+            "correct": "Yes"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Careful with DELETE",
+            "content": "Deleted data is gone forever unless you have a backup, so always double-check your WHERE clause."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What should you check before DELETE?",
+            "options": ["SELECT clause", "WHERE clause", "FROM clause"],
+            "correct": "WHERE clause"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Testing with SELECT",
+            "content": "Run a SELECT with the same WHERE to see what will be deleted. Example: SELECT * FROM Pets WHERE Age > 10;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What can you run to test a DELETE?",
+            "options": ["SELECT", "INSERT", "UPDATE"],
+            "correct": "SELECT"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Deletion Dynamo!",
+            "content": "You're deleting data safely and confidently! Let's create tables next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Creating Tables",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The CREATE TABLE Command",
+            "content": "CREATE TABLE makes a new table. Example: CREATE TABLE Pets (Name VARCHAR(50), Age INT); creates a Pets table."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does CREATE TABLE do?",
+            "options": ["Deletes a table", "Creates a table", "Updates a table"],
+            "correct": "Creates a table"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Defining Columns",
+            "content": "List columns with data types. Example: CREATE TABLE Students (ID INT, Name VARCHAR(100));"
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What do you specify for columns in CREATE TABLE?",
+            "options": ["Data types", "Table names", "Row counts"],
+            "correct": "Data types"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Common Data Types",
+            "content": "VARCHAR for text, INT for whole numbers, DECIMAL for decimals, DATE for dates."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "Which data type is for text?",
+            "options": ["INT", "VARCHAR", "DATE"],
+            "correct": "VARCHAR"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Primary Key",
+            "content": "Add PRIMARY KEY to a column. Example: CREATE TABLE Customers (ID INT PRIMARY KEY, Name VARCHAR(50));"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does PRIMARY KEY do?",
+            "options": ["Sorts data", "Uniquely identifies rows", "Limits rows"],
+            "correct": "Uniquely identifies rows"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "NOT NULL",
+            "content": "NOT NULL means a column must have a value. Example: Name VARCHAR(50) NOT NULL;"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does NOT NULL ensure?",
+            "options": ["Unique values", "A value is required", "No text allowed"],
+            "correct": "A value is required"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Default Values",
+            "content": "DEFAULT sets a default. Example: CREATE TABLE Orders (Status VARCHAR(20) DEFAULT 'Pending');"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does DEFAULT do?",
+            "options": ["Sets a default value", "Deletes a column", "Filters data"],
+            "correct": "Sets a default value"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Auto-Increment",
+            "content": "AUTO_INCREMENT generates unique IDs. Example: ID INT PRIMARY KEY AUTO_INCREMENT;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What does AUTO_INCREMENT do?",
+            "options": ["Sorts IDs", "Generates unique IDs", "Limits IDs"],
+            "correct": "Generates unique IDs"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Table Creator!",
+            "content": "You're building tables like a pro! Let's modify tables next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Modifying Tables",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The ALTER TABLE Command",
+            "content": "ALTER TABLE changes a table's structure. Example: ALTER TABLE Pets ADD Color VARCHAR(20); adds a Color column."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does ALTER TABLE do?",
+            "options": ["Creates a table", "Changes a table", "Deletes a table"],
+            "correct": "Changes a table"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Adding Columns",
+            "content": "Use ADD to add columns. Example: ALTER TABLE Customers ADD Email VARCHAR(100);"
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does ADD do in ALTER TABLE?",
+            "options": ["Adds columns", "Removes columns", "Changes columns"],
+            "correct": "Adds columns"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Dropping Columns",
+            "content": "Use DROP COLUMN to remove columns. Example: ALTER TABLE Pets DROP COLUMN Color;"
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does DROP COLUMN do?",
+            "options": ["Adds a column", "Removes a column", "Renames a column"],
+            "correct": "Removes a column"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "Modifying Columns",
+            "content": "Use MODIFY to change column types. Example: ALTER TABLE Students MODIFY Name VARCHAR(200);"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does MODIFY do?",
+            "options": ["Changes column type", "Adds a column", "Deletes a column"],
+            "correct": "Changes column type"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Renaming Columns",
+            "content": "Use CHANGE to rename. Example: ALTER TABLE Pets CHANGE OldName NewName VARCHAR(50);"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does CHANGE do in ALTER TABLE?",
+            "options": ["Renames columns", "Deletes columns", "Sorts columns"],
+            "correct": "Renames columns"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Adding Constraints",
+            "content": "Add rules like NOT NULL. Example: ALTER TABLE Customers MODIFY Name VARCHAR(50) NOT NULL;"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Can ALTER TABLE add NOT NULL?",
+            "options": ["Yes", "No", "Only for numbers"],
+            "correct": "Yes"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Dropping Constraints",
+            "content": "Remove rules. Example: ALTER TABLE Customers MODIFY Name VARCHAR(50); removes NOT NULL if allowed."
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "Can you remove constraints with ALTER TABLE?",
+            "options": ["Yes", "No", "Only for text"],
+            "correct": "Yes"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Table Modifier!",
+            "content": "You're altering tables like a pro! Let's drop tables next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "title": "Dropping Tables",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "The DROP TABLE Command",
+            "content": "DROP TABLE deletes a table and all its data. Example: DROP TABLE Pets; removes the Pets table."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What does DROP TABLE do?",
+            "options": ["Creates a table", "Deletes a table", "Updates a table"],
+            "correct": "Deletes a table"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "Be Careful!",
+            "content": "Dropping a table is permanent. Always ensure you have backups or don't need the data."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "Is DROP TABLE reversible?",
+            "options": ["Yes", "No", "Sometimes"],
+            "correct": "No"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "Dropping Multiple Tables",
+            "content": "Some systems allow dropping multiple tables. Example: DROP TABLE Pets, Customers;"
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "Can you drop multiple tables at once?",
+            "options": ["Yes", "No", "Only one"],
+            "correct": "Yes"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "IF EXISTS",
+            "content": "Use IF EXISTS to avoid errors if the table doesn't exist. Example: DROP TABLE IF EXISTS Orders;"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does IF EXISTS do in DROP TABLE?",
+            "options": ["Creates a table", "Avoids errors", "Sorts tables"],
+            "correct": "Avoids errors"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "Checking Before Dropping",
+            "content": "Run SELECT * FROM TableName; to check the data before dropping to avoid mistakes."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What can you do before DROP TABLE?",
+            "options": ["Run SELECT", "Run INSERT", "Run UPDATE"],
+            "correct": "Run SELECT"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Dependencies",
+            "content": "Dropping a table may affect related tables if they are linked by keys, so check relationships first."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What should you check before dropping a table?",
+            "options": ["Table size", "Relationships", "Column names"],
+            "correct": "Relationships"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Alternative to DROP",
+            "content": "Use TRUNCATE to remove all rows but keep the table structure. Example: TRUNCATE TABLE Pets;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "What does TRUNCATE do?",
+            "options": ["Removes rows, keeps structure", "Removes table", "Updates rows"],
+            "correct": "Removes rows, keeps structure"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Table Dropper!",
+            "content": "You're handling table deletion safely! Let's explore string functions next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "title": "String Functions",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What are String Functions?",
+            "content": "String functions manipulate text, like combining or changing it. Example: UPPER('cat') makes 'CAT'."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What do string functions do?",
+            "options": ["Manipulate text", "Calculate numbers", "Sort data"],
+            "correct": "Manipulate text"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "UPPER Function",
+            "content": "UPPER converts text to uppercase. Example: SELECT UPPER(Name) FROM Pets; returns names in all caps."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does UPPER('dog') return?",
+            "options": ["dog", "DOG", "Dog"],
+            "correct": "DOG"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "LOWER Function",
+            "content": "LOWER converts text to lowercase. Example: SELECT LOWER(City) FROM Customers; returns cities in lowercase."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does LOWER('CAT') return?",
+            "options": ["cat", "CAT", "Cat"],
+            "correct": "cat"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "CONCAT Function",
+            "content": "CONCAT joins text. Example: SELECT CONCAT(FirstName, ' ', LastName) FROM Students; combines names."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does CONCAT('A', 'B') do?",
+            "options": ["AB", "A B", "A, B"],
+            "correct": "AB"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "LENGTH Function",
+            "content": "LENGTH counts characters. Example: SELECT LENGTH(Name) FROM Pets; returns the length of each name."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does LENGTH('Cat') return?",
+            "options": ["3", "4", "5"],
+            "correct": "3"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "SUBSTRING Function",
+            "content": "SUBSTRING extracts part of text. Example: SELECT SUBSTRING(Name, 1, 3) FROM Pets; gets first 3 characters."
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does SUBSTRING('Hello', 1, 2) return?",
+            "options": ["He", "Hel", "llo"],
+            "correct": "He"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Using with WHERE",
+            "content": "Combine with WHERE. Example: SELECT Name FROM Customers WHERE LENGTH(Name) > 5;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "Can string functions be used in WHERE?",
+            "options": ["Yes", "No", "Only in SELECT"],
+            "correct": "Yes"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "String Wizard!",
+            "content": "You're manipulating text like a pro! Let's tackle number functions next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "Number Functions",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What are Number Functions?",
+            "content": "Number functions perform math on numbers, like rounding or finding absolute values."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What do number functions do?",
+            "options": ["Manipulate text", "Perform math", "Sort data"],
+            "correct": "Perform math"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "ROUND Function",
+            "content": "ROUND rounds numbers. Example: SELECT ROUND(Price, 1) FROM Products; rounds to 1 decimal."
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does ROUND(3.56, 1) return?",
+            "options": ["3.5", "3.6", "4.0"],
+            "correct": "3.6"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "CEIL Function",
+            "content": "CEIL rounds up. Example: SELECT CEIL(4.1) FROM Orders; returns 5."
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does CEIL(4.1) return?",
+            "options": ["4", "5", "4.1"],
+            "correct": "5"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "FLOOR Function",
+            "content": "FLOOR rounds down. Example: SELECT FLOOR(4.9) FROM Orders; returns 4."
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does FLOOR(4.9) return?",
+            "options": ["4", "5", "4.9"],
+            "correct": "4"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "ABS Function",
+            "content": "ABS gives the absolute value. Example: SELECT ABS(-10) FROM Products; returns 10."
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does ABS(-10) return?",
+            "options": ["-10", "10", "0"],
+            "correct": "10"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "Using in Calculations",
+            "content": "Combine with math. Example: SELECT ROUND(Price * 0.9, 2) AS Discount FROM Products;"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "Can number functions be used in calculations?",
+            "options": ["Yes", "No", "Only in WHERE"],
+            "correct": "Yes"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Using with WHERE",
+            "content": "Use in conditions. Example: SELECT * FROM Orders WHERE ROUND(Total) > 100;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "Can number functions be used in WHERE?",
+            "options": ["Yes", "No", "Only in SELECT"],
+            "correct": "Yes"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Math Master!",
+            "content": "You're crunching numbers like a pro! Let's explore date functions next! 🚀"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "title": "Date Functions",
+        "lessons": [
+          {
+            "id": 1,
+            "type": "info",
+            "title": "What are Date Functions?",
+            "content": "Date functions handle dates, like finding the current date or extracting parts of a date."
+          },
+          {
+            "id": 2,
+            "type": "quiz",
+            "question": "What do date functions do?",
+            "options": ["Manipulate dates", "Calculate numbers", "Sort text"],
+            "correct": "Manipulate dates"
+          },
+          {
+            "id": 3,
+            "type": "info",
+            "title": "CURRENT_DATE",
+            "content": "CURRENT_DATE gets today's date. Example: SELECT CURRENT_DATE;"
+          },
+          {
+            "id": 4,
+            "type": "quiz",
+            "question": "What does CURRENT_DATE return?",
+            "options": ["Today's date", "Tomorrow's date", "Yesterday's date"],
+            "correct": "Today's date"
+          },
+          {
+            "id": 5,
+            "type": "info",
+            "title": "YEAR Function",
+            "content": "YEAR extracts the year. Example: SELECT YEAR(OrderDate) FROM Orders;"
+          },
+          {
+            "id": 6,
+            "type": "quiz",
+            "question": "What does YEAR('2023-05-09') return?",
+            "options": ["2023", "05", "09"],
+            "correct": "2023"
+          },
+          {
+            "id": 7,
+            "type": "info",
+            "title": "MONTH Function",
+            "content": "MONTH extracts the month. Example: SELECT MONTH(BirthDate) FROM Customers;"
+          },
+          {
+            "id": 8,
+            "type": "quiz",
+            "question": "What does MONTH('2023-05-09') return?",
+            "options": ["2023", "05", "09"],
+            "correct": "05"
+          },
+          {
+            "id": 9,
+            "type": "info",
+            "title": "DAY Function",
+            "content": "DAY extracts the day. Example: SELECT DAY(OrderDate) FROM Orders;"
+          },
+          {
+            "id": 10,
+            "type": "quiz",
+            "question": "What does DAY('2023-05-09') return?",
+            "options": ["2023", "05", "09"],
+            "correct": "09"
+          },
+          {
+            "id": 11,
+            "type": "info",
+            "title": "DATEDIFF Function",
+            "content": "DATEDIFF finds days between dates. Example: SELECT DATEDIFF(CURRENT_DATE, OrderDate) FROM Orders;"
+          },
+          {
+            "id": 12,
+            "type": "quiz",
+            "question": "What does DATEDIFF do?",
+            "options": ["Adds dates", "Finds days between dates", "Extracts months"],
+            "correct": "Finds days between dates"
+          },
+          {
+            "id": 13,
+            "type": "info",
+            "title": "Using in WHERE",
+            "content": "Use with conditions. Example: SELECT * FROM Orders WHERE YEAR(OrderDate) = 2023;"
+          },
+          {
+            "id": 14,
+            "type": "quiz",
+            "question": "Can date functions be used in WHERE?",
+            "options": ["Yes", "No", "Only in SELECT"],
+            "correct": "Yes"
+          },
+          {
+            "id": 15,
+            "type": "info",
+            "title": "Date Dynamo!",
+            "content": "You're handling dates like a pro! Let's learn about subqueries next! 🚀"
+          }
+        ]
+    },
+    {
+      "id": 20,
+      "title": "Using Subqueries",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Subquery?",
+          "content": "A subquery is a query inside another query, like a question within a question. It’s used to get data that the main query needs."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a subquery?",
+          "options": ["A separate table", "A query inside a query", "A new database"],
+          "correct": "A query inside a query"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Subquery in WHERE",
+          "content": "Use subqueries in WHERE to filter. Example: SELECT * FROM Orders WHERE CustomerID IN (SELECT CustomerID FROM Customers WHERE City = 'Paris');"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "Where can a subquery be used?",
+          "options": ["In WHERE", "In ORDER BY", "In GROUP BY"],
+          "correct": "In WHERE"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Single Value Subquery",
+          "content": "A subquery returning one value can be used with =. Example: SELECT * FROM Products WHERE Price > (SELECT AVG(Price) FROM Products);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does a single value subquery return?",
+          "options": ["One value", "Multiple rows", "A table"],
+          "correct": "One value"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "IN Operator with Subquery",
+          "content": "Use IN for multiple values. Example: SELECT Name FROM Customers WHERE CustomerID IN (SELECT CustomerID FROM Orders);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which operator is used with a subquery returning multiple values?",
+          "options": ["=", "IN", ">"],
+          "correct": "IN"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Subquery in SELECT",
+          "content": "Subqueries can be in SELECT. Example: SELECT Name, (SELECT COUNT(*) FROM Orders WHERE Orders.CustomerID = Customers.CustomerID) AS OrderCount FROM Customers;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can a subquery be used in the SELECT clause?",
+          "options": ["Yes", "No", "Only in WHERE"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Correlated Subquery",
+          "content": "A correlated subquery uses values from the outer query. Example: SELECT * FROM Products p WHERE Price > (SELECT AVG(Price) FROM Products WHERE Category = p.Category);"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does a correlated subquery use?",
+          "options": ["Outer query values", "Inner query values", "No values"],
+          "correct": "Outer query values"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Performance Note",
+          "content": "Subqueries can be slow for large data. Joins are often faster, but subqueries are easier to read for simple tasks."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Are subqueries always the fastest option?",
+          "options": ["Yes", "No", "Always"],
+          "correct": "No"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Subquery Star!",
+          "content": "You're mastering subqueries! Let's explore views next! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Working with Views",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a View?",
+          "content": "A view is a saved query that acts like a virtual table. It doesn’t store data but shows the query’s results."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a view?",
+          "options": ["A real table", "A virtual table", "A database"],
+          "correct": "A virtual table"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating a View",
+          "content": "Use CREATE VIEW. Example: CREATE VIEW CustomerOrders AS SELECT Customers.Name, Orders.Total FROM Customers INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What command creates a view?",
+          "options": ["CREATE TABLE", "CREATE VIEW", "CREATE DATABASE"],
+          "correct": "CREATE VIEW"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using a View",
+          "content": "Query a view like a table. Example: SELECT * FROM CustomerOrders WHERE Total > 100;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "How do you use a view?",
+          "options": ["Like a table", "Like a database", "Like a column"],
+          "correct": "Like a table"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Why Use Views?",
+          "content": "Views simplify complex queries, improve security by limiting data access, and make queries reusable."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Why are views useful?",
+          "options": ["They store data", "They simplify queries", "They delete data"],
+          "correct": "They simplify queries"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Dropping a View",
+          "content": "Use DROP VIEW to remove a view. Example: DROP VIEW CustomerOrders;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "How do you remove a view?",
+          "options": ["DROP TABLE", "DROP VIEW", "DELETE VIEW"],
+          "correct": "DROP VIEW"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Updating Views",
+          "content": "Some views can be updated if they meet conditions, like being based on one table. Example: UPDATE CustomerView SET Name = 'Bob';"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can some views be updated?",
+          "options": ["Yes", "No", "Always"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Views and Security",
+          "content": "Views can restrict data. Example: CREATE VIEW LimitedCustomers AS SELECT Name FROM Customers; hides other columns."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What can views do for security?",
+          "options": ["Restrict data access", "Delete data", "Sort data"],
+          "correct": "Restrict data access"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "View Virtuoso!",
+          "content": "You're creating and using views like a pro! Let's learn about indexes next! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Understanding Indexes",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is an Index?",
+          "content": "An index is like a book’s index, helping the database find data faster without scanning every row."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does an index do?",
+          "options": ["Stores data", "Speeds up searches", "Deletes data"],
+          "correct": "Speeds up searches"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating an Index",
+          "content": "Use CREATE INDEX. Example: CREATE INDEX idx_customer_id ON Customers(CustomerID);"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What command creates an index?",
+          "options": ["CREATE TABLE", "CREATE INDEX", "CREATE VIEW"],
+          "correct": "CREATE INDEX"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Indexing Columns",
+          "content": "Index columns used in WHERE or JOIN. Example: CREATE INDEX idx_city ON Customers(City);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "Which columns should be indexed?",
+          "options": ["All columns", "Columns in WHERE or JOIN", "No columns"],
+          "correct": "Columns in WHERE or JOIN"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Dropping an Index",
+          "content": "Use DROP INDEX. Example: DROP INDEX idx_customer_id ON Customers;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How do you remove an index?",
+          "options": ["DROP INDEX", "DROP TABLE", "DROP VIEW"],
+          "correct": "DROP INDEX"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Unique Indexes",
+          "content": "A unique index prevents duplicate values. Example: CREATE UNIQUE INDEX idx_email ON Customers(Email);"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does a unique index prevent?",
+          "options": ["Duplicate values", "Null values", "Text values"],
+          "correct": "Duplicate values"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Trade-Off",
+          "content": "Indexes speed up SELECT but slow down INSERT, UPDATE, and DELETE because the index must be updated."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Do indexes affect INSERT performance?",
+          "options": ["Yes", "No", "Only SELECT"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "When to Use Indexes",
+          "content": "Use indexes on frequently searched columns but avoid over-indexing to save space and maintain performance."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Should you index every column?",
+          "options": ["Yes", "No", "Always"],
+          "correct": "No"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Index Expert!",
+          "content": "You're optimizing queries with indexes! Let's explore constraints next! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Using Constraints",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Constraints?",
+          "content": "Constraints are rules for data, like ensuring a column can’t be empty or must be unique."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do constraints do?",
+          "options": ["Sort data", "Enforce data rules", "Delete data"],
+          "correct": "Enforce data rules"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "NOT NULL Constraint",
+          "content": "NOT NULL ensures a column must have a value. Example: CREATE TABLE Pets (Name VARCHAR(50) NOT NULL);"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does NOT NULL do?",
+          "options": ["Allows empty values", "Requires a value", "Makes values unique"],
+          "correct": "Requires a value"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "UNIQUE Constraint",
+          "content": "UNIQUE ensures no duplicate values. Example: CREATE TABLE Customers (Email VARCHAR(100) UNIQUE);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does UNIQUE prevent?",
+          "options": ["Null values", "Duplicate values", "Text values"],
+          "correct": "Duplicate values"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "PRIMARY KEY Constraint",
+          "content": "PRIMARY KEY is unique and NOT NULL. Example: CREATE TABLE Orders (OrderID INT PRIMARY KEY);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does PRIMARY KEY include?",
+          "options": ["UNIQUE and NOT NULL", "Only UNIQUE", "Only NOT NULL"],
+          "correct": "UNIQUE and NOT NULL"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "FOREIGN KEY Constraint",
+          "content": "FOREIGN KEY links tables. Example: CREATE TABLE Orders (CustomerID INT, FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID));"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does FOREIGN KEY do?",
+          "options": ["Links tables", "Deletes tables", "Sorts tables"],
+          "correct": "Links tables"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "CHECK Constraint",
+          "content": "CHECK limits values. Example: CREATE TABLE Pets (Age INT CHECK (Age >= 0)); ensures Age is not negative."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does CHECK do?",
+          "options": ["Limits values", "Makes values unique", "Allows nulls"],
+          "correct": "Limits values"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Adding Constraints Later",
+          "content": "Use ALTER TABLE. Example: ALTER TABLE Pets ADD CONSTRAINT chk_age CHECK (Age >= 0);"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Can you add constraints with ALTER TABLE?",
+          "options": ["Yes", "No", "Only at creation"],
+          "correct": "Yes"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Constraint Champion!",
+          "content": "You're enforcing data rules like a pro! Let's learn about transactions next! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Understanding Transactions",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Transaction?",
+          "content": "A transaction is a group of SQL commands that must all succeed or fail together, like transferring money between accounts."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a transaction?",
+          "options": ["A single command", "A group of commands", "A table"],
+          "correct": "A group of commands"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Starting a Transaction",
+          "content": "Use START TRANSACTION or BEGIN. Example: START TRANSACTION;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "How do you start a transaction?",
+          "options": ["CREATE TRANSACTION", "START TRANSACTION", "BEGIN TABLE"],
+          "correct": "START TRANSACTION"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Committing a Transaction",
+          "content": "COMMIT saves changes. Example: COMMIT; makes all changes permanent."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does COMMIT do?",
+          "options": ["Undoes changes", "Saves changes", "Starts a transaction"],
+          "correct": "Saves changes"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Rolling Back",
+          "content": "ROLLBACK undoes changes if something goes wrong. Example: ROLLBACK;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does ROLLBACK do?",
+          "options": ["Saves changes", "Undoes changes", "Deletes tables"],
+          "correct": "Undoes changes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Example Transaction",
+          "content": "START TRANSACTION; UPDATE Accounts SET Balance = Balance - 100 WHERE ID = 1; UPDATE Accounts SET Balance = Balance + 100 WHERE ID = 2; COMMIT;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What happens if a transaction fails?",
+          "options": ["Changes are saved", "Changes are undone", "Nothing happens"],
+          "correct": "Changes are undone"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Why Use Transactions?",
+          "content": "Transactions ensure data consistency, like making sure a money transfer doesn’t lose funds."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Why are transactions important?",
+          "options": ["For speed", "For data consistency", "For sorting"],
+          "correct": "For data consistency"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Savepoints",
+          "content": "Savepoints allow partial rollbacks. Example: SAVEPOINT sp1; ROLLBACK TO sp1;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What do savepoints allow?",
+          "options": ["Full rollbacks", "Partial rollbacks", "No rollbacks"],
+          "correct": "Partial rollbacks"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Transaction Titan!",
+          "content": "You're managing transactions like a pro! Let's wrap up with SQL best practices! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "SQL Best Practices",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Write Clear Queries",
+          "content": "Use uppercase for SQL keywords and format queries for readability. Example: SELECT Name, Age FROM Pets WHERE Age > 5;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "How should SQL keywords be written?",
+          "options": ["Lowercase", "Uppercase", "Mixed case"],
+          "correct": "Uppercase"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Use Comments",
+          "content": "Add comments to explain queries. Example: -- Get all cats; SELECT * FROM Pets WHERE Type = 'Cat';"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "Why use comments in SQL?",
+          "options": ["To sort data", "To explain queries", "To delete data"],
+          "correct": "To explain queries"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Test Queries",
+          "content": "Run SELECT before UPDATE or DELETE to check the affected rows. Example: SELECT * FROM Orders WHERE Total < 10;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What should you do before UPDATE?",
+          "options": ["Run SELECT", "Run INSERT", "Run COMMIT"],
+          "correct": "Run SELECT"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Use Specific Columns",
+          "content": "Avoid SELECT * in production; list specific columns. Example: SELECT Name, Price FROM Products;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Why avoid SELECT *?",
+          "options": ["It’s slower", "It’s less specific", "It’s incorrect"],
+          "correct": "It’s less specific"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Backup Data",
+          "content": "Always back up your database before making changes like DROP or DELETE to avoid data loss."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What should you do before DROP TABLE?",
+          "options": ["Backup data", "Sort data", "Index data"],
+          "correct": "Backup data"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Optimize Queries",
+          "content": "Use indexes and avoid unnecessary subqueries to make queries faster."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What helps optimize queries?",
+          "options": ["Indexes", "Comments", "Views"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Transactions",
+          "content": "Wrap critical operations in transactions to ensure data integrity. Example: START TRANSACTION; UPDATE Accounts; COMMIT;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What ensures data integrity?",
+          "options": ["Views", "Transactions", "Indexes"],
+          "correct": "Transactions"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "SQL Superstar! 🎉",
+          "content": "You've mastered SQL from basics to best practices! You're ready to manage data like a pro! 🚀"
+        }
+      ]
+    }
+  ]
+}

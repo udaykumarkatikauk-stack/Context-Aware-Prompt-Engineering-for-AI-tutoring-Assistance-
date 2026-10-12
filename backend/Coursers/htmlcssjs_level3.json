@@ -1,0 +1,326 @@
+{
+  "level": 3,
+  "language": "htmlcssjs",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Advanced Form Inputs",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "More Input Types", "content": "HTML5 introduced many new input types that provide better user experiences, especially on mobile devices, by showing custom keyboards or widgets." },
+        { "id": 2, "type": "info", "title": "Date and Time Inputs", "content": "Use `<input type='date'>`, `<input type='time'>`, and `<input type='datetime-local'>` to allow users to easily select dates and times from a native UI." },
+        { "id": 3, "type": "codeChallenge", "title": "Create an input field for a user to select their birthday.", "expectedAnswer": "<input type='date' name='birthday'>", "blocks": ["<input type='date' name='birthday'>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "Which input type is best for picking a flight departure time?", "options": ["text", "time", "number"], "correct": "time" },
+        { "id": 5, "type": "info", "title": "Specialized Inputs", "content": "Types like `<input type='color'>` shows a color picker, `<input type='range'>` creates a slider, and `<input type='file'>` allows file uploads." },
+        { "id": 6, "type": "codeChallenge", "title": "Create a color picker input.", "expectedAnswer": "<label>Choose color:</label>\n<input type='color'>", "blocks": ["<label>Choose color:</label>\n<input type='color'>"], "language": "html" },
+        { "id": 7, "type": "codeChallenge", "title": "Create a volume control slider from 0 to 100.", "expectedAnswer": "<input type='range' min='0' max='100' name='volume'>", "blocks": ["<input type='range' min='0' max='100' name='volume'>"], "language": "html" },
+        { "id": 8, "type": "quiz", "question": "Which input type would you use to let a user upload a profile picture?", "options": ["image", "file", "upload"], "correct": "file" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Create an input for entering an email address.", "starterCode": "<input type=' ' name='user_email'>", "placeholders": [{ "line": 1, "index": 13, "hint": "email" }], "blocks": ["email", "text", "url"], "correctAnswers": ["email"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Input Innovator! 💡", "content": "You've expanded your form toolkit! Using these specialized inputs makes your forms more user-friendly and robust." }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Form Structure and Semantics",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "The `<label>` Element", "content": "The `<label>` element is crucial for accessibility. It links a text description to a form control. Clicking the label focuses the input." },
+        { "id": 2, "type": "info", "title": "Linking Labels", "content": "You link a `<label>` to an `<input>` by giving the input an `id` and matching it with the label's `for` attribute." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a text input with a properly linked label for 'Username'.", "expectedAnswer": "<label for='user'>Username:</label>\n<input type='text' id='user'>", "blocks": ["<label for='user'>Username:</label>\n<input type='text' id='user'>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "Which two attributes connect a label and an input?", "options": ["name and value", "for and id", "link and input"], "correct": "for and id" },
+        { "id": 5, "type": "info", "title": "Grouping with `<fieldset>`", "content": "The `<fieldset>` element groups related controls within a form. The `<legend>` element provides a caption for the fieldset." },
+        { "id": 6, "type": "codeChallenge", "title": "Group 'name' and 'email' inputs inside a fieldset with the legend 'User Details'.", "expectedAnswer": "<fieldset>\n  <legend>User Details</legend>\n  <input type='text' name='name'>\n  <input type='email' name='email'>\n</fieldset>", "blocks": ["<fieldset>\n  <legend>User Details</legend>\n  <input type='text' name='name'>\n  <input type='email' name='email'>\n</fieldset>"], "language": "html" },
+        { "id": 7, "type": "quiz", "question": "What is the purpose of `<fieldset>`?", "options": ["To create a button", "To style the form", "To group related form controls"], "correct": "To group related form controls" },
+        { "id": 8, "type": "info", "title": "The `placeholder` Attribute", "content": "The `placeholder` attribute provides a short hint (like a sample value or format) that appears in the input field before the user enters a value." },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add a placeholder to the input.", "starterCode": "<input type='text'  ='Enter your name...'>", "placeholders": [{ "line": 1, "index": 19, "hint": "placeholder" }], "blocks": ["placeholder", "hint", "value"], "correctAnswers": ["placeholder"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Form Architect! 🏛️", "content": "Your forms are now not only functional but also well-structured and accessible. This is a mark of a professional developer." }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Form Validation Attributes",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Browser-Based Validation", "content": "HTML5 provides attributes that let the browser validate form fields without any JavaScript, providing instant feedback to the user." },
+        { "id": 2, "type": "info", "title": "The `required` Attribute", "content": "The boolean attribute `required` specifies that an input field must be filled out before the form can be submitted." },
+        { "id": 3, "type": "codeChallenge", "title": "Make an email input field mandatory.", "expectedAnswer": "<input type='email' name='email' required>", "blocks": ["<input type='email' name='email' required>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "What does the `required` attribute do?", "options": ["Highlights the field", "Hides the field", "Prevents form submission if empty"], "correct": "Prevents form submission if empty" },
+        { "id": 5, "type": "info", "title": "Restricting Length", "content": "Use `minlength` and `maxlength` to specify the minimum and maximum number of characters allowed in a text-based input." },
+        { "id": 6, "type": "codeChallenge", "title": "Create a password input that must be at least 8 characters long.", "expectedAnswer": "<input type='password' minlength='8'>", "blocks": ["<input type='password' minlength='8'>"], "language": "html" },
+        { "id": 7, "type": "info", "title": "Pattern Matching", "content": "The `pattern` attribute takes a Regular Expression, allowing you to define a specific format the input value must match (e.g., a postal code)." },
+        { "id": 8, "type": "codeChallenge", "title": "Create an input that only accepts 3-digit numbers.", "expectedAnswer": "<input type='text' pattern='[0-9]{3}'>", "blocks": ["<input type='text' pattern='[0-9]{3}'>"], "language": "html" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Make the username field required.", "starterCode": "<input type='text' name='username'  >", "placeholders": [{ "line": 1, "index": 34, "hint": "required" }], "blocks": ["required", "needed", "must-fill"], "correctAnswers": ["required"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Validation Vanguard! 🛡️", "content": "You can now build self-validating forms right in your HTML, improving data quality and user experience with zero JavaScript." }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Dropdowns and Text Areas",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Dropdown Lists", "content": "For a long list of choices, a dropdown menu is better than radio buttons. This is created with the `<select>` and `<option>` tags." },
+        { "id": 2, "type": "info", "title": "The `<select>` and `<option>` Tags", "content": "The `<select>` tag is the container. Each `<option>` tag inside it represents one choice in the list. The `value` attribute of the option is what gets submitted." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a dropdown to select a country.", "expectedAnswer": "<select name='country'>\n  <option value='us'>United States</option>\n  <option value='ca'>Canada</option>\n</select>", "blocks": ["<select name='country'>\n  <option value='us'>United States</option>\n  <option value='ca'>Canada</option>\n</select>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "Which tag defines an item in a dropdown list?", "options": ["<item>", "<li>", "<option>"], "correct": "<option>" },
+        { "id": 5, "type": "info", "title": "Grouping Options", "content": "You can group related options together within a `<select>` list using the `<optgroup>` tag, which takes a `label` attribute for the group name." },
+        { "id": 6, "type": "codeChallenge", "title": "Create a dropdown with grouped options for 'Fruits' and 'Vegetables'.", "expectedAnswer": "<select>\n  <optgroup label='Fruits'>\n    <option>Apple</option>\n  </optgroup>\n  <optgroup label='Vegetables'>\n    <option>Carrot</option>\n  </optgroup>\n</select>", "blocks": ["<select>\n  <optgroup label='Fruits'>\n    <option>Apple</option>\n  </optgroup>\n  <optgroup label='Vegetables'>\n    <option>Carrot</option>\n  </optgroup>\n</select>"], "language": "html" },
+        { "id": 7, "type": "info", "title": "Multi-line Text Input", "content": "For long-form user input, like comments or messages, the `<textarea>` element is the correct choice instead of a single-line `<input>`." },
+        { "id": 8, "type": "codeChallenge", "title": "Create a text area for user comments.", "expectedAnswer": "<textarea name='comments' rows='4' cols='50'></textarea>", "blocks": ["<textarea name='comments' rows='4' cols='50'></textarea>"], "language": "html" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Create an option with the value 'de' for Germany.", "starterCode": "<  value='de'>Germany</option>", "placeholders": [{ "line": 1, "index": 1, "hint": "option" }], "blocks": ["option", "select", "item"], "correctAnswers": ["option"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Selection Specialist! 🎯", "content": "You've mastered more advanced form controls, allowing you to gather complex and varied user input with ease." }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Advanced Table Structure",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Semantic Tables", "content": "For large data tables, it's important to structure them semantically. This helps browsers, assistive technologies, and even search engines understand your data." },
+        { "id": 2, "type": "info", "title": "Header, Body, and Footer", "content": "You can group your table content into `<thead>` for the header row(s), `<tbody>` for the main data rows, and `<tfoot>` for the footer row(s)." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a table with a `<thead>` and a `<tbody>` section.", "expectedAnswer": "<table>\n  <thead>\n    <tr><th>Name</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Alex</td></tr>\n  </tbody>\n</table>", "blocks": ["<table>\n  <thead>\n    <tr><th>Name</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Alex</td></tr>\n  </tbody>\n</table>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "Which tag is used for the main data rows of a table?", "options": ["<thead>", "<tbody>", "<tfoot>"], "correct": "<tbody>" },
+        { "id": 5, "type": "info", "title": "The `<caption>` Element", "content": "The `<caption>` tag provides a title or description for the entire table. It should be the first child of the `<table>` element and is crucial for accessibility." },
+        { "id": 6, "type": "codeChallenge", "title": "Add a caption 'Monthly Sales Figures' to a table.", "expectedAnswer": "<table>\n  <caption>Monthly Sales Figures</caption>\n  <tr><td>...</td></tr>\n</table>", "blocks": ["<table>\n  <caption>Monthly Sales Figures</caption>\n  <tr><td>...</td></tr>\n</table>"], "language": "html" },
+        { "id": 7, "type": "info", "title": "Column Groups", "content": "The `<colgroup>` and `<col>` elements allow you to group and style entire columns at once, without adding classes to every single cell." },
+        { "id": 8, "type": "codeChallenge", "title": "Define a table with two columns using `<colgroup>`.", "expectedAnswer": "<table>\n  <colgroup>\n    <col>\n    <col>\n  </colgroup>\n  <tr><td>...</td><td>...</td></tr>\n</table>", "blocks": ["<table>\n  <colgroup>\n    <col>\n    <col>\n  </colgroup>\n  <tr><td>...</td><td>...</td></tr>\n</table>"], "language": "html" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add the `<tfoot>` element to wrap the summary row.", "starterCode": "  \n  <tr><td>Total: $500</td></tr>\n  \n", "placeholders": [{ "line": 1, "index": 0, "hint": "<tfoot>" }, { "line": 3, "index": 0, "hint": "</tfoot>" }], "blocks": ["<tfoot>", "</tfoot>", "<tbody>", "</tbody>"], "correctAnswers": ["<tfoot>", "</tfoot>"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Table Tactician! 📊", "content": "You can now structure large data tables in a way that is semantic, accessible, and easy to style. This is a vital skill for displaying complex data." }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Spanning Table Cells",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Merging Cells", "content": "Sometimes, a data cell needs to span across multiple columns or rows. HTML provides attributes for this purpose." },
+        { "id": 2, "type": "info", "title": "Spanning Columns", "content": "The `colspan` attribute is used on a `<th>` or `<td>` to make it span across more than one column." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a header cell that spans two columns.", "expectedAnswer": "<tr>\n  <th colspan='2'>User Details</th>\n</tr>", "blocks": ["<tr>\n  <th colspan='2'>User Details</th>\n</tr>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "What does `colspan='3'` do?", "options": ["Makes a cell 3px wide", "Makes a cell span 3 rows", "Makes a cell span 3 columns"], "correct": "Makes a cell span 3 columns" },
+        { "id": 5, "type": "info", "title": "Spanning Rows", "content": "Similarly, the `rowspan` attribute is used on a `<th>` or `<td>` to make it span across more than one row." },
+        { "id": 6, "type": "codeChallenge", "title": "Create a data cell that spans two rows.", "expectedAnswer": "<tr>\n  <td rowspan='2'>Side-Header</td>\n  <td>Data 1</td>\n</tr>\n<tr>\n  <td>Data 2</td>\n</tr>", "blocks": ["<tr>\n  <td rowspan='2'>Side-Header</td>\n  <td>Data 1</td>\n</tr>\n<tr>\n  <td>Data 2</td>\n</tr>"], "language": "html" },
+        { "id": 7, "type": "quiz", "question": "Which attribute makes a cell taller, spanning multiple rows?", "options": ["cellspan", "rowspan", "colspan"], "correct": "rowspan" },
+        { "id": 8, "type": "code_fill_in_the_blank", "instruction": "Make the header cell span 3 columns.", "starterCode": "<th  ='3'>Monthly Report</th>", "placeholders": [{ "line": 1, "index": 3, "hint": "colspan" }], "blocks": ["colspan", "rowspan", "span"], "correctAnswers": ["colspan"], "language": "html" },
+        { "id": 9, "type": "codeChallenge", "title": "Create a complex cell that spans 2 columns and 2 rows.", "expectedAnswer": "<td colspan='2' rowspan='2'>Merged Cell</td>", "blocks": ["<td colspan='2' rowspan='2'>Merged Cell</td>"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Table Architect! 🏗️", "content": "You've mastered the art of creating complex table layouts. This allows for sophisticated data presentation far beyond simple grids." }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Advanced Multimedia",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "More Media Control", "content": "The `<audio>` and `<video>` tags have several attributes to give you more control over how media is presented and played." },
+        { "id": 2, "type": "info", "title": "Video Attributes", "content": "Use `autoplay` to start the video automatically (often requires `muted`), `loop` to repeat it, and `poster` to show an image before the video loads." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a video that loops and shows a poster image.", "expectedAnswer": "<video src='promo.mp4' loop poster='poster.jpg' controls></video>", "blocks": ["<video src='promo.mp4' loop poster='poster.jpg' controls></video>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "Which attribute shows an image before a video plays?", "options": ["placeholder", "poster", "preview"], "correct": "poster" },
+        { "id": 5, "type": "info", "title": "Multiple Sources", "content": "Different browsers support different video/audio formats. You can provide multiple formats inside a `<video>` or `<audio>` tag using the `<source>` element." },
+        { "id": 6, "type": "codeChallenge", "title": "Provide both MP4 and WebM video formats.", "expectedAnswer": "<video controls>\n  <source src='video.mp4' type='video/mp4'>\n  <source src='video.webm' type='video/webm'>\n</video>", "blocks": ["<video controls>\n  <source src='video.mp4' type='video/mp4'>\n  <source src='video.webm' type='video/webm'>\n</video>"], "language": "html" },
+        { "id": 7, "type": "info", "title": "Subtitles and Captions", "content": "The `<track>` element is used to specify timed text tracks, such as subtitles or captions. This is essential for accessibility." },
+        { "id": 8, "type": "codeChallenge", "title": "Add an English subtitles track to a video.", "expectedAnswer": "<video src='movie.mp4' controls>\n  <track src='subs_en.vtt' kind='subtitles' srclang='en' label='English'>\n</video>", "blocks": ["<video src='movie.mp4' controls>\n  <track src='subs_en.vtt' kind='subtitles' srclang='en' label='English'>\n</video>"], "language": "html" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add the `loop` attribute to make the audio repeat.", "starterCode": "<audio src='music.mp3' controls  ></audio>", "placeholders": [{ "line": 1, "index": 32, "hint": "loop" }], "blocks": ["loop", "repeat", "autoplay"], "correctAnswers": ["loop"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Multimedia Maestro! 🎬", "content": "You can now embed and control multimedia like a pro, ensuring it's accessible and compatible across different browsers." }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Responsive Images",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Images for Every Screen", "content": "On modern websites, it's inefficient to serve a huge desktop image to a small mobile phone. HTML provides ways to serve different images based on screen size." },
+        { "id": 2, "type": "info", "title": "The `srcset` Attribute", "content": "The `srcset` attribute on an `<img>` tag allows you to provide a comma-separated list of image files and their inherent widths." },
+        { "id": 3, "type": "codeChallenge", "title": "Provide small and large versions of a banner image using `srcset`.", "expectedAnswer": "<img srcset='banner-480.jpg 480w, banner-800.jpg 800w' src='banner-800.jpg' alt='Banner'>", "blocks": ["<img srcset='banner-480.jpg 480w, banner-800.jpg 800w' src='banner-800.jpg' alt='Banner'>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "What does the 'w' unit in `srcset` describe?", "options": ["The image's weight in kilobytes", "The image's inherent width in pixels", "The required screen width"], "correct": "The image's inherent width in pixels" },
+        { "id": 5, "type": "info", "title": "The `<picture>` Element", "content": "For more advanced control, like serving completely different image formats (e.g., modern WebP vs. older JPG), you can use the `<picture>` element." },
+        { "id": 6, "type": "info", "title": "`<picture>` and `<source>`", "content": "Inside `<picture>`, you list `<source>` elements with different `srcset` and `type` attributes. The browser picks the first one it supports. The final `<img>` is a fallback." },
+        { "id": 7, "type": "codeChallenge", "title": "Use `<picture>` to provide a WebP image with a JPG fallback.", "expectedAnswer": "<picture>\n  <source srcset='photo.webp' type='image/webp'>\n  <img src='photo.jpg' alt='Photo'>\n</picture>", "blocks": ["<picture>\n  <source srcset='photo.webp' type='image/webp'>\n  <img src='photo.jpg' alt='Photo'>\n</picture>"], "language": "html" },
+        { "id": 8, "type": "quiz", "question": "Inside a `<picture>` element, what is the purpose of the `<img>` tag?", "options": ["It's the main image", "It's optional", "It's a fallback for older browsers"], "correct": "It's a fallback for older browsers" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add a `<source>` element inside the `<picture>` container.", "starterCode": "<picture>\n  \n  <img src='fallback.jpg'>\n</picture>", "placeholders": [{ "line": 2, "index": 2, "hint": "<source srcset='image.avif' type='image/avif'>" }], "blocks": ["<source srcset='image.avif' type='image/avif'>", "<img>", "<option>"], "correctAnswers": ["<source srcset='image.avif' type='image/avif'>"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Image Optimizer! 🖼️", "content": "You've learned how to make your websites faster and more efficient by serving the right image for the right device. This is a critical modern web skill." }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Semantic Layout Deep Dive",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Beyond the `<div>`", "content": "While `<div>` is a generic container, HTML5 introduced semantic layout elements that describe their purpose, improving accessibility and SEO." },
+        { "id": 2, "type": "info", "title": "The `<header>` Element", "content": "The `<header>` element represents introductory content, typically a group of introductory or navigational aids. It can be for the whole page or for a section." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a page header containing a logo and the main heading.", "expectedAnswer": "<header>\n  <img src='logo.png' alt='Logo'>\n  <h1>My Website</h1>\n</header>", "blocks": ["<header>\n  <img src='logo.png' alt='Logo'>\n  <h1>My Website</h1>\n</header>"], "language": "html" },
+        { "id": 4, "type": "info", "title": "The `<footer>` Element", "content": "The `<footer>` element represents the footer for its nearest sectioning ancestor. It typically contains copyright information, contact details, or related links." },
+        { "id": 5, "type": "codeChallenge", "title": "Create a page footer with a copyright notice.", "expectedAnswer": "<footer>\n  <p>© 2023 My Company</p>\n</footer>", "blocks": ["<footer>\n  <p>© 2023 My Company</p>\n</footer>"], "language": "html" },
+        { "id": 6, "type": "info", "title": "The `<nav>` Element", "content": "The `<nav>` element is specifically for major navigation blocks, such as the main site menu." },
+        { "id": 7, "type": "codeChallenge", "title": "Create a navigation menu using `<nav>` and an unordered list.", "expectedAnswer": "<nav>\n  <ul>\n    <li><a href='/'>Home</a></li>\n    <li><a href='/about'>About</a></li>\n  </ul>\n</nav>", "blocks": ["<nav>\n  <ul>\n    <li><a href='/'>Home</a></li>\n    <li><a href='/about'>About</a></li>\n  </ul>\n</nav>"], "language": "html" },
+        { "id": 8, "type": "info", "title": "The `<main>` Element", "content": "The `<main>` element represents the dominant, unique content of the `<body>`. There should only be one `<main>` element per page." },
+        { "id": 9, "type": "quiz", "question": "Which semantic element is for the primary content of the page?", "options": ["<article>", "<section>", "<main>"], "correct": "<main>" },
+        { "id": 10, "type": "info", "title": "Layout Luminary! ✨", "content": "You now understand how to structure the main layout of a page semantically, making your sites more meaningful to browsers and screen readers." }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Semantic Content Deep Dive",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Structuring Content Blocks", "content": "Inside your `<main>` element, you can further structure your content with more specific semantic tags." },
+        { "id": 2, "type": "info", "title": "The `<section>` Element", "content": "The `<section>` element represents a standalone thematic grouping of content. It should almost always have a heading." },
+        { "id": 3, "type": "codeChallenge", "title": "Create a 'Contact Us' section with a heading and a paragraph.", "expectedAnswer": "<section>\n  <h2>Contact Us</h2>\n  <p>Our address is...</p>\n</section>", "blocks": ["<section>\n  <h2>Contact Us</h2>\n  <p>Our address is...</p>\n</section>"], "language": "html" },
+        { "id": 4, "type": "info", "title": "The `<article>` Element", "content": "The `<article>` element represents a self-contained composition that is independently distributable or reusable, like a blog post, forum post, or news story." },
+        { "id": 5, "type": "quiz", "question": "Which tag is best for a single blog post on a page of many posts?", "options": ["<section>", "<article>", "<div>"], "correct": "<article>" },
+        { "id": 6, "type": "codeChallenge", "title": "Mark up a short news story using `<article>`.", "expectedAnswer": "<article>\n  <h3>New Discovery!</h3>\n  <p>Scientists found something amazing.</p>\n</article>", "blocks": ["<article>\n  <h3>New Discovery!</h3>\n  <p>Scientists found something amazing.</p>\n</article>"], "language": "html" },
+        { "id": 7, "type": "info", "title": "The `<aside>` Element", "content": "The `<aside>` element represents content that is tangentially related to the main content around it, such as a sidebar, pull quotes, or ad groups." },
+        { "id": 8, "type": "codeChallenge", "title": "Create a sidebar with related links.", "expectedAnswer": "<aside>\n  <h4>Related Links</h4>\n  <ul>...</ul>\n</aside>", "blocks": ["<aside>\n  <h4>Related Links</h4>\n  <ul>...</ul>\n</aside>"], "language": "html" },
+        { "id": 9, "type": "quiz", "question": "Which element would you use for a glossary definition in a sidebar?", "options": ["<section>", "<aside>", "<article>"], "correct": "<aside>" },
+        { "id": 10, "type": "info", "title": "Content Connoisseur! 🧐", "content": "You can now structure not just the page layout, but the content itself, with a high degree of semantic precision. This is a top-tier HTML skill." }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Intro to Web Accessibility (A11y)",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "What is Accessibility?", "content": "Web accessibility (often abbreviated A11y) is the practice of making websites usable by as many people as possible, including those with disabilities." },
+        { "id": 2, "type": "info", "title": "Why is it Important?", "content": "It's not only the right thing to do, but it also improves the experience for all users, boosts SEO, and is a legal requirement in many places." },
+        { "id": 3, "type": "quiz", "question": "Who benefits from web accessibility?", "options": ["Only users with disabilities", "Only developers", "Everyone"], "correct": "Everyone" },
+        { "id": 4, "type": "info", "title": "Semantic HTML is Key", "content": "The single most important thing you can do for accessibility is to use semantic HTML correctly. A screen reader uses tags like `<nav>` and `<h1>` to help users navigate." },
+        { "id": 5, "type": "quiz", "question": "What is the most fundamental practice for good A11y?", "options": ["Using lots of colors", "Using semantic HTML", "Writing JavaScript"], "correct": "Using semantic HTML" },
+        { "id": 6, "type": "info", "title": "The `alt` Attribute Revisited", "content": "We've seen `alt` on `<img>` tags. This alternative text is what a screen reader will announce to a visually impaired user. It's not optional, it's essential." },
+        { "id": 7, "type": "codeChallenge", "title": "Write an image tag with descriptive alt text.", "expectedAnswer": "<img src='dog.jpg' alt='A golden retriever playing fetch in a park.'>", "blocks": ["<img src='dog.jpg' alt='A golden retriever playing fetch in a park.'>"], "language": "html" },
+        { "id": 8, "type": "info", "title": "Link Text", "content": "Avoid generic link text like 'Click Here'. The link text should be descriptive of where the link will take the user, e.g., 'Read our full privacy policy'." },
+        { "id": 9, "type": "quiz", "question": "Which is better link text?", "options": ["Click here", "To learn more, click here", "View our 2023 annual report"], "correct": "View our 2023 annual report" },
+        { "id": 10, "type": "info", "title": "A11y Advocate! ❤️", "content": "You've taken the first step toward building a more inclusive web. Thinking about accessibility from the start will make you a better developer." }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "ARIA Roles and Attributes",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "What is ARIA?", "content": "ARIA (Accessible Rich Internet Applications) is a set of attributes you can add to HTML to make web content more accessible, especially for dynamic JavaScript widgets." },
+        { "id": 2, "type": "info", "title": "When to Use ARIA", "content": "Rule #1 of ARIA: Don't use ARIA if you can use a native semantic HTML element instead. For example, use a `<button>` tag instead of `<div role='button'>`." },
+        { "id": 3, "type": "quiz", "question": "Which is better for accessibility?", "options": ["<button>Submit</button>", "<div role='button'>Submit</div>", "They are the same"], "correct": "<button>Submit</button>" },
+        { "id": 4, "type": "info", "title": "The `role` Attribute", "content": "The `role` attribute can define a role for an element that it doesn't have natively, like `role='alert'` for a status message `<div>`." },
+        { "id": 5, "type": "codeChallenge", "title": "Give a `<div>` the role of a navigation menu.", "expectedAnswer": "<div role='navigation'>...</div>", "blocks": ["<div role='navigation'>...</div>"], "language": "html" },
+        { "id": 6, "type": "info", "title": "State Attributes", "content": "ARIA attributes like `aria-label`, `aria-hidden`, and `aria-expanded` can provide more information about the state of an element." },
+        { "id": 7, "type": "codeChallenge", "title": "Add an ARIA label to a close button that only has an 'X' icon.", "expectedAnswer": "<button aria-label='Close'>X</button>", "blocks": ["<button aria-label='Close'>X</button>"], "language": "html" },
+        { "id": 8, "type": "quiz", "question": "What does `aria-hidden='true'` do?", "options": ["Hides the element visually", "Hides the element from screen readers", "Hides the element from everyone"], "correct": "Hides the element from screen readers" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add a `role` attribute to the search box div.", "starterCode": "<div  ='search'>...</div>", "placeholders": [{ "line": 1, "index": 4, "hint": "role" }], "blocks": ["role", "aria", "type"], "correctAnswers": ["role"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Accessibility Ally! 🤝", "content": "You've learned the basics of ARIA. This powerful tool helps you bridge the accessibility gaps in complex web applications. Use it wisely!" }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Embedding Content with `<iframe>`",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "A Window to Another Page", "content": "An `<iframe>` (Inline Frame) is used to embed another HTML document within the current one. It's commonly used for maps, videos, or payment gateways." },
+        { "id": 2, "type": "info", "title": "Basic Syntax", "content": "The `src` attribute specifies the URL of the page to embed. `width` and `height` attributes control the size of the frame." },
+        { "id": 3, "type": "codeChallenge", "title": "Embed an example website in an iframe.", "expectedAnswer": "<iframe src='https://example.com' width='600' height='400'></iframe>", "blocks": ["<iframe src='https://example.com' width='600' height='400'></iframe>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "Which attribute defines the address of the page to embed?", "options": ["href", "link", "src"], "correct": "src" },
+        { "id": 5, "type": "info", "title": "The `title` Attribute", "content": "For accessibility, it's very important to add a `title` attribute to your `<iframe>` to describe what it contains for screen reader users." },
+        { "id": 6, "type": "codeChallenge", "title": "Embed a YouTube video with a descriptive title.", "expectedAnswer": "<iframe src='...' title='YouTube video player for Learning HTML'></iframe>", "blocks": ["<iframe src='...' title='YouTube video player for Learning HTML'></iframe>"], "language": "html" },
+        { "id": 7, "type": "info", "title": "Security with `sandbox`", "content": "If you're embedding untrusted content, the `sandbox` attribute lets you restrict what the embedded page can do, like run scripts or submit forms." },
+        { "id": 8, "type": "quiz", "question": "What is the purpose of the `sandbox` attribute?", "options": ["To style the iframe", "To improve security", "To make it load faster"], "correct": "To improve security" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add a `height` attribute to the iframe.", "starterCode": "<iframe src='...' width='100%'  ='500'></iframe>", "placeholders": [{ "line": 1, "index": 30, "hint": "height" }], "blocks": ["height", "size-y", "length"], "correctAnswers": ["height"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Content Curator! 큐", "content": "You can now embed third-party content seamlessly and securely into your web pages, a common requirement in modern web development." }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "HTML Entities",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Reserved Characters", "content": "Some characters are reserved in HTML, like `<` and `>`. If you want to display them as text, you need to use character entities." },
+        { "id": 2, "type": "info", "title": "Common Entities", "content": "The most common entities are `<` for <, `>` for >, and `&` for &." },
+        { "id": 3, "type": "codeChallenge", "title": "Display the text '<p>' literally on the page.", "expectedAnswer": "<p><p></p>", "blocks": ["<p><p></p>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "Which entity represents the less-than sign (<)?", "options": ["&less;", "<", "<s;"], "correct": "<" },
+        { "id": 5, "type": "info", "title": "Non-Breaking Space", "content": "The ` ` entity is a non-breaking space. It prevents an automatic line break from happening at its position." },
+        { "id": 6, "type": "codeChallenge", "title": "Ensure '10 USD' always stays on the same line.", "expectedAnswer": "<p>10 USD</p>", "blocks": ["<p>10 USD</p>"], "language": "html" },
+        { "id": 7, "type": "info", "title": "Symbol Entities", "content": "Entities are also used for symbols that aren't on a standard keyboard, like `©` for the copyright symbol © or `®` for ®." },
+        { "id": 8, "type": "codeChallenge", "title": "Add a copyright symbol to your footer.", "expectedAnswer": "<p>© 2023</p>", "blocks": ["<p>© 2023</p>"], "language": "html" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Display the ampersand symbol.", "starterCode": "<p>This & that</p>", "placeholders": [{ "line": 1, "index": 10, "hint": "&" }], "blocks": ["&", "&", "∧"], "correctAnswers": ["&"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Symbol Sage! ™️", "content": "You've learned how to handle special characters and symbols correctly, ensuring your content always displays as intended." }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Interactive Elements",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Native Interactivity", "content": "HTML5 provides some elements that have built-in interactivity, working out of the box with no JavaScript required." },
+        { "id": 2, "type": "info", "title": "The `<details>` Element", "content": "The `<details>` element creates a disclosure widget in which information is visible only when the widget is toggled into an 'open' state." },
+        { "id": 3, "type": "info", "title": "The `<summary>` Element", "content": "A `<summary>` tag is used inside `<details>` to provide a visible heading for the hidden content. Clicking the summary toggles the view." },
+        { "id": 4, "type": "codeChallenge", "title": "Create a simple show/hide widget using `<details>` and `<summary>`.", "expectedAnswer": "<details>\n  <summary>Show Details</summary>\n  <p>Here is the hidden information.</p>\n</details>", "blocks": ["<details>\n  <summary>Show Details</summary>\n  <p>Here is the hidden information.</p>\n</details>"], "language": "html" },
+        { "id": 5, "type": "quiz", "question": "What is the role of the `<summary>` tag?", "options": ["It holds the hidden content", "It's the always-visible title for a `<details>` widget", "It summarizes the whole page"], "correct": "It's the always-visible title for a `<details>` widget" },
+        { "id": 6, "type": "info", "title": "Datalists for Autocomplete", "content": "The `<datalist>` element provides an 'autocomplete' feature for `<input>` elements. It contains a set of `<option>`s that will be suggested to the user." },
+        { "id": 7, "type": "codeChallenge", "title": "Create a text input with a datalist of suggested browser names.", "expectedAnswer": "<input list='browsers'>\n<datalist id='browsers'>\n  <option value='Chrome'>\n  <option value='Firefox'>\n</datalist>", "blocks": ["<input list='browsers'>\n<datalist id='browsers'>\n  <option value='Chrome'>\n  <option value='Firefox'>\n</datalist>"], "language": "html" },
+        { "id": 8, "type": "quiz", "question": "How do you link an `<input>` to a `<datalist>`?", "options": ["With the `for` and `id` attributes", "With the `list` and `id` attributes", "They link automatically"], "correct": "With the `list` and `id` attributes" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add a `<summary>` to the details widget.", "starterCode": "<details>\n  \n  <p>Content...</p>\n</details>", "placeholders": [{ "line": 2, "index": 2, "hint": "<summary>FAQ</summary>" }], "blocks": ["<summary>FAQ</summary>", "<heading>FAQ</heading>", "<title>FAQ</title>"], "correctAnswers": ["<summary>FAQ</summary>"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Interaction Inventor! 🪄", "content": "You can now build some common interactive patterns using only HTML, making your sites more engaging and user-friendly with less code." }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "The `<figure>` and `<figcaption>` Elements",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Semantic Captions", "content": "Sometimes, an image, diagram, or code block needs a caption. HTML provides a semantically correct way to group this content together." },
+        { "id": 2, "type": "info", "title": "The `<figure>` Element", "content": "The `<figure>` element represents self-contained content, like an image, illustration, or code snippet, that is referenced in the main text." },
+        { "id": 3, "type": "codeChallenge", "title": "Wrap an image in a `<figure>` tag.", "expectedAnswer": "<figure>\n  <img src='chart.png' alt='Sales chart'>\n</figure>", "blocks": ["<figure>\n  <img src='chart.png' alt='Sales chart'>\n</figure>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "What kind of content is `<figure>` meant for?", "options": ["Any content", "Self-contained, referenced content", "Only images"], "correct": "Self-contained, referenced content" },
+        { "id": 5, "type": "info", "title": "The `<figcaption>` Element", "content": "The `<figcaption>` element represents a caption or legend for the content of its parent `<figure>` element." },
+        { "id": 6, "type": "codeChallenge", "title": "Add a caption to an image inside a figure.", "expectedAnswer": "<figure>\n  <img src='photo.jpg' alt='...'>\n  <figcaption>Fig.1 - A photo of the Swiss Alps.</figcaption>\n</figure>", "blocks": ["<figure>\n  <img src='photo.jpg' alt='...'>\n  <figcaption>Fig.1 - A photo of the Swiss Alps.</figcaption>\n</figure>"], "language": "html" },
+        { "id": 7, "type": "quiz", "question": "Where can a `<figcaption>` be placed inside a `<figure>`?", "options": ["Only at the start", "Only at the end", "As the first or last child"], "correct": "As the first or last child" },
+        { "id": 8, "type": "codeChallenge", "title": "Create a figure for a code block with a caption.", "expectedAnswer": "<figure>\n  <figcaption>Listing 1.1: Hello World in Python</figcaption>\n  <pre><code>print('Hello, World!')</code></pre>\n</figure>", "blocks": ["<figure>\n  <figcaption>Listing 1.1: Hello World in Python</figcaption>\n  <pre><code>print('Hello, World!')</code></pre>\n</figure>"], "language": "html" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add the caption tag.", "starterCode": "<figure>\n  <img src='...'>\n  < >A caption.</ >\n</figure>", "placeholders": [{ "line": 3, "index": 3, "hint": "figcaption" }, { "line": 3, "index": 17, "hint": "/figcaption" }], "blocks": ["figcaption", "/figcaption", "caption", "/caption"], "correctAnswers": ["figcaption", "/figcaption"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Caption Captain! 캡", "content": "You now know the professional, semantic way to associate captions with their content, improving meaning and accessibility." }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Advanced Meta Tags",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "More Than Just Keywords", "content": "The `<head>` section and its `<meta>` tags are powerful tools for controlling how your site appears on search engines and social media." },
+        { "id": 2, "type": "info", "title": "Controlling Search Engines", "content": "You can give instructions to search engine crawlers, for example, `<meta name='robots' content='noindex, nofollow'>` tells them not to index the page or follow its links." },
+        { "id": 3, "type": "codeChallenge", "title": "Add a meta tag to tell search engines not to index a page.", "expectedAnswer": "<meta name='robots' content='noindex'>", "blocks": ["<meta name='robots' content='noindex'>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "What does `content='nofollow'` do?", "options": ["Hides the page", "Tells crawlers not to follow links on the page", "Disables all links"], "correct": "Tells crawlers not to follow links on the page" },
+        { "id": 5, "type": "info", "title": "The Open Graph Protocol", "content": "The Open Graph protocol (used by Facebook, Twitter, etc.) lets you control how your content appears when shared. These are `<meta>` tags with `property` instead of `name`." },
+        { "id": 6, "type": "info", "title": "Essential OG Tags", "content": "Key Open Graph tags include `og:title`, `og:description`, `og:image`, and `og:url`." },
+        { "id": 7, "type": "codeChallenge", "title": "Add an Open Graph title and description to your page.", "expectedAnswer": "<meta property='og:title' content='My Awesome Article'>\n<meta property='og:description' content='A summary of the article.'>", "blocks": ["<meta property='og:title' content='My Awesome Article'>\n<meta property='og:description' content='A summary of the article.'>"], "language": "html" },
+        { "id": 8, "type": "codeChallenge", "title": "Specify the preview image for social media sharing.", "expectedAnswer": "<meta property='og:image' content='https://example.com/image.jpg'>", "blocks": ["<meta property='og:image' content='https://example.com/image.jpg'>"], "language": "html" },
+        { "id": 9, "type": "code_fill_in_the_blank", "instruction": "Add the `og:url` property for the page's canonical URL.", "starterCode": "<meta property=' ' content='https://example.com/page'>", "placeholders": [{ "line": 1, "index": 16, "hint": "og:url" }], "blocks": ["og:url", "og:link", "og:href"], "correctAnswers": ["og:url"], "language": "html" },
+        { "id": 10, "type": "info", "title": "Social Sharer! 🔗", "content": "You can now control your site's appearance beyond your own domain, ensuring a professional look when shared across the web." }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "SVG and Canvas Basics",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Graphics in HTML", "content": "Besides raster images (`<img>`), HTML supports two powerful ways to create graphics directly in the browser: SVG and Canvas." },
+        { "id": 2, "type": "info", "title": "SVG: Scalable Vector Graphics", "content": "SVG is an XML-based format for describing 2D graphics. It's resolution-independent, meaning it scales perfectly to any size without losing quality. Great for logos and icons." },
+        { "id": 3, "type": "codeChallenge", "title": "Embed a simple SVG circle directly in your HTML.", "expectedAnswer": "<svg width='100' height='100'>\n  <circle cx='50' cy='50' r='40' fill='red' />\n</svg>", "blocks": ["<svg width='100' height='100'>\n  <circle cx='50' cy='50' r='40' fill='red' />\n</svg>"], "language": "html" },
+        { "id": 4, "type": "quiz", "question": "What is the main advantage of SVG?", "options": ["Small file size", "Scales without quality loss", "Easy to write"], "correct": "Scales without quality loss" },
+        { "id": 5, "type": "info", "title": "Canvas", "content": "The `<canvas>` element provides a drawing surface. You use JavaScript to draw on it pixel by pixel. It's a 'fire and forget' model, great for games and complex visualizations." },
+        { "id": 6, "type": "codeChallenge", "title": "Create a canvas element with a specific width and height.", "expectedAnswer": "<canvas id='myCanvas' width='200' height='100'></canvas>", "blocks": ["<canvas id='myCanvas' width='200' height='100'></canvas>"], "language": "html" },
+        { "id": 7, "type": "quiz", "question": "Which graphics technology relies heavily on JavaScript to draw?", "options": ["SVG", "IMG", "Canvas"], "correct": "Canvas" },
+        { "id": 8, "type": "info", "title": "SVG vs. Canvas", "content": "Use SVG for static, shape-based graphics that need to be sharp at all sizes. Use Canvas for dynamic, pixel-based graphics like games or real-time data charts." },
+        { "id": 9, "type": "quiz", "question": "Which would be better for an interactive game of Pong?", "options": ["SVG", "Canvas"], "correct": "Canvas" },
+        { "id": 10, "type": "info", "title": "Graphics Guru! 🎨", "content": "You understand the fundamentals of the two main graphics technologies in HTML. This opens the door to creating rich visual experiences beyond standard text and images." }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "HTML Best Practices",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Writing Professional HTML", "content": "Let's review some best practices that distinguish clean, professional HTML from messy code." },
+        { "id": 2, "type": "info", "title": "Validate Your HTML", "content": "Always run your HTML through a validator, like the W3C Markup Validation Service. It helps catch errors and ensures your code is compliant." },
+        { "id": 3, "type": "quiz", "question": "Why should you validate your HTML?", "options": ["To make it look prettier", "To catch errors and ensure browser compatibility", "It's not necessary"], "correct": "To catch errors and ensure browser compatibility" },
+        { "id": 4, "type": "info", "title": "Use Lowercase Tags", "content": "While HTML isn't case-sensitive, the community standard is to always write tags and attributes in lowercase for consistency and readability." },
+        { "id": 5, "type": "quiz", "question": "Which is the preferred style?", "options": ["<P>", "<p>", "It doesn't matter"], "correct": "<p>" },
+        { "id": 6, "type": "info", "title": "Close All Tags", "content": "While some tags are self-closing (`<img>`) and some browsers might render unclosed tags (`<p>`), you should always explicitly close your container tags (e.g., `<p>...</p>`)." },
+        { "id": 7, "type": "info", "title": "Meaningful Structure", "content": "Structure your document logically with headings and semantic tags. Don't just use `<div>` for everything. A well-structured document is easier to maintain and better for A11y/SEO." },
+        { "id": 8, "type": "info", "title": "Indentation", "content": "Properly indent your nested elements. This doesn't change how the page looks, but it makes the code infinitely easier for humans to read and debug." },
+        { "id": 9, "type": "quiz", "question": "Does code indentation affect how the page is displayed?", "options": ["Yes, it adds space", "No, it's only for human readability", "Only for `<pre>` tags"], "correct": "No, it's only for human readability" },
+        { "id": 10, "type": "info", "title": "HTML Professional! 🏆", "content": "You not only know the tags, but you know how to write clean, valid, and maintainable HTML. This is the mark of a true professional." }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Level 3 Review",
+      "lessons": [
+        { "id": 1, "type": "info", "title": "Advanced HTML Review", "content": "You've gone far beyond the basics and learned the tools to create complex, accessible, and modern HTML documents. Let's test your knowledge." },
+        { "id": 2, "type": "quiz", "question": "Which attribute is crucial for linking a `<label>` to an `<input>`?", "options": ["name", "for", "link"], "correct": "for" },
+        { "id": 3, "type": "quiz", "question": "To make a table cell span two columns, you use...", "options": ["<td rowspan='2'>", "<td colspan='2'>", "<td span='2'>"], "correct": "<td colspan='2'>" },
+        { "id": 4, "type": "quiz", "question": "Which element provides multiple image sources for responsiveness?", "options": ["<img> with `srcset`", "<picture>", "Both are correct"], "correct": "Both are correct" },
+        { "id": 5, "type": "quiz", "question": "The best tag for a site's main navigation menu is...", "options": ["<div>", "<menu>", "<nav>"], "correct": "<nav>" },
+        { "id": 6, "type": "quiz", "question": "What is the primary purpose of ARIA attributes?", "options": ["To improve styling", "To improve accessibility", "To improve performance"], "correct": "To improve accessibility" },
+        { "id": 7, "type": "quiz", "question": "To create a native show/hide widget without JavaScript, you use...", "options": ["<accordion>", "<details>", "<hidden>"], "correct": "<details>" },
+        { "id": 8, "type": "quiz", "question": "Which meta tag property is used for social media sharing previews?", "options": ["`name='og:title'`", "`property='og:title'`", "`content='og:title'`"], "correct": "`property='og:title'`" },
+        { "id": 9, "type": "info", "title": "Ready for Anything", "content": "With your deep knowledge of HTML, you are now perfectly prepared to learn CSS and JavaScript to bring these well-structured documents to life." },
+        { "id": 10, "type": "info", "title": "HTML Master! 🏅", "content": "Congratulations! You have achieved a master's understanding of HTML. You are ready to build any web structure imaginable." }
+      ]
+    }
+  ]
+}

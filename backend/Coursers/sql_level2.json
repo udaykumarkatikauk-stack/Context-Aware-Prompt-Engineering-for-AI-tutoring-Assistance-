@@ -1,0 +1,2066 @@
+{
+  "level": 2,
+  "language": "sql",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Advanced WHERE Clauses",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Complex Conditions",
+          "content": "Combine multiple conditions in WHERE using AND, OR, and parentheses. Example: SELECT * FROM Orders WHERE Total > 100 AND (Status = 'Shipped' OR Status = 'Delivered');"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do parentheses do in a WHERE clause?",
+          "options": ["Group conditions", "Sort results", "Limit rows"],
+          "correct": "Group conditions"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using IN",
+          "content": "IN checks if a value is in a list. Example: SELECT Name FROM Customers WHERE City IN ('Paris', 'London');"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does WHERE City IN ('Paris', 'London') do?",
+          "options": ["Excludes Paris and London", "Includes Paris and London", "Sorts by city"],
+          "correct": "Includes Paris and London"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using BETWEEN",
+          "content": "BETWEEN selects a range, inclusive. Example: SELECT * FROM Orders WHERE OrderDate BETWEEN '2023-01-01' AND '2023-12-31';"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does BETWEEN '2023-01-01' AND '2023-12-31' select?",
+          "options": ["Dates outside the range", "Dates within the range", "Only 2023-01-01"],
+          "correct": "Dates within the range"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Combining Operators",
+          "content": "Combine IN, BETWEEN, and comparisons. Example: SELECT * FROM Products WHERE Price BETWEEN 10 AND 50 AND Category IN ('Electronics', 'Clothing');"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can you combine BETWEEN and IN in WHERE?",
+          "options": ["Yes", "No", "Only with OR"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Nested Conditions",
+          "content": "Use nested conditions for complex logic. Example: SELECT * FROM Employees WHERE (Salary > 50000 OR Department = 'IT') AND HireDate > '2020-01-01';"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does (Salary > 50000 OR Department = 'IT') AND HireDate > '2020-01-01' require?",
+          "options": ["All conditions true", "Salary or Department true, plus HireDate", "Only Salary true"],
+          "correct": "Salary or Department true, plus HireDate"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Precedence in WHERE",
+          "content": "AND is evaluated before OR. Use parentheses to control order. Example: WHERE A OR B AND C means WHERE A OR (B AND C)."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Which operator is evaluated first in WHERE?",
+          "options": ["OR", "AND", "NOT"],
+          "correct": "AND"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Complex WHERE clauses can slow queries. Ensure indexes exist on filtered columns like Price or OrderDate."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What improves WHERE clause performance?",
+          "options": ["Indexes", "Subqueries", "Joins"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Use IS NULL or IS NOT NULL for NULL checks. Example: SELECT * FROM Customers WHERE City IS NULL;"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Pattern Matching with LIKE",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "The LIKE Operator",
+          "content": "LIKE matches patterns in text. Example: SELECT * FROM Customers WHERE Name LIKE 'A%'; gets names starting with A."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does LIKE 'A%' match?",
+          "options": ["Names ending with A", "Names starting with A", "Names containing A"],
+          "correct": "Names starting with A"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Wildcard %",
+          "content": "The % wildcard matches any characters. Example: SELECT * FROM Products WHERE Name LIKE '%phone%'; finds names containing 'phone'."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does '%phone%' match?",
+          "options": ["Only phone", "Anything with phone", "Starts with phone"],
+          "correct": "Anything with phone"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Wildcard _",
+          "content": "The _ wildcard matches one character. Example: SELECT * FROM Customers WHERE Name LIKE 'J_n'; matches Jon, Jan, etc."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does 'J_n' match?",
+          "options": ["Any name", "Three-letter names like Jon", "Names starting with J"],
+          "correct": "Three-letter names like Jon"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Combining Wildcards",
+          "content": "Use % and _ together. Example: SELECT * FROM Products WHERE Code LIKE 'A_1%'; matches A11, A21, etc."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does 'A_1%' match?",
+          "options": ["A then one char then 1", "Only A1", "A followed by 1"],
+          "correct": "A then one char then 1"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "NOT LIKE",
+          "content": "NOT LIKE excludes patterns. Example: SELECT * FROM Customers WHERE Name NOT LIKE 'B%'; excludes names starting with B."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does NOT LIKE 'B%' do?",
+          "options": ["Includes B names", "Excludes B names", "Only B names"],
+          "correct": "Excludes B names"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Case Sensitivity",
+          "content": "LIKE may be case-sensitive depending on the database. Use LOWER() for consistency. Example: SELECT * FROM Customers WHERE LOWER(Name) LIKE 'a%';"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "How do you handle case sensitivity with LIKE?",
+          "options": ["Use UPPER() or LOWER()", "Use IN", "Use BETWEEN"],
+          "correct": "Use UPPER() or LOWER()"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "LIKE with leading % (e.g., '%phone') prevents index use, slowing queries. Avoid if possible."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Why avoid LIKE with leading %?",
+          "options": ["Prevents index use", "Changes data", "Syntax error"],
+          "correct": "Prevents index use"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Combining with Other Conditions",
+          "content": "Use LIKE with AND/OR. Example: SELECT * FROM Products WHERE Name LIKE '%phone%' AND Price > 500;"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Working with IN and NOT IN",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "The IN Operator",
+          "content": "IN matches a value against a list. Example: SELECT * FROM Orders WHERE Status IN ('Pending', 'Shipped');"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does IN ('Pending', 'Shipped') do?",
+          "options": ["Excludes Pending and Shipped", "Includes Pending and Shipped", "Sorts by Status"],
+          "correct": "Includes Pending and Shipped"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "NOT IN Operator",
+          "content": "NOT IN excludes values in a list. Example: SELECT * FROM Customers WHERE Country NOT IN ('USA', 'UK');"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does NOT IN ('USA', 'UK') do?",
+          "options": ["Includes USA and UK", "Excludes USA and UK", "Only USA"],
+          "correct": "Excludes USA and UK"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "IN with Subqueries",
+          "content": "Use IN with subqueries. Example: SELECT * FROM Products WHERE Category IN (SELECT Category FROM Categories WHERE Active = 1);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "Can IN be used with a subquery?",
+          "options": ["Yes", "No", "Only with numbers"],
+          "correct": "Yes"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Empty Lists",
+          "content": "An empty IN list returns no rows. Example: SELECT * FROM Pets WHERE Type IN (); returns nothing."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does IN () return?",
+          "options": ["All rows", "No rows", "One row"],
+          "correct": "No rows"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Combining with Other Conditions",
+          "content": "Use IN with AND/OR. Example: SELECT * FROM Orders WHERE CustomerID IN (1, 2, 3) AND Total > 100;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can IN be combined with AND?",
+          "options": ["Yes", "No", "Only with OR"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "IN with large lists or subqueries can be slow. Consider JOIN for better performance with subqueries."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What can be faster than IN with a subquery?",
+          "options": ["JOIN", "LIKE", "BETWEEN"],
+          "correct": "JOIN"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "IN does not match NULL values. Use IS NULL separately. Example: SELECT * FROM Customers WHERE City IN ('Paris', NULL); won’t match NULLs."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Does IN match NULL values?",
+          "options": ["Yes", "No", "Only with IS NULL"],
+          "correct": "No"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Text and Numbers",
+          "content": "IN works with text and numbers. Example: SELECT * FROM Employees WHERE DepartmentID IN (101, 102);"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "BETWEEN for Ranges",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "The BETWEEN Operator",
+          "content": "BETWEEN selects values in a range, inclusive. Example: SELECT * FROM Orders WHERE Total BETWEEN 100 AND 500;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Is BETWEEN inclusive of its endpoints?",
+          "options": ["Yes", "No", "Only for numbers"],
+          "correct": "Yes"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using with Dates",
+          "content": "BETWEEN works with dates. Example: SELECT * FROM Orders WHERE OrderDate BETWEEN '2023-01-01' AND '2023-12-31';"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "Can BETWEEN be used with dates?",
+          "options": ["Yes", "No", "Only with numbers"],
+          "correct": "Yes"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "NOT BETWEEN",
+          "content": "NOT BETWEEN excludes a range. Example: SELECT * FROM Products WHERE Price NOT BETWEEN 10 AND 50;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does NOT BETWEEN 10 AND 50 do?",
+          "options": ["Includes 10 to 50", "Excludes 10 to 50", "Only 10"],
+          "correct": "Excludes 10 to 50"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Combining with Other Conditions",
+          "content": "Use BETWEEN with AND/OR. Example: SELECT * FROM Employees WHERE Salary BETWEEN 40000 AND 60000 AND Department = 'Sales';"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can BETWEEN be combined with AND?",
+          "options": ["Yes", "No", "Only with OR"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Numbers vs. Text",
+          "content": "BETWEEN works with numbers and text. Example: SELECT * FROM Customers WHERE Name BETWEEN 'A' AND 'M'; gets names from A to M."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can BETWEEN be used with text?",
+          "options": ["Yes", "No", "Only with numbers"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "BETWEEN uses indexes effectively if columns like Price or OrderDate are indexed."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Does BETWEEN benefit from indexes?",
+          "options": ["Yes", "No", "Only for text"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "BETWEEN does not match NULL values. Use IS NULL separately to handle NULLs."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Does BETWEEN match NULL values?",
+          "options": ["Yes", "No", "Only with IS NULL"],
+          "correct": "No"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Edge Cases",
+          "content": "Ensure the lower bound is less than the upper bound. Example: BETWEEN 100 AND 50 is invalid."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Advanced JOIN Techniques",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Multiple Joins",
+          "content": "Join multiple tables. Example: SELECT c.Name, o.OrderDate, p.Name FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID INNER JOIN Products p ON o.ProductID = p.ProductID;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does joining multiple tables do?",
+          "options": ["Combines data from all", "Deletes tables", "Sorts tables"],
+          "correct": "Combines data from all"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Self Joins",
+          "content": "Join a table to itself. Example: SELECT e1.Name, e2.Name AS Manager FROM Employees e1 INNER JOIN Employees e2 ON e1.ManagerID = e2.EmployeeID;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What is a self join?",
+          "options": ["Joining a table to itself", "Joining two tables", "Joining three tables"],
+          "correct": "Joining a table to itself"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Non-Equi Joins",
+          "content": "Use operators like > or <. Example: SELECT * FROM Products p1 INNER JOIN Products p2 ON p1.Price > p2.Price;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What operator can be used in a non-equi join?",
+          "options": ["=", ">", "IN"],
+          "correct": ">"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Join with WHERE",
+          "content": "Combine JOIN with WHERE. Example: SELECT c.Name FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID WHERE o.Total > 100;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can WHERE be used with JOIN?",
+          "options": ["Yes", "No", "Only with IN"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Join Order",
+          "content": "Join order can affect performance. Place smaller tables first and ensure indexes on join columns."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What can improve JOIN performance?",
+          "options": ["Indexes on join columns", "Using LIKE", "No indexes"],
+          "correct": "Indexes on join columns"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Ambiguous Columns",
+          "content": "Use table aliases to avoid ambiguity. Example: SELECT c.CustomerID, c.Name FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID;"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "How do you avoid ambiguous column names in joins?",
+          "options": ["Use table aliases", "Use IN", "Use BETWEEN"],
+          "correct": "Use table aliases"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Complex Join Conditions",
+          "content": "Use multiple conditions in ON. Example: SELECT * FROM Orders o INNER JOIN Customers c ON o.CustomerID = c.CustomerID AND c.City = 'London';"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Can ON include multiple conditions?",
+          "options": ["Yes", "No", "Only with AND"],
+          "correct": "Yes"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Multiple joins increase query complexity. Optimize with indexes and limit result sets."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Outer Joins in Depth",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Outer Joins?",
+          "content": "Outer joins include unmatched rows from one or both tables. Types: LEFT, RIGHT, FULL. Example: SELECT c.Name, o.OrderID FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does an outer join include?",
+          "options": ["Only matched rows", "Unmatched rows", "Sorted rows"],
+          "correct": "Unmatched rows"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "LEFT JOIN",
+          "content": "LEFT JOIN keeps all rows from the left table. Example: SELECT c.Name, o.Total FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID; includes customers without orders."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does LEFT JOIN keep?",
+          "options": ["All right table rows", "All left table rows", "Only matched rows"],
+          "correct": "All left table rows"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "RIGHT JOIN",
+          "content": "RIGHT JOIN keeps all rows from the right table. Example: SELECT c.Name, o.Total FROM Customers c RIGHT JOIN Orders o ON c.CustomerID = o.CustomerID; includes orders without customers."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does RIGHT JOIN keep?",
+          "options": ["All left table rows", "All right table rows", "Only matched rows"],
+          "correct": "All right table rows"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "FULL JOIN",
+          "content": "FULL JOIN keeps all rows from both tables. Example: SELECT c.Name, o.OrderID FROM Customers c FULL JOIN Orders o ON c.CustomerID = o.CustomerID; includes all customers and orders."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does FULL JOIN include?",
+          "options": ["Only matched rows", "All rows from both tables", "Only left table rows"],
+          "correct": "All rows from both tables"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Handling NULLs",
+          "content": "Outer joins produce NULLs for unmatched rows. Example: In a LEFT JOIN, Orders columns are NULL for customers without orders."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What appears in unmatched rows of an outer join?",
+          "options": ["0", "NULL", "Empty string"],
+          "correct": "NULL"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Filtering with Outer Joins",
+          "content": "Use WHERE carefully with outer joins to avoid losing unmatched rows. Example: SELECT c.Name FROM Customers c LEFT JOIN Orders o ON c.CustomerID = o.CustomerID WHERE o.OrderID IS NULL; finds customers with no orders."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What can WHERE o.OrderID IS NULL find in a LEFT JOIN?",
+          "options": ["Customers with orders", "Customers without orders", "All customers"],
+          "correct": "Customers without orders"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Outer joins can be slower than INNER JOINs. Ensure indexes on join columns and limit result sets."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What improves outer join performance?",
+          "options": ["Indexes", "Subqueries", "No aliases"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Outer joins are useful for reporting, like finding all customers, including those without orders, or all products, including those not sold."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Cross Joins and Cartesian Products",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Cross Join?",
+          "content": "CROSS JOIN combines every row from two tables. Example: SELECT * FROM Colors CROSS JOIN Sizes; pairs every color with every size."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does a CROSS JOIN produce?",
+          "options": ["Matched rows", "All row combinations", "Sorted rows"],
+          "correct": "All row combinations"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Syntax",
+          "content": "Use CROSS JOIN or a comma. Example: SELECT c.Name, s.Size FROM Colors c CROSS JOIN Sizes s; or SELECT c.Name, s.Size FROM Colors c, Sizes s;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "Which is a valid CROSS JOIN syntax?",
+          "options": ["CROSS JOIN", "INNER JOIN", "LEFT JOIN"],
+          "correct": "CROSS JOIN"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "CROSS JOIN is useful for generating combinations, like all possible product variations (e.g., color-size pairs)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What is a common use for CROSS JOIN?",
+          "options": ["Filtering rows", "Generating combinations", "Sorting data"],
+          "correct": "Generating combinations"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Result Size",
+          "content": "If table A has 10 rows and table B has 5, CROSS JOIN yields 50 rows (10 × 5). Be cautious with large tables."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How many rows from a CROSS JOIN of 3-row and 4-row tables?",
+          "options": ["7", "12", "3"],
+          "correct": "12"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Filtering Cross Joins",
+          "content": "Use WHERE to filter results. Example: SELECT c.Name, s.Size FROM Colors c CROSS JOIN Sizes s WHERE s.Size = 'Large';"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can WHERE be used with CROSS JOIN?",
+          "options": ["Yes", "No", "Only with IN"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "CROSS JOINs can produce large result sets. Limit rows with WHERE or use smaller tables."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Why be cautious with CROSS JOIN?",
+          "options": ["Slow queries", "Deletes data", "Changes tables"],
+          "correct": "Slow queries"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Avoiding Accidental Cross Joins",
+          "content": "Omitting ON in a JOIN can cause a CROSS JOIN. Always specify join conditions for INNER or OUTER joins."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What causes an accidental CROSS JOIN?",
+          "options": ["Missing ON clause", "Using WHERE", "Using indexes"],
+          "correct": "Missing ON clause"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Practical Example",
+          "content": "CROSS JOIN can generate test data. Example: SELECT e.Name, d.Date FROM Employees e CROSS JOIN Dates d; creates all employee-date combinations."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Self Joins for Hierarchical Data",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Self Join?",
+          "content": "A self join joins a table to itself. Example: SELECT e1.Name, e2.Name AS Manager FROM Employees e1 INNER JOIN Employees e2 ON e1.ManagerID = e2.EmployeeID;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does a self join do?",
+          "options": ["Joins a table to itself", "Joins two different tables", "Joins three tables"],
+          "correct": "Joins a table to itself"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Hierarchical Data",
+          "content": "Self joins are ideal for hierarchical data like employee-manager relationships or category-subcategory structures."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What is a common use for self joins?",
+          "options": ["Sorting data", "Hierarchical data", "Filtering rows"],
+          "correct": "Hierarchical data"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Aliases",
+          "content": "Aliases are required to distinguish table instances. Example: e1 and e2 in SELECT e1.Name, e2.Name FROM Employees e1 JOIN Employees e2;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "Are aliases required in self joins?",
+          "options": ["Yes", "No", "Only for WHERE"],
+          "correct": "Yes"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "LEFT Self Join",
+          "content": "Use LEFT JOIN to include top-level rows. Example: SELECT e1.Name, e2.Name AS Manager FROM Employees e1 LEFT JOIN Employees e2 ON e1.ManagerID = e2.EmployeeID; includes employees without managers."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does a LEFT self join include?",
+          "options": ["Only matched rows", "Rows without matches", "Sorted rows"],
+          "correct": "Rows without matches"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Multiple Self Joins",
+          "content": "Join the table multiple times for deeper hierarchies, like grandparent-parent-child relationships."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can a table be self-joined multiple times?",
+          "options": ["Yes", "No", "Only twice"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Ensure indexes on columns used in self joins (e.g., ManagerID) to improve query speed."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves self join performance?",
+          "options": ["Indexes", "LIKE", "No aliases"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "In a LEFT self join, NULL appears for rows without matches (e.g., top-level employees with no manager)."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What appears for unmatched rows in a LEFT self join?",
+          "options": ["0", "NULL", "Empty string"],
+          "correct": "NULL"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Self joins are used for organizational charts, bill of materials, or category trees in databases."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Subqueries in Depth",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Subquery?",
+          "content": "A subquery is a query nested inside another query. Example: SELECT Name FROM Customers WHERE CustomerID IN (SELECT CustomerID FROM Orders WHERE Total > 1000);"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a subquery?",
+          "options": ["A nested query", "A join", "A table"],
+          "correct": "A nested query"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Subqueries in WHERE",
+          "content": "Use subqueries in WHERE to filter rows. Example: SELECT * FROM Products WHERE Price > (SELECT AVG(Price) FROM Products);"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "Where can subqueries be used?",
+          "options": ["Only in SELECT", "In WHERE", "Only in FROM"],
+          "correct": "In WHERE"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Subqueries in SELECT",
+          "content": "Use subqueries in SELECT for per-row calculations. Example: SELECT Name, (SELECT COUNT(*) FROM Orders o WHERE o.CustomerID = c.CustomerID) AS OrderCount FROM Customers c;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "Can subqueries be used in SELECT?",
+          "options": ["Yes", "No", "Only in WHERE"],
+          "correct": "Yes"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Subqueries in FROM",
+          "content": "Use subqueries in FROM as derived tables. Example: SELECT * FROM (SELECT CustomerID, COUNT(*) AS Orders FROM Orders GROUP BY CustomerID) AS Sub WHERE Orders > 5;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is a subquery in FROM called?",
+          "options": ["Derived table", "Join table", "Base table"],
+          "correct": "Derived table"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Single vs. Multi-Row",
+          "content": "Single-row subqueries return one row (use =, >). Multi-row subqueries return multiple rows (use IN, ANY, ALL)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What operator is used with multi-row subqueries?",
+          "options": ["=", "IN", ">"],
+          "correct": "IN"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Subqueries can be slower than JOINs. Rewrite as JOIN where possible for better performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What can be faster than a subquery?",
+          "options": ["JOIN", "LIKE", "CROSS JOIN"],
+          "correct": "JOIN"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Subqueries returning NULL can affect results. Example: WHERE x IN (SELECT y WHERE y IS NULL) may return no rows."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What happens if a subquery returns NULL with IN?",
+          "options": ["Matches NULL", "No rows returned", "All rows returned"],
+          "correct": "No rows returned"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Subqueries are useful for filtering based on aggregates or finding rows matching conditions in another table."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Correlated Subqueries",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Correlated Subquery?",
+          "content": "A correlated subquery references columns from the outer query, running for each row. Example: SELECT Name FROM Customers c WHERE EXISTS (SELECT 1 FROM Orders o WHERE o.CustomerID = c.CustomerID);"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What makes a subquery correlated?",
+          "options": ["References outer query", "Runs once", "Uses JOIN"],
+          "correct": "References outer query"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using EXISTS",
+          "content": "EXISTS checks if a subquery returns rows. Example: SELECT * FROM Products p WHERE EXISTS (SELECT 1 FROM Orders o WHERE o.ProductID = p.ProductID);"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does EXISTS check?",
+          "options": ["Row existence", "Row count", "Row values"],
+          "correct": "Row existence"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "NOT EXISTS",
+          "content": "NOT EXISTS checks for no rows. Example: SELECT * FROM Customers c WHERE NOT EXISTS (SELECT 1 FROM Orders o WHERE o.CustomerID = c.CustomerID);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does NOT EXISTS find?",
+          "options": ["Rows with matches", "Rows without matches", "All rows"],
+          "correct": "Rows without matches"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Correlated in SELECT",
+          "content": "Use in SELECT for per-row calculations. Example: SELECT Name, (SELECT SUM(Total) FROM Orders o WHERE o.CustomerID = c.CustomerID) AS TotalSpent FROM Customers c;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can correlated subqueries be in SELECT?",
+          "options": ["Yes", "No", "Only in WHERE"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Impact",
+          "content": "Correlated subqueries run per row, so they can be slow. Consider JOIN or CTEs for optimization."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Why are correlated subqueries slow?",
+          "options": ["Run per row", "Run once", "Use indexes"],
+          "correct": "Run per row"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Comparison Operators",
+          "content": "Use >, =, etc. Example: SELECT * FROM Products p WHERE Price > (SELECT AVG(Price) FROM Products p2 WHERE p2.Category = p.Category);"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can correlated subqueries use >?",
+          "options": ["Yes", "No", "Only IN"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Correlated subqueries with NULLs can lead to unexpected results. Test carefully with IS NULL."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What should you test for with correlated subqueries?",
+          "options": ["NULL values", "Indexes", "Joins"],
+          "correct": "NULL values"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Correlated subqueries are useful for row-by-row comparisons, like finding products above their category’s average price."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Common Table Expressions (CTEs)",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a CTE?",
+          "content": "A Common Table Expression (CTE) is a temporary result set defined with WITH. Example: WITH TopOrders AS (SELECT * FROM Orders WHERE Total > 1000) SELECT * FROM TopOrders;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a CTE?",
+          "options": ["Permanent table", "Temporary result set", "Stored procedure"],
+          "correct": "Temporary result set"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "CTE Syntax",
+          "content": "Use WITH followed by a name and query. Example: WITH Sales AS (SELECT CustomerID, SUM(Total) AS Total FROM Orders GROUP BY CustomerID) SELECT * FROM Sales WHERE Total > 5000;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What keyword starts a CTE?",
+          "options": ["WITH", "SELECT", "FROM"],
+          "correct": "WITH"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Multiple CTEs",
+          "content": "Define multiple CTEs with commas. Example: WITH A AS (SELECT * FROM Orders), B AS (SELECT * FROM A WHERE Total > 100) SELECT * FROM B;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "Can you define multiple CTEs?",
+          "options": ["Yes", "No", "Only one"],
+          "correct": "Yes"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "CTEs vs. Subqueries",
+          "content": "CTEs are more readable than nested subqueries and can be reused in a query. They often perform similarly to subqueries."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is an advantage of CTEs?",
+          "options": ["Faster execution", "More readable", "Permanent storage"],
+          "correct": "More readable"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Recursive CTEs",
+          "content": "Recursive CTEs handle hierarchical data. Example: WITH RECURSIVE Tree AS (...) for traversing employee-manager hierarchies."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What can recursive CTEs handle?",
+          "options": ["Flat data", "Hierarchical data", "Sorted data"],
+          "correct": "Hierarchical data"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "CTEs are not materialized in some databases (e.g., MySQL). Avoid complex logic in CTEs for better performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Are CTEs always materialized?",
+          "options": ["Yes", "No", "Only in PostgreSQL"],
+          "correct": "No"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Joining CTEs",
+          "content": "Join CTEs like tables. Example: WITH Sales AS (SELECT CustomerID, SUM(Total) AS Total FROM Orders GROUP BY CustomerID) SELECT c.Name, s.Total FROM Customers c JOIN Sales s ON c.CustomerID = s.CustomerID;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Can CTEs be joined like tables?",
+          "options": ["Yes", "No", "Only with subqueries"],
+          "correct": "Yes"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "CTEs simplify complex queries, improve readability, and are ideal for hierarchical or multi-step calculations."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Window Functions: Basics",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Window Functions?",
+          "content": "Window functions perform calculations across rows without grouping. Example: SELECT Name, ROW_NUMBER() OVER (ORDER BY Price) AS RowNum FROM Products;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do window functions avoid?",
+          "options": ["Grouping rows", "Filtering rows", "Joining tables"],
+          "correct": "Grouping rows"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "ROW_NUMBER()",
+          "content": "Assigns a unique number to each row. Example: SELECT Name, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY Price) AS Rank FROM Products;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does ROW_NUMBER() assign?",
+          "options": ["Random number", "Unique number", "Average value"],
+          "correct": "Unique number"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "PARTITION BY",
+          "content": "Divides rows into groups. Example: ROW_NUMBER() OVER (PARTITION BY Category ORDER BY Price) resets numbering per category."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does PARTITION BY do?",
+          "options": ["Sorts rows", "Groups rows", "Filters rows"],
+          "correct": "Groups rows"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "RANK()",
+          "content": "Assigns ranks, with ties getting the same rank. Example: SELECT Name, RANK() OVER (ORDER BY Price DESC) AS Rank FROM Products;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How does RANK() handle ties?",
+          "options": ["Different ranks", "Same rank", "Skips ranks"],
+          "correct": "Same rank"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "DENSE_RANK()",
+          "content": "Like RANK(), but no gaps in ranking. Example: SELECT Name, DENSE_RANK() OVER (ORDER BY Price DESC) AS Rank FROM Products;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What is unique about DENSE_RANK()?",
+          "options": ["Gaps in ranks", "No gaps in ranks", "Random ranks"],
+          "correct": "No gaps in ranks"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Window functions require sorting, so use indexes on ORDER BY columns (e.g., Price) for efficiency."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves window function performance?",
+          "options": ["Indexes", "Joins", "Subqueries"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "OVER Clause",
+          "content": "The OVER clause defines the window. Example: OVER (PARTITION BY Category ORDER BY Price) sets the scope for ROW_NUMBER()."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What defines the scope of a window function?",
+          "options": ["WHERE clause", "OVER clause", "GROUP BY"],
+          "correct": "OVER clause"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Window functions are used for ranking, numbering, or calculating metrics like top products per category."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Window Functions: Aggregates",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Aggregate Window Functions",
+          "content": "Use SUM(), AVG(), etc., over a window. Example: SELECT Name, Price, SUM(Price) OVER (PARTITION BY Category) AS CategoryTotal FROM Products;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What can SUM() do in a window function?",
+          "options": ["Sum per group", "Sum all rows", "Sort rows"],
+          "correct": "Sum per group"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Running Totals",
+          "content": "Calculate running totals with ORDER BY. Example: SELECT OrderID, Total, SUM(Total) OVER (ORDER BY OrderDate) AS RunningTotal FROM Orders;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does ORDER BY in SUM() OVER create?",
+          "options": ["Running total", "Group total", "Average"],
+          "correct": "Running total"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "AVG() Over Window",
+          "content": "Compute averages per partition. Example: SELECT Name, Price, AVG(Price) OVER (PARTITION BY Category) AS AvgPrice FROM Products;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does AVG() OVER (PARTITION BY Category) compute?",
+          "options": ["Total price", "Average per category", "Overall average"],
+          "correct": "Average per category"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "COUNT() Over Window",
+          "content": "Count rows in a window. Example: SELECT CustomerID, COUNT(*) OVER (PARTITION BY CustomerID) AS OrderCount FROM Orders;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does COUNT(*) OVER compute?",
+          "options": ["Row count per partition", "Total rows", "Unique rows"],
+          "correct": "Row count per partition"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Combining Aggregates",
+          "content": "Use multiple window functions. Example: SELECT Name, Price, SUM(Price) OVER (PARTITION BY Category), AVG(Price) OVER (PARTITION BY Category) FROM Products;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can multiple window functions be used in one query?",
+          "options": ["Yes", "No", "Only one"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Aggregate window functions can be costly. Use indexes on PARTITION BY and ORDER BY columns."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves aggregate window function performance?",
+          "options": ["Indexes", "Subqueries", "Joins"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Aggregate window functions ignore NULLs in calculations, similar to regular aggregates."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Do aggregate window functions include NULLs in calculations?",
+          "options": ["Yes", "No", "Only in SUM()"],
+          "correct": "No"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Aggregate window functions are used for running totals, category averages, or counting occurrences without grouping."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Window Functions: Advanced",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "LAG() Function",
+          "content": "LAG() accesses the previous row’s value. Example: SELECT OrderID, Total, LAG(Total) OVER (ORDER BY OrderDate) AS PrevTotal FROM Orders;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does LAG() access?",
+          "options": ["Next row", "Previous row", "Current row"],
+          "correct": "Previous row"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "LEAD() Function",
+          "content": "LEAD() accesses the next row’s value. Example: SELECT OrderID, Total, LEAD(Total) OVER (ORDER BY OrderDate) AS NextTotal FROM Orders;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does LEAD() access?",
+          "options": ["Previous row", "Next row", "Current row"],
+          "correct": "Next row"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Frame Specification",
+          "content": "Define a window frame with ROWS or RANGE. Example: SUM(Total) OVER (ORDER BY OrderDate ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does ROWS BETWEEN define?",
+          "options": ["Window frame", "Partition", "Sort order"],
+          "correct": "Window frame"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "NTILE()",
+          "content": "NTILE(n) divides rows into n buckets. Example: SELECT Name, NTILE(4) OVER (ORDER BY Price) AS Quartile FROM Products;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does NTILE(4) create?",
+          "options": ["4 buckets", "4 rows", "4 columns"],
+          "correct": "4 buckets"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "FIRST_VALUE()",
+          "content": "Returns the first value in a window. Example: SELECT Name, FIRST_VALUE(Price) OVER (PARTITION BY Category ORDER BY Price) AS MinPrice FROM Products;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does FIRST_VALUE() return?",
+          "options": ["Last value", "First value", "Average value"],
+          "correct": "First value"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Advanced window functions like LAG() require sorting. Index ORDER BY columns for better performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves LAG() performance?",
+          "options": ["Indexes", "Subqueries", "Joins"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "LAG() and LEAD() return NULL for missing rows (e.g., first or last row in a partition)."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What do LAG() and LEAD() return for missing rows?",
+          "options": ["0", "NULL", "Empty string"],
+          "correct": "NULL"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Advanced window functions are used for time-series analysis, like comparing sales to previous periods."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Grouping Sets and CUBE",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is GROUPING SETS?",
+          "content": "GROUPING SETS allows multiple grouping levels in one query. Example: SELECT Category, Region, SUM(Sales) FROM Orders GROUP BY GROUPING SETS (Category, Region);"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does GROUPING SETS do?",
+          "options": ["Multiple groupings", "Single grouping", "Sorts data"],
+          "correct": "Multiple groupings"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "CUBE",
+          "content": "CUBE generates all possible combinations of groups. Example: SELECT Category, Region, SUM(Sales) FROM Orders GROUP BY CUBE (Category, Region);"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does CUBE generate?",
+          "options": ["Single group", "All group combinations", "Filtered groups"],
+          "correct": "All group combinations"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "ROLLUP",
+          "content": "ROLLUP creates hierarchical subtotals. Example: SELECT Category, Region, SUM(Sales) FROM Orders GROUP BY ROLLUP (Category, Region);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does ROLLUP create?",
+          "options": ["Subtotals", "All rows", "Unique rows"],
+          "correct": "Subtotals"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "GROUPING Function",
+          "content": "GROUPING(column) identifies summary rows. Returns 1 for aggregated rows. Example: SELECT Category, GROUPING(Category) FROM Orders GROUP BY CUBE (Category);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does GROUPING(Category) return for summary rows?",
+          "options": ["0", "1", "NULL"],
+          "correct": "1"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Combining with Aggregates",
+          "content": "Use with SUM(), COUNT(), etc. Example: SELECT Category, Region, COUNT(*) FROM Orders GROUP BY GROUPING SETS (Category, (Category, Region));"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can GROUPING SETS use COUNT()?",
+          "options": ["Yes", "No", "Only SUM()"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "CUBE and ROLLUP can generate many rows. Use GROUPING SETS for specific combinations to improve efficiency."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What is more efficient than CUBE?",
+          "options": ["GROUPING SETS", "ROLLUP", "JOIN"],
+          "correct": "GROUPING SETS"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Summary rows in CUBE/ROLLUP may show NULL for non-aggregated columns. Use GROUPING() to distinguish."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "How do you distinguish summary rows in CUBE?",
+          "options": ["Use GROUPING()", "Use WHERE", "Use ORDER BY"],
+          "correct": "Use GROUPING()"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "GROUPING SETS and CUBE are used for multi-level reporting, like sales summaries by category and region."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Pivoting Data",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Pivoting?",
+          "content": "Pivoting converts rows to columns for reporting. Example: SELECT * FROM (SELECT Category, Month, Sales FROM Orders) PIVOT (SUM(Sales) FOR Month IN ('Jan', 'Feb')); (syntax varies by DBMS)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does pivoting do?",
+          "options": ["Converts rows to columns", "Converts columns to rows", "Sorts data"],
+          "correct": "Converts rows to columns"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Conditional Aggregation",
+          "content": "Without PIVOT, use CASE. Example: SELECT Category, SUM(CASE WHEN Month = 'Jan' THEN Sales END) AS Jan FROM Orders GROUP BY Category;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What can replace PIVOT in some databases?",
+          "options": ["CASE with aggregation", "JOIN", "WHERE"],
+          "correct": "CASE with aggregation"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "PIVOT Syntax",
+          "content": "PIVOT requires a source query, aggregate, and column values. Example: PIVOT (SUM(Sales) FOR Month IN ('Jan', 'Feb'));"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does PIVOT require?",
+          "options": ["Aggregate function", "JOIN condition", "WHERE clause"],
+          "correct": "Aggregate function"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Unpivoting",
+          "content": "UNPIVOT converts columns to rows. Example: SELECT * FROM SalesTable UNPIVOT (Sales FOR Month IN (Jan, Feb)); (syntax varies by DBMS)."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does UNPIVOT do?",
+          "options": ["Converts rows to columns", "Converts columns to rows", "Groups data"],
+          "correct": "Converts columns to rows"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Pivoting can be resource-intensive. Use indexes on grouping columns and limit data before pivoting."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What improves pivoting performance?",
+          "options": ["Indexes", "Subqueries", "CROSS JOIN"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "PIVOT may produce NULLs for missing data. Use COALESCE to handle them. Example: COALESCE(SUM(CASE WHEN Month = 'Jan' THEN Sales END), 0)."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "How do you handle NULLs in pivoting?",
+          "options": ["Use COALESCE", "Use WHERE", "Use ORDER BY"],
+          "correct": "Use COALESCE"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "PIVOT/UNPIVOT is supported in SQL Server, Oracle; others use CASE. Check your DBMS documentation."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Which DBMS might not support PIVOT?",
+          "options": ["MySQL", "SQL Server", "Oracle"],
+          "correct": "MySQL"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Pivoting is used for reports like sales by month or category, creating spreadsheet-like outputs."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Advanced Aggregations",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Advanced GROUP BY",
+          "content": "Use GROUP BY with multiple columns. Example: SELECT Category, Region, SUM(Sales) FROM Orders GROUP BY Category, Region;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does GROUP BY with Category, Region do?",
+          "options": ["Groups by Category only", "Groups by both", "Sorts by both"],
+          "correct": "Groups by both"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "HAVING Clause",
+          "content": "Filter groups with HAVING. Example: SELECT Category, SUM(Sales) FROM Orders GROUP BY Category HAVING SUM(Sales) > 10000;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does HAVING filter?",
+          "options": ["Individual rows", "Groups", "Columns"],
+          "correct": "Groups"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Filtered Aggregates",
+          "content": "Use FILTER (in some DBMS) or CASE. Example: SELECT Category, COUNT(*) FILTER (WHERE Status = 'Shipped') AS Shipped FROM Orders GROUP BY Category;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does FILTER in COUNT(*) do?",
+          "options": ["Counts all rows", "Counts specific rows", "Sorts rows"],
+          "correct": "Counts specific rows"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Multiple Aggregates",
+          "content": "Combine aggregates. Example: SELECT Category, SUM(Sales), AVG(Sales) FROM Orders GROUP BY Category;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can you combine SUM() and AVG() in one query?",
+          "options": ["Yes", "No", "Only with WHERE"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Aggregates like SUM() and AVG() ignore NULLs. Example: SUM(Sales) skips NULL Sales values."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Do aggregates include NULLs?",
+          "options": ["Yes", "No", "Only in COUNT(*)"],
+          "correct": "No"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Use indexes on GROUP BY and HAVING columns to improve aggregation performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves aggregation performance?",
+          "options": ["Indexes", "Subqueries", "CROSS JOIN"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Distinct Aggregates",
+          "content": "Use DISTINCT in aggregates. Example: SELECT COUNT(DISTINCT CustomerID) FROM Orders;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What does COUNT(DISTINCT CustomerID) do?",
+          "options": ["Counts all rows", "Counts unique CustomerIDs", "Counts NULLs"],
+          "correct": "Counts unique CustomerIDs"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Advanced aggregations are used for summary reports, like total sales by region or filtered order counts."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Stored Procedures: Basics",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Stored Procedure?",
+          "content": "A stored procedure is a precompiled SQL routine stored in the database. Example: CREATE PROCEDURE GetHighOrders AS SELECT * FROM Orders WHERE Total > 1000;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a stored procedure?",
+          "options": ["Temporary query", "Precompiled SQL routine", "Table"],
+          "correct": "Precompiled SQL routine"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Procedures",
+          "content": "Use CREATE PROCEDURE. Example: CREATE PROCEDURE GetOrders AS SELECT * FROM Orders; (syntax varies by DBMS)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What keyword creates a stored procedure?",
+          "options": ["CREATE PROCEDURE", "CREATE TABLE", "CREATE FUNCTION"],
+          "correct": "CREATE PROCEDURE"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Executing Procedures",
+          "content": "Call procedures with CALL or EXEC. Example: CALL GetOrders; or EXEC GetOrders;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "How do you execute a stored procedure?",
+          "options": ["SELECT", "CALL or EXEC", "RUN"],
+          "correct": "CALL or EXEC"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Benefits",
+          "content": "Stored procedures improve performance, security, and maintainability by encapsulating logic."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is a benefit of stored procedures?",
+          "options": ["Slower queries", "Improved security", "Temporary storage"],
+          "correct": "Improved security"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Modifying Procedures",
+          "content": "Use ALTER PROCEDURE to modify. Example: ALTER PROCEDURE GetOrders AS SELECT * FROM Orders WHERE Total > 500; (syntax varies)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "How do you modify a stored procedure?",
+          "options": ["ALTER PROCEDURE", "CREATE PROCEDURE", "DROP PROCEDURE"],
+          "correct": "ALTER PROCEDURE"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Dropping Procedures",
+          "content": "Use DROP PROCEDURE to remove. Example: DROP PROCEDURE GetOrders;"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What removes a stored procedure?",
+          "options": ["DROP PROCEDURE", "DELETE PROCEDURE", "REMOVE PROCEDURE"],
+          "correct": "DROP PROCEDURE"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Stored procedures are precompiled, reducing execution time compared to ad-hoc queries."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Why are stored procedures faster?",
+          "options": ["Precompiled", "Run per row", "Use subqueries"],
+          "correct": "Precompiled"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Stored procedures are used for repetitive tasks, like generating reports or updating data."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Stored Procedures with Parameters",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Parameterized Procedures",
+          "content": "Stored procedures can accept parameters. Example: CREATE PROCEDURE GetOrdersByStatus (IN status VARCHAR(50)) AS SELECT * FROM Orders WHERE Status = status;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What can stored procedures accept?",
+          "options": ["Parameters", "Tables", "Indexes"],
+          "correct": "Parameters"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Input Parameters",
+          "content": "Use IN for input. Example: CREATE PROCEDURE GetOrdersByCustomer (IN custID INT) AS SELECT * FROM Orders WHERE CustomerID = custID;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does IN specify in a procedure?",
+          "options": ["Output parameter", "Input parameter", "Table name"],
+          "correct": "Input parameter"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Output Parameters",
+          "content": "Use OUT to return values. Example: CREATE PROCEDURE GetOrderCount (IN custID INT, OUT count INT) AS SELECT COUNT(*) INTO count FROM Orders WHERE CustomerID = custID;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does OUT do in a procedure?",
+          "options": ["Returns a value", "Filters rows", "Sorts data"],
+          "correct": "Returns a value"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Calling with Parameters",
+          "content": "Pass parameters when calling. Example: CALL GetOrdersByStatus('Shipped'); or EXEC GetOrdersByCustomer(101);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How do you pass a parameter to a procedure?",
+          "options": ["In CALL or EXEC", "In SELECT", "In WHERE"],
+          "correct": "In CALL or EXEC"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Multiple Parameters",
+          "content": "Use multiple parameters. Example: CREATE PROCEDURE GetOrdersByRange (IN minTotal DECIMAL, IN maxTotal DECIMAL) AS SELECT * FROM Orders WHERE Total BETWEEN minTotal AND maxTotal;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can procedures have multiple parameters?",
+          "options": ["Yes", "No", "Only one"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Parameterized procedures prevent SQL injection and improve execution plans."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What prevents SQL injection in procedures?",
+          "options": ["Parameters", "Subqueries", "Joins"],
+          "correct": "Parameters"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Handle NULL parameters carefully. Example: Use COALESCE to set defaults in the procedure."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "How do you handle NULL parameters?",
+          "options": ["Use COALESCE", "Use WHERE", "Use ORDER BY"],
+          "correct": "Use COALESCE"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Parameterized procedures are used for dynamic filtering, like orders by customer or date range."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Triggers: Basics",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is a Trigger?",
+          "content": "A trigger is an automatic action executed on data changes. Example: CREATE TRIGGER LogInsert AFTER INSERT ON Orders FOR EACH ROW INSERT INTO AuditLog (Action) VALUES ('Insert');"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is a trigger?",
+          "options": ["Manual query", "Automatic action", "Stored procedure"],
+          "correct": "Automatic action"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Trigger Types",
+          "content": "Triggers can be BEFORE or AFTER for INSERT, UPDATE, DELETE. Example: BEFORE INSERT to validate data."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "When can a trigger execute?",
+          "options": ["Only AFTER", "BEFORE or AFTER", "Only on SELECT"],
+          "correct": "BEFORE or AFTER"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "FOR EACH ROW",
+          "content": "FOR EACH ROW applies the trigger per row. Example: CREATE TRIGGER UpdateStock AFTER INSERT ON Orders FOR EACH ROW UPDATE Products SET Stock = Stock - 1;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does FOR EACH ROW do?",
+          "options": ["Applies per table", "Applies per row", "Applies once"],
+          "correct": "Applies per row"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "NEW and OLD",
+          "content": "Use NEW for inserted/updated rows, OLD for deleted/updated. Example: NEW.Quantity in an INSERT trigger."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does NEW refer to in a trigger?",
+          "options": ["Old row", "New row", "Table"],
+          "correct": "New row"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Creating Triggers",
+          "content": "Use CREATE TRIGGER. Example: CREATE TRIGGER CheckPrice BEFORE INSERT ON Products FOR EACH ROW IF NEW.Price < 0 THEN SIGNAL SQLSTATE '45000'; END IF;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What creates a trigger?",
+          "options": ["CREATE TRIGGER", "CREATE PROCEDURE", "CREATE TABLE"],
+          "correct": "CREATE TRIGGER"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Triggers can slow data operations. Keep trigger logic simple and avoid recursive triggers."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What can slow operations in triggers?",
+          "options": ["Complex logic", "Indexes", "Joins"],
+          "correct": "Complex logic"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Dropping Triggers",
+          "content": "Use DROP TRIGGER to remove. Example: DROP TRIGGER LogInsert;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "How do you remove a trigger?",
+          "options": ["DROP TRIGGER", "DELETE TRIGGER", "REMOVE TRIGGER"],
+          "correct": "DROP TRIGGER"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Triggers are used for logging changes, enforcing rules, or updating related tables automatically."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1553 @@
+{
+  "level": 5,
+  "language": "python",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Advanced Recursion",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Advanced Recursion?",
+          "content": "Recursion solves complex problems, like traversing nested lists or trees."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does recursion need to avoid infinite loops?",
+          "options": ["Base case", "Loop", "Return"],
+          "correct": "Base case"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Recursive Sum of List",
+          "content": "Sum a list like sum_list([1, 2]) = 1 + sum_list([2])."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Write recursive sum for [1, 2, 3].",
+          "expectedAnswer": "def sum_list(lst):\n    if not lst:\n        return 0\n    return lst[0] + sum_list(lst[1:])\nprint(sum_list([1, 2, 3]))",
+          "blocks": ["def sum_list(lst):", "\n    if not lst:", "\n        return 0", "\n    return lst[0] + sum_list(lst[1:])", "\nprint(sum_list([1, 2, 3]))"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Nested List Recursion",
+          "content": "Handle nested lists, like [1, [2, 3]] by checking types."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Sum nested list [1, [2]].",
+          "starterCode": "def sum_nested(lst):\n    total = 0\n    for item in lst:\n        if isinstance(item, list):\n            total += sum_nested(item)\n        else:\n            total += \n    return total\nprint(sum_nested([1, [2]]))",
+          "placeholders": [
+            {"line": 7, "index": 13, "hint": "item"}
+          ],
+          "blocks": ["item", "lst", "0"],
+          "correctAnswers": ["item"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does sum_nested([1, [2]]) return?",
+          "options": ["3", "1", "[1, 2]"],
+          "correct": "3"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Tail Recursion",
+          "content": "Optimize with tail calls, though Python doesn’t optimize them."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Write tail-recursive factorial.",
+          "expectedAnswer": "def factorial(n, acc=1):\n    if n <= 1:\n        return acc\n    return factorial(n-1, n*acc)\nprint(factorial(3))",
+          "blocks": ["def factorial(n, acc=1):", "\n    if n <= 1:", "\n        return acc", "\n    return factorial(n-1, n*acc)", "\nprint(factorial(3))"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use recursion for tree-like or divide-and-conquer problems."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete recursive list length.",
+          "starterCode": "def list_len(lst):\n    if not lst:\n        return 0\n    return 1 + \nprint(list_len([1, 2]))",
+          "placeholders": [
+            {"line": 4, "index": 11, "hint": "list_len(lst[1:])"}
+          ],
+          "blocks": ["list_len(lst[1:])", "lst[0]", "1"],
+          "correctAnswers": ["list_len(lst[1:])"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Is Python optimized for tail recursion?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "No"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Recursion Power",
+          "content": "Advanced recursion elegantly solves complex problems."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Recursion Master! 🌳",
+          "content": "You’re conquering recursion like a pro! Your code branches perfectly!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Generators",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Generators?",
+          "content": "Generators yield values one at a time, like def gen(): yield 1."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What keyword defines a generator?",
+          "options": ["return", "yield", "def"],
+          "correct": "yield"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Generators",
+          "content": "Use yield, like def nums(): for i in range(3): yield i."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create generator for 0, 1, 2.",
+          "expectedAnswer": "def nums():\n    for i in range(3):\n        yield i\nfor x in nums():\n    print(x)",
+          "blocks": ["def nums():", "\n    for i in range(3):", "\n        yield i", "\nfor x in nums():", "\n    print(x)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Generators",
+          "content": "Iterate with for or next(), like next(gen()) for first value."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get first value from generator.",
+          "starterCode": "def gen():\n    yield 1\n    yield 2\ng = gen()\nprint()",
+          "placeholders": [
+            {"line": 5, "index": 6, "hint": "next(g)"}
+          ],
+          "blocks": ["next(g)", "g()", "yield 1"],
+          "correctAnswers": ["next(g)"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does next(gen()) do?",
+          "options": ["Gets next value", "Restarts generator", "Ends generator"],
+          "correct": "Gets next value"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Generator Expressions",
+          "content": "Like (x*2 for x in range(3)) for concise generators."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Use generator expression for squares of 1, 2.",
+          "expectedAnswer": "squares = (x**2 for x in range(1, 3))\nfor s in squares:\n    print(s)",
+          "blocks": ["squares = (x**2 for x in range(1, 3))", "\nfor s in squares:", "\n    print(s)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Memory Efficiency",
+          "content": "Generators save memory by yielding one value at a time."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Yield even numbers.",
+          "starterCode": "def evens(n):\n    for i in range(n):\n        if i % 2 == 0:\n            \nfor x in evens(4):\n    print(x)",
+          "placeholders": [
+            {"line": 4, "index": 12, "hint": "yield i"}
+          ],
+          "blocks": ["yield i", "print(i)", "return i"],
+          "correctAnswers": ["yield i"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Do generators store all values in memory?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "No"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Generator Power",
+          "content": "Generators are efficient for large datasets."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Generator Guru! ⚙️",
+          "content": "You’re yielding values like a pro! Your code is lean and mean!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Decorators",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Decorators?",
+          "content": "Decorators modify functions, like @decorator above def func():."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does a decorator do?",
+          "options": ["Adds functionality", "Removes function", "Loops function"],
+          "correct": "Adds functionality"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Decorators",
+          "content": "Define a decorator function that wraps another, like def my_decorator(func):."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Print 'Start' before saying 'Hi' using a decorator.",
+          "expectedAnswer": "def deco(f):\n  def run():\n    print('Start')\n    f()\n  return run\n\n@deco\ndef hi():\n  print('Hi')\n\nhi()",
+          "blocks": [
+            "def deco(f):",
+            "\n  def run():",
+            "\n    print('Start')",
+            "\n    f()",
+            "\n  return run",
+            "\n@deco",
+            "\ndef hi():",
+            "\n  print('Hi')",
+            "\nhi()"
+          ],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Decorators with Arguments",
+          "content": "Handle args with *args, **kwargs in wrapper, like wrapper(*args)."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Pass arguments from the wrapper to the original function.",
+          "starterCode": "def deco(func):\n    def wrapper(*args, **kwargs):\n        print('Before call')\n        \n        print('After call')\n    return wrapper\n@deco\ndef say(name):\n    print(f'Hello, {name}')\nsay('Mia')",
+          "placeholders": [
+            {"line": 4, "index": 8, "hint": "Call the original function with its arguments"}
+          ],
+          "blocks": ["func(*args, **kwargs)", "func()", "say(name)"],
+          "correctAnswers": ["func(*args, **kwargs)"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does the @ syntax for decorators do?",
+          "options": ["Runs the function twice", "Wraps a function with another function", "Deletes the function"],
+          "correct": "Wraps a function with another function"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Using functools.wraps",
+          "content": "Preserve function metadata with @wraps(func) in wrapper."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Use @wraps in a decorator.",
+          "expectedAnswer": "from functools import wraps\n\ndef d(f):\n  @wraps(f)\n  def w(): print('Hi')\n  return w\n\n@d\ndef x(): pass\n\nx()",
+          "blocks": [
+            "from functools import wraps\n\ndef d(f):\n  @wraps(f)\n  def w(): print('Hi')\n  return w\n\n@d\ndef x(): pass\n\nx()"
+          ],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Decorators are great for logging, timing, or access control."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete decorator call.",
+          "starterCode": "def deco(func):\n    def wrapper():\n        print('Go')\n        func()\n    return wrapper\n@deco\ndef hi():\n    print('Hello')\n",
+          "placeholders": [
+            {"line": 9, "index": 0, "hint": "hi()"}
+          ],
+          "blocks": ["hi()", "deco()", "wrapper()"],
+          "correctAnswers": ["hi()"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can decorators take arguments?",
+          "options": ["Yes", "No", "Only one"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Decorator Power",
+          "content": "Decorators enhance functions cleanly and reusably."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Decorator Wizard! 🎩",
+          "content": "You’re wrapping functions like a pro! Your code is enchanted!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Set Comprehensions",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Set Comprehensions?",
+          "content": "Create sets concisely, like {x*2 for x in [1, 2, 2]} gives {2, 4}."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does {x for x in [1, 1, 2]} give?",
+          "options": ["{1, 2}", "{1, 1, 2}", "{1}"],
+          "correct": "{1, 2}"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Set Comprehensions",
+          "content": "Use {expression for item in iterable}, like {x**2 for x in [1, 2]}."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create {1, 4, 9} using set comprehension.",
+          "expectedAnswer": "squares = {x**2 for x in [1, 2, 3]}\nprint(squares)",
+          "blocks": ["squares = {x**2 for x in [1, 2, 3]}", "\nprint(squares)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "With Conditions",
+          "content": "Add if, like {x for x in range(5) if x % 2 == 0} for evens."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get even numbers from range(5).",
+          "starterCode": "evens = {x for x in range(5) }\nprint(evens)",
+          "placeholders": [
+            {"line": 1, "index": 29, "hint": "if x % 2 == 0"}
+          ],
+          "blocks": ["if x % 2 == 0", "if x > 0", "x % 2"],
+          "correctAnswers": ["if x % 2 == 0"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does {x for x in [1, 2, 3] if x > 1} give?",
+          "options": ["{1, 2, 3}", "{2, 3}", "{1}"],
+          "correct": "{2, 3}"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "From Lists",
+          "content": "Use lists, like {len(x) for x in ['a', 'bb']} for {1, 2}."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create {1, 2} from ['a', 'bb'].",
+          "expectedAnswer": "words = ['a', 'bb']\nlengths = {len(x) for x in words}\nprint(lengths)",
+          "blocks": ["words = ['a', 'bb']", "\nlengths = {len(x) for x in words}", "\nprint(lengths)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Set comprehensions ensure unique elements concisely."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Square numbers in [1, 2].",
+          "starterCode": "nums = [1, 2]\nsquares = { for x in nums}\nprint(squares)",
+          "placeholders": [
+            {"line": 2, "index": 11, "hint": "x**2"}
+          ],
+          "blocks": ["x**2", "x*2", "x+2"],
+          "correctAnswers": ["x**2"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does {x*2 for x in [1, 1]} give?",
+          "options": ["{2}", "{2, 2}", "{1, 2}"],
+          "correct": "{2}"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Set Comprehension Power",
+          "content": "Set comprehensions create unique collections efficiently."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Set Comprehension Star! 🌟",
+          "content": "You’re crafting unique sets like a pro! Your comprehensions shine!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Advanced Lambda Functions",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Advanced Lambda Functions?",
+          "content": "Lambdas can be used in complex scenarios, like sorting or mapping, e.g., map(lambda x: x*2, [1, 2])."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does map(lambda x: x+1, [1, 2]) produce?",
+          "options": ["[2, 3]", "[1, 2]", "[3, 4]"],
+          "correct": "[2, 3]"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Lambdas with Map",
+          "content": "Use with map(), like list(map(lambda x: x**2, [1, 2])) for [1, 4]."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Square [1, 2, 3] using lambda and map.",
+          "expectedAnswer": "nums = [1, 2, 3]\nresult = list(map(lambda x: x**2, nums))\nprint(result)",
+          "blocks": ["nums = [1, 2, 3]", "\nresult = list(map(lambda x: x**2, nums))", "\nprint(result)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Lambdas with Filter",
+          "content": "Use with filter(), like list(filter(lambda x: x % 2 == 0, [1, 2, 3])) for [2]."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Filter odds from [1, 2, 3, 4].",
+          "starterCode": "nums = [1, 2, 3, 4]\nresult = list(filter(lambda x: , nums))\nprint(result)",
+          "placeholders": [
+            {"line": 2, "index": 28, "hint": "x % 2 != 0"}
+          ],
+          "blocks": ["x % 2 != 0", "x % 2 == 0", "x > 2"],
+          "correctAnswers": ["x % 2 != 0"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does list(filter(lambda x: x > 1, [0, 1, 2])) give?",
+          "options": ["[0, 1]", "[2]", "[1, 2]"],
+          "correct": "[2]"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Lambdas in Sorting",
+          "content": "Use in sort(), like sorted(lst, key=lambda x: x[1]) for second item."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Sort [[1, 'b'], [2, 'a']] by second item using lambda.",
+          "expectedAnswer": "items = [[1, 'b'], [2, 'a']]\nresult = sorted(items, key=lambda x: x[1])\nprint(result)",
+          "blocks": ["items = [[1, 'b'], [2, 'a']]", "\nresult = sorted(items, key=lambda x: x[1])", "\nprint(result)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use lambdas for concise, one-off transformations or filters."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Triple numbers in [1, 2] using map and lambda.",
+          "starterCode": "nums = [1, 2]\nresult = list(map(lambda x: , nums))\nprint(result)",
+          "placeholders": [
+            {"line": 2, "index": 26, "hint": "x*3"}
+          ],
+          "blocks": ["x*3", "x*2", "x+3"],
+          "correctAnswers": ["x*3"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does sorted([2, 1], key=lambda x: x) give?",
+          "options": ["[1, 2]", "[2, 1]", "[1]"],
+          "correct": "[1, 2]"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Lambda Power",
+          "content": "Advanced lambdas streamline functional programming tasks."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Lambda Master! 🚀",
+          "content": "You’re wielding advanced lambdas like a pro! Your code is sleek and functional!"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "File Reading",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is File Reading?",
+          "content": "Read text from files using open() with 'r', like file.read()."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does open('file.txt', 'r') do?",
+          "options": ["Writes file", "Reads file", "Appends file"],
+          "correct": "Reads file"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Reading Files",
+          "content": "Use with open('file.txt', 'r') as file: file.read() to get content."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "Which of the following correctly reads the content of 'file.txt'?",
+          "options": [
+            "with open('file.txt', 'r') as file: content = file.read()",
+            "open('file.txt', 'r') as file: content = file.read()",
+            "file = open('file.txt')\ncontent = file.read()\nfile.close()",
+            "read('file.txt')"
+          ],
+          "correct": "with open('file.txt', 'r') as file: content = file.read()"
+        },
+
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Reading Lines",
+          "content": "Use readlines() to get a list of lines, like ['line1\\n', 'line2\\n']."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Read lines from 'data.txt'.",
+          "starterCode": "with open('data.txt', 'r') as file:\n    lines = file.()\nprint(lines)",
+          "placeholders": [
+            {"line": 2, "index": 16, "hint": "readlines"}
+          ],
+          "blocks": ["readlines", "read", "write"],
+          "correctAnswers": ["readlines"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does file.readlines() return?",
+          "options": ["String", "List of lines", "Single line"],
+          "correct": "List of lines"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Looping Lines",
+          "content": "Loop through lines, like for line in file: print(line.strip())."
+        },
+        {
+          "id": 9,
+          "type": "quiz",
+          "question": "How do you print each line from 'lines.txt' without adding extra newlines?",
+          "options": [
+            "with open('lines.txt', 'r') as f:\n    for line in f:\n        print(line)",
+            "with open('lines.txt', 'r') as f:\n    print(f.read())",
+            "with open('lines.txt', 'r') as f:\n    for line in f:\n        print(line.strip())",
+            "with open('lines.txt', 'r') as f:\n    for line in f:\n        print(line, end='\\n')"
+          ],
+          "correct": "with open('lines.txt', 'r') as f:\n    for line in f:\n        print(line.strip())"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "File Reading Tips",
+          "content": "Use strip() to remove \\n, and read() for small files."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Read first line from 'text.txt'.",
+          "starterCode": "with open('text.txt', 'r') as file:\n    first = file.()\nprint(first)",
+          "placeholders": [
+            {"line": 2, "index": 16, "hint": "readline"}
+          ],
+          "blocks": ["readline", "readlines", "read"],
+          "correctAnswers": ["readline"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does file.readline() return?",
+          "options": ["All content", "First line", "List of lines"],
+          "correct": "First line"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "File Reading Power",
+          "content": "Reading files unlocks external data for processing."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "File Reader Pro! 📖",
+          "content": "You’re reading files like a pro! Your data access is top-notch!"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "List Comprehension with Nested Loops",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Nested Loop Comprehensions?",
+          "content": "Use multiple loops in comprehensions, like [x*y for x in [1, 2] for y in [3, 4]]."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does [x*y for x in [1] for y in [2, 3]] give?",
+          "options": ["[2, 3]", "[1, 2]", "[2, 3, 4]"],
+          "correct": "[2, 3]"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Nested Comprehensions",
+          "content": "Order loops as they appear, like [x+y for x in [1] for y in [2]]."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create [3, 4, 4, 5] using nested comprehension.",
+          "expectedAnswer": "result = [x+y for x in [1, 2] for y in [2, 3]]\nprint(result)",
+          "blocks": ["result = [x+y for x in [1, 2] for y in [2, 3]]", "\nprint(result)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Nested with Conditions",
+          "content": "Add conditions, like [x*y for x in [1, 2] for y in [3, 4] if x*y > 3]."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get products > 3 from [1, 2] and [2, 3].",
+          "starterCode": "result = [x*y for x in [1, 2] for y in [2, 3] ]\nprint(result)",
+          "placeholders": [
+            {"line": 1, "index": 37, "hint": "if x*y > 3"}
+          ],
+          "blocks": ["if x*y > 3", "if x > 1", "if y > 2"],
+          "correctAnswers": ["if x*y > 3"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does [x*y for x in [2] for y in [1, 2] if y > 1] give?",
+          "options": ["[4]", "[2, 4]", "[2]"],
+          "correct": "[4]"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Equivalent Loops",
+          "content": "Nested comprehensions mimic nested for loops but are more concise."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create [(1, 3), (1, 4), (2, 3), (2, 4)] using comprehension.",
+          "expectedAnswer": "pairs = [(x, y) for x in [1, 2] for y in [3, 4]]\nprint(pairs)",
+          "blocks": ["pairs = [(x, y) for x in [1, 2] for y in [3, 4]]", "\nprint(pairs)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use for generating combinations or flattening nested data."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Sum pairs from [1, 2] and [3, 4].",
+          "starterCode": "result = [ for x in [1, 2] for y in [3, 4]]\nprint(result)",
+          "placeholders": [
+            {"line": 1, "index": 10, "hint": "x+y"}
+          ],
+          "blocks": ["x+y", "x*y", "x-y"],
+          "correctAnswers": ["x+y"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does [(x, y) for x in [1] for y in [1, 2]] give?",
+          "options": ["[(1, 1), (1, 2)]", "[(1, 1)]", "[(1, 2)]"],
+          "correct": "[(1, 1), (1, 2)]"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Nested Loop Power",
+          "content": "Nested comprehensions handle complex iterations concisely."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Nested Loop Ninja! 🥷",
+          "content": "You’re mastering nested comprehensions like a pro! Your code is compact!"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Working with Tuples",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Tuples?",
+          "content": "Tuples are immutable sequences, like (1, 2, 3), created with ()."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Can you modify a tuple?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "No"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Tuples",
+          "content": "Use (), like t = (1, 2), or just 1, 2 for packing."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create and print (1, 2, 3).",
+          "expectedAnswer": "t = (1, 2, 3)\nprint(t)",
+          "blocks": ["t = (1, 2, 3)", "\nprint(t)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Unpacking Tuples",
+          "content": "Assign like a, b = (1, 2) to get a=1, b=2."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Unpack (1, 2) into x, y.",
+          "starterCode": "t = (1, 2)\n, y = t\nprint(x, y)",
+          "placeholders": [
+            {"line": 2, "index": 0, "hint": "x"}
+          ],
+          "blocks": ["x", "y", "t"],
+          "correctAnswers": ["x"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does a, b = (1, 2) assign?",
+          "options": ["a=1, b=2", "a=2, b=1", "a=(1, 2)"],
+          "correct": "a=1, b=2"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Tuples in Loops",
+          "content": "Use in loops, like for x, y in [(1, 2), (3, 4)]: print(x, y)."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Loop through [(1, 'a'), (2, 'b')] and print pairs.",
+          "expectedAnswer": "pairs = [(1, 'a'), (2, 'b')]\nfor num, char in pairs:\n    print(num, char)",
+          "blocks": ["pairs = [(1, 'a'), (2, 'b')]", "\nfor num, char in pairs:", "\n    print(num, char)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use tuples for fixed, immutable data or multiple returns."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Access second item of (1, 2, 3).",
+          "starterCode": "t = (1, 2, 3)\nprint(t[])",
+          "placeholders": [
+            {"line": 2, "index": 8, "hint": "1"}
+          ],
+          "blocks": ["1", "0", "2"],
+          "correctAnswers": ["1"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does (1, 2, 3)[1] give?",
+          "options": ["1", "2", "3"],
+          "correct": "2"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Tuple Power",
+          "content": "Tuples provide lightweight, immutable data storage."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Tuple Titan! 🛠️",
+          "content": "You’re mastering tuples like a pro! Your code is solid and efficient!"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Advanced String Methods",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Advanced String Methods?",
+          "content": "Methods like split(), join(), replace() for string manipulation."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does 'a b'.split() return?",
+          "options": ["['a', 'b']", "'a', 'b'", "['a b']"],
+          "correct": "['a', 'b']"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Split",
+          "content": "Split strings into lists, like 'a,b'.split(',') gives ['a', 'b']."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Split 'x,y,z' by ',' and print list.",
+          "expectedAnswer": "s = 'x,y,z'\nresult = s.split(',')\nprint(result)",
+          "blocks": ["s = 'x,y,z'", "\nresult = s.split(',')", "\nprint(result)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Join",
+          "content": "Join list to string, like ','.join(['a', 'b']) gives 'a,b'."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Join ['a', 'b'] with '-'.",
+          "starterCode": "lst = ['a', 'b']\nresult = ''.join(lst)\nprint(result)",
+          "placeholders": [
+            {"line": 2, "index": 10, "hint": "'-'"}
+          ],
+          "blocks": ["'-'", "','", "' '"],
+          "correctAnswers": ["'-'"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does ' '.join(['hi', 'there']) give?",
+          "options": ["'hi there'", "'hi,there'", "'hithere'"],
+          "correct": "'hi there'"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Using Replace",
+          "content": "Replace text, like 'hello'.replace('l', 'p') gives 'heppo'."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Replace 'cat' with 'dog' in 'cat runs'.",
+          "expectedAnswer": "s = 'cat runs'\nresult = s.replace('cat', 'dog')\nprint(result)",
+          "blocks": ["s = 'cat runs'", "\nresult = s.replace('cat', 'dog')", "\nprint(result)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use for parsing, formatting, or cleaning strings."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Split 'a;b' by ';'.",
+          "starterCode": "s = 'a;b'\nresult = s.(';')\nprint(result)",
+          "placeholders": [
+            {"line": 2, "index": 10, "hint": "split"}
+          ],
+          "blocks": ["split", "join", "replace"],
+          "correctAnswers": ["split"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does 'hi'.replace('h', 'b') give?",
+          "options": ["'bi'", "'hi'", "'bh'"],
+          "correct": "'bi'"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "String Method Power",
+          "content": "Advanced string methods simplify text processing."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "String Method Maestro! 🎻",
+          "content": "You’re manipulating strings like a pro! Your text processing is flawless!"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Advanced Dictionary Methods",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Advanced Dictionary Methods?",
+          "content": "Methods like get(), items(), update() for dict operations."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does dict.get('key', 0) return if key is missing?",
+          "options": ["0", "None", "Error"],
+          "correct": "0"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Get",
+          "content": "Use get() for safe access, like d.get('x', 0) returns 0 if 'x' missing."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Use get() to access 'x' from {} with default 1.",
+          "expectedAnswer": "d = {}\nresult = d.get('x', 1)\nprint(result)",
+          "blocks": ["d = {}", "\nresult = d.get('x', 1)", "\nprint(result)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Update",
+          "content": "Merge dicts, like d.update({'x': 1}) adds or updates keys."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Update {'a': 1} with {'b': 2}.",
+          "starterCode": "d = {'a': 1}\nd.({'b': 2})\nprint(d)",
+          "placeholders": [
+            {"line": 2, "index": 3, "hint": "update"}
+          ],
+          "blocks": ["update", "get", "items"],
+          "correctAnswers": ["update"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does d.items() return for {'a': 1}?",
+          "options": ["[('a', 1)]", "['a']", "[1]"],
+          "correct": "[('a', 1)]"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Using Items",
+          "content": "Loop with items(), like for k, v in d.items(): print(k, v)."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print key-value pairs from {'x': 1, 'y': 2}.",
+          "expectedAnswer": "d = {'x': 1, 'y': 2}\nfor k, v in d.items():\n    print(k, v)",
+          "blocks": ["d = {'x': 1, 'y': 2}", "\nfor k, v in d.items():", "\n    print(k, v)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use for safe access, merging, or iterating dictionaries."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get 'y' from {'x': 1} with default 0.",
+          "starterCode": "d = {'x': 1}\nresult = d.('y', 0)\nprint(result)",
+          "placeholders": [
+            {"line": 2, "index": 10, "hint": "get"}
+          ],
+          "blocks": ["get", "update", "items"],
+          "correctAnswers": ["get"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does d.update({'x': 2}) do to {'x': 1}?",
+          "options": ["{'x': 2}", "{'x': 1}", "{'x': 1, 'x': 2}"],
+          "correct": "{'x': 2}"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Dictionary Method Power",
+          "content": "Advanced dict methods make data handling robust."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Dict Method Master! 🗄️",
+          "content": "You’re navigating dictionaries like a pro! Your data skills are elite!"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "List Slicing",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is List Slicing?",
+          "content": "Extract parts of lists, like lst[1:3] for elements at indices 1, 2."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does [1, 2, 3, 4][1:3] return?",
+          "options": ["[2, 3]", "[1, 2]", "[3, 4]"],
+          "correct": "[2, 3]"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Basic Slicing",
+          "content": "Use [start:end], like lst[0:2] for first two elements."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Slice [2, 3] from [1, 2, 3, 4].",
+          "expectedAnswer": "lst = [1, 2, 3, 4]\nprint(lst[1:3])",
+          "blocks": ["lst = [1, 2, 3, 4]", "\nprint(lst[1:3])"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Step in Slicing",
+          "content": "Use [start:end:step], like lst[::2] for every second element."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get every second element from [1, 2, 3, 4].",
+          "starterCode": "lst = [1, 2, 3, 4]\nprint(lst[::])",
+          "placeholders": [
+            {"line": 2, "index": 10, "hint": "2"}
+          ],
+          "blocks": ["2", "1", "3"],
+          "correctAnswers": ["2"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does [1, 2, 3, 4][::2] give?",
+          "options": ["[1, 3]", "[2, 4]", "[1, 2]"],
+          "correct": "[1, 3]"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Reverse Slicing",
+          "content": "Use negative step, like lst[::-1] to reverse list."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Reverse [1, 2, 3] using slicing.",
+          "expectedAnswer": "lst = [1, 2, 3]\nprint(lst[::-1])",
+          "blocks": ["lst = [1, 2, 3]", "\nprint(lst[::-1])"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use slicing for quick sublist extraction or reversal."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Slice last two elements from [1, 2, 3, 4].",
+          "starterCode": "lst = [1, 2, 3, 4]\nprint(lst[])",
+          "placeholders": [
+            {"line": 2, "index": 10, "hint": "[-2:]"}
+          ],
+          "blocks": ["[-2:]", "[2:]", "[1:3]"],
+          "correctAnswers": ["[-2:]"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does [1, 2, 3][-2:] give?",
+          "options": ["[2, 3]", "[1, 2]", "[3]"],
+          "correct": "[2, 3]"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Slicing Power",
+          "content": "List slicing makes data extraction flexible and fast."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Slicing Specialist! ✂️",
+          "content": "You’re slicing lists like a pro! Your data handling is precise!"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Variable Scope",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Variable Scope?",
+          "content": "Scope defines variable accessibility, like local vs global."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Where is a variable defined inside a function accessible?",
+          "options": ["Globally", "Locally", "Both"],
+          "correct": "Locally"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Local Scope",
+          "content": "Variables in functions are local, like x in def f(): x = 1."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Define local x in function and print.",
+          "expectedAnswer": "def f():\n    x = 5\n    print(x)\nf()",
+          "blocks": ["def f():", "\n    x = 5", "\n    print(x)", "\nf()"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Global Scope",
+          "content": "Use global keyword, like global x in function to modify global x."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Modify global x in function.",
+          "starterCode": "x = 1\ndef f():\n    x = 2\n    print(x)\nf()\nprint(x)",
+          "placeholders": [
+            {"line": 3, "index": 4, "hint": "global"}
+          ],
+          "blocks": ["global", "local", "nonlocal"],
+          "correctAnswers": ["global"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does global x do in a function?",
+          "options": ["Creates local", "Modifies global", "Errors"],
+          "correct": "Modifies global"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Nonlocal Scope",
+          "content": "Use nonlocal in nested functions to modify enclosing scope variables."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Use nonlocal to modify x in nested function.",
+          "expectedAnswer": "def outer():\n    x = 1\n    def inner():\n        nonlocal x\n        x = 2\n    inner()\n    print(x)\nouter()",
+          "blocks": ["def outer():", "\n    x = 1", "\n    def inner():", "\n        nonlocal x", "\n        x = 2", "\n    inner()", "\n    print(x)", "\nouter()"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use global/nonlocal sparingly to avoid confusion."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Access global x without modifying.",
+          "starterCode": "x = 10\ndef f():\n    print()\nf()",
+          "placeholders": [
+            {"line": 3, "index": 10, "hint": "x"}
+          ],
+          "blocks": ["x", "global x", "nonlocal x"],
+          "correctAnswers": ["x"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can a function read a global variable without global keyword?",
+          "options": ["Yes", "No", "Only with nonlocal"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Scope Power",
+          "content": "Understanding scope ensures predictable variable behavior."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Scope Sage! 🔍",
+          "content": "You’re mastering variable scope like a pro! Your code is clear and controlled!"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Combining Modules",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Combining Modules?",
+          "content": "Use multiple modules together, like math and random for calculations."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Can you import math and random together?",
+          "options": ["Yes", "No", "Only one module"],
+          "correct": "Yes"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Math and Random",
+          "content": "Combine like random.randint(1, 10) and math.sqrt() for dynamic math."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Generate random number and print its square root.",
+          "expectedAnswer": "import math\nimport random\nnum = random.randint(1, 16)\nprint(math.sqrt(num))",
+          "blocks": ["import math", "\nimport random", "\nnum = random.randint(1, 16)", "\nprint(math.sqrt(num))"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Combining with Time",
+          "content": "Use time.time() with random for time-based seeds."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Seed random with time.",
+          "starterCode": "import random\nimport time\nrandom.(time.time())\nprint(random.randint(1, 5))",
+          "placeholders": [
+            {"line": 3, "index": 7, "hint": "seed"}
+          ],
+          "blocks": ["seed", "random", "time"],
+          "correctAnswers": ["seed"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does random.seed(time.time()) do?",
+          "options": ["Sets random start", "Gets time", "Errors"],
+          "correct": "Sets random start"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Modules with Lists",
+          "content": "Use random.choice() with lists, like picking from ['a', 'b']."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Pick random item from ['x', 'y', 'z'] and square it with math.",
+          "expectedAnswer": "import math\nimport random\nlst = ['x', 'y', 'z']\nnum = random.randint(1, 5)\nprint(math.pow(num, 2))",
+          "blocks": ["import math", "\nimport random", "\nlst = ['x', 'y', 'z']", "\nnum = random.randint(1, 5)", "\nprint(math.pow(num, 2))"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Combine modules for complex functionality."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Use math.ceil on random number.",
+          "starterCode": "import math\nimport random\nnum = random.randint(1, 5)\nprint(math.(num))",
+          "placeholders": [
+            {"line": 4, "index": 7, "hint": "ceil"}
+          ],
+          "blocks": ["ceil", "floor", "sqrt"],
+          "correctAnswers": ["ceil"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does math.pow(2, 3) return?",
+          "options": ["8", "6", "9"],
+          "correct": "8"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Module Combination Power",
+          "content": "Combining modules unlocks versatile programming."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Module Maestro! 🎼",
+          "content": "You’re combining modules like a pro! Your code is powerful and dynamic!"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Generator Functions",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Generator Functions?",
+          "content": "Functions that yield values one at a time, like def gen(): yield 1."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does yield do in a function?",
+          "options": ["Returns all", "Yields one value", "Ends function"],
+          "correct": "Yields one value"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Generators",
+          "content": "Use yield, like def nums(): for i in range(3): yield i."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create generator for 0, 1, 2 and print values.",
+          "expectedAnswer": "def nums():\n    for i in range(3):\n        yield i\nfor x in nums():\n    print(x)",
+          "blocks": ["def nums():", "\n    for i in range(3):", "\n        yield i", "\nfor x in nums():", "\n    print(x)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Generators",
+          "content": "Iterate with for or next(), like next(gen()) for first value."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get first value from generator yielding 1, 2.",
+          "starterCode": "def gen():\n    yield 1\n    yield 2\ng = gen()\nprint(())",
+          "placeholders": [
+            {"line": 5, "index": 7, "hint": "next(g)"}
+          ],
+          "blocks": ["next(g)", "g()", "yield 1"],
+          "correctAnswers": ["next(g)"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does next(gen()) do for def gen(): yield 1?",
+          "options": ["1", "None", "Error"],
+          "correct": "1"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Generator Benefits",
+          "content": "Generators save memory by yielding one value at a time."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create generator for evens up to 4 and print.",
+          "expectedAnswer": "def evens():\n    for i in range(0, 5, 2):\n        yield i\nfor x in evens():\n    print(x)",
+          "blocks": ["def evens():", "\n    for i in range(0, 5, 2):", "\n        yield i", "\nfor x in evens():", "\n    print(x)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "When to Use",
+          "content": "Use for large datasets or streaming data."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Yield x*2 in generator for [1, 2].",
+          "starterCode": "def double():\n    for x in [1, 2]:\n        \nprint(list(double()))",
+          "placeholders": [
+            {"line": 3, "index": 8, "hint": "yield x*2"}
+          ],
+          "blocks": ["yield x*2", "return x*2", "x*2"],
+          "correctAnswers": ["yield x*2"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Do generators store all values in memory?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "No"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Generator Power",
+          "content": "Generators provide efficient iteration for large data."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Generator Guru! ⚙️",
+          "content": "You’re yielding values like a pro! Your generators are memory-efficient!"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1637 @@
+{
+  "level": 1,
+  "language": "python",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Python Introduction",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Python?",
+          "content": "Python is a fun and easy programming language used to build apps, games, and websites."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What can Python be used for?",
+          "options": ["Building apps", "Cooking", "Drawing"],
+          "correct": "Building apps"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Why Learn Python?",
+          "content": "Python is great for beginners because it’s simple to read and write, like plain English."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "Why is Python good for beginners?",
+          "options": ["It’s fast", "It’s simple", "It’s complex"],
+          "correct": "It’s simple"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Running Python Code",
+          "content": "You can write Python code in an editor and run it to see the results."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What do you need to run Python?",
+          "options": ["A paintbrush", "An editor", "A book"],
+          "correct": "An editor"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Your First Python Code",
+          "content": "The print() function shows text on the screen. Example: print('Hello') shows 'Hello'."
+        },
+        {
+          "id": 8,
+          "type": "codeChallenge",
+          "title": "Print 'Hello, World!' to the screen.",
+          "expectedAnswer": "print('Hello, World!')",
+          "blocks": ["print('Hello, World!')"],
+          "language": "python"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Using print()",
+          "content": "Use print() with text in quotes, like print('Hi') to display 'Hi'."
+        },
+        {
+          "id": 10,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete the code to print 'Start'.",
+          "starterCode": "('Start')",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "print"}
+          ],
+          "blocks": ["print", "show", "write"],
+          "correctAnswers": ["print"],
+          "language": "python"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What does print('Fun') display?",
+          "options": ["Fun", "print", "Nothing"],
+          "correct": "Fun"
+        },
+        {
+          "id": 12,
+          "type": "info",
+          "title": "Text in Quotes",
+          "content": "Text in print() must be in single ('') or double (\"\") quotes, like 'Hello' or \"Hi\"."
+        },
+        {
+          "id": 13,
+          "type": "codeChallenge",
+          "title": "Print 'I love Python' to the screen.",
+          "expectedAnswer": "print('I love Python')",
+          "blocks": ["print('I love Python')"],
+          "language": "python"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "You’re a Python Starter! 🚀",
+          "content": "Great job! You’ve started coding with Python. Keep exploring to make cool things!"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Python Syntax",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Syntax?",
+          "content": "Syntax is the way we write Python code so the computer understands it."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does syntax mean?",
+          "options": ["Colors", "Rules for code", "Speed"],
+          "correct": "Rules for code"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Indentation",
+          "content": "Python uses spaces to group code. Usually, we use 4 spaces for indentation."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "How many spaces are used for indentation?",
+          "options": ["2", "4", "6"],
+          "correct": "4"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Writing Commands",
+          "content": "A command like print('Hi') is a single line of code that does something."
+        },
+        {
+          "id": 6,
+          "type": "codeChallenge",
+          "title": "Print 'Code is fun' to the screen.",
+          "expectedAnswer": "print('Code is fun')",
+          "blocks": ["print('Code is fun')"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Correct Syntax",
+          "content": "Use print() with text in quotes, like print('Wow') to avoid errors."
+        },
+        {
+          "id": 8,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Fix the code to print 'Go'.",
+          "starterCode": "('Go')",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "print"}
+          ],
+          "blocks": ["print", "display", "run"],
+          "correctAnswers": ["print"],
+          "language": "python"
+        },
+        {
+          "id": 9,
+          "type": "quiz",
+          "question": "What happens if syntax is wrong?",
+          "options": ["Code runs", "Code fails", "Code prints"],
+          "correct": "Code fails"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Simple Commands",
+          "content": "Commands like print('Hello') tell Python what to do, step by step."
+        },
+        {
+          "id": 11,
+          "type": "codeChallenge",
+          "title": "Print 'Python rocks' to the screen.",
+          "expectedAnswer": "print('Python rocks')",
+          "blocks": ["print('Python rocks')"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "info",
+          "title": "Case Sensitivity",
+          "content": "Python is case-sensitive, so Print and print are different."
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "Is PRINT the same as print?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "No"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Syntax Star! 🌟",
+          "content": "You’re writing Python code like a pro! Keep following the rules to create awesome programs!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Python Comments",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Comments?",
+          "content": "Comments are notes in code that Python ignores. They explain what the code does."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What are comments for?",
+          "options": ["Running code", "Explaining code", "Deleting code"],
+          "correct": "Explaining code"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Writing Comments",
+          "content": "Use # to start a comment, like # This is a note. It can be on its own line."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Add a comment 'Shows message' above print('Hi').",
+          "expectedAnswer": "# Shows message\nprint('Hi')",
+          "blocks": ["# Shows message", "print('Hi')"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Comment Placement",
+          "content": "Comments can go above code or at the end of a line, like print('Hey') # Note."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a comment 'Start' before printing.",
+          "starterCode": "\nprint('Run')",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "# Start"}
+          ],
+          "blocks": ["# Start", "print('Run')", "// Start"],
+          "correctAnswers": ["# Start"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What symbol starts a comment?",
+          "options": ["#", "/", "*"],
+          "correct": "#"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Why Use Comments?",
+          "content": "Comments help you and others understand your code later."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Add a comment 'Greets user' above print('Hello').",
+          "expectedAnswer": "# Greets user\nprint('Hello')",
+          "blocks": ["# Greets user", "print('Hello')"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Clear Comments",
+          "content": "Write short, clear comments like # Print name to explain the code’s purpose."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a comment 'Display' before print('Go').",
+          "starterCode": "\nprint('Go')",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "# Display"}
+          ],
+          "blocks": ["# Display", "print('Go')", "# Go"],
+          "correctAnswers": ["# Display"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Does Python run comments?",
+          "options": ["Yes", "No", "Sometimes"],
+          "correct": "No"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Comment Benefits",
+          "content": "Good comments make your code easier to fix or share with others."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Comment Champion! 📝",
+          "content": "You’re adding helpful notes to your code! Comments make your programs clear and awesome!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Python Variables",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Variables?",
+          "content": "Variables are like boxes that store data, like numbers or text."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do variables store?",
+          "options": ["Data", "Code", "Colors"],
+          "correct": "Data"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Variables",
+          "content": "Use = to store a value, like age = 10 or name = 'Mia'."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a variable age with value 15.",
+          "expectedAnswer": "age = 15",
+          "blocks": ["age = 15"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Variable Names",
+          "content": "Variable names should be clear, like score or user, and can’t have spaces."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Create a variable city with 'Rome'.",
+          "starterCode": " = 'Rome'",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "city"}
+          ],
+          "blocks": ["city", "place", "name"],
+          "correctAnswers": ["city"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What symbol creates a variable?",
+          "options": ["+", "=", "*"],
+          "correct": "="
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Using Variables",
+          "content": "Use variables in print(), like print(name) to show the stored value."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create a variable named 'name' with value 'Alex' and print it.",
+          "expectedAnswer": "name = 'Alex'\\nprint(name)",
+          "blocks": [
+            "name = 'Alex'\nprint(name)"
+          ],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Changing Variables",
+          "content": "You can update a variable by assigning a new value, like age = 20."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Update score to 100.",
+          "starterCode": "score = 50\nscore = ",
+          "placeholders": [
+            {"line": 2, "index": 8, "hint": "100"}
+          ],
+          "blocks": ["100", "50", "score"],
+          "correctAnswers": ["100"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can variable names have spaces?",
+          "options": ["Yes", "No", "Only one"],
+          "correct": "No"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Variable Power",
+          "content": "Variables let you store and reuse data to make programs flexible."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Variable Victory! 📦",
+          "content": "You’re storing data like a pro! Variables are your first step to powerful programs!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Python Data Types",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Data Types?",
+          "content": "Data types tell Python what kind of data you’re using, like numbers or text."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Which is a data type?",
+          "options": ["String", "Button", "Color"],
+          "correct": "String"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Integers",
+          "content": "Integers are whole numbers, like 5 or 100, used for counting."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a variable count with value 8.",
+          "expectedAnswer": "count = 8",
+          "blocks": ["count = 8"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Strings",
+          "content": "Strings are text in quotes, like 'dog' or \"cat\", used for messages."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Create a variable pet with 'Dog'.",
+          "starterCode": "pet = ",
+          "placeholders": [
+            {"line": 1, "index": 6, "hint": "'Dog'"}
+          ],
+          "blocks": ["'Dog'", "Dog", "'dog'"],
+          "correctAnswers": ["'Dog'"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What type is 'Hello'?",
+          "options": ["Integer", "String", "Float"],
+          "correct": "String"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Floats",
+          "content": "Floats are numbers with decimals, like 3.14, used for precise measurements."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Create a variable price with value 4.99.",
+          "expectedAnswer": "price = 4.99",
+          "blocks": ["price = 4.99"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Booleans",
+          "content": "Booleans are True or False, used to make decisions in code."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Create a variable is_on with True.",
+          "starterCode": "is_on = ",
+          "placeholders": [
+            {"line": 1, "index": 8, "hint": "True"}
+          ],
+          "blocks": ["True", "true", "'True'"],
+          "correctAnswers": ["True"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What type is 7.5?",
+          "options": ["Integer", "Float", "String"],
+          "correct": "Float"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Mixing Types",
+          "content": "Variables can hold any data type, and you can change the type later."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Data Type Dynamo! 💾",
+          "content": "You’re mastering data types! They’re the building blocks of your Python programs!"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Python Operators",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Operators?",
+          "content": "Operators let you do math, like adding or multiplying numbers."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do operators do?",
+          "options": ["Draw pictures", "Do math", "Write text"],
+          "correct": "Do math"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Addition",
+          "content": "Use + to add numbers, like 5 + 3 equals 8."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Print the result of 7 + 2.",
+          "expectedAnswer": "print(7 + 2)",
+          "blocks": ["print(7 + 2)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Multiplication",
+          "content": "Use * to multiply, like 4 * 3 equals 12."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Multiply 6 by 2.",
+          "starterCode": "print(6  2)",
+          "placeholders": [
+            {"line": 1, "index": 7, "hint": "*"}
+          ],
+          "blocks": ["*", "+", "-"],
+          "correctAnswers": ["*"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does 5 * 2 equal?",
+          "options": ["7", "10", "12"],
+          "correct": "10"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Subtraction",
+          "content": "Use - to subtract, like 10 - 4 equals 6."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print the result of 8 - 3.",
+          "expectedAnswer": "print(8 - 3)",
+          "blocks": ["print(8 - 3)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Division",
+          "content": "Use / to divide, like 15 / 5 equals 3.0."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Divide 12 by 4.",
+          "starterCode": "print(12  4)",
+          "placeholders": [
+            {"line": 1, "index": 8, "hint": "/"}
+          ],
+          "blocks": ["/", "*", "+"],
+          "correctAnswers": ["/"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does 9 / 3 equal?",
+          "options": ["3", "6", "9"],
+          "correct": "3"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Using Operators",
+          "content": "Operators work with variables too, like x = 5; print(x + 2)."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Operator Ace! ➕",
+          "content": "You’re doing math like a champ! Operators make your code powerful and fun!"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Python Strings",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Strings?",
+          "content": "Strings are text, like 'Hello', wrapped in single or double quotes."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Which is a string?",
+          "options": ["5", "'Hi'", "True"],
+          "correct": "'Hi'"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Strings",
+          "content": "Use quotes to make strings, like message = 'Welcome'."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a variable greeting with 'Hello' and print it.",
+          "expectedAnswer": "greeting = 'Hello'\nprint(greeting)",
+          "blocks": [
+            "greeting = 'Hello'\nprint(greeting)"
+          ],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Joining Strings",
+          "content": "Use + to combine strings, like 'Hi' + 'there' makes 'Hithere'."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Join 'Good' and 'Day'.",
+          "starterCode": "print('Good'  'Day')",
+          "placeholders": [
+            {"line": 1, "index": 11, "hint": "+"}
+          ],
+          "blocks": [" + ", " - ", " * "],
+          "correctAnswers": [" + "],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does 'a' + 'b' make?",
+          "options": ["'ab'", "'a b'", "'a+b'"],
+          "correct": "'ab'"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Adding Spaces",
+          "content": "To add a space between strings, include ' ', like 'Hi' + ' ' + 'there'."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print 'Hello' and 'World' with a space between.",
+          "expectedAnswer": "print('Hello' + ' ' + 'World')",
+          "blocks": ["print('Hello' + ' ' + 'World')"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "New Lines",
+          "content": "Use \\n to add a new line in a string, like 'Up\\nDown'."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Print 'Top' and 'Bottom' on two lines.",
+          "starterCode": "print('TopBottom')",
+          "placeholders": [
+            {"line": 1, "index": 9, "hint": "\\n"}
+          ],
+          "blocks": ["\\n", " ", "\\t"],
+          "correctAnswers": ["\\n"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does \\n do?",
+          "options": ["Adds a space", "New line", "Ends code"],
+          "correct": "New line"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "String Power",
+          "content": "Strings make your programs interactive and expressive."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "String Superstar! 📜",
+          "content": "You’re crafting text like a wizard! Strings make your programs talkative and fun!"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Python Numbers",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Numbers?",
+          "content": "Numbers in Python can be integers (like 5) or floats (like 3.14)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Which is a float?",
+          "options": ["7", "2.5", "'10'"],
+          "correct": "2.5"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Integers",
+          "content": "Integers are whole numbers, like age = 12, used for counting."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a variable score with value 100.",
+          "expectedAnswer": "score = 100",
+          "blocks": ["score = 100"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Using Floats",
+          "content": "Floats are decimals, like price = 9.99, used for precision."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Create a variable weight with 4.5.",
+          "starterCode": "weight = ",
+          "placeholders": [
+            {"line": 1, "index": 9, "hint": "4.5"}
+          ],
+          "blocks": ["4.5", "4", "'4.5'"],
+          "correctAnswers": ["4.5"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What is 10 an example of?",
+          "options": ["Float", "Integer", "String"],
+          "correct": "Integer"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Math with Numbers",
+          "content": "Use numbers with operators, like print(5 + 2) to show 7."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print the result of 10 * 3.",
+          "expectedAnswer": "print(10 * 3)",
+          "blocks": ["print(10 * 3)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Storing Results",
+          "content": "Store math results in variables, like total = 6 + 4."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Store 8 + 5 in result.",
+          "starterCode": "result = ",
+          "placeholders": [
+            {"line": 1, "index": 9, "hint": "8 + 5"}
+          ],
+          "blocks": ["8 + 5", "8 * 5", "8 - 5"],
+          "correctAnswers": ["8 + 5"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does 6.0 / 2 equal?",
+          "options": ["3.0", "2.0", "4.0"],
+          "correct": "3.0"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Number Power",
+          "content": "Numbers let you calculate and solve problems in your programs."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Number Ninja! 🔢",
+          "content": "You’re crunching numbers like a pro! Keep calculating to build cool stuff!"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Python User Input",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Input?",
+          "content": "The input() function lets users type answers, like a question in a game."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does input() do?",
+          "options": ["Prints text", "Gets user input", "Does math"],
+          "correct": "Gets user input"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using input()",
+          "content": "Use input('Question: ') to ask something, then store the answer."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Ask for a name and say hello.",
+          "expectedAnswer": "name = input('Enter your name: ')\nprint('Hello ' + name + '!')",
+          "blocks": [
+            "name = input('Enter your name: ')\nprint('Hello ' + name + '!')"
+          ],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Storing Input",
+          "content": "Save input in a variable, like color = input('Color: ')."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Ask for a city and store it.",
+          "starterCode": "city = ('City: ')",
+          "placeholders": [
+            {"line": 1, "index": 7, "hint": "input"}
+          ],
+          "blocks": ["input", "print", "get"],
+          "correctAnswers": ["input"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does input('Hi: ') do?",
+          "options": ["Prints 'Hi'", "Asks for input", "Stores 'Hi'"],
+          "correct": "Asks for input"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Greeting Users",
+          "content": "Combine input with print, like print('Hi, ' + name) to greet users."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Ask for a pet’s name and print 'Pet: ' plus the name.",
+          "expectedAnswer": "pet = input('Pet name: ')\nprint('Pet: ' + pet)",
+          "blocks": ["pet = input('Pet name: ')", "\nprint('Pet: ' + pet)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Input as Text",
+          "content": "Input is always text, even if users type numbers."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Print input for favorite color.",
+          "starterCode": "color = input('Color: ')\n(color)",
+          "placeholders": [
+            {"line": 2, "index": 0, "hint": "print"}
+          ],
+          "blocks": ["print", "input", "show"],
+          "correctAnswers": ["print"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Is input('Age: ') a number?",
+          "options": ["Yes", "No, it’s text", "Sometimes"],
+          "correct": "No, it’s text"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Interactive Programs",
+          "content": "Input makes your programs talk to users and feel alive."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Input Innovator! ⌨️",
+          "content": "You’re making programs interactive! User input is your key to fun apps!"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Python Type Conversion",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Type Conversion?",
+          "content": "Type conversion changes data types, like turning text into a number."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does type conversion do?",
+          "options": ["Changes colors", "Changes data types", "Changes text size"],
+          "correct": "Changes data types"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Text to Number",
+          "content": "Use int() to turn text into an integer, like int('5') makes 5."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Convert '10' to an integer and print it.",
+          "expectedAnswer": "print(int('10'))",
+          "blocks": ["print(int('10'))"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Converting Input",
+          "content": "Input is text, so use int(input()) to get a number from users."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Convert input to an integer.",
+          "starterCode": "age = (input('Age: '))",
+          "placeholders": [
+            {"line": 1, "index": 6, "hint": "int"}
+          ],
+          "blocks": ["int", "str", "float"],
+          "correctAnswers": ["int"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does int('7') return?",
+          "options": ["'7'", "7", "7.0"],
+          "correct": "7"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Number to Text",
+          "content": "Use str() to turn a number into text, like str(5) makes '5'."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Convert 20 to text and print it with ' years'.",
+          "expectedAnswer": "print(str(20) + ' years')",
+          "blocks": ["print(str(20) + ' years')"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Floats",
+          "content": "Use float() to turn text into a decimal, like float('3.14') makes 3.14."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Convert '2.5' to a float.",
+          "starterCode": "print(('2.5'))",
+          "placeholders": [
+            {"line": 1, "index": 6, "hint": "float"}
+          ],
+          "blocks": ["float", "int", "str"],
+          "correctAnswers": ["float"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does str(15) return?",
+          "options": ["15", "'15'", "15.0"],
+          "correct": "'15'"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Why Convert?",
+          "content": "Conversion lets you do math with input or combine numbers with text."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Conversion Creator! 🔄",
+          "content": "You’re changing types like magic! Type conversion makes your code super flexible!"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Python Conditionals",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Conditionals?",
+          "content": "Conditionals let your program make choices, like doing something only if true."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do conditionals do?",
+          "options": ["Repeat code", "Make choices", "Print text"],
+          "correct": "Make choices"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "If Statements",
+          "content": "Use if to check a condition, like if age > 10: print('Older')."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "If num = 15, print 'Big' if greater than 10.",
+          "expectedAnswer": "num = 15\nif num > 10:\n    print('Big')",
+          "blocks": ["num = 15", "\nif num > 10:", "\n    print('Big')"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Comparisons",
+          "content": "Use > (greater), < (less), or == (equal) to compare values."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Check if score is equal to 100.",
+          "starterCode": "score = 100\nif score  100:\n    print('Perfect')",
+          "placeholders": [
+            {"line": 2, "index": 10, "hint": "=="}
+          ],
+          "blocks": ["==", ">", "<"],
+          "correctAnswers": ["=="],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does == mean?",
+          "options": ["Greater than", "Equal to", "Less than"],
+          "correct": "Equal to"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Else Statements",
+          "content": "Use else for what happens if the condition is false, like else: print('No')."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "If x = 5, print 'Small' if less than 10, else 'Large'.",
+          "expectedAnswer": "x = 5\nif x < 10:\n    print('Small')\nelse:\n    print('Large')",
+          "blocks": ["x = 5\nif x < 10:\n    print('Small')\nelse:\n    print('Large')"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Indentation in If",
+          "content": "Indent code under if or else with 4 spaces to show it’s part of the block."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Check if age is less than 18.",
+          "starterCode": "age = 16\nif  < 18:\n    print('Young')",
+          "placeholders": [
+            {"line": 2, "index": 4, "hint": "age"}
+          ],
+          "blocks": ["age", "number", "value"],
+          "correctAnswers": ["age"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What runs if the if condition is false?",
+          "options": ["if code", "else code", "Nothing"],
+          "correct": "else code"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Smart Choices",
+          "content": "Conditionals make your programs decide what to do based on data."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Conditional Captain! ✅",
+          "content": "You’re making smart choices with conditionals! Your programs are getting clever!"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Python Elif Statements",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Elif?",
+          "content": "Elif means 'else if' and checks another condition if the first if is false."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does elif stand for?",
+          "options": ["End if", "Else if", "Extra if"],
+          "correct": "Else if"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using Elif",
+          "content": "Use elif after if, like if score > 90: print('A'), elif score > 80: print('B')."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "If x = 85, print 'B' if >80, else 'C'.",
+          "expectedAnswer": "x = 85\nif x > 80:\n    print('B')\nelse:\n    print('C')",
+          "blocks": ["x = 85\nif x > 80:\n    print('B')\nelse:\n    print('C')"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Multiple Elif",
+          "content": "You can use multiple elifs to check several conditions in order."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add elif to check if score > 70.",
+          "starterCode": "score = 75\nif score > 90:\n    print('A')\n____ score > 70:\n    print('C')",
+          "placeholders": [
+            {"line": 4, "index": 0, "hint": "elif"}
+          ],
+          "blocks": ["elif", "if", "else"],
+          "correctAnswers": ["elif"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "When does elif run?",
+          "options": ["Always", "If if is false", "If if is true"],
+          "correct": "If if is false"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Elif with Else",
+          "content": "Use else at the end to cover cases not caught by if or elif."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "If x = 60, print 'C' if >80, 'D' if >60, else 'F'.",
+          "expectedAnswer": "x = 60\nif x > 80:\n    print('C')\nelif x > 60:\n    print('D')\nelse:\n    print('F')",
+          "blocks": ["x = 60\nif x > 80:\n    print('C')\nelif x > 60:\n    print('D')\nelse:\n    print('F')"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Elif Order",
+          "content": "Python checks elif conditions in order, stopping at the first true one."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Check if temp > 30 with elif.",
+          "starterCode": "temp = 35\nif temp < 20:\n    print('Cold')\n____ temp > 30:\n    print('Hot')",
+          "placeholders": [
+            {"line": 4, "index": 0, "hint": "elif"}
+          ],
+          "blocks": ["elif", "if", "else"],
+          "correctAnswers": ["elif"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Can you have multiple elifs?",
+          "options": ["Yes", "No", "Only one"],
+          "correct": "Yes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Flexible Choices",
+          "content": "Elif lets your program handle many possibilities easily."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Elif Expert! 🌟",
+          "content": "You’re mastering multiple choices! Elif makes your programs super smart!"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Python Lists",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Lists?",
+          "content": "Lists store multiple items, like fruits = ['apple', 'banana']."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does a list hold?",
+          "options": ["One item", "Multiple items", "Only numbers"],
+          "correct": "Multiple items"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Lists",
+          "content": "Use square brackets [], like colors = ['red', 'blue']."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a list ['cat', 'dog'] and print it.",
+          "expectedAnswer": "pets = ['cat', 'dog']\nprint(pets)",
+          "blocks": ["pets = ['cat', 'dog']", "\nprint(pets)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Accessing Items",
+          "content": "Use index numbers, like list[0] to get the first item."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Get the first item from ['pen', 'book'].",
+          "starterCode": "items = ['pen', 'book']\nprint(items[])",
+          "placeholders": [
+            {"line": 2, "index": 12, "hint": "0"}
+          ],
+          "blocks": ["0", "1", "2"],
+          "correctAnswers": ["0"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What is the first index in a list?",
+          "options": ["0", "1", "-1"],
+          "correct": "0"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "List Length",
+          "content": "Use len() to count items, like len(['a', 'b']) returns 2."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print the length of ['red', 'blue', 'green'].",
+          "expectedAnswer": "colors = ['red', 'blue', 'green']\nprint(len(colors))",
+          "blocks": ["colors = ['red', 'blue', 'green']", "\nprint(len(colors))"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Changing Lists",
+          "content": "Update items with index, like list[0] = 'new'."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Change the first item to 'yellow'.",
+          "starterCode": "colors = ['red', 'blue']\ncolors[0] = ",
+          "placeholders": [
+            {"line": 2, "index": 13, "hint": "'yellow'"}
+          ],
+          "blocks": ["'yellow'", "'red'", "'blue'"],
+          "correctAnswers": ["'yellow'"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does len(['x', 'y']) return?",
+          "options": ["1", "2", "3"],
+          "correct": "2"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "List Flexibility",
+          "content": "Lists can hold numbers, text, or both, and you can change them."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "List Legend! 📋",
+          "content": "You’re organizing data with lists! They’re perfect for storing lots of items!"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Python Loops",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Loops?",
+          "content": "Loops repeat code, like printing a list of names one by one."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do loops do?",
+          "options": ["Repeat code", "Make choices", "Store data"],
+          "correct": "Repeat code"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "For Loops",
+          "content": "For loops go through items, like for fruit in ['apple', 'banana']: print(fruit)."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Print each item in ['red', 'blue'].",
+          "expectedAnswer": "for color in ['red', 'blue']:\n    print(color)",
+          "blocks": ["for color in ['red', 'blue']:", "\n    print(color)"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Looping with range()",
+          "content": "Use range(3) to loop 3 times, starting from 0: 0, 1, 2."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Loop 2 times with range().",
+          "starterCode": "for i in (2):\n    print(i)",
+          "placeholders": [
+            {"line": 1, "index": 9, "hint": "range"}
+          ],
+          "blocks": ["range", "list", "count"],
+          "correctAnswers": ["range"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does range(3) give?",
+          "options": ["0, 1, 2", "1, 2, 3", "3"],
+          "correct": "0, 1, 2"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Looping Lists",
+          "content": "Loop through a list to use each item, like printing each number."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Print each number in [1, 2, 3].",
+          "expectedAnswer": "for num in [1, 2, 3]:\n    print(num)",
+          "blocks": ["for num in [1, 2, 3]:", "\n    print(num)"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Indentation in Loops",
+          "content": "Indent code inside a loop to show it repeats, using 4 spaces."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete a loop to print 'Hi'.",
+          "starterCode": " item in ['x']:\n    print('Hi')",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "for"}
+          ],
+          "blocks": ["for", "if", "while"],
+          "correctAnswers": ["for"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What keyword starts a for loop?",
+          "options": ["for", "loop", "repeat"],
+          "correct": "for"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Loop Magic",
+          "content": "Loops save time by repeating tasks automatically."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Loop Leader! 🔄",
+          "content": "You’re repeating code like a pro! Loops make your programs efficient and cool!"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Python Functions",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What are Functions?",
+          "content": "Functions are reusable code blocks, like a recipe you can use anytime."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What are functions for?",
+          "options": ["Storing data", "Reusing code", "Printing text"],
+          "correct": "Reusing code"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Defining Functions",
+          "content": "Use def to create a function, like def say_hi(): print('Hi')."
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Define a function say_hello() that prints 'Hello' and call it.",
+          "expectedAnswer": "def say_hello():\n    print('Hello')\nsay_hello()",
+          "blocks": ["def say_hello():\n    print('Hello')\nsay_hello()"],
+          "language": "python"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Calling Functions",
+          "content": "Run a function by using its name with (), like say_hi()."
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Call a function named start.",
+          "starterCode": "def start():\n    print('Go')\n()",
+          "placeholders": [
+            {"line": 3, "index": 0, "hint": "start"}
+          ],
+          "blocks": ["start", "go", "run"],
+          "correctAnswers": ["start"],
+          "language": "python"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "How do you call a function named fun?",
+          "options": ["fun", "fun()", "def fun"],
+          "correct": "fun()"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Function Structure",
+          "content": "A function has a name, () for parameters, and indented code."
+        },
+        {
+          "id": 9,
+          "type": "codeChallenge",
+          "title": "Define a function greet() that prints 'Hi there' and call it.",
+          "expectedAnswer": "def greet():\n    print('Hi there')\ngreet()",
+          "blocks": ["def greet():\n    print('Hi there')\ngreet()"],
+          "language": "python"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Reusing Functions",
+          "content": "Call a function multiple times to reuse its code easily."
+        },
+        {
+          "id": 11,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Define a function named show.",
+          "starterCode": " show():\n    print('Show')\nshow()",
+          "placeholders": [
+            {"line": 1, "index": 0, "hint": "def"}
+          ],
+          "blocks": ["def", "for", "if"],
+          "correctAnswers": ["def"],
+          "language": "python"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What keyword defines a function?",
+          "options": ["def", "func", "run"],
+          "correct": "def"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Function Power",
+          "content": "Functions make your code organized and reusable for big projects."
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "Function Fanatic! ⚙️",
+          "content": "You’re creating reusable code! Functions are your tools for awesome programs!"
+        }
+      ]
+    }
+  ]
+}

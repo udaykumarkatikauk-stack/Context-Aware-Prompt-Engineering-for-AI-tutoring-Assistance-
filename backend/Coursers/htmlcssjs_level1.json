@@ -1,0 +1,1276 @@
+{
+  "level": 1,
+  "language": "htmlcssjs",
+  "modules": [
+    {
+
+      "id": 1,
+      "title": "Intro to HTML",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Introduction to HTML",
+          "content": "HTML, or HyperText Markup Language, is the foundation of web pages. It uses tags to structure content like headings, paragraphs, and images."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Basic HTML Structure",
+          "content": "Every HTML page starts with a <!DOCTYPE html> declaration, followed by an <html> tag containing <head> for metadata and <body> for visible content."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "What is the purpose of HTML?",
+          "options": [
+            "To style web pages",
+            "To structure web content",
+            "To add interactivity"
+          ],
+          "correct": "To structure web content"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "To create a heading, use the <h1> tag followed by your text and a closing </h1> tag.",
+          "expectedAnswer": "<h1>Welcome</h1>",
+          "blocks": ["<h1>Welcome</h1>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "To add a paragraph, use the <p> tag, add your text, and close it with </p>.",
+          "expectedAnswer": "<p>Hello World</p>",
+          "blocks": ["<p>Hello World</p>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "To separate list items in an unordered list, use the <li> tag for each item inside a <ul> tag.",
+          "starterCode": "<ul>\n  \n  <li>Bananas</li>\n</ul>",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "<li>"},
+            {"line": 2, "index": 10, "hint": "</li>"}
+          ],
+          "blocks": ["<li>", "</li>", "<div>", "</div>"],
+          "correctAnswers": ["<li>", "</li>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which tag is used to create a paragraph?",
+          "options": ["<p>", "<h1>", "<div>"],
+          "correct": "<p>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is wrong with this tag: <H1>?",
+          "options": [
+            "It should be lowercase",
+            "It’s missing a closing tag",
+            "It’s not a valid HTML tag"
+          ],
+          "correct": "It should be lowercase"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Awesome Work! 🎉",
+          "content": "You've nailed the HTML Basics module! 🎊 You're now ready to build structured web pages. Let's dive into the next adventure and keep growing your skills! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "HTML Elements and Links",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are HTML Elements?",
+          "content": "HTML elements are building blocks of web pages, made up of tags like <p>, <h1>, or <div> that surround content to define its purpose."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Creating Links",
+          "content": "The <a> tag creates a hyperlink. Use the href attribute to specify the URL, like <a href='https://example.com'>Click me</a>."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Which tag is used to create a hyperlink?",
+          "options": [
+            "<link>",
+            "<a>",
+            "<url>"
+          ],
+          "correct": "<a>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "To create a link, use the <a> tag with an href attribute and add text between the opening and closing tags.",
+          "expectedAnswer": "<a href='https://example.com'>Visit Example</a>",
+          "blocks": ["<a href='https://example.com'>Visit Example</a>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "To make text bold, wrap it with the <b> tag, like <b>Bold text</b>.",
+          "expectedAnswer": "<b>Important</b>",
+          "blocks": ["<b>Important</b>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "To create an image, use the <img> tag with a src attribute for the image URL.",
+          "starterCode": "<p>Look at this picture:</p>\n  \n",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "<img src='photo.jpg'>"}
+          ],
+          "blocks": ["<img src='photo.jpg'>", "<div>", "<p>"],
+          "correctAnswers": ["<img src='photo.jpg'>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which attribute specifies the URL in a link?",
+          "options": ["src", "href", "link"],
+          "correct": "href"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which tag makes text bold?",
+          "options": ["<b>", "<i>", "<strong>"],
+          "correct": "<b>"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Fantastic Job! 🎉",
+          "content": "You've conquered the HTML Elements and Links module! 🎈 Your web-building skills are growing stronger. Get ready for the next exciting challenge to keep leveling up! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "HTML Lists and Formatting",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are HTML Lists?",
+          "content": "HTML lists organize content in a structured way. Use <ul> for unordered (bulleted) lists and <ol> for ordered (numbered) lists, with <li> for each item."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Text Formatting",
+          "content": "HTML provides tags like <strong> for bold text and <em> for italic text to emphasize content."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Which tag is used for an unordered list?",
+          "options": [
+            "<ol>",
+            "<ul>",
+            "<li>"
+          ],
+          "correct": "<ul>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "To create an unordered list, use the <ul> tag and wrap each item in <li> tags.",
+          "expectedAnswer": "<ul><li>Apple</li></ul>",
+          "blocks": ["<ul><li>Apple</li></ul>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "To emphasize text as italic, wrap it with the <em> tag, like <em>Italic text</em>.",
+          "expectedAnswer": "<em>Special</em>",
+          "blocks": ["<em>Special</em>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "To create an ordered list, use the <ol> tag and wrap each item in <li> tags.",
+          "starterCode": "<p>My tasks:</p>\n  \n  <li>Buy milk</li>\n",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "<ol>"},
+            {"line": 4, "index": 0, "hint": "</ol>"}
+          ],
+          "blocks": ["<ol>", "</ol>", "<ul>", "</ul>"],
+          "correctAnswers": ["<ol>", "</ol>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which tag makes text bold?",
+          "options": ["<em>", "<strong>", "<bolder>"],
+          "correct": "<strong>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is the purpose of the <li> tag?",
+          "options": [
+            "To define a list item",
+            "To create a link",
+            "To add a heading"
+          ],
+          "correct": "To define a list item"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "You’re Killing It! 🎉",
+          "content": "Amazing work completing the HTML Lists and Formatting module! 🎊 You’re mastering the art of structuring web content. Let’s jump into the next challenge and keep the momentum going! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "HTML Tables and Attributes",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Introduction to HTML Tables",
+          "content": "HTML tables organize data in rows and columns using the <table>, <tr> (row), and <td> (data cell) tags."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Using Attributes",
+          "content": "Attributes provide extra information to tags. For example, the id attribute gives an element a unique identifier, like <div id='main'>."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Which tag defines a table row?",
+          "options": [
+            "<td>",
+            "<tr>",
+            "<table>"
+          ],
+          "correct": "<tr>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "To create a table with one cell, use the <table>, <tr>, and <td> tags in that order.",
+          "expectedAnswer": "<table><tr><td>Data</td></tr></table>",
+          "blocks": ["<table><tr><td>Data</td></tr></table>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "To add an id attribute to a paragraph, include id='value' inside the opening <p> tag.",
+          "expectedAnswer": "<p id='intro'>Welcome</p>",
+          "blocks": ["<p id='intro'>Welcome</p>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "To create a table header, use the <th> tag inside a <tr> within a <table>.",
+          "starterCode": "<table>\n  <tr>\n    \n  </tr>\n</table>",
+          "placeholders": [
+            {"line": 3, "index": 4, "hint": "<th>Title</th>"}
+          ],
+          "blocks": ["<th>Title</th>", "<td>Title</td>", "<div>Title</div>"],
+          "correctAnswers": ["<th>Title</th>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which attribute gives an element a unique identifier?",
+          "options": ["class", "id", "name"],
+          "correct": "id"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Which tag is used for a table data cell?",
+          "options": ["<th>", "<td>", "<tr>"],
+          "correct": "<td>"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Way to Go! 🎉",
+          "content": "You've aced the HTML Tables and Attributes module! 🎈 Your ability to structure data is top-notch. Let’s tackle the next challenge and keep building your web skills! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "HTML Forms and Inputs",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Introduction to HTML Forms",
+          "content": "Forms allow users to input data. They're created with the <form> tag and can contain various input elements like text fields, checkboxes, and buttons."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Common Input Types",
+          "content": "Use <input> with different type attributes: text (for regular text), password (hidden text), checkbox (toggle), and submit (form submission button)."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Which tag is used to create a form?",
+          "options": [
+            "<input>",
+            "<form>",
+            "<field>"
+          ],
+          "correct": "<form>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "To create a text input field, use <input type='text'> inside a form.",
+          "expectedAnswer": "<form><input type='text'></form>",
+          "blocks": ["<form><input type='text'></form>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "To create a submit button, use <input type='submit'> with an optional value attribute for the button text.",
+          "expectedAnswer": "<input type='submit' value='Send'>",
+          "blocks": ["<input type='submit' value='Send'>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "To create a password field, use <input type='password'> inside a form.",
+          "starterCode": "<form>\n  \n</form>",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "<input type='password'>"}
+          ],
+          "blocks": ["<input type='password'>", "<input type='text'>", "<password>"],
+          "correctAnswers": ["<input type='password'>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which input type creates a checkbox?",
+          "options": [
+            "<input type='check'>",
+            "<input type='toggle'>",
+            "<input type='checkbox'>"
+          ],
+          "correct": "<input type='checkbox'>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What attribute specifies what text appears on a submit button?",
+          "options": ["text", "value", "name"],
+          "correct": "value"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Form Master Achieved! 🎉",
+          "content": "You've successfully completed the HTML Forms module! 🎊 Now you can create interactive forms that collect user input. Your web skills are becoming more powerful with each lesson! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "HTML5 Semantic Elements",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Semantic Elements?",
+          "content": "Semantic elements clearly describe their meaning to browsers and developers. Examples include <header>, <footer>, <article>, and <section>."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Common Semantic Tags",
+          "content": "<header> defines introductory content, <nav> for navigation links, <main> for the main content, and <footer> for closing content."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Which tag is typically used for navigation links?",
+          "options": [
+            "<nav>",
+            "<links>",
+            "<menu>"
+          ],
+          "correct": "<nav>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "To create a basic page structure, use <header>, <main>, and <footer> tags in order.",
+          "expectedAnswer": "<header></header><main></main><footer></footer>",
+          "blocks": ["<header></header><main></main><footer></footer>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "To mark up an independent article, wrap your content in <article> tags.",
+          "expectedAnswer": "<article>News story here</article>",
+          "blocks": ["<article>News story here</article>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "To define a section in a document, use the <section> tag.",
+          "starterCode": "<main>\n  \n  <p>Content goes here</p>\n</main>",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "<section>"},
+            {"line": 4, "index": 0, "hint": "</section>"}
+          ],
+          "blocks": ["<section>", "</section>", "<div>", "</div>"],
+          "correctAnswers": ["<section>", "</section>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which tag represents the main content of a document?",
+          "options": ["<content>", "<body>", "<main>"],
+          "correct": "<main>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is the advantage of semantic elements?",
+          "options": [
+            "They automatically style content",
+            "They make the structure clearer",
+            "They add interactivity"
+          ],
+          "correct": "They make the structure clearer"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Semantic Pro! 🎉",
+          "content": "Brilliant work on the HTML5 Semantic Elements module! 🎈 You now understand how to create meaningful page structures. Keep up the great work as we move forward! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "HTML Multimedia",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Adding Media to Web Pages",
+          "content": "HTML supports multimedia through <audio> for sound, <video> for movies, and <img> for images. These elements make pages dynamic and engaging."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Media Attributes",
+          "content": "Use src to specify media location (like src='movie.mp4'), controls to show play buttons, and width/height to set dimensions for videos/images."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Which tag embeds a video player?",
+          "options": [
+            "<movie>",
+            "<video>",
+            "<media>"
+          ],
+          "correct": "<video>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "To embed an image, use <img src='photo.jpg' alt='description'> where alt provides alternative text.",
+          "expectedAnswer": "<img src='photo.jpg' alt='Scenery'>",
+          "blocks": ["<img src='photo.jpg' alt='Scenery'>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "To add a video with controls, use <video src='clip.mp4' controls></video>.",
+          "expectedAnswer": "<video src='clip.mp4' controls></video>",
+          "blocks": ["<video src='clip.mp4' controls></video>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "To add background music, use <audio> with controls and src attributes.",
+          "starterCode": "<body>\n  \n</body>",
+          "placeholders": [
+            {"line": 2, "index": 2, "hint": "<audio src='music.mp3' controls></audio>"}
+          ],
+          "blocks": [
+            "<audio src='music.mp3' controls></audio>",
+            "<sound src='music.mp3'>",
+            "<music controls>"
+          ],
+          "correctAnswers": ["<audio src='music.mp3' controls></audio>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which attribute is required for <img> tags?",
+          "options": ["src", "link", "file"],
+          "correct": "src"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does the alt attribute do?",
+          "options": [
+            "Makes images load faster",
+            "Provides text when images can't display",
+            "Adds animation"
+          ],
+          "correct": "Provides text when images can't display"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Media Maestro! 🎬",
+          "content": "You've mastered HTML Multimedia! 🎧 Now you can bring web pages to life with images, videos, and sounds. The web is your creative canvas – keep building! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "HTML Meta Tags",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Understanding Meta Tags",
+          "content": "Meta tags in the <head> section provide metadata like character sets, page descriptions, and viewport settings that browsers and search engines use."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Essential Meta Tags",
+          "content": "<meta charset='UTF-8'> sets character encoding, <meta name='viewport'> controls mobile display, and <meta name='description'> helps SEO."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Where do meta tags belong?",
+          "options": [
+            "In the <body>",
+            "In the <head>",
+            "At the end of the file"
+          ],
+          "correct": "In the <head>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Set UTF-8 character encoding and display 'Hello, World!' on the webpage.",
+          "expectedAnswer": "<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>Hello, World!</body></html>",
+          "blocks": ["<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>Hello, World!</body></html>"],
+          "language": "html"
+        },
+
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Add a viewport meta tag for mobile optimization and display 'Welcome to my webpage!' on the screen.",
+          "expectedAnswer": "<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><body>Welcome to my webpage!</body></html>",
+          "blocks": ["<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><body>Welcome to my webpage!</body></html>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a page description meta tag for search engines and display a heading 'About Dogs' on the page.",
+          "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n  \n</head>\n<body>\n  <h1>About Dogs</h1>\n</body>\n</html>",
+          "placeholders": [
+            {
+              "line": 4,
+              "index": 2,
+              "hint": "<meta name='description' content='Page about dogs'>"
+            }
+          ],
+          "blocks": [
+            "<meta name='description' content='Page about dogs'>",
+            "<description>Page about dogs</description>",
+            "<meta desc='Page about dogs'>"
+          ],
+          "correctAnswers": ["<meta name='description' content='Page about dogs'>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which meta tag prevents mobile zooming issues?",
+          "options": [
+            "<meta name='zoom'>",
+            "<meta name='viewport'>",
+            "<meta name='mobile'>"
+          ],
+          "correct": "<meta name='viewport'>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Why is UTF-8 important?",
+          "options": [
+            "Makes pages load faster",
+            "Ensures proper character display",
+            "Adds animations"
+          ],
+          "correct": "Ensures proper character display"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Meta Master! 🔍",
+          "content": "You've unlocked the secrets of HTML Meta Tags! 🗝️ Now you can control how browsers and search engines see your pages. Your technical skills are growing impressively! 🚀"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "HTML Basic Structure",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "The HTML Skeleton",
+          "content": "Every HTML page needs this structure: <!DOCTYPE html>, <html>, <head>, and <body> tags. The <head> contains invisible info, <body> has visible content."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "The Title Tag",
+          "content": "<title> in the <head> sets what appears in browser tabs. Example: <title>My Page</title> makes the tab show 'My Page'."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Where does visible content go?",
+          "options": [
+            "<head>",
+            "<body>",
+            "<title>"
+          ],
+          "correct": "<body>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create the basic HTML structure with <html>, <head>, and <body> tags, and display the text 'This is a basic page'.",
+          "expectedAnswer": "<!DOCTYPE html><html><head></head><body>This is a basic page</body></html>",
+          "blocks": ["<!DOCTYPE html><html><head></head><body>This is a basic page</body></html>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Add a title 'Homepage' inside the <head> section and display a heading 'Welcome to the Homepage' on the page.",
+          "expectedAnswer": "<!DOCTYPE html><html><head><title>Homepage</title></head><body><h1>Welcome to the Homepage</h1></body></html>",
+          "blocks": ["<!DOCTYPE html><html><head><title>Homepage</title></head><body><h1>Welcome to the Homepage</h1></body></html>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete the doctype declaration for HTML5 and display 'HTML5 Page Loaded' on the page.",
+          "starterCode": "<html>\n<head></head>\n<body>\n  HTML5 Page Loaded\n</body>\n</html>",
+          "placeholders": [
+            {
+              "line": 1,
+              "index": 0,
+              "hint": "<!DOCTYPE html>"
+            }
+          ],
+          "blocks": ["<!DOCTYPE html>", "<!DOCTYPE>", "<html>"],
+          "correctAnswers": ["<!DOCTYPE html>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which comes first in HTML?",
+          "options": [
+            "<body>",
+            "<head>",
+            "<!DOCTYPE html>"
+          ],
+          "correct": "<!DOCTYPE html>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does <title> control?",
+          "options": [
+            "Background color",
+            "Browser tab text",
+            "Font size"
+          ],
+          "correct": "Browser tab text"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Structure Pro! 🏗️",
+          "content": "You've built the perfect HTML skeleton! Now every page you create will have solid foundations. Keep up the great work! 🎉"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "HTML Text Formatting",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Text Styling Basics",
+          "content": "HTML has simple tags for text: <b> for bold, <i> for italic, <u> for underline, and <br> for line breaks."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Headings Hierarchy",
+          "content": "<h1> to <h6> create headings. <h1> is biggest (most important), <h6> is smallest. Use them in order like a document outline."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "Which tag makes text italic?",
+          "options": [
+            "<bold>",
+            "<i>",
+            "<emph>"
+          ],
+          "correct": "<i>"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Make the word 'Hello' bold using <b> tags.",
+          "expectedAnswer": "<b>Hello</b>",
+          "blocks": ["<b>Hello</b>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Create a main heading with <h1> saying 'Welcome'.",
+          "expectedAnswer": "<h1>Welcome</h1>",
+          "blocks": ["<h1>Welcome</h1>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a line break between two lines of text.",
+          "starterCode": "First line\nSecond line",
+          "placeholders": [
+            {"line": 1, "index": 10, "hint": "<br>"}
+          ],
+          "blocks": ["<br>", "<break>", "<lb>"],
+          "correctAnswers": ["<br>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Which heading is largest?",
+          "options": [
+            "<h3>",
+            "<h1>",
+            "<h6>"
+          ],
+          "correct": "<h1>"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does <u> do?",
+          "options": [
+            "Makes text uppercase",
+            "Underlines text",
+            "Links to a URL"
+          ],
+          "correct": "Underlines text"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Text Wizard! ✍️",
+          "content": "You now control text like a pro! Bold, italics, headings – your pages will never look plain again. Amazing progress! 🎊"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "HTML Comments",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Why Use Comments?",
+          "content": "Comments <!-- like this --> are notes in code that browsers ignore. They help explain your code to other developers (or your future self!)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Comment Syntax",
+          "content": "Comments start with <!-- and end with -->. They can span multiple lines. Example: <!-- Navigation starts here -->."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "What do comments do?",
+          "options": [
+            "Make text bold",
+            "Are visible to users",
+            "Are ignored by browsers"
+          ],
+          "correct": "Are ignored by browsers"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Add a comment 'Main content' before a paragraph and display the text 'This is a paragraph.'",
+          "expectedAnswer": "<!DOCTYPE html><html><head></head><body><!-- Main content --><p>This is a paragraph.</p></body></html>",
+          "blocks": ["<!DOCTYPE html><html><head></head><body><!-- Main content --><p>This is a paragraph.</p></body></html>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Comment out the text 'Temporary section' and display a heading 'Active Section' on the page.",
+          "expectedAnswer": "<!DOCTYPE html><html><head></head><body><!-- Temporary section --><h1>Active Section</h1></body></html>",
+          "blocks": ["<!DOCTYPE html><html><head></head><body><!-- Temporary section --><h1>Active Section</h1></body></html>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Complete the HTML comment syntax around the text 'Sample comment' and display 'Page Content Visible' on the page.",
+          "starterCode": "<!DOCTYPE html>\n<html>\n<head></head>\n<body>\n  <!-- Sample comment -->\n  Page Content Visible\n</body>\n</html>",
+          "placeholders": [
+            {
+              "line": 5,
+              "index": 2,
+              "hint": "<!--"
+            },
+            {
+              "line": 5,
+              "index": 20,
+              "hint": "-->"
+            }
+          ],
+          "blocks": ["<!--", "-->", "<!—", "—>"],
+          "correctAnswers": ["<!--", "-->"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "How do comments start?",
+          "options": [
+            "/*",
+            "<!--",
+            "//"
+          ],
+          "correct": "<!--"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can comments span multiple lines?",
+          "options": [
+            "Yes",
+            "No",
+            "Only in CSS"
+          ],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Comment Champion! 💬",
+          "content": "You've mastered the art of commenting! Your future self will thank you for leaving clear notes in your code. Great job! 🏆"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "HTML Divs",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "The Div Element",
+          "content": "<div> is a container that groups elements together. It's like an invisible box to organize content or apply styles to multiple elements."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Why Use Divs?",
+          "content": "Divs help structure pages. You can give them IDs (<div id='header'>) or classes (<div class='menu'>) to style them with CSS later."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "What does <div> stand for?",
+          "options": [
+            "Document division",
+            "Digital interval",
+            "Divided section"
+          ],
+          "correct": "Document division"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Create a div with id 'container'.",
+          "expectedAnswer": "<div id='container'></div>",
+          "blocks": ["<div id='container'></div>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Wrap a heading and paragraph in a div.",
+          "expectedAnswer": "<div><h1>Title</h1><p>Text</p></div>",
+          "blocks": ["<div><h1>Title</h1><p>Text</p></div>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a class 'box' to this div.",
+          "starterCode": "<div>Content</div>",
+          "placeholders": [
+            {"line": 1, "index": 5, "hint": "class='box'"}
+          ],
+          "blocks": ["class='box'", "id='box'", "style='box'"],
+          "correctAnswers": ["class='box'"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Is <div> visible by default?",
+          "options": [
+            "Yes",
+            "No, it's invisible",
+            "Only with CSS"
+          ],
+          "correct": "No, it's invisible"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What's the difference between id and class?",
+          "options": [
+            "id is unique, class can repeat",
+            "class is for JavaScript",
+            "No difference"
+          ],
+          "correct": "id is unique, class can repeat"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Div Dynamo! 📦",
+          "content": "You're now a <div> expert! These invisible boxes will become your best friends in web design. Keep up the fantastic work! 🌟"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "HTML Spans",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "The Span Element",
+          "content": "<span> is an inline container for small text pieces. Unlike <div>, it doesn't create line breaks. Use it to style parts of text differently."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "Span vs Div",
+          "content": "<div> = block-level (full width), <span> = inline (flows with text). Example: <p>This <span class='highlight'>word</span> is special.</p>"
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "When would you use <span>?",
+          "options": [
+            "To group paragraphs",
+            "To style part of a sentence",
+            "To create sections"
+          ],
+          "correct": "To style part of a sentence"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Make the word 'amazing' red using a span with class 'red'.",
+          "expectedAnswer": "<span class='red'>amazing</span>",
+          "blocks": ["<span class='red'>amazing</span>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Highlight 'important' in a paragraph using <span>.",
+          "expectedAnswer": "<p>This is <span>important</span> text.</p>",
+          "blocks": ["<p>This is <span>important</span> text.</p>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a span around 'click here' in this link.",
+          "starterCode": "<a href='#'>Please click here</a>",
+          "placeholders": [
+            {"line": 1, "index": 16, "hint": "<span>click here</span>"}
+          ],
+          "blocks": ["<span>click here</span>", "<div>click here</div>"],
+          "correctAnswers": ["<span>click here</span>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Is <span> block or inline?",
+          "options": [
+            "Block",
+            "Inline",
+            "Both"
+          ],
+          "correct": "Inline"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can you put a <div> inside a <span>?",
+          "options": [
+            "Yes",
+            "No",
+            "Only with CSS"
+          ],
+          "correct": "No"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Span Specialist! 🎯",
+          "content": "You've mastered the precision of <span>! Now you can target specific words with surgical accuracy. Your HTML skills are getting razor-sharp! 🔪"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "HTML Line Breaks",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Creating New Lines",
+          "content": "<br> makes line breaks without starting a new paragraph. It's self-closing - just write <br> (no </br> needed)."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "When to Use <br>",
+          "content": "Use <br> for addresses, poems, or anytime you need a new line within the same paragraph. Example: 'Line one<br>Line two'."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "What does <br> stand for?",
+          "options": [
+            "Break row",
+            "Line break",
+            "Both are correct"
+          ],
+          "correct": "Both are correct"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Add a line break between 'Hello' and 'World'.",
+          "expectedAnswer": "Hello<br>World",
+          "blocks": ["Hello<br>World"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Format an address with line breaks.",
+          "expectedAnswer": "123 Street<br>City<br>Country",
+          "blocks": ["123 Street<br>City<br>Country"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add a line break after each item in this list.",
+          "starterCode": "Apples Bananas Oranges",
+          "placeholders": [
+            {"line": 1, "index": 6, "hint": "<br>"},
+            {"line": 1, "index": 14, "hint": "<br>"}
+          ],
+          "blocks": ["<br>", "<br>", "<break>"],
+          "correctAnswers": ["<br>", "<br>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Is <br> a container tag?",
+          "options": [
+            "Yes",
+            "No",
+            "Sometimes"
+          ],
+          "correct": "No"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How many <br> tags for two empty lines?",
+          "options": [
+            "1",
+            "2",
+            "3"
+          ],
+          "correct": "2"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Break Master! ⏎",
+          "content": "You now control line breaks like a poet formatting verses! Your content will always have perfect spacing. Beautiful work! ✨"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "HTML Horizontal Rules",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "The <hr> Tag",
+          "content": "<hr> creates a horizontal line (a 'thematic break') to separate content. Like <br>, it's self-closing - just write <hr>."
+        },
+        {
+          "id": 2,
+          "type": "info",
+          "title": "When to Use <hr>",
+          "content": "Use between sections when a heading isn't needed. Example: <p>First section</p><hr><p>Second section</p> creates a visual divider."
+        },
+        {
+          "id": 3,
+          "type": "quiz",
+          "title": "What does <hr> stand for?",
+          "options": [
+            "Horizontal rule",
+            "Header row",
+            "Hard return"
+          ],
+          "correct": "Horizontal rule"
+        },
+        {
+          "id": 4,
+          "type": "codeChallenge",
+          "title": "Add a horizontal rule between two paragraphs.",
+          "expectedAnswer": "<p>Top</p><hr><p>Bottom</p>",
+          "blocks": ["<p>Top</p><hr><p>Bottom</p>"],
+          "language": "html"
+        },
+        {
+          "id": 5,
+          "type": "codeChallenge",
+          "title": "Create a thick red horizontal rule using style attributes.",
+          "expectedAnswer": "<hr style='height:5px;background:red'>",
+          "blocks": ["<hr style='height:5px;background:red'>"],
+          "language": "html"
+        },
+        {
+          "id": 6,
+          "type": "code_fill_in_the_blank",
+          "instruction": "Add an <hr> between these sections.",
+          "starterCode": "<section>About</section>\n<section>Contact</section>",
+          "placeholders": [
+            {"line": 2, "index": 0, "hint": "<hr>"}
+          ],
+          "blocks": ["<hr>", "<br>", "<div>"],
+          "correctAnswers": ["<hr>"],
+          "language": "html"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "Is <hr> visible by default?",
+          "options": [
+            "Yes",
+            "No",
+            "Only in Chrome"
+          ],
+          "correct": "Yes"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What's the default <hr> appearance?",
+          "options": [
+            "Dotted line",
+            "Solid thin line",
+            "Double line"
+          ],
+          "correct": "Solid thin line"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Rule Creator! 📏",
+          "content": "You've mastered the art of content separation! Your pages now have clear, organized sections. You're building like a pro! 🛠️"
+        }
+      ]
+    }
+  ]
+}

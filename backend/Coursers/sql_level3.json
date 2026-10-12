@@ -1,0 +1,3090 @@
+{
+  "level": 3,
+  "language": "sql",
+  "modules": [
+    {
+      "id": 1,
+      "title": "Advanced Query Optimization",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Query Optimization?",
+          "content": "Query optimization improves performance by selecting the best execution plan. Example: Use EXPLAIN to analyze SELECT * FROM Orders WHERE CustomerID = 101;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does query optimization improve?",
+          "options": ["Data accuracy", "Query performance", "Table structure"],
+          "correct": "Query performance"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using EXPLAIN",
+          "content": "EXPLAIN shows the query plan. Example: EXPLAIN SELECT * FROM Orders WHERE Total > 1000; reveals index usage and scan types (PostgreSQL/MySQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does EXPLAIN show?",
+          "options": ["Query results", "Query plan", "Table data"],
+          "correct": "Query plan"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Cost-Based Optimization",
+          "content": "DBMS uses cost estimates to choose plans. Lower cost means faster execution. Example: Indexes reduce cost for WHERE clauses."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does the DBMS use to choose query plans?",
+          "options": ["Cost estimates", "Row counts", "Table size"],
+          "correct": "Cost estimates"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Avoiding Table Scans",
+          "content": "Full table scans are slow for large tables. Example: Add an index on CustomerID to optimize SELECT * FROM Orders WHERE CustomerID = 101;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What can a full table scan cause?",
+          "options": ["Faster queries", "Slower queries", "Data loss"],
+          "correct": "Slower queries"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Join Optimization",
+          "content": "Optimize joins with indexes and smaller tables first. Example: SELECT c.Name, o.Total FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID; benefits from indexes."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What improves join performance?",
+          "options": ["Indexes", "Subqueries", "CROSS JOIN"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Query Rewriting",
+          "content": "Rewrite subqueries as joins. Example: Rewrite SELECT * FROM Products WHERE Price > (SELECT AVG(Price) FROM Products) as a JOIN for better performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What can be faster than a subquery?",
+          "options": ["JOIN", "LIKE", "PIVOT"],
+          "correct": "JOIN"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Statistics and Updates",
+          "content": "DBMS relies on statistics for optimization. Example: ANALYZE TABLE Orders; updates stats for better plans (PostgreSQL/MySQL)."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What does ANALYZE TABLE do?",
+          "options": ["Updates statistics", "Deletes data", "Creates indexes"],
+          "correct": "Updates statistics"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Query optimization is critical for large datasets, reporting, and high-concurrency systems."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Index Optimization",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Indexes?",
+          "content": "Indexes speed up queries by storing sorted data. Example: CREATE INDEX idx_customer ON Orders (CustomerID);"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do indexes speed up?",
+          "options": ["Data insertion", "Query execution", "Table creation"],
+          "correct": "Query execution"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Covering Indexes",
+          "content": "Covering indexes include all query columns. Example: CREATE INDEX idx_order_cover ON Orders (CustomerID, Total); for SELECT CustomerID, Total FROM Orders;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What is a covering index?",
+          "options": ["Index for one column", "Index with all query columns", "Index for joins"],
+          "correct": "Index with all query columns"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Partial Indexes",
+          "content": "Partial indexes cover a subset of rows. Example: CREATE INDEX idx_active ON Customers (CustomerID) WHERE Active = 1; (PostgreSQL)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does a partial index cover?",
+          "options": ["All rows", "Subset of rows", "All columns"],
+          "correct": "Subset of rows"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Composite Indexes",
+          "content": "Composite indexes include multiple columns. Example: CREATE INDEX idx_composite ON Orders (CustomerID, OrderDate);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What is a composite index?",
+          "options": ["Single-column index", "Multi-column index", "Table index"],
+          "correct": "Multi-column index"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Index Maintenance",
+          "content": "Rebuild indexes to reduce fragmentation. Example: REINDEX TABLE Orders; (PostgreSQL) or ALTER INDEX idx_customer REBUILD; (SQL Server)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does REINDEX do?",
+          "options": ["Deletes index", "Rebuilds index", "Creates table"],
+          "correct": "Rebuilds index"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Trade-offs",
+          "content": "Indexes speed up SELECT but slow INSERT/UPDATE. Balance index creation with write performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What can indexes slow down?",
+          "options": ["SELECT queries", "INSERT/UPDATE", "Table scans"],
+          "correct": "INSERT/UPDATE"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Choosing Columns",
+          "content": "Index columns used in WHERE, JOIN, or ORDER BY. Example: Index OrderDate for SELECT * FROM Orders ORDER BY OrderDate;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Which columns should be indexed?",
+          "options": ["WHERE/JOIN/ORDER BY", "All columns", "Primary keys only"],
+          "correct": "WHERE/JOIN/ORDER BY"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Indexes are critical for large tables, frequent queries, and performance-sensitive applications."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Complex Transactions",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Transactions?",
+          "content": "Transactions ensure data consistency with ACID properties. Example: BEGIN TRANSACTION; UPDATE Accounts SET Balance = Balance - 100 WHERE ID = 1; COMMIT;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do transactions ensure?",
+          "options": ["Data deletion", "Data consistency", "Query speed"],
+          "correct": "Data consistency"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Savepoints",
+          "content": "Savepoints allow partial rollbacks. Example: BEGIN; UPDATE Orders SET Total = 100; SAVEPOINT sp1; UPDATE Orders SET Total = 200; ROLLBACK TO sp1; COMMIT;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What do savepoints allow?",
+          "options": ["Full rollback", "Partial rollback", "Query optimization"],
+          "correct": "Partial rollback"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Isolation Levels",
+          "content": "Isolation levels control concurrency. Example: SET TRANSACTION ISOLATION LEVEL READ COMMITTED; (options: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does SERIALIZABLE isolation prevent?",
+          "options": ["Data insertion", "Concurrent issues", "Index usage"],
+          "correct": "Concurrent issues"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Nested Transactions",
+          "content": "Some DBMS support nested transactions via savepoints. Example: BEGIN; SAVEPOINT sp1; UPDATE Orders SET Total = 100; SAVEPOINT sp2; ROLLBACK TO sp2;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How are nested transactions often implemented?",
+          "options": ["With JOIN", "With savepoints", "With indexes"],
+          "correct": "With savepoints"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Transaction Rollback",
+          "content": "ROLLBACK undoes changes. Example: BEGIN; UPDATE Accounts SET Balance = Balance - 100; ROLLBACK; leaves Balance unchanged."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does ROLLBACK do?",
+          "options": ["Saves changes", "Undoes changes", "Creates indexes"],
+          "correct": "Undoes changes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Keep transactions short to reduce locking and improve concurrency."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves transaction concurrency?",
+          "options": ["Short transactions", "Long transactions", "No indexes"],
+          "correct": "Short transactions"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Error Handling",
+          "content": "Use TRY-CATCH in transactions to handle errors. Example: BEGIN TRY; UPDATE Orders; COMMIT; END TRY BEGIN CATCH; ROLLBACK; END CATCH; (SQL Server)."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What handles errors in transactions?",
+          "options": ["TRY-CATCH", "WHERE", "JOIN"],
+          "correct": "TRY-CATCH"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Complex transactions are used for financial operations, inventory updates, and multi-step data changes."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Dynamic SQL",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Dynamic SQL?",
+          "content": "Dynamic SQL builds and executes SQL at runtime. Example: SET @sql = 'SELECT * FROM Orders WHERE Total > ' + CAST(@threshold AS VARCHAR); EXEC(@sql); (SQL Server)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does dynamic SQL do?",
+          "options": ["Runs static queries", "Builds SQL at runtime", "Creates tables"],
+          "correct": "Builds SQL at runtime"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using EXECUTE",
+          "content": "EXECUTE runs dynamic SQL. Example: EXECUTE ('SELECT * FROM ' + @tableName); (PostgreSQL: EXECUTE format('SELECT * FROM %I', tableName))."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What runs dynamic SQL?",
+          "options": ["EXECUTE", "SELECT", "UPDATE"],
+          "correct": "EXECUTE"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Parameterized Dynamic SQL",
+          "content": "Use parameters to avoid injection. Example: EXEC sp_executesql @sql, N'@threshold INT', @threshold = 1000; (SQL Server)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What prevents SQL injection in dynamic SQL?",
+          "options": ["Parameters", "Static queries", "Indexes"],
+          "correct": "Parameters"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Building Queries",
+          "content": "Concatenate strings for flexibility. Example: SET @sql = 'SELECT * FROM Orders WHERE ' + @condition; EXEC(@sql);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How is dynamic SQL built?",
+          "options": ["String concatenation", "JOIN clauses", "Static SELECT"],
+          "correct": "String concatenation"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Dynamic Table Names",
+          "content": "Use dynamic SQL for variable table names. Example: EXECUTE format('SELECT * FROM %I', @tableName); (PostgreSQL)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What can dynamic SQL handle?",
+          "options": ["Fixed tables", "Variable table names", "Only indexes"],
+          "correct": "Variable table names"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Dynamic SQL may bypass query plan caching. Use parameterized queries to improve performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What can improve dynamic SQL performance?",
+          "options": ["Parameterized queries", "Table scans", "No indexes"],
+          "correct": "Parameterized queries"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Security Risks",
+          "content": "Avoid concatenating user input directly to prevent SQL injection. Always use parameters."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What does concatenating user input risk?",
+          "options": ["SQL injection", "Faster queries", "Index creation"],
+          "correct": "SQL injection"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Dynamic SQL is used for flexible reports, dynamic table operations, and automated scripts."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Advanced CTEs",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Recursive CTEs",
+          "content": "Recursive CTEs handle hierarchies. Example: WITH RECURSIVE Tree AS (SELECT EmployeeID, Name, ManagerID FROM Employees WHERE ManagerID IS NULL UNION ALL SELECT e.EmployeeID, e.Name, e.ManagerID FROM Employees e JOIN Tree t ON e.ManagerID = t.EmployeeID) SELECT * FROM Tree;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do recursive CTEs handle?",
+          "options": ["Flat data", "Hierarchical data", "Sorted data"],
+          "correct": "Hierarchical data"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Recursive CTE Structure",
+          "content": "Recursive CTEs use UNION ALL with a base case and recursive step. Example: Base case selects root, recursive step joins to CTE."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What connects base and recursive steps in a CTE?",
+          "options": ["UNION ALL", "JOIN", "WHERE"],
+          "correct": "UNION ALL"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Depth Control",
+          "content": "Limit recursion with a condition. Example: Add WHERE depth < 5 to recursive CTE to limit hierarchy levels."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "How can you limit recursion in a CTE?",
+          "options": ["Add WHERE condition", "Use JOIN", "Use ORDER BY"],
+          "correct": "Add WHERE condition"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Path Tracking",
+          "content": "Track hierarchy paths. Example: WITH RECURSIVE Tree AS (...) SELECT Name, CONCAT(t.Path, ' -> ', t.Name) AS Path FROM Tree t;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What can CONCAT do in a recursive CTE?",
+          "options": ["Sort data", "Track paths", "Filter rows"],
+          "correct": "Track paths"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Recursive CTEs can be slow for deep hierarchies. Ensure indexes on join columns like ManagerID."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What improves recursive CTE performance?",
+          "options": ["Indexes", "Subqueries", "No joins"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Cycle Detection",
+          "content": "Prevent infinite loops with cycle detection. Example: Use CYCLE clause in PostgreSQL to detect repeated EmployeeIDs."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What prevents infinite loops in recursive CTEs?",
+          "options": ["Cycle detection", "WHERE clause", "GROUP BY"],
+          "correct": "Cycle detection"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Non-Recursive CTEs",
+          "content": "Advanced non-recursive CTEs simplify complex joins. Example: WITH Sales AS (SELECT CustomerID, SUM(Total) FROM Orders GROUP BY CustomerID) SELECT * FROM Sales JOIN Customers;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Can non-recursive CTEs simplify joins?",
+          "options": ["Yes", "No", "Only recursive"],
+          "correct": "Yes"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Recursive CTEs are used for organizational charts, bill of materials, or graph traversals."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Window Functions: Expert Techniques",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Custom Window Frames",
+          "content": "Define precise window frames with ROWS or RANGE. Example: SELECT OrderID, SUM(Total) OVER (PARTITION BY CustomerID ORDER BY OrderDate ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS RecentSum FROM Orders;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does ROWS BETWEEN 2 PRECEDING AND CURRENT ROW define?",
+          "options": ["Full partition", "Sliding window", "Entire table"],
+          "correct": "Sliding window"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "RANGE vs. ROWS",
+          "content": "RANGE considers value ranges, ROWS considers row counts. Example: RANGE BETWEEN INTERVAL '1' DAY PRECEDING AND CURRENT ROW for date-based windows."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does RANGE use for window frames?",
+          "options": ["Row counts", "Value ranges", "Indexes"],
+          "correct": "Value ranges"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "CUME_DIST()",
+          "content": "CUME_DIST() calculates cumulative distribution. Example: SELECT Name, CUME_DIST() OVER (ORDER BY Price) AS Dist FROM Products;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does CUME_DIST() compute?",
+          "options": ["Row rank", "Cumulative distribution", "Average value"],
+          "correct": "Cumulative distribution"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "PERCENT_RANK()",
+          "content": "PERCENT_RANK() gives relative rank as a percentage. Example: SELECT Name, PERCENT_RANK() OVER (ORDER BY Price) AS Rank FROM Products;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does PERCENT_RANK() return?",
+          "options": ["Absolute rank", "Percentage rank", "Row count"],
+          "correct": "Percentage rank"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Combining Window Functions",
+          "content": "Use multiple window functions. Example: SELECT Name, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY Price), SUM(Price) OVER (PARTITION BY Category) FROM Products;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can multiple window functions be combined?",
+          "options": ["Yes", "No", "Only one"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Complex window functions require sorting. Index PARTITION BY and ORDER BY columns for efficiency."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves window function performance?",
+          "options": ["Indexes", "Subqueries", "Joins"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Window functions like CUME_DIST() treat NULLs as values, sorted per ORDER BY rules."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "How do window functions handle NULLs?",
+          "options": ["Ignore them", "Treat as values", "Exclude rows"],
+          "correct": "Treat as values"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Expert window functions are used for advanced analytics, like moving averages or percentile rankings."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Partitioned Tables",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Table Partitioning?",
+          "content": "Partitioning splits large tables into smaller parts. Example: CREATE TABLE Orders (OrderID INT, OrderDate DATE) PARTITION BY RANGE (OrderDate); (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does table partitioning do?",
+          "options": ["Joins tables", "Splits large tables", "Indexes tables"],
+          "correct": "Splits large tables"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Range Partitioning",
+          "content": "Partition by ranges (e.g., dates). Example: PARTITION BY RANGE (OrderDate) (PARTITION p0 VALUES LESS THAN ('2023-01-01'), PARTITION p1 VALUES LESS THAN ('2024-01-01'));"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does RANGE partitioning use?",
+          "options": ["Value ranges", "Row counts", "Indexes"],
+          "correct": "Value ranges"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "List Partitioning",
+          "content": "Partition by specific values. Example: PARTITION BY LIST (Region) (PARTITION p0 VALUES IN ('East'), PARTITION p1 VALUES IN ('West'));"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does LIST partitioning use?",
+          "options": ["Ranges", "Specific values", "Row counts"],
+          "correct": "Specific values"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Hash Partitioning",
+          "content": "Partition by hash for even distribution. Example: PARTITION BY HASH (CustomerID) PARTITIONS 4;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does HASH partitioning ensure?",
+          "options": ["Even distribution", "Sorted data", "Unique values"],
+          "correct": "Even distribution"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Querying Partitions",
+          "content": "Queries automatically target relevant partitions. Example: SELECT * FROM Orders WHERE OrderDate = '2023-06-01'; uses partition p0."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What do queries target in partitioned tables?",
+          "options": ["All partitions", "Relevant partitions", "Indexes"],
+          "correct": "Relevant partitions"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Partitioning improves query speed for large tables but increases maintenance overhead."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does partitioning improve for large tables?",
+          "options": ["Query speed", "Data insertion", "Table creation"],
+          "correct": "Query speed"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Maintenance",
+          "content": "Manage partitions with ADD/DROP. Example: ALTER TABLE Orders ADD PARTITION p2 VALUES LESS THAN ('2025-01-01');"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "How do you add a partition?",
+          "options": ["ALTER TABLE", "CREATE TABLE", "DROP TABLE"],
+          "correct": "ALTER TABLE"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Partitioning is used for large datasets, like time-series data or regional sales, to improve performance."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Materialized Views",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Materialized Views?",
+          "content": "Materialized views store query results physically. Example: CREATE MATERIALIZED VIEW SalesSummary AS SELECT Category, SUM(Total) FROM Orders GROUP BY Category; (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do materialized views store?",
+          "options": ["Query logic", "Physical data", "Indexes"],
+          "correct": "Physical data"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Materialized Views",
+          "content": "Use CREATE MATERIALIZED VIEW. Example: CREATE MATERIALIZED VIEW TopCustomers AS SELECT CustomerID, COUNT(*) FROM Orders GROUP BY CustomerID;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What creates a materialized view?",
+          "options": ["CREATE VIEW", "CREATE MATERIALIZED VIEW", "CREATE TABLE"],
+          "correct": "CREATE MATERIALIZED VIEW"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Refreshing Views",
+          "content": "Refresh with REFRESH MATERIALIZED VIEW. Example: REFRESH MATERIALIZED VIEW SalesSummary; (use CONCURRENTLY in PostgreSQL to avoid locks)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What refreshes a materialized view?",
+          "options": ["REFRESH MATERIALIZED VIEW", "UPDATE VIEW", "ALTER VIEW"],
+          "correct": "REFRESH MATERIALIZED VIEW"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Indexes on Views",
+          "content": "Add indexes to materialized views. Example: CREATE INDEX idx_sales ON SalesSummary (Category);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can indexes be added to materialized views?",
+          "options": ["Yes", "No", "Only for regular views"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Materialized views speed up queries but require refreshes, which can be slow for large datasets."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What can slow materialized view refreshes?",
+          "options": ["Large datasets", "Indexes", "Small tables"],
+          "correct": "Large datasets"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Regular vs. Materialized Views",
+          "content": "Regular views are virtual; materialized views store data. Materialized views need explicit refreshes."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What is a key difference between regular and materialized views?",
+          "options": ["Virtual vs. physical", "Indexed vs. non-indexed", "Temporary vs. permanent"],
+          "correct": "Virtual vs. physical"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Materialized views are used for precomputed aggregates, dashboards, or caching complex query results."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What are materialized views used for?",
+          "options": ["Dynamic queries", "Precomputed aggregates", "Table creation"],
+          "correct": "Precomputed aggregates"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "Supported in PostgreSQL, Oracle; SQL Server uses indexed views. Check DBMS documentation."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Advanced Triggers",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Multi-Event Triggers",
+          "content": "Triggers can handle multiple events. Example: CREATE TRIGGER Audit ON Orders FOR INSERT, UPDATE, DELETE AS INSERT INTO AuditLog (Action) VALUES ('Modified'); (SQL Server)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Can triggers handle multiple events?",
+          "options": ["Yes", "No", "Only INSERT"],
+          "correct": "Yes"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Conditional Logic",
+          "content": "Use IF in triggers. Example: CREATE TRIGGER CheckPrice BEFORE INSERT ON Products FOR EACH ROW IF NEW.Price < 0 THEN SIGNAL SQLSTATE '45000'; END IF; (MySQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What allows conditional logic in triggers?",
+          "options": ["IF statement", "WHERE clause", "JOIN"],
+          "correct": "IF statement"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "INSTEAD OF Triggers",
+          "content": "INSTEAD OF triggers replace actions. Example: CREATE TRIGGER InsteadInsert INSTEAD OF INSERT ON ViewName FOR EACH ROW INSERT INTO BaseTable ...; (SQL Server)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What do INSTEAD OF triggers do?",
+          "options": ["Replace actions", "Log actions", "Delete rows"],
+          "correct": "Replace actions"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Trigger Order",
+          "content": "Some DBMS allow trigger order. Example: ALTER TRIGGER Audit FIRST AFTER INSERT ON Orders; (PostgreSQL)."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can trigger execution order be set?",
+          "options": ["Yes, in some DBMS", "No", "Only for INSERT"],
+          "correct": "Yes, in some DBMS"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Recursive Triggers",
+          "content": "Triggers can cause recursion. Example: UPDATE in a trigger triggers another. Enable with ALTER DATABASE (SQL Server)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What can cause trigger recursion?",
+          "options": ["UPDATE in trigger", "SELECT in trigger", "INDEX creation"],
+          "correct": "UPDATE in trigger"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Complex triggers slow operations. Keep logic minimal and avoid recursive triggers."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What slows operations in triggers?",
+          "options": ["Complex logic", "Indexes", "Simple SELECT"],
+          "correct": "Complex logic"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Debugging Triggers",
+          "content": "Log trigger actions to debug. Example: INSERT INTO DebugLog (Message) VALUES (NEW.Price); in a trigger."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "How can you debug triggers?",
+          "options": ["Log actions", "Use EXPLAIN", "Create indexes"],
+          "correct": "Log actions"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Advanced triggers enforce complex rules, audit changes, or update related tables."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Stored Procedures: Advanced",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Error Handling",
+          "content": "Use TRY-CATCH in procedures. Example: CREATE PROCEDURE SafeUpdate AS BEGIN TRY UPDATE Orders SET Total = Total + 100; END TRY BEGIN CATCH ROLLBACK; END CATCH; (SQL Server)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What handles errors in stored procedures?",
+          "options": ["TRY-CATCH", "WHERE", "JOIN"],
+          "correct": "TRY-CATCH"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Cursors",
+          "content": "Cursors process rows individually. Example: DECLARE cur CURSOR FOR SELECT CustomerID FROM Orders; OPEN cur; FETCH NEXT FROM cur; (SQL Server)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What do cursors process?",
+          "options": ["Entire tables", "Rows individually", "Indexes"],
+          "correct": "Rows individually"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Dynamic SQL in Procedures",
+          "content": "Use dynamic SQL for flexibility. Example: CREATE PROCEDURE DynamicQuery (@table VARCHAR(50)) AS EXEC('SELECT * FROM ' + @table);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does dynamic SQL add to procedures?",
+          "options": ["Fixed queries", "Flexibility", "Indexes"],
+          "correct": "Flexibility"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Output Parameters",
+          "content": "Return multiple values. Example: CREATE PROCEDURE GetStats (OUT total DECIMAL, OUT count INT) AS SELECT SUM(Total), COUNT(*) INTO total, count FROM Orders;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What do output parameters return?",
+          "options": ["Single value", "Multiple values", "Table"],
+          "correct": "Multiple values"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Temporary Tables",
+          "content": "Use temp tables in procedures. Example: CREATE TEMPORARY TABLE #Temp (ID INT); INSERT INTO #Temp SELECT CustomerID FROM Orders;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can temporary tables be used in procedures?",
+          "options": ["Yes", "No", "Only in triggers"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Avoid cursors when possible; use set-based operations for better performance."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What is faster than cursors?",
+          "options": ["Set-based operations", "Dynamic SQL", "Indexes"],
+          "correct": "Set-based operations"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Security",
+          "content": "Use EXECUTE AS to control permissions. Example: CREATE PROCEDURE GetData WITH EXECUTE AS OWNER AS SELECT * FROM Orders;"
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What controls permissions in procedures?",
+          "options": ["EXECUTE AS", "WHERE", "JOIN"],
+          "correct": "EXECUTE AS"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Advanced procedures handle complex logic, batch processing, or dynamic reporting."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "User-Defined Functions (UDFs)",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are UDFs?",
+          "content": "UDFs are custom functions returning values. Example: CREATE FUNCTION GetTax (@amount DECIMAL) RETURNS DECIMAL AS BEGIN RETURN @amount * 0.08; END; (SQL Server)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do UDFs return?",
+          "options": ["Tables", "Values", "Indexes"],
+          "correct": "Values"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Scalar UDFs",
+          "content": "Return a single value. Example: CREATE FUNCTION AddTax (@price DECIMAL) RETURNS DECIMAL AS RETURN @price * 1.1;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does a scalar UDF return?",
+          "options": ["Table", "Single value", "Multiple rows"],
+          "correct": "Single value"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Table-Valued UDFs",
+          "content": "Return a table. Example: CREATE FUNCTION GetOrders (@custID INT) RETURNS TABLE AS RETURN SELECT * FROM Orders WHERE CustomerID = @custID;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does a table-valued UDF return?",
+          "options": ["Single value", "Table", "Index"],
+          "correct": "Table"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Using UDFs",
+          "content": "Call UDFs in queries. Example: SELECT ProductID, GetTax(Price) AS Tax FROM Products;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Where can UDFs be used?",
+          "options": ["In triggers only", "In queries", "In indexes"],
+          "correct": "In queries"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Scalar UDFs can be slow in row-by-row operations. Consider inline table-valued UDFs for better performance."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What is faster than scalar UDFs?",
+          "options": ["Table-valued UDFs", "Cursors", "Triggers"],
+          "correct": "Table-valued UDFs"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Deterministic UDFs",
+          "content": "Deterministic UDFs always return the same result for the same input. Example: GetTax() is deterministic."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What is a deterministic UDF?",
+          "options": ["Random output", "Same output for same input", "Table output"],
+          "correct": "Same output for same input"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "UDFs are used for reusable calculations, like tax computations or custom filtering."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What are UDFs used for?",
+          "options": ["Table creation", "Reusable calculations", "Index maintenance"],
+          "correct": "Reusable calculations"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "UDFs are supported in SQL Server, PostgreSQL, Oracle; syntax varies. Check documentation."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "SQL Injection Prevention",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is SQL Injection?",
+          "content": "SQL injection is a security vulnerability where malicious SQL is inserted. Example: Input ' OR '1'='1 can bypass WHERE clauses."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does SQL injection exploit?",
+          "options": ["Indexes", "User input", "Triggers"],
+          "correct": "User input"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Parameterized Queries",
+          "content": "Use parameters to prevent injection. Example: PREPARE stmt FROM 'SELECT * FROM Users WHERE ID = ?'; EXECUTE stmt USING @id; (MySQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What prevents SQL injection?",
+          "options": ["Parameterized queries", "Dynamic SQL", "Cursors"],
+          "correct": "Parameterized queries"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Escaping Inputs",
+          "content": "Escape special characters if parameters aren’t possible. Example: Use QUOTE() in MySQL to escape strings."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What can be used if parameters aren’t possible?",
+          "options": ["Escaping inputs", "Dynamic SQL", "Indexes"],
+          "correct": "Escaping inputs"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Avoiding Concatenation",
+          "content": "Don’t concatenate user input in dynamic SQL. Example: Avoid SET @sql = 'SELECT * FROM Users WHERE Name = ''' + @name + '''';"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What should you avoid in dynamic SQL?",
+          "options": ["Parameters", "User input concatenation", "Indexes"],
+          "correct": "User input concatenation"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Stored Procedures",
+          "content": "Use stored procedures with parameters. Example: CREATE PROCEDURE GetUser (@id INT) AS SELECT * FROM Users WHERE ID = @id;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "How do stored procedures help prevent injection?",
+          "options": ["Use parameters", "Use dynamic SQL", "Use cursors"],
+          "correct": "Use parameters"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Input Validation",
+          "content": "Validate inputs before use. Example: Check if input is numeric before using in WHERE ID = input;"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What should you do before using inputs?",
+          "options": ["Validate inputs", "Index inputs", "Join inputs"],
+          "correct": "Validate inputs"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "SQL injection prevention is critical for web applications, APIs, and any user-facing database."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Where is SQL injection prevention critical?",
+          "options": ["Internal scripts", "Web applications", "Indexes"],
+          "correct": "Web applications"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Tools",
+          "content": "Use ORMs or libraries that handle parameterization, like SQLAlchemy for Python."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Database Locks and Concurrency",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Database Locks?",
+          "content": "Locks prevent concurrent data changes. Example: SELECT * FROM Orders WHERE ID = 1 FOR UPDATE; locks rows (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do database locks prevent?",
+          "options": ["Data reads", "Concurrent changes", "Index creation"],
+          "correct": "Concurrent changes"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Row-Level Locks",
+          "content": "Lock specific rows. Example: SELECT * FROM Accounts WHERE ID = 101 FOR UPDATE; prevents updates to that row."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does FOR UPDATE do?",
+          "options": ["Locks rows", "Deletes rows", "Indexes rows"],
+          "correct": "Locks rows"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Table-Level Locks",
+          "content": "Lock entire tables. Example: LOCK TABLE Orders IN EXCLUSIVE MODE; (PostgreSQL)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does LOCK TABLE do?",
+          "options": ["Locks rows", "Locks entire table", "Creates table"],
+          "correct": "Locks entire table"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Deadlocks",
+          "content": "Deadlocks occur when transactions wait for each other. Example: Transaction A locks row 1, B locks row 2, each waits for the other."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What causes a deadlock?",
+          "options": ["Single transaction", "Mutual waiting", "Fast queries"],
+          "correct": "Mutual waiting"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Avoiding Deadlocks",
+          "content": "Access resources in a consistent order. Example: Always lock Orders before Customers in transactions."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "How can deadlocks be avoided?",
+          "options": ["Random order", "Consistent order", "No locks"],
+          "correct": "Consistent order"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Minimize lock duration with short transactions to improve concurrency."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What improves concurrency?",
+          "options": ["Short transactions", "Long transactions", "No indexes"],
+          "correct": "Short transactions"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Locks are critical for financial systems, inventory, or any concurrent data updates."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Where are locks critical?",
+          "options": ["Reports", "Financial systems", "Indexes"],
+          "correct": "Financial systems"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "MVCC",
+          "content": "Multi-Version Concurrency Control (MVCC) avoids locks by using versions. Supported in PostgreSQL, Oracle."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Advanced Date and Time Operations",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Time Zones",
+          "content": "Handle time zones. Example: SELECT NOW() AT TIME ZONE 'UTC'; (PostgreSQL) or CONVERT_TZ(NOW(), 'UTC', 'EST'); (MySQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does AT TIME ZONE do?",
+          "options": ["Changes date", "Converts time zone", "Formats date"],
+          "correct": "Converts time zone"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Date Arithmetic",
+          "content": "Add/subtract intervals. Example: SELECT OrderDate + INTERVAL '30 days' AS DueDate FROM Orders; (PostgreSQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does INTERVAL '30 days' do?",
+          "options": ["Formats date", "Adds 30 days", "Subtracts 30 days"],
+          "correct": "Adds 30 days"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Date Formatting",
+          "content": "Format dates. Example: SELECT TO_CHAR(OrderDate, 'YYYY-MM-DD') FROM Orders; (PostgreSQL) or DATE_FORMAT(OrderDate, '%Y-%m-%d') (MySQL)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does TO_CHAR do?",
+          "options": ["Formats dates", "Adds intervals", "Converts time zones"],
+          "correct": "Formats dates"
+        },
+        {
+          "id": 7,
+          "type": "quiz",
+          "question": "What does EXTRACT(YEAR FROM OrderDate) do?",
+          "options": ["Formats date", "Extracts year", "Adds year"],
+          "correct": "Extracts year"
+        },
+        {
+          "id": 8,
+          "type": "info",
+          "title": "Interval Calculations",
+          "content": "Calculate time differences. Example: SELECT AGE(OrderDate, '2023-01-01') AS TimeSince FROM Orders; (PostgreSQL)."
+        },
+        {
+          "id": 9,
+          "type": "quiz",
+          "question": "What does AGE() calculate?",
+          "options": ["Time difference", "Date format", "Time zone"],
+          "correct": "Time difference"
+        },
+        {
+          "id": 10,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Index date columns for range queries. Example: CREATE INDEX idx_date ON Orders (OrderDate);"
+        },
+        {
+          "id": 11,
+          "type": "quiz",
+          "question": "What improves date range query performance?",
+          "options": ["Indexes", "Cursors", "Triggers"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 12,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Date operations are used for scheduling, reporting, or time-series analysis."
+        },
+        {
+          "id": 13,
+          "type": "quiz",
+          "question": "What are date operations used for?",
+          "options": ["Indexing", "Time-series analysis", "Table creation"],
+          "correct": "Time-series analysis"
+        },
+        {
+          "id": 14,
+          "type": "info",
+          "title": "DBMS Variations",
+          "content": "Date functions vary. PostgreSQL uses TO_CHAR, MySQL uses DATE_FORMAT, SQL Server uses FORMAT."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Regular Expressions in SQL",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Regular Expressions?",
+          "content": "Regular expressions match patterns. Example: SELECT * FROM Customers WHERE Name ~ '^[A-Z]'; matches names starting with a capital letter (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do regular expressions match?",
+          "options": ["Exact values", "Patterns", "Indexes"],
+          "correct": "Patterns"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Using REGEXP",
+          "content": "Use REGEXP or ~. Example: SELECT * FROM Products WHERE Name REGEXP 'phone$'; matches names ending with 'phone' (MySQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does REGEXP 'phone$' match?",
+          "options": ["Starts with phone", "Ends with phone", "Contains phone"],
+          "correct": "Ends with phone"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Character Classes",
+          "content": "Use [A-Z], [0-9], etc. Example: SELECT * FROM Customers WHERE Email ~ '[a-z0-9]+@'; matches valid email patterns (PostgreSQL)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does [0-9] match?",
+          "options": ["Letters", "Digits", "Spaces"],
+          "correct": "Digits"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Anchors",
+          "content": "Use ^ and $ for start/end. Example: SELECT * FROM Products WHERE Code ~ '^[A-Z]{3}$'; matches 3-letter codes (PostgreSQL)."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does ^ in a regex do?",
+          "options": ["Matches end", "Matches start", "Matches any"],
+          "correct": "Matches start"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Regex queries may not use indexes. Use LIKE for simple patterns if possible."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What can be faster than REGEXP for simple patterns?",
+          "options": ["LIKE", "JOIN", "INDEX"],
+          "correct": "LIKE"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "PostgreSQL uses ~, MySQL uses REGEXP, SQL Server uses PATINDEX. Check documentation."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Which DBMS uses ~ for regex?",
+          "options": ["MySQL", "PostgreSQL", "SQL Server"],
+          "correct": "PostgreSQL"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Regex is used for validating emails, phone numbers, or complex string patterns."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What is regex used for?",
+          "options": ["Indexing", "Pattern validation", "Table creation"],
+          "correct": "Pattern validation"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Replacing Patterns",
+          "content": "Replace with REGEXP_REPLACE. Example: SELECT REGEXP_REPLACE(Name, '[0-9]', '') FROM Customers; removes digits (PostgreSQL)."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "JSON and XML in SQL",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Querying JSON",
+          "content": "Query JSON data. Example: SELECT Data->>'name' AS Name FROM Users WHERE Data->>'age' > '30'; (PostgreSQL, JSONB column)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does ->> extract from JSON?",
+          "options": ["Table", "Text value", "Index"],
+          "correct": "Text value"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "JSON Functions",
+          "content": "Use JSON functions. Example: SELECT JSON_EXTRACT(Data, '$.name') FROM Users; (MySQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does JSON_EXTRACT do?",
+          "options": ["Extracts JSON values", "Creates JSON", "Indexes JSON"],
+          "correct": "Extracts JSON values"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Querying XML",
+          "content": "Query XML data. Example: SELECT XMLQUERY('//name/text()' PASSING Data) FROM Users; (Oracle)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does XMLQUERY do?",
+          "options": ["Extracts XML values", "Creates tables", "Joins XML"],
+          "correct": "Extracts XML values"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "JSONB vs. JSON",
+          "content": "JSONB (PostgreSQL) stores binary JSON, enabling indexing. Example: CREATE INDEX idx_json ON Users USING GIN (Data);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What enables JSONB indexing?",
+          "options": ["Binary storage", "Text storage", "Table storage"],
+          "correct": "Binary storage"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Index JSON fields for faster queries. Example: CREATE INDEX ON Users (Data->>'name'); (PostgreSQL)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What improves JSON query performance?",
+          "options": ["Indexes", "Cursors", "Triggers"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Modifying JSON",
+          "content": "Update JSON. Example: UPDATE Users SET Data = JSON_SET(Data, '$.age', 31) WHERE ID = 1; (MySQL)."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does JSON_SET do?",
+          "options": ["Deletes JSON", "Updates JSON", "Indexes JSON"],
+          "correct": "Updates JSON"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "JSON/XML are used for semi-structured data, like user profiles or API responses."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What are JSON/XML used for?",
+          "options": ["Structured data", "Semi-structured data", "Indexes"],
+          "correct": "Semi-structured data"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "JSON in PostgreSQL (JSONB), MySQL, SQL Server; XML in Oracle, SQL Server. Syntax varies."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Common Table Expressions: Optimization",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Optimizing CTEs",
+          "content": "CTEs may not be materialized. Example: WITH Sales AS (SELECT * FROM Orders) SELECT * FROM Sales WHERE Total > 1000; may re-run the CTE."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "Are CTEs always materialized?",
+          "options": ["Yes", "No", "Only in MySQL"],
+          "correct": "No"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Materializing CTEs",
+          "content": "Use temp tables for materialization. Example: CREATE TEMPORARY TABLE TempSales AS SELECT * FROM Orders; SELECT * FROM TempSales;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What can materialize a CTE?",
+          "options": ["Temporary table", "Index", "Join"],
+          "correct": "Temporary table"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Recursive CTE Performance",
+          "content": "Optimize recursive CTEs with indexes. Example: Index ManagerID for WITH RECURSIVE Tree AS (...) SELECT * FROM Employees;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What improves recursive CTE performance?",
+          "options": ["Indexes", "Cursors", "Triggers"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Avoiding Redundant CTEs",
+          "content": "Reuse CTEs instead of repeating. Example: WITH Data AS (SELECT * FROM Orders) SELECT * FROM Data UNION SELECT * FROM Data;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "How should CTEs be reused?",
+          "options": ["Repeat query", "Reference CTE", "Use cursors"],
+          "correct": "Reference CTE"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "CTEs vs. Subqueries",
+          "content": "CTEs improve readability but may not optimize better than subqueries. Test with EXPLAIN."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What should you test CTE performance with?",
+          "options": ["EXPLAIN", "INDEX", "JOIN"],
+          "correct": "EXPLAIN"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Limit CTE complexity and use indexes on joined or filtered columns."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What reduces CTE complexity?",
+          "options": ["Indexes", "Cursors", "Complex logic"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Optimized CTEs are used for hierarchical queries, multi-step calculations, or readable joins."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What are optimized CTEs used for?",
+          "options": ["Indexing", "Hierarchical queries", "Table creation"],
+          "correct": "Hierarchical queries"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Variations",
+          "content": "PostgreSQL, SQL Server support CTEs; MySQL supports since 8.0. Check documentation."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Advanced Pivoting and Unpivoting",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Dynamic Pivoting",
+          "content": "Use dynamic SQL for pivoting. Example: SET @sql = (SELECT GROUP_CONCAT('SUM(CASE WHEN Month = ''' || Month || ''' THEN Sales END) AS ' || Month) FROM Months); EXEC(@sql); (MySQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is used for dynamic pivoting?",
+          "options": ["Dynamic SQL", "Static SQL", "Indexes"],
+          "correct": "Dynamic SQL"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Cross-Tab Reports",
+          "content": "Create cross-tab reports with CASE. Example: SELECT Category, SUM(CASE WHEN Month = 'Jan' THEN Sales END) AS Jan FROM Orders GROUP BY Category;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What creates cross-tab reports?",
+          "options": ["CASE with aggregation", "JOIN", "WHERE"],
+          "correct": "CASE with aggregation"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Dynamic Unpivoting",
+          "content": "Unpivot dynamically. Example: SET @sql = 'SELECT * FROM SalesTable UNPIVOT (Sales FOR Month IN (' + @months + '))'; EXEC(@sql);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What is used for dynamic unpivoting?",
+          "options": ["Dynamic SQL", "Static SQL", "Indexes"],
+          "correct": "Dynamic SQL"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Dynamic pivoting can be slow. Precompute results in materialized views if possible."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What can improve dynamic pivoting performance?",
+          "options": ["Materialized views", "Cursors", "Triggers"],
+          "correct": "Materialized views"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Use COALESCE for NULLs. Example: SELECT Category, COALESCE(SUM(CASE WHEN Month = 'Jan' THEN Sales END), 0) AS Jan FROM Orders GROUP BY Category;"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What handles NULLs in pivoting?",
+          "options": ["COALESCE", "WHERE", "JOIN"],
+          "correct": "COALESCE"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "PIVOT in SQL Server, Oracle; MySQL uses CASE. Dynamic pivoting requires dynamic SQL."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Which DBMS requires CASE for pivoting?",
+          "options": ["MySQL", "SQL Server", "Oracle"],
+          "correct": "MySQL"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Advanced pivoting is used for dynamic reports, like sales by month or region."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What are advanced pivoting reports used for?",
+          "options": ["Indexing", "Dynamic reports", "Table creation"],
+          "correct": "Dynamic reports"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Automation",
+          "content": "Automate pivoting with stored procedures to generate column lists dynamically."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Full-Text Search",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Full-Text Search?",
+          "content": "Full-text search finds text patterns. Example: SELECT * FROM Products WHERE to_tsvector(Name) @@ to_tsquery('phone'); (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does full-text search find?",
+          "options": ["Exact matches", "Text patterns", "Indexes"],
+          "correct": "Text patterns"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "TSVECTOR and TSQUERY",
+          "content": "Use TSVECTOR for indexing, TSQUERY for searching. Example: SELECT * FROM Products WHERE to_tsvector(Name) @@ to_tsquery('phone & tablet'); (PostgreSQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does to_tsvector create?",
+          "options": ["Search query", "Searchable index", "Table"],
+          "correct": "Searchable index"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Full-Text Indexes",
+          "content": "Create full-text indexes. Example: CREATE INDEX idx_fts ON Products USING GIN (to_tsvector('english', Name)); (PostgreSQL)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What improves full-text search performance?",
+          "options": ["Full-text indexes", "Cursors", "Triggers"],
+          "correct": "Full-text indexes"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Ranking Results",
+          "content": "Rank search results. Example: SELECT Name, ts_rank(to_tsvector(Name), to_tsquery('phone')) AS Rank FROM Products; (PostgreSQL)."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does ts_rank do?",
+          "options": ["Sorts results", "Ranks results", "Filters results"],
+          "correct": "Ranks results"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Use GIN indexes for full-text search to avoid slow scans."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What index type is used for full-text search?",
+          "options": ["B-tree", "GIN", "Hash"],
+          "correct": "GIN"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "PostgreSQL uses TSVECTOR; SQL Server uses CONTAINS; MySQL uses MATCH. Check documentation."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Which DBMS uses MATCH for full-text search?",
+          "options": ["PostgreSQL", "MySQL", "SQL Server"],
+          "correct": "MySQL"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Full-text search is used for product searches, document retrieval, or content management."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What is full-text search used for?",
+          "options": ["Indexing", "Product searches", "Table creation"],
+          "correct": "Product searches"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Stemming",
+          "content": "Stemming matches word variations. Example: 'phone' matches 'phones' in to_tsquery('phone')."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Database Statistics and Maintenance",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Database Statistics?",
+          "content": "Statistics help the optimizer choose plans. Example: ANALYZE Orders; updates stats (PostgreSQL/MySQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do database statistics help?",
+          "options": ["Query optimizer", "Data insertion", "Index creation"],
+          "correct": "Query optimizer"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Updating Statistics",
+          "content": "Update stats after data changes. Example: UPDATE STATISTICS Orders; (SQL Server)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "When should you update statistics?",
+          "options": ["After data changes", "Before queries", "During indexing"],
+          "correct": "After data changes"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Vacuuming",
+          "content": "Vacuum cleans dead rows. Example: VACUUM ANALYZE Orders; (PostgreSQL) reclaims space and updates stats."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does VACUUM do?",
+          "options": ["Creates indexes", "Cleans dead rows", "Updates data"],
+          "correct": "Cleans dead rows"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Rebuilding Indexes",
+          "content": "Rebuild fragmented indexes. Example: REINDEX TABLE Orders; (PostgreSQL) or ALTER INDEX idx_orders REBUILD; (SQL Server)."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does REINDEX do?",
+          "options": ["Deletes indexes", "Rebuilds indexes", "Creates tables"],
+          "correct": "Rebuilds indexes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Schedule maintenance during low activity to avoid locking."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "When should maintenance be scheduled?",
+          "options": ["High activity", "Low activity", "Any time"],
+          "correct": "Low activity"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Monitoring Statistics",
+          "content": "Check stats staleness. Example: SELECT * FROM pg_stat_user_tables WHERE relname = 'Orders'; (PostgreSQL)."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What does pg_stat_user_tables show?",
+          "options": ["Table stats", "Index data", "Query results"],
+          "correct": "Table stats"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Statistics and maintenance ensure optimal query performance in large databases."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What do statistics ensure?",
+          "options": ["Query performance", "Data deletion", "Table creation"],
+          "correct": "Query performance"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Automation",
+          "content": "Automate maintenance with jobs. Example: PostgreSQL’s autovacuum or SQL Server Agent."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Role-Based Access Control",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is RBAC?",
+          "content": "Role-Based Access Control manages permissions via roles. Example: CREATE ROLE analyst; GRANT SELECT ON Orders TO analyst; (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does RBAC manage?",
+          "options": ["Indexes", "Permissions", "Queries"],
+          "correct": "Permissions"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Creating Roles",
+          "content": "Create roles. Example: CREATE ROLE report_user WITH LOGIN PASSWORD 'secure'; (PostgreSQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What creates a role?",
+          "options": ["CREATE ROLE", "CREATE USER", "CREATE TABLE"],
+          "correct": "CREATE ROLE"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Granting Permissions",
+          "content": "Grant specific permissions. Example: GRANT INSERT, UPDATE ON Orders TO report_user;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does GRANT do?",
+          "options": ["Revokes access", "Grants permissions", "Creates tables"],
+          "correct": "Grants permissions"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Revoking Permissions",
+          "content": "Revoke access. Example: REVOKE INSERT ON Orders FROM report_user;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does REVOKE do?",
+          "options": ["Grants access", "Removes access", "Creates roles"],
+          "correct": "Removes access"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Role Inheritance",
+          "content": "Roles can inherit permissions. Example: GRANT analyst TO report_user; (PostgreSQL)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "Can roles inherit permissions?",
+          "options": ["Yes", "No", "Only in MySQL"],
+          "correct": "Yes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Simplify role hierarchies to reduce permission check overhead."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What reduces permission check overhead?",
+          "options": ["Simple hierarchies", "Complex hierarchies", "No roles"],
+          "correct": "Simple hierarchies"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "RBAC is used for secure access in multi-user systems, like enterprise databases."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Where is RBAC used?",
+          "options": ["Single-user systems", "Multi-user systems", "Indexes"],
+          "correct": "Multi-user systems"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Auditing Roles",
+          "content": "Audit permissions. Example: SELECT * FROM information_schema.table_privileges WHERE table_name = 'Orders';"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Advanced Error Handling",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "TRY-CATCH Blocks",
+          "content": "Handle errors with TRY-CATCH. Example: BEGIN TRY INSERT INTO Orders VALUES (NULL); END TRY BEGIN CATCH SELECT ERROR_MESSAGE(); END CATCH; (SQL Server)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What handles errors in SQL Server?",
+          "options": ["TRY-CATCH", "WHERE", "JOIN"],
+          "correct": "TRY-CATCH"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Custom Errors",
+          "content": "Raise custom errors. Example: RAISE EXCEPTION 'Invalid price' USING ERRCODE = '22000'; (PostgreSQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What raises custom errors in PostgreSQL?",
+          "options": ["RAISE EXCEPTION", "THROW ERROR", "SIGNAL ERROR"],
+          "correct": "RAISE EXCEPTION"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Error Logging",
+          "content": "Log errors to a table. Example: INSERT INTO ErrorLog (Error) SELECT ERROR_MESSAGE() FROM CATCH; (SQL Server)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What can errors be logged to?",
+          "options": ["Table", "Index", "View"],
+          "correct": "Table"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Transaction Rollback",
+          "content": "Rollback on error. Example: BEGIN TRY BEGIN TRANSACTION; INSERT INTO Orders; COMMIT; END TRY BEGIN CATCH ROLLBACK; END CATCH;"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does CATCH do on error?",
+          "options": ["Commits", "Rolls back", "Indexes"],
+          "correct": "Rolls back"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Error Details",
+          "content": "Retrieve error details. Example: SELECT ERROR_LINE(), ERROR_NUMBER() FROM CATCH; (SQL Server)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does ERROR_NUMBER() return?",
+          "options": ["Error code", "Row count", "Table name"],
+          "correct": "Error code"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Minimize TRY-CATCH overhead by using in critical sections only."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Where should TRY-CATCH be used?",
+          "options": ["All queries", "Critical sections", "Indexes"],
+          "correct": "Critical sections"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Error handling is used for robust procedures, transaction safety, and debugging."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What is error handling used for?",
+          "options": ["Indexing", "Transaction safety", "Table creation"],
+          "correct": "Transaction safety"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Variations",
+          "content": "SQL Server uses TRY-CATCH; PostgreSQL uses EXCEPTION; MySQL uses DECLARE HANDLER."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Temporal Tables",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Temporal Tables?",
+          "content": "Temporal tables track history. Example: CREATE TABLE Employees (ID INT, Name VARCHAR(50), SysStartTime DATETIME2 GENERATED ALWAYS AS ROW START, SysEndTime DATETIME2 GENERATED ALWAYS AS ROW END, PERIOD FOR SYSTEM_TIME (SysStartTime, SysEndTime)) WITH (SYSTEM_VERSIONING = ON); (SQL Server)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do temporal tables track?",
+          "options": ["Indexes", "History", "Queries"],
+          "correct": "History"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Querying History",
+          "content": "Query historical data. Example: SELECT * FROM Employees FOR SYSTEM_TIME AS OF '2023-01-01'; (SQL Server)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does FOR SYSTEM_TIME AS OF do?",
+          "options": ["Deletes history", "Queries history", "Creates table"],
+          "correct": "Queries history"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "History Table",
+          "content": "History is stored in a separate table. Example: WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = EmployeesHistory));"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "Where is temporal table history stored?",
+          "options": ["Main table", "Separate table", "Index"],
+          "correct": "Separate table"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Enabling Temporal",
+          "content": "Enable with SYSTEM_VERSIONING. Example: ALTER TABLE Employees SET (SYSTEM_VERSIONING = ON);"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What enables temporal tables?",
+          "options": ["SYSTEM_VERSIONING", "INDEX", "TRIGGER"],
+          "correct": "SYSTEM_VERSIONING"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Index history tables for faster queries. Example: CREATE INDEX idx_history ON EmployeesHistory (SysStartTime);"
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What improves temporal table query performance?",
+          "options": ["Indexes", "Cursors", "Triggers"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Temporal tables are used for auditing, compliance, or tracking data changes over time."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What are temporal tables used for?",
+          "options": ["Indexing", "Auditing", "Table creation"],
+          "correct": "Auditing"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "SQL Server, Oracle support temporal tables; PostgreSQL uses triggers for similar functionality."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Which DBMS natively supports temporal tables?",
+          "options": ["MySQL", "SQL Server", "PostgreSQL"],
+          "correct": "SQL Server"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Retention",
+          "content": "Set history retention. Example: ALTER TABLE Employees SET (SYSTEM_VERSIONING = ON (HISTORY_RETENTION_PERIOD = 1 YEAR));"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Query Parallelism",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Query Parallelism?",
+          "content": "Query parallelism splits queries across multiple CPU cores. Example: SELECT /*+ PARALLEL(4) */ SUM(Total) FROM Orders; (Oracle) enables 4 parallel threads."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does query parallelism use to improve performance?",
+          "options": ["Multiple CPU cores", "Single core", "Indexes only"],
+          "correct": "Multiple CPU cores"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Enabling Parallelism",
+          "content": "Use hints or settings. Example: SET max_parallel_workers_per_gather = 4; (PostgreSQL) enables parallel execution for scans."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What enables parallelism in PostgreSQL?",
+          "options": ["max_parallel_workers_per_gather", "CREATE INDEX", "SET TRANSACTION"],
+          "correct": "max_parallel_workers_per_gather"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Parallel Table Scans",
+          "content": "Parallelism speeds up large table scans. Example: SELECT COUNT(*) FROM Orders; may use parallel workers if enabled."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does parallelism speed up?",
+          "options": ["Small queries", "Large table scans", "Index creation"],
+          "correct": "Large table scans"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Parallel Joins",
+          "content": "Parallelize joins for large datasets. Example: SELECT /*+ PARALLEL */ * FROM Orders o JOIN Customers c ON o.CustomerID = c.CustomerID; (Oracle)."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "Can joins be parallelized?",
+          "options": ["Yes", "No", "Only in MySQL"],
+          "correct": "Yes"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Parallelism increases CPU usage. Use for large datasets, not small queries."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "When should parallelism be used?",
+          "options": ["Small queries", "Large datasets", "All queries"],
+          "correct": "Large datasets"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Limitations",
+          "content": "Parallelism may not apply to DML (INSERT/UPDATE) or small tables. Check DBMS support."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "Does parallelism apply to INSERT statements?",
+          "options": ["Always", "Rarely", "Never"],
+          "correct": "Rarely"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Parallelism is used for data warehousing, large reports, or analytical queries."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What is parallelism used for?",
+          "options": ["Data warehousing", "Small updates", "Index creation"],
+          "correct": "Data warehousing"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "Oracle, PostgreSQL, SQL Server support parallelism; MySQL has limited support. Check documentation."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Data Partitioning Strategies",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Range Partitioning Strategy",
+          "content": "Partition by ranges for ordered data. Example: CREATE TABLE Sales (SaleID INT, SaleDate DATE) PARTITION BY RANGE (SaleDate) (PARTITION p0 VALUES LESS THAN ('2023-01-01'), PARTITION p1 VALUES LESS THAN ('2024-01-01')); (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What is range partitioning best for?",
+          "options": ["Random data", "Ordered data", "Small tables"],
+          "correct": "Ordered data"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "List Partitioning Strategy",
+          "content": "Partition by specific values. Example: PARTITION BY LIST (Region) (PARTITION p0 VALUES IN ('North', 'South'), PARTITION p1 VALUES IN ('East', 'West')); (PostgreSQL)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does list partitioning use?",
+          "options": ["Ranges", "Specific values", "Hashes"],
+          "correct": "Specific values"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Hash Partitioning Strategy",
+          "content": "Distribute data evenly with hash. Example: PARTITION BY HASH (CustomerID) PARTITIONS 4; (PostgreSQL)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does hash partitioning ensure?",
+          "options": ["Sorted data", "Even distribution", "Unique values"],
+          "correct": "Even distribution"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Subpartitioning",
+          "content": "Combine strategies. Example: PARTITION BY RANGE (SaleDate) SUBPARTITION BY HASH (CustomerID) (PARTITION p0 VALUES LESS THAN ('2024-01-01')); (Oracle)."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does subpartitioning combine?",
+          "options": ["Indexes", "Partitioning strategies", "Tables"],
+          "correct": "Partitioning strategies"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Choose partitioning keys that align with query patterns to avoid full scans."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What should partitioning keys align with?",
+          "options": ["Query patterns", "Table size", "Indexes"],
+          "correct": "Query patterns"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Maintenance",
+          "content": "Manage partitions with ALTER TABLE. Example: ALTER TABLE Sales DETACH PARTITION p0; (PostgreSQL)."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What manages partitions?",
+          "options": ["ALTER TABLE", "CREATE INDEX", "DROP TABLE"],
+          "correct": "ALTER TABLE"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Partitioning strategies are used for time-series data, geographic data, or large-scale analytics."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What are partitioning strategies used for?",
+          "options": ["Small tables", "Time-series data", "Indexes"],
+          "correct": "Time-series data"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "PostgreSQL, Oracle support advanced partitioning; SQL Server uses partition functions; MySQL has basic support."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Advanced Aggregation Techniques",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "Conditional Aggregates",
+          "content": "Aggregate with conditions. Example: SELECT Category, SUM(CASE WHEN Region = 'North' THEN Sales ELSE 0 END) AS NorthSales FROM Orders GROUP BY Category;"
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does CASE in aggregates allow?",
+          "options": ["Conditional aggregation", "Sorting", "Indexing"],
+          "correct": "Conditional aggregation"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "ROLLUP",
+          "content": "Create subtotals with ROLLUP. Example: SELECT Region, Category, SUM(Sales) FROM Orders GROUP BY ROLLUP(Region, Category);"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does ROLLUP create?",
+          "options": ["Subtotals", "Indexes", "Joins"],
+          "correct": "Subtotals"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "CUBE",
+          "content": "Generate all combinations of aggregates. Example: SELECT Region, Category, SUM(Sales) FROM Orders GROUP BY CUBE(Region, Category);"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does CUBE generate?",
+          "options": ["Single aggregates", "All combinations", "Sorted data"],
+          "correct": "All combinations"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "GROUPING SETS",
+          "content": "Define specific groupings. Example: SELECT Region, Category, SUM(Sales) FROM Orders GROUP BY GROUPING SETS ((Region), (Category));"
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does GROUPING SETS define?",
+          "options": ["Indexes", "Specific groupings", "Joins"],
+          "correct": "Specific groupings"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Use indexes on GROUP BY columns to speed up aggregations."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What improves aggregation performance?",
+          "options": ["Indexes", "Cursors", "Triggers"],
+          "correct": "Indexes"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "NULL Handling",
+          "content": "Use COALESCE for NULLs. Example: SELECT COALESCE(Region, 'Total'), SUM(Sales) FROM Orders GROUP BY ROLLUP(Region);"
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What handles NULLs in aggregations?",
+          "options": ["COALESCE", "WHERE", "JOIN"],
+          "correct": "COALESCE"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Advanced aggregations are used for financial reports, dashboards, or multi-dimensional analysis."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What are advanced aggregations used for?",
+          "options": ["Indexing", "Financial reports", "Table creation"],
+          "correct": "Financial reports"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "ROLLUP, CUBE, GROUPING SETS are supported in PostgreSQL, SQL Server, Oracle; MySQL supports WITH ROLLUP."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "SQL for Machine Learning",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "SQL in ML Workflows",
+          "content": "SQL prepares data for ML. Example: SELECT CustomerID, AVG(Total) AS AvgSpend FROM Orders GROUP BY CustomerID; for feature engineering."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does SQL do in ML workflows?",
+          "options": ["Trains models", "Prepares data", "Indexes data"],
+          "correct": "Prepares data"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Feature Engineering",
+          "content": "Create features with SQL. Example: SELECT CustomerID, COUNT(*) AS OrderCount, SUM(Total) AS TotalSpend FROM Orders GROUP BY CustomerID;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What is feature engineering in SQL?",
+          "options": ["Creating features", "Training models", "Indexing"],
+          "correct": "Creating features"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Window Functions for ML",
+          "content": "Use window functions for features. Example: SELECT CustomerID, Total, AVG(Total) OVER (PARTITION BY Region) AS RegionAvg FROM Orders;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What can window functions create for ML?",
+          "options": ["Indexes", "Features", "Models"],
+          "correct": "Features"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Data Sampling",
+          "content": "Sample data for ML. Example: SELECT * FROM Orders WHERE RANDOM() < 0.1; (PostgreSQL) for 10% random sample."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does RANDOM() < 0.1 do?",
+          "options": ["Sorts data", "Samples 10% data", "Indexes data"],
+          "correct": "Samples 10% data"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Use materialized views or temporary tables for complex ML feature queries to avoid recomputation."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What avoids recomputation in ML queries?",
+          "options": ["Materialized views", "Cursors", "Triggers"],
+          "correct": "Materialized views"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Integration with ML Tools",
+          "content": "Export SQL data to ML tools. Example: COPY (SELECT * FROM Features) TO 'features.csv' CSV; (PostgreSQL)."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What exports SQL data to ML tools?",
+          "options": ["COPY TO", "CREATE INDEX", "ALTER TABLE"],
+          "correct": "COPY TO"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "SQL for ML is used for customer segmentation, churn prediction, or recommendation systems."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What is SQL for ML used for?",
+          "options": ["Indexing", "Customer segmentation", "Table creation"],
+          "correct": "Customer segmentation"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "PostgreSQL’s MADlib, SQL Server’s ML Services, Oracle’s OML support ML in SQL."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Cross-Database Queries",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What Are Cross-Database Queries?",
+          "content": "Query across databases. Example: SELECT * FROM db1.dbo.Orders o JOIN db2.dbo.Customers c ON o.CustomerID = c.CustomerID; (SQL Server)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What do cross-database queries do?",
+          "options": ["Query single database", "Query multiple databases", "Create databases"],
+          "correct": "Query multiple databases"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Database Links",
+          "content": "Use database links in Oracle. Example: CREATE DATABASE LINK remote_db CONNECT TO user IDENTIFIED BY pass USING 'remote'; SELECT * FROM Orders@remote_db;"
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What does a database link do in Oracle?",
+          "options": ["Joins tables", "Connects to remote database", "Indexes data"],
+          "correct": "Connects to remote database"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Foreign Data Wrappers",
+          "content": "Use FDW in PostgreSQL. Example: CREATE FOREIGN TABLE remote_orders (OrderID INT, Total DECIMAL) SERVER remote_server;"
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does FDW do in PostgreSQL?",
+          "options": ["Creates indexes", "Accesses remote data", "Partitions tables"],
+          "correct": "Accesses remote data"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Minimize cross-database joins due to network latency. Localize data if possible."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What slows cross-database queries?",
+          "options": ["Indexes", "Network latency", "Local data"],
+          "correct": "Network latency"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Security",
+          "content": "Secure cross-database access with roles. Example: GRANT SELECT ON remote_orders TO analyst; (PostgreSQL)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What secures cross-database access?",
+          "options": ["Roles", "Indexes", "Triggers"],
+          "correct": "Roles"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Cross-database queries are used for distributed systems, data integration, or reporting across databases."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What are cross-database queries used for?",
+          "options": ["Single table queries", "Data integration", "Index creation"],
+          "correct": "Data integration"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "SQL Server uses linked servers, Oracle uses database links, PostgreSQL uses FDW. MySQL has limited support."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "Which DBMS uses linked servers?",
+          "options": ["PostgreSQL", "SQL Server", "MySQL"],
+          "correct": "SQL Server"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Monitoring",
+          "content": "Monitor query performance across databases with EXPLAIN or equivalent tools."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Database Replication Basics",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "What is Database Replication?",
+          "content": "Replication copies data to another database. Example: CREATE SUBSCRIPTION sub1 CONNECTION 'host=remote dbname=prod' PUBLICATION pub1; (PostgreSQL)."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does database replication do?",
+          "options": ["Deletes data", "Copies data", "Indexes data"],
+          "correct": "Copies data"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Read Replicas",
+          "content": "Read replicas handle read-only queries. Example: Set up a streaming replica in PostgreSQL for load balancing."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What do read replicas handle?",
+          "options": ["Write queries", "Read-only queries", "Indexes"],
+          "correct": "Read-only queries"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Synchronous Replication",
+          "content": "Synchronous replication ensures data consistency. Example: SET synchronous_commit = on; (PostgreSQL)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does synchronous replication ensure?",
+          "options": ["Data consistency", "Query speed", "Index creation"],
+          "correct": "Data consistency"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Asynchronous Replication",
+          "content": "Asynchronous replication allows lag. Example: Configure log shipping in SQL Server for async replication."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does asynchronous replication allow?",
+          "options": ["No lag", "Data lag", "Indexing"],
+          "correct": "Data lag"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Failover",
+          "content": "Failover switches to a replica. Example: ALTER SYSTEM FAILOVER TO replica_host; (PostgreSQL with tools like Patroni)."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What does failover do?",
+          "options": ["Deletes data", "Switches to replica", "Creates indexes"],
+          "correct": "Switches to replica"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Use read replicas to offload read queries, reducing primary server load."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What do read replicas reduce?",
+          "options": ["Primary server load", "Write performance", "Index size"],
+          "correct": "Primary server load"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "Replication is used for high availability, load balancing, or disaster recovery."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What is replication used for?",
+          "options": ["Indexing", "High availability", "Table creation"],
+          "correct": "High availability"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "DBMS Support",
+          "content": "PostgreSQL uses streaming replication, SQL Server uses Always On, Oracle uses Data Guard."
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "SQL for Big Data",
+      "lessons": [
+        {
+          "id": 1,
+          "type": "info",
+          "title": "SQL for Big Data",
+          "content": "SQL queries large datasets in big data systems. Example: SELECT user_id, COUNT(*) FROM events GROUP BY user_id; in Apache Spark SQL."
+        },
+        {
+          "id": 2,
+          "type": "quiz",
+          "question": "What does SQL query in big data systems?",
+          "options": ["Small datasets", "Large datasets", "Indexes"],
+          "correct": "Large datasets"
+        },
+        {
+          "id": 3,
+          "type": "info",
+          "title": "Distributed Queries",
+          "content": "Run SQL on distributed systems. Example: SELECT * FROM hive_table WHERE date = '2023-01-01'; (Apache Hive)."
+        },
+        {
+          "id": 4,
+          "type": "quiz",
+          "question": "What do distributed queries run on?",
+          "options": ["Single server", "Distributed systems", "Local tables"],
+          "correct": "Distributed systems"
+        },
+        {
+          "id": 5,
+          "type": "info",
+          "title": "Partitioning in Big Data",
+          "content": "Partition data for scalability. Example: CREATE TABLE events (user_id INT, date DATE) PARTITIONED BY (date); (Hive)."
+        },
+        {
+          "id": 6,
+          "type": "quiz",
+          "question": "What does partitioning improve in big data?",
+          "options": ["Indexing", "Scalability", "Data deletion"],
+          "correct": "Scalability"
+        },
+        {
+          "id": 7,
+          "type": "info",
+          "title": "Integration with Tools",
+          "content": "Use SQL with big data tools. Example: Spark SQL integrates with DataFrames for large-scale processing."
+        },
+        {
+          "id": 8,
+          "type": "quiz",
+          "question": "What does Spark SQL integrate with?",
+          "options": ["Indexes", "DataFrames", "Triggers"],
+          "correct": "DataFrames"
+        },
+        {
+          "id": 9,
+          "type": "info",
+          "title": "Performance Tip",
+          "content": "Use columnar storage formats like Parquet or ORC for faster queries in big data systems."
+        },
+        {
+          "id": 10,
+          "type": "quiz",
+          "question": "What improves query performance in big data?",
+          "options": ["Columnar storage", "Row storage", "Indexes only"],
+          "correct": "Columnar storage"
+        },
+        {
+          "id": 11,
+          "type": "info",
+          "title": "Window Functions in Big Data",
+          "content": "Use window functions for analytics. Example: SELECT user_id, SUM(amount) OVER (PARTITION BY region ORDER BY date) FROM transactions; (Spark SQL)."
+        },
+        {
+          "id": 12,
+          "type": "quiz",
+          "question": "What are window functions used for in big data?",
+          "options": ["Indexing", "Analytics", "Table creation"],
+          "correct": "Analytics"
+        },
+        {
+          "id": 13,
+          "type": "info",
+          "title": "Use Cases",
+          "content": "SQL for big data is used for log analysis, real-time analytics, or large-scale reporting."
+        },
+        {
+          "id": 14,
+          "type": "quiz",
+          "question": "What is SQL for big data used for?",
+          "options": ["Small queries", "Log analysis", "Index creation"],
+          "correct": "Log analysis"
+        },
+        {
+          "id": 15,
+          "type": "info",
+          "title": "Tools",
+          "content": "Popular tools include Apache Spark SQL, Hive, Presto, and BigQuery. Check compatibility."
+        }
+      ]
+    }
+  ]
+}
